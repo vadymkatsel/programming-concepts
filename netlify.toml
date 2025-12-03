@@ -1,6 +1,0 @@
-[build]
-  publish = "_book"
-  command = "quarto render"
-  
-[context.production.environment]
-  QUARTO_VERSION = "1.4.550"
