@@ -3,6 +3,4 @@ jupyter: python3
 ---
 
 # Welcome to the course!
-```{python}
-1 + 1
-```
+## Let the adventure start!
