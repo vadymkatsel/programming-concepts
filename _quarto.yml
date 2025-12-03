@@ -3,15 +3,10 @@ project:
 
 book:
   title: "programming-concepts-course"
-  author: "Norah Jones"
+  author: "---"
   date: "03.12.2025"
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
-
-bibliography: references.bib
 
 format:
   html:

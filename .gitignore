@@ -6,3 +6,6 @@
 __pyache__/
 venv/
 .env
+_book/
+
+/.quarto/
