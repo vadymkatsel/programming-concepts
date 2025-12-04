@@ -1,10 +1,36 @@
 ---
+pagetitle: "Programming Concepts Course"
+title: "Головна"
+page-layout: custom  
+section-divs: false  
+toc: false           
+sidebar: false       
 jupyter: python3
 ---
 
-# Welcome to the course!
-## Let the adventure start!
+<style>
+#title-block-header {
+  display: none;
+}
+</style>
 
-```{python}
-print("Hello, world!")
-```
+<div class="hero-banner">
+  <div class="hero-contents">
+  <h1 class="hero-title">Programming Concepts Course</h1>
+  <p class="hero-subtitle">Курс з Основ Програмування для новачків</p>
+  
+  <a href="modules/lists.qmd" class="btn-start">Перейти до курсу 🚀</a>
+  </div>
+</div>
+
+<div style="max-width: 800px; margin: 0 auto; padding: 20px;">
+
+<h1> Про цей курс </h1>
+**Чому** варто вчити програмування саме тут.
+
+* Просто
+* Зрозуміло
+* Без води
+
+</div>
+  

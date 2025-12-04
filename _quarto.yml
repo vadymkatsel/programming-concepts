@@ -7,12 +7,13 @@ book:
   date: "03.12.2025"
   chapters:
     - index.qmd
+    - modules/lists.qmd
+    - modules/dictionaries-tuples-sets.qmd
 
 format:
   html:
     theme:
       - cosmo
-      - brand
-
+    css: style.css
 
 
