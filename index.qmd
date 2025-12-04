@@ -4,3 +4,7 @@ jupyter: python3
 
 # Welcome to the course!
 ## Let the adventure start!
+
+```{python}
+print("Hello, world!")
+```
