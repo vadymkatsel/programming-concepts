@@ -11,15 +11,19 @@ jupyter: python3
 <style>
 #title-block-header {
   display: none;
+  padding: 0px;
 }
 </style>
 
 <div class="hero-banner">
-  <div class="hero-contents">
-  <h1 class="hero-title">Programming Concepts Course</h1>
-  <p class="hero-subtitle">Курс з Основ Програмування для новачків</p>
+  <div class="hero-header">
+  <h1 class="hero-title"> <span class="logo">[>]</span>Programming Concepts Course</h1>
+  <p class="hero-subtitle">Інтерактивний курс, що відкриває двері до світу програмування усім охочим</p>
   
-  <a href="modules/lists.qmd" class="btn-start">Перейти до курсу 🚀</a>
+  <a href="modules/lists.qmd" class="btn-start">Перейти до курсу!</a>
+  </div>
+  <div class="image-container">
+  <img src="images/hero-img.svg" alt="Programming Concepts">
   </div>
 </div>
 
