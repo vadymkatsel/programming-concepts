@@ -12,8 +12,11 @@ book:
 
 format:
   html:
+    page-layout: full
     theme:
-      - cosmo
+      dark: darkly
+      light: cosmo
+    number-sections: false
     css: style.css
 
 

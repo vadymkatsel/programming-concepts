@@ -8,6 +8,7 @@ toc: true
 lang: ua
 execute:
   eval: false
+page-layout: full
 ---
 
 ## 📌 План на сьогодні 
