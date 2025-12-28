@@ -1,14 +1,23 @@
 project:
   type: book
+  output-dir: _site
+
+execute:
+  freeze: auto
 
 book:
-  title: "programming-concepts-course"
+  title: "Programming Concepts Course"
   author: "---"
   date: "03.12.2025"
   chapters:
     - index.qmd
     - modules/lists.qmd
     - modules/dictionaries-tuples-sets.qmd
+
+website: 
+  title: "Programming Concepts"
+  site-url: "https://vadymkatsel.github.io/programming-concepts"
+  repo-url: "https://github.com/vadymkatsel/programming-concepts"
 
 format:
   html:
