@@ -1,6 +1,8 @@
 project:
   type: book
   output-dir: _site
+  resources:
+    - images/
 
 execute:
   freeze: auto
@@ -11,13 +13,23 @@ book:
   date: "03.12.2025"
   chapters:
     - index.qmd
-    - modules/lists.qmd
-    - modules/dictionaries-tuples-sets.qmd
+    - part: "Вступ та підготовка до курсу"
+      chapters: 
+        - modules/about-the-course.qmd
+    - part: "Тестовий розідл"
+      chapters: 
+      - modules/lists.qmd
+      - modules/dictionaries-tuples-sets.qmd
+  sidebar:
+    collapse-level: 1
 
 website: 
   title: "Programming Concepts"
+  page-footer: 
+    center: "© 2025 Vadym Katsel. All rights reserved."
   site-url: "https://vadymkatsel.github.io/programming-concepts"
   repo-url: "https://github.com/vadymkatsel/programming-concepts"
+  favicon: images/favicon.png
 
 format:
   html:

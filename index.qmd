@@ -6,6 +6,16 @@ section-divs: false
 toc: false           
 sidebar: false       
 jupyter: python3
+format:
+  html:
+    include-in-header:
+      text: |
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('quarto-dark');
+            document.body.classList.remove('quarto-light');
+          });
+        </script>
 ---
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +30,10 @@ body {
   padding: 0;
   background-color: #050505;
   color: #fff;
+}
+
+.quarto-color-scheme-toggle {
+  display: none;
 }
 
 h1 {
@@ -76,6 +90,7 @@ a:hover {
   text-align: right;
   max-width: 600px;
   padding: 30px;
+  justify-content: center;
 }
 
 .hero-title {
@@ -219,7 +234,7 @@ a:hover {
   <div class="hero-header">
     <h1 class="hero-title"> <span class="logo">[>]</span>Programming Concepts Course</h1>
     <p class="hero-subtitle">Курс з основ програмування для початківців</p>
-    <a href="modules/lists.qmd" class="btn-start">Перейти до курсу!</a>
+    <a href="modules/about-the-course.qmd" class="btn-start">Перейти до курсу!</a>
   </div>
 
   <div class="image-container">
