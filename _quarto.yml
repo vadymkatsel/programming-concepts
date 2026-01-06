@@ -29,7 +29,6 @@ website:
     center: "© 2025 Vadym Katsel. All rights reserved."
   site-url: "https://vadymkatsel.github.io/programming-concepts"
   repo-url: "https://github.com/vadymkatsel/programming-concepts"
-  favicon: images/favicon.png
 
 format:
   html:
@@ -39,5 +38,9 @@ format:
       light: cosmo
     number-sections: false
     css: style.css
+    include-in-header: 
+      text: |
+        <link rel="icon" type="image/svg+xml" href="https://vadymkatsel.github.io/programming-concepts/images/favicon.svg">
+    favicon: images/favicon.svg
 
 
