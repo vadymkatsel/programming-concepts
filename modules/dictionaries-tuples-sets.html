@@ -431,7 +431,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="паралельні-списки-за-таке-незарах" class="level2">
 <h2 class="anchored" data-anchor-id="паралельні-списки-за-таке-незарах">📋📋 Паралельні списки (за таке незарах)</h2>
-<div id="8d37b479" class="cell" data-execution_count="1">
+<div id="b2b2bae2" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Так робити НЕ ТРЕБА! (Це "паралельні списки")</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> [<span class="st">'Олена'</span>, <span class="st">'Іван'</span>, <span class="st">'Марія'</span>]</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>grades <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">12</span>]</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
@@ -444,7 +444,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="рішення-майже-всіх-проблем">💡 Рішення (майже) всіх проблем</h2>
 <p>Тут нам на допомогу приходять словники!</p>
 <p>Словник - це структура даних, яка зберігає пари “ключ-значення”.</p>
-<div id="e28a12aa" class="cell" data-execution_count="2">
+<div id="83ba3cc6" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>student_grades <span class="op">=</span> {</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'Олена'</span>: <span class="dv">10</span>,</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'Іван'</span>: <span class="dv">8</span>,</span>
@@ -453,7 +453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Як дістати оцінку? Дуже просто:</p>
-<div id="2a51de38" class="cell" data-execution_count="3">
+<div id="9cf6d69a" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( student_grades[<span class="st">'Іван'</span>] )</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#         our dict      key</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># We're using a key to get a value</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
@@ -479,28 +479,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Доступ: отримуємо значення за ключем</li>
 </ul></li>
 </ul>
-<div id="013696ee" class="cell" data-execution_count="4">
+<div id="ad08b991" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>( student[<span class="st">'name'</span>] ) <span class="co"># -&gt; 'Олена'</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># print( student[0] ) # -&gt; ПОМИЛКА!</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Додавання/заміна: Однаковий синтаксис. Якщо ключ є — змінює, якщо немає — створює.</li>
 </ul>
-<div id="b3b28f5e" class="cell" data-execution_count="5">
+<div id="16874d50" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>student[<span class="st">'course'</span>] <span class="op">=</span> <span class="dv">3</span>     <span class="co"># Змінить 2 на 3</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>student[<span class="st">'email'</span>] <span class="op">=</span> <span class="st">'a@kse.ua'</span> <span class="co"># Додасть нову пару</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Перевірка: Оператор in (який ви знаєте зі списків) перевіряє наявність ключа.</li>
 </ul>
-<div id="578ab8b5" class="cell" data-execution_count="6">
+<div id="53ee54cd" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">'email'</span> <span class="kw">in</span> student:</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Email вже є!"</span>)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Довжина: len() рахує кількість пар.</li>
 </ul>
-<div id="12689139" class="cell" data-execution_count="7">
+<div id="92be119e" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(student) <span class="co"># -&gt; 3 (name, course, email)</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
@@ -559,7 +559,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Синтаксис</strong>: () (круглі дужки) my_tuple = (1, ‘a’, True)</p></li>
 <li><p><strong>Головна фішка</strong>: Їх не можна змінити після створення.</p></li>
 </ul>
-<div id="832138fe" class="cell" data-execution_count="8">
+<div id="79a9d22c" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>config_tuple <span class="op">=</span> (<span class="st">'admin'</span>, <span class="st">'pass123'</span>, <span class="st">'kse.ua'</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Юзер: </span><span class="sc">{</span>config_tuple[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">, Сервер: </span><span class="sc">{</span>config_tuple[<span class="dv">2</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -576,7 +576,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Синтаксис</strong>: set([ … ]) або {1, 2, 3}</p></li>
 </ul>
 <p><em>Увага! {} — це порожній словник. Порожня множина створюється так: my_set = set().</em></p>
-<div id="ab9a8fc2" class="cell" data-execution_count="9">
+<div id="fedabc9c" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>visitors <span class="op">=</span> [<span class="st">'Іван'</span>, <span class="st">'Анна'</span>, <span class="st">'Іван'</span>, <span class="st">'Петро'</span>, <span class="st">'Анна'</span>, <span class="st">'Марія'</span>, <span class="st">'Іван'</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Список гостей (з дублікатами): </span><span class="sc">{</span>visitors<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -584,7 +584,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Унікальні гості (без дублікатів): </span><span class="sc">{</span>unique_visitors<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Кількість унікальних: </span><span class="sc">{</span><span class="bu">len</span>(unique_visitors)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="2209e453" class="cell" data-execution_count="10">
+<div id="fce606b7" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Студенти, що взяли курс з Економіки</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>econ_students <span class="op">=</span> {<span class="st">'Іван'</span>, <span class="st">'Анна'</span>, <span class="st">'Петро'</span>, <span class="st">'Марія'</span>}</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -639,7 +639,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><p>Програма перебирає весь словник і гарно виводить його.</p></li>
 <li><p>Логіка: <code>for key, value in inventory.items()</code>:</p>
-<div id="d1db962d" class="cell" data-execution_count="11">
+<div id="a6e2de31" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">---</span> Поточний Інвентар <span class="op">---</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>Apples: <span class="dv">50</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>Bananas: <span class="dv">200</span></span>
