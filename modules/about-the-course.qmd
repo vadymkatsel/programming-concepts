@@ -30,6 +30,7 @@ include-in-header:
           url('../images/construction.png');
       }
     </style>
+    <link rel="icon" type="image/svg+xml" href="https://vadymkatsel.github.io/programming-concepts/images/favicon.svg">
 ---
 
 ## 🎉 Ласкаво просимо на курс з Основ Програмування!
