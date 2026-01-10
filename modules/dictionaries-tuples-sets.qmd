@@ -1,13 +1,10 @@
 ---
-title: "Словники, кортежі та множини"
-affiliation: "Основи програмування"
-author: Vadym Katsel
-date: today
-date-format: "YYYY-MM-DD"
+title: "Dictionaries, Tuples and Sets"
 toc: true
 lang: ua
 execute:
   eval: false
+page-layout: full
 ---
 
 ## 📌 План на сьогодні 

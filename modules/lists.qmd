@@ -1,9 +1,5 @@
 ---
 title: "Списки"
-affiliation: "Основи програмування"
-author: Vadym Katsel
-date: today
-date-format: "YYYY-MM-DD"
 toc: true
 lang: ua
 execute:
