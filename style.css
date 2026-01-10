@@ -49,6 +49,8 @@ body {
   line-height: 1.6; 
   transition: background-color 0.3 ease, color 0.3 ease;
   letter-spacing: -0.1px;
+
+  
 }
 
 code, kbd, pre, samp, .sourceCode {

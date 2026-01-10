@@ -9,7 +9,9 @@ execute:
 
 book:
   title: "Programming Concepts Course"
-  author: "---"
+  author:
+    - name: Vadym Katsel [Creator & Lead Developer]
+    - name: Yevhenii Kozolup [Content Consultant]
   date: "03.12.2025"
   chapters:
     - index.qmd

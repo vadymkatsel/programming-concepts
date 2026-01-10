@@ -1,6 +1,8 @@
 ---
 title: "Вступний модуль"
-author: Vadym Katsel
+author:
+  - name: Vadym Katsel [Creator & Lead Developer]
+  - name: Yevhenii Kozolup [Content Consultant]
 date: today
 date-format: "YYYY-MM-DD"
 toc: true
