@@ -7,7 +7,7 @@ __pyache__/
 venv/
 .env
 _book/
-
+.idea/
 /.quarto/
-
+_site/
 **/*.quarto_ipynb

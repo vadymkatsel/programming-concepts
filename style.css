@@ -55,6 +55,11 @@ code, kbd, pre, samp, .sourceCode {
   background-color: var(--code-bg);
 }
 
+.level3 {
+  border-bottom: 2px solid var(--border-color);
+  transition: color 0.2s ease;
+}
+
 div.sourceCode {
   background-color: var(--code-bg);
   border: 1px solid var(--border-color); 

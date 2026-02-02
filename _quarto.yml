@@ -18,10 +18,9 @@ book:
     - part: "Вступ та підготовка до курсу"
       chapters: 
         - modules/about-the-course.qmd
-    - part: "Тестовий розідл"
+    - part: "Змінні, типи даних. Математичні операції в Python"
       chapters: 
-      - modules/lists.qmd
-      - modules/dictionaries-tuples-sets.qmd
+      - modules/ps-2.qmd
   sidebar:
     collapse-level: 1
 
