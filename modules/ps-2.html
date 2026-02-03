@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ua" xml:lang="ua"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Списки – Programming Concepts Course</title>
+<title>Practice Session 2 – Programming Concepts Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../modules/dictionaries-tuples-sets.html" rel="next">
 <link href="../modules/about-the-course.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -74,8 +73,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -109,6 +108,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <link rel="icon" type="image/svg+xml" href="https://vadymkatsel.github.io/programming-concepts/images/favicon.svg">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../style.css">
 </head>
@@ -282,7 +310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключити бокову панель навігації" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/lists.html">Тестовий розідл</a></li><li class="breadcrumb-item"><a href="../modules/lists.html"><span class="chapter-title">Списки</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/ps-2.html">Змінні, типи даних. Математичні операції в Python</a></li><li class="breadcrumb-item"><a href="../modules/ps-2.html"><span class="chapter-title">Practice Session 2</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключити бокову панель навігації" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Пошук" onclick="window.quartoOpenSearch();">
@@ -334,7 +362,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Тестовий розідл</span></a>
+ <span class="menu-text">Змінні, типи даних. Математичні операції в Python</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Переключити розділ">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -342,12 +370,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/lists.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Списки</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/dictionaries-tuples-sets.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Dictionaries, Tuples and Sets</span></a>
+  <a href="../modules/ps-2.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Practice Session 2</span></a>
   </div>
 </li>
       </ul>
@@ -362,17 +385,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Зміст</h2>
    
   <ul>
-  <li><a href="#план-на-сьогодні" id="toc-план-на-сьогодні" class="nav-link active" data-scroll-target="#план-на-сьогодні">📌 План на сьогодні</a></li>
-  <li><a href="#коробки" id="toc-коробки" class="nav-link" data-scroll-target="#коробки">📦 Коробки</a></li>
-  <li><a href="#контейнери" id="toc-контейнери" class="nav-link" data-scroll-target="#контейнери">🫙 Контейнери</a></li>
-  <li><a href="#властивості-списків" id="toc-властивості-списків" class="nav-link" data-scroll-target="#властивості-списків">📋 Властивості списків</a></li>
-  <li><a href="#live-coding-1" id="toc-live-coding-1" class="nav-link" data-scroll-target="#live-coding-1">👨🏻‍💻 Live coding 1:</a>
+  <li><a href="#план-заняття-верхівка-айсберга" id="toc-план-заняття-верхівка-айсберга" class="nav-link active" data-scroll-target="#план-заняття-верхівка-айсберга">🧊 План заняття: Верхівка айсберга</a></li>
+  <li><a href="#operations-cheat-sheet" id="toc-operations-cheat-sheet" class="nav-link" data-scroll-target="#operations-cheat-sheet">📝 Operations Cheat Sheet</a></li>
+  <li><a href="#цілі-числа" id="toc-цілі-числа" class="nav-link" data-scroll-target="#цілі-числа">🔢 Цілі числа</a>
   <ul class="collapse">
-  <li><a href="#трекер-продажів" id="toc-трекер-продажів" class="nav-link" data-scroll-target="#трекер-продажів">Трекер продажів</a></li>
-  <li><a href="#опрацювання-даних" id="toc-опрацювання-даних" class="nav-link" data-scroll-target="#опрацювання-даних">Опрацювання даних</a></li>
+  <li><a href="#live-coding-конвертація-часу" id="toc-live-coding-конвертація-часу" class="nav-link" data-scroll-target="#live-coding-конвертація-часу">👨‍💻 Live Coding: Конвертація часу</a></li>
+  <li><a href="#guided-practice-reverse-engineering" id="toc-guided-practice-reverse-engineering" class="nav-link" data-scroll-target="#guided-practice-reverse-engineering">🛠 Guided Practice: Reverse Engineering</a></li>
   </ul></li>
-  <li><a href="#live-coding-2-інтерактивний-ввід-даних" id="toc-live-coding-2-інтерактивний-ввід-даних" class="nav-link" data-scroll-target="#live-coding-2-інтерактивний-ввід-даних">👨🏻‍💻 Live coding 2: Інтерактивний ввід даних</a></li>
-  <li><a href="#ваше-завдання" id="toc-ваше-завдання" class="nav-link" data-scroll-target="#ваше-завдання">🔍 Ваше завдання</a></li>
+  <li><a href="#дійсні-числа" id="toc-дійсні-числа" class="nav-link" data-scroll-target="#дійсні-числа">💠 Дійсні числа</a>
+  <ul class="collapse">
+  <li><a href="#live-coding-рух-тіла" id="toc-live-coding-рух-тіла" class="nav-link" data-scroll-target="#live-coding-рух-тіла">👨‍💻 Live Coding: Рух тіла</a></li>
+  <li><a href="#guided-practice-евклідова-відстань" id="toc-guided-practice-евклідова-відстань" class="nav-link" data-scroll-target="#guided-practice-евклідова-відстань">🛠 Guided Practice: Евклідова відстань</a></li>
+  </ul></li>
+  <li><a href="#самойтійна-робота" id="toc-самойтійна-робота" class="nav-link" data-scroll-target="#самойтійна-робота">Самойтійна робота</a>
+  <ul class="collapse">
+  <li><a href="#проблема-з-яблуками-integers" id="toc-проблема-з-яблуками-integers" class="nav-link" data-scroll-target="#проблема-з-яблуками-integers">Проблема з яблуками (Integers)</a></li>
+  <li><a href="#гіпотенуза-трикутника-floats" id="toc-гіпотенуза-трикутника-floats" class="nav-link" data-scroll-target="#гіпотенуза-трикутника-floats">Гіпотенуза трикутника (Floats)</a></li>
+  <li><a href="#сума-цифр" id="toc-сума-цифр" class="nav-link" data-scroll-target="#сума-цифр">Сума цифр</a></li>
+  </ul></li>
+  <li><a href="#bug-hunter" id="toc-bug-hunter" class="nav-link" data-scroll-target="#bug-hunter">🐛 Bug Hunter</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">№1</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">№2</a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">№3</a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">№4</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -380,9 +417,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/lists.html">Тестовий розідл</a></li><li class="breadcrumb-item"><a href="../modules/lists.html"><span class="chapter-title">Списки</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/ps-2.html">Змінні, типи даних. Математичні операції в Python</a></li><li class="breadcrumb-item"><a href="../modules/ps-2.html"><span class="chapter-title">Practice Session 2</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Списки</span></h1>
+<h1 class="title"><span class="chapter-title">Practice Session 2</span></h1>
 </div>
 
 
@@ -399,141 +436,217 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="план-на-сьогодні" class="level2">
-<h2 class="anchored" data-anchor-id="план-на-сьогодні">📌 План на сьогодні</h2>
-<ol type="1">
-<li>Lists та їхні властивості</li>
-<li>Live coding №1: Трекер продажів</li>
-<li>Live coding №2: Інтерактивний ввід</li>
-<li>Q&amp;A</li>
-<li>Ваше завдання</li>
-</ol>
-</section>
-<section id="коробки" class="level2">
-<h2 class="anchored" data-anchor-id="коробки">📦 Коробки</h2>
-<p>До сьогоднішнього дня всі наші дані ми зберігали у простих ‘коробках’ — змінних. <code>name = 'Іван'</code>, <code>price = 12.50</code>. Це чудово, але що, якщо у вас 100 студентів? Або 1000 цін на акції?</p>
-<div id="d6de167e" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>student1 <span class="op">=</span> <span class="st">"Alice"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>student2 <span class="op">=</span> <span class="st">"Bob"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>student3 <span class="op">=</span> <span class="st">"Peter"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>.</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>.</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>.</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>student1000 <span class="op">=</span> <span class="st">"Pablo"</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Створювати 1000 змінних — це жах. Нам потрібні контейнери.</p>
-</section>
-<section id="контейнери" class="level2">
-<h2 class="anchored" data-anchor-id="контейнери">🫙 Контейнери</h2>
-<p>Для вирішення в цієї проблеми в Python є різні структури даних:</p>
+<section id="план-заняття-верхівка-айсберга" class="level2">
+<h2 class="anchored" data-anchor-id="план-заняття-верхівка-айсберга">🧊 План заняття: Верхівка айсберга</h2>
+<p>На сьогоднішньому занятті ми спробуємо змусити комп’ютер підкорятися нашим наказам, пірнемо в світ математичних операцій та напишемо наші перші програми - і все це завдяки неймовірній мові програмування <strong>Python</strong>.</p>
+<p><strong>Детальніше про наш план:</strong></p>
 <ul>
-<li><strong>List</strong></li>
-<li>Set</li>
-<li>Tuple</li>
-<li>Dictionary</li>
-</ul>
-<p>Уявіть, що Список (List) — це як шафа з пронумерованими поличками.</p>
-<div id="388c65bb" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Peter"</span>]</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="властивості-списків" class="level2">
-<h2 class="anchored" data-anchor-id="властивості-списків">📋 Властивості списків</h2>
+<li>Цілі числа
 <ul>
-<li><p>Індексація почнається з <strong>0</strong></p></li>
-<li><p>Впорядковані (все буде лежати в тому порядку, в якому ви додали)</p>
-<div id="20cc14ae" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Peter"</span>]</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#              0       1       2</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
-</div></li>
-<li><p>Змінювані (можна додавати, видаляти, змінювати елементи)</p>
-<div id="170bae52" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>students[<span class="dv">1</span>] <span class="op">=</span> <span class="st">"Robert"</span>  </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># students = ["Alice", "Robert", "Peter"]</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>students.append(<span class="st">"Maria"</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># students = ["Alice", "Robert", "Peter", "Maria"]</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>students.pop()</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># students = ["Alice", "Robert", "Peter"]</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
-</div></li>
-<li><p>Підтримка різних типів</p>
-<div id="725abbd4" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mixed_list <span class="op">=</span> [<span class="dv">1</span>, <span class="st">"Hello"</span>, <span class="fl">3.14</span>, <span class="va">True</span>]</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
-</div></li>
+<li>👨‍💻 Live Coding: Конвертація часу</li>
+<li>🛠 Guided Practice: Reverse Engineering</li>
+</ul></li>
+<li>Дійсні числа
+<ul>
+<li>👨‍💻 Live Coding: Рух тіла</li>
+<li>🛠 Guided Practice: Евклідова відстань</li>
+</ul></li>
+<li>Самостійна робота
+<ul>
+<li>Проблема з яблуками</li>
+<li>Гіпотенуза трикутника</li>
+<li>Сума цифр</li>
+</ul></li>
+<li>🐛 Bug Hunter</li>
 </ul>
 </section>
-<section id="live-coding-1" class="level2">
-<h2 class="anchored" data-anchor-id="live-coding-1">👨🏻‍💻 Live coding 1:</h2>
-<section id="трекер-продажів" class="level3">
-<h3 class="anchored" data-anchor-id="трекер-продажів">Трекер продажів</h3>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<section id="operations-cheat-sheet" class="level2">
+<h2 class="anchored" data-anchor-id="operations-cheat-sheet">📝 Operations Cheat Sheet</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Операція</th>
+<th>Опис</th>
+<th>Приклад</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>*</code></td>
+<td>Множення</td>
+<td><code>2 * 3</code></td>
+<td><code>6</code></td>
+</tr>
+<tr class="even">
+<td><code>**</code></td>
+<td>Піднесення до степеня</td>
+<td><code>2 ** 3</code></td>
+<td><code>8</code></td>
+</tr>
+<tr class="odd">
+<td><code>/</code></td>
+<td>Ділення (завжди float)</td>
+<td><code>7 / 2</code></td>
+<td><code>3.5</code></td>
+</tr>
+<tr class="even">
+<td><code>//</code></td>
+<td>Цілочисельне ділення</td>
+<td><code>7 // 2</code></td>
+<td><code>3</code></td>
+</tr>
+<tr class="odd">
+<td><code>%</code></td>
+<td>Остача від ділення</td>
+<td><code>7 % 2</code></td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="цілі-числа" class="level2">
+<h2 class="anchored" data-anchor-id="цілі-числа">🔢 Цілі числа</h2>
+<p>Перш ніж ми перейдемо до вирішення певних проблем, маємо поглянти на типову помилку початківців у програмуванні.</p>
+<div id="ad9694ad" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Введіть перше число: "</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Введіть друге число: "</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">+</span> b)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Чому запропонований код не виконається так, як очікується?</p>
+<section id="live-coding-конвертація-часу" class="level3">
+<h3 class="anchored" data-anchor-id="live-coding-конвертація-часу">👨‍💻 Live Coding: Конвертація часу</h3>
+<p><strong>Контекст:</strong> Ми розробляємо підсистему для роботи з сервером. Час роботи, який повертає сервер подано в секундах. Наша задача - перевести кількість секунд у зрозумілий для користувача формат: <code>години, хвилини, секунди</code>.</p>
+<p><strong>Вхідні дані:</strong> Кількість секунд <code>s = 5490</code>.</p>
+<p><strong>Вихідні дані:</strong> Кількість годин, хвилин, та секунд.</p>
+</section>
+<section id="guided-practice-reverse-engineering" class="level3">
+<h3 class="anchored" data-anchor-id="guided-practice-reverse-engineering">🛠 Guided Practice: Reverse Engineering</h3>
+<p><strong>Контекст:</strong> Тепер, припустимо, що користувач хоче ввести свій час, та передати його на сервер. Він користується форматом <code>години, хвилини, секунди</code>. Оскільки сервер розуміє тільки час в секундах, нам потрібно перевести наданий користувачем час у секунди.</p>
+<p><strong>Вхідні дані:</strong> Ввід від користувача <code>hours=int(input())</code>, <code>minutes=int(input())</code>, <code>seconds=int(input())</code>.</p>
+<p><strong>Вихідні дані:</strong> Загальний час у секундах</p>
+</section>
+</section>
+<section id="дійсні-числа" class="level2">
+<h2 class="anchored" data-anchor-id="дійсні-числа">💠 Дійсні числа</h2>
+<p>На цьому етапі, в гру вступає, її величність, floating point, яка дозволяє нам розширити кількість можливих чисел в нескінченну кількість разів (майже). Але для того, аби оперувати цими числами, на відміну від цілих чисел, ми будемо користуватись типом <code>float</code>.</p>
+<section id="live-coding-рух-тіла" class="level3">
+<h3 class="anchored" data-anchor-id="live-coding-рух-тіла">👨‍💻 Live Coding: Рух тіла</h3>
+<p><strong>Контекст:</strong> Ми працюємо з обчисленням руху об’єкту в комп’ютерній грі. Ми маємо машину, яка рухається з прискоренням, та знаємо початкову швидкість <span class="math inline">\(v_0\)</span>, прискорення <span class="math inline">\(a\)</span> та час <span class="math inline">\(t\)</span>. Наша задача - знайти зміщення <span class="math inline">\(S\)</span> за наступною формулою:</p>
+<p><span class="math display">\[S = v_0 t + \frac{at^2}{2}\]</span></p>
+<p><strong>Вхідні дані:</strong> Початкова швидкість <code>v = 10</code>, a=20<code>,</code>t=10`.</p>
+<p><strong>Вихідні дані:</strong> Зміщення</p>
+</section>
+<section id="guided-practice-евклідова-відстань" class="level3">
+<h3 class="anchored" data-anchor-id="guided-practice-евклідова-відстань">🛠 Guided Practice: Евклідова відстань</h3>
+<p><strong>Контекст:</strong> Працюючи над тією ж відеогрою, перед нами постала задача вирахувати відстань між спостерігачем і ціллю. Ми знаємо координати спостерігача <span class="math inline">\(A(x_1, y_1)\)</span> та цілі <span class="math inline">\(B(x_2, y_2)\)</span>. Для цього потрібно скористатись наступною формулою: <span class="math display">\[ d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} \]</span></p>
+<p><strong>Вхідні дані:</strong> <code>x1 = 10</code>, <code>x2=5</code>, <code>y1 = 20</code>, <code>y2 = 3</code></p>
+<p><strong>Вихідні дані:</strong> Відстань <code>d</code></p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">None</span>Завдання
+<span class="screen-reader-only">Порада</span>Підказка
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Уявімо, що нам потрібно відслідковувати продажі. Нам надали певні дані, потрібно їх якось зберегти і обробити.</p>
+<p>Для вирішення даної задачі маєте скористатися оператором піднесення до степеня <code>**</code></p>
 </div>
 </div>
-<p>Що саме потрібно зробити:</p>
-<ul>
-<li>Записати дані</li>
-<li>Вивести дані по дням</li>
-<li>Показати кількість днів, за яку в нас є дані</li>
-<li>Вивести продажі за останній день</li>
-</ul>
 </section>
-<section id="опрацювання-даних" class="level3">
-<h3 class="anchored" data-anchor-id="опрацювання-даних">Опрацювання даних</h3>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
+</section>
+<section id="самойтійна-робота" class="level2">
+<h2 class="anchored" data-anchor-id="самойтійна-робота">Самойтійна робота</h2>
+<section id="проблема-з-яблуками-integers" class="level3">
+<h3 class="anchored" data-anchor-id="проблема-з-яблуками-integers">Проблема з яблуками (Integers)</h3>
+<p><span class="math inline">\(N\)</span> школярів ділять <span class="math inline">\(K\)</span> яблук порівну, залишок, що не ділиться, залишається у кошику.</p>
+<p><strong>Вхідні дані:</strong> Два числа <span class="math inline">\(N\)</span> і <span class="math inline">\(K\)</span>.</p>
+<p><strong>Вихідні дані:</strong> Два числа: скільки яблук дісталося кожному студенту і скільки залишилось у кошику.</p>
+</section>
+<section id="гіпотенуза-трикутника-floats" class="level3">
+<h3 class="anchored" data-anchor-id="гіпотенуза-трикутника-floats">Гіпотенуза трикутника (Floats)</h3>
+<p>Дано два катети прямокутного трикутника. Знайдіть гіпотенузу.</p>
+<p><strong>Вхідні дані:</strong> Два числа <span class="math inline">\(a\)</span> і <span class="math inline">\(b\)</span>.</p>
+<p><strong>Вихідні дані:</strong> Довжина гіпотенузи.</p>
+</section>
+<section id="сума-цифр" class="level3">
+<h3 class="anchored" data-anchor-id="сума-цифр">Сума цифр</h3>
+<p>Дано трицифрове число (наприклад, 179). Знайдіть суму його цифр.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
-<p>Тепер, коли маємо дані, давайте зробимо певний аналіз. Припустимо, що маємо такий список: <code>sales_week = [1500, 2150, 1850, 2050, 1700]</code></p>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Попередження</span>Обмеження
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>Не можна використовувати цикли або перетворення в рядок.</p>
 </div>
-<p>Зробімо наступне:</p>
-<ul>
-<li>Порахуймо суму продажів за тиждень</li>
-<li>Знайдімо к-сть днів з низькими продажами (менше ніж 1800)</li>
-<li>Знайдімо середній продаж за день</li>
-</ul>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Порада</span>Підказка
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Для вирішення даної задачі маєте скористатися оператороми цілочисельного ділення та ділення з остачею аби отримати та відкинути останню цифру.</p>
+</div>
+</div>
 </section>
 </section>
-<section id="live-coding-2-інтерактивний-ввід-даних" class="level2">
-<h2 class="anchored" data-anchor-id="live-coding-2-інтерактивний-ввід-даних">👨🏻‍💻 Live coding 2: Інтерактивний ввід даних</h2>
-<p>Давайте уявимо, що маємо завдання написати систему збору оцінок.</p>
-<p>Програма має запитувати у користувача кілька значень і автоматично зберігати їх у список. В кінці, ми покажемо користувачу, що він ввів.</p>
+<section id="bug-hunter" class="level2">
+<h2 class="anchored" data-anchor-id="bug-hunter">🐛 Bug Hunter</h2>
+<p>І нарешті, остання частина нашої практики - Bug Hunter! Погляньте на фрагменти коду, та поясніть, чому вони не виконаються, або виконаються не так, як очікується.</p>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section">№1</h3>
+<div id="20dd466a" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>width <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Введіть ширину: "</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>height <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Введіть висоту: "</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>area <span class="op">=</span> width <span class="op">*</span> height</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Площа: </span><span class="sc">{</span>area<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
-<section id="ваше-завдання" class="level2">
-<h2 class="anchored" data-anchor-id="ваше-завдання">🔍 Ваше завдання</h2>
-<p>Ваше завдання буде об’єднувати в собі другий та третій Live Coding.</p>
-<p>Ваша задача полягає в тому, аби <strong>написати програму, яка просить в користувача увести 5 оцінок. Ви маєте зберегти ці 5 оцінок у списку, після чого вивести на екран середній бал та кількість найвищих оцінок (ви можете використати 10 як найвищу оцінку). </strong></p>
-<p>Приклад роботи програми:</p>
-<div id="867547c2" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">---</span>Grades<span class="op">---</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>Please, enter grade <span class="dv">1</span>: <span class="dv">9</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>Please, enter grade <span class="dv">2</span>: <span class="dv">11</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="dv">11</span> <span class="kw">is</span> <span class="kw">not</span> supported. Please, choose between <span class="dv">0</span> <span class="kw">and</span> <span class="fl">10.</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>Please, enter grade <span class="dv">2</span>: <span class="dv">10</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>Please, enter grade <span class="dv">3</span>: djfhdj</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>Invalid <span class="bu">format</span>, <span class="cf">try</span> again</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>Please, enter grade <span class="dv">3</span>: <span class="dv">8</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>Please, enter grade <span class="dv">4</span>: <span class="dv">7</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>Please, enter grade <span class="dv">5</span>: <span class="dv">10</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>The mean grade <span class="kw">is</span> <span class="fl">8.8</span>, <span class="kw">and</span> the number of top grades (<span class="dv">10</span>) <span class="kw">is</span> <span class="fl">2.</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="section-1" class="level3">
+<h3 class="anchored" data-anchor-id="section-1">№2</h3>
+<div id="877eca75" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>num1 <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>num2 <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>average <span class="op">=</span> num1 <span class="op">+</span> num2 <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Середнє значення: </span><span class="sc">{</span>average<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="section-2" class="level3">
+<h3 class="anchored" data-anchor-id="section-2">№3</h3>
+<div id="c93e0121" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>R <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="fl">3.14159</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>length <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> pi <span class="op">*</span> r </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(length)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="section-3" class="level3">
+<h3 class="anchored" data-anchor-id="section-3">№4</h3>
+<div id="1dd122c0" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">0</span>,<span class="dv">5</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> x <span class="op">+</span> y</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -957,9 +1070,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../modules/dictionaries-tuples-sets.html" class="pagination-link" aria-label="Dictionaries, Tuples and Sets">
-        <span class="nav-page-text"><span class="chapter-title">Dictionaries, Tuples and Sets</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
