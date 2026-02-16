@@ -20,7 +20,10 @@ book:
         - modules/about-the-course.qmd
     - part: "Змінні, типи даних. Математичні операції в Python"
       chapters: 
-      - modules/ps-2.qmd
+      - modules/variables-data-types-operations-practice.qmd
+    - part: "Списки"
+      chapters: 
+      - modules/lists-practice.qmd
   sidebar:
     collapse-level: 1
 
