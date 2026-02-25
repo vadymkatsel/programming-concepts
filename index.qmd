@@ -8,6 +8,7 @@ sidebar: false
 jupyter: python3
 format:
   html:
+    сss: main.css
     include-in-header:
       text: |
         <script>
@@ -17,223 +18,18 @@ format:
           });
         </script>
         <link rel="icon" type="image/svg+xml" href="https://vadymkatsel.github.io/programming-concepts/images/favicon.svg">
+        <link rel="stylesheet" href="main.css">
 ---
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-#title-block-header {
-  display: none;
-  padding: 0px;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #050505;
-  color: #fff;
-}
-
-.quarto-color-scheme-toggle {
-  display: none;
-}
-
-h1 {
-  border: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-.hero-banner {
-  display: flex;              
-  align-items: center;        
-  justify-content: center; 
-  min-height: 100vh; 
-  width: 100%;    
-  padding: 20px;
-  
-  position: relative;
-  overflow: hidden;  
-  z-index: 1;
-}
-
-.hero-banner::before,
-.hero-banner::after {
-  content: '';
-  position: fixed;
-  width: 60vw;   
-  height: 60vw; 
-  border-radius: 50%;
-  filter: blur(100px); 
-  opacity: 0.15; 
-  z-index: -1; 
-}
-
-.hero-banner::before {
-  background: #4D64E8; 
-  top: -20%;
-  left: -20%;
-}
-
-.hero-banner::after {
-  background: #F97316;
-  bottom: -20%;
-  right: -20%;
-}
-
-.hero-header {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  
-  align-items: flex-end;
-  text-align: right;
-  max-width: 600px;
-  padding: 30px;
-  justify-content: center;
-}
-
-.hero-title {
-  font-size: 55px;          
-  font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  color: white;
-}
-
-.hero-subtitle {
-  font-size: 25px;
-  color: #cccccc;            
-  margin-bottom: 40px;        
-}
-
-.logo {
-  color: #F97316;             
-  margin-right: 15px;         
-}
-
-.btn-start {
-  display: inline-block;
-  padding: 15px 30px;
-  width: auto;
-  font-size: 15px;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
-  border: 2px solid #fff;  
-  background: rgba(77, 100, 232, 0.1); 
-  transition: all 0.3s ease;
-}
-
-.btn-start:hover {
-  background: #FF6500;        
-  box-shadow: 0 0 20px rgba(77, 100, 232, 0.5);
-}
-
-.image-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  max-width: 600px;
-  padding: 30px;
-}
-
-.image-container img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: 500px;
-  border-radius: 8px; 
-}
-
-@media (max-width: 1100px) {
-  .hero-title {
-    font-size: 40px; 
-  }
-  .hero-subtitle {
-    font-size: 20px;
-  }
-  .hero-banner {
-    padding: 0 5%; 
-  }
-}
-
-@media (max-width: 800px) {
-  .hero-banner {
-    flex-direction: column; 
-    height: auto; 
-    padding-top: 100px;
-    padding-bottom: 50px;
-  }
-
-  .hero-header {
-    align-items: center; 
-    text-align: center;
-    max-width: 100%; 
-  }
-
-  .image-container {
-    display: flex;
-    justify-content: center; 
-    width: 100%;
-    max-width: 450px; 
-  }
-
-  .image-container img {
-    width: auto;
-    height: auto;
-    max-height: 350px;
-  }
-}
-
-@media (max-width: 400px) {
-  .hero-banner::before,
-  .hero-banner::after {
-    width: 80vw;
-    height: 80vw;
-    filter: blur(80px); 
-  }
-
-  .hero-banner::before {
-    top: -10%; 
-    left: -20%;
-  }
-
-  .hero-banner::after {
-    bottom: -10%;
-    right: -20%;
-  }
-
-  .hero-banner {
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-  }
-  .hero-header {
-    align-items: center;
-    justify-content: center;
-  }
-  .hero-title {
-    font-size: 32px; 
-  }
-  .hero-subtitle {
-    font-size: 16px;
-  }
-  .btn-start {
-    width: 100%; 
-    text-align: center;
-  }
-  .image-container {
-    display: none;
-  }
-}
-</style>
 
 ```{=html}
-<div class="hero-banner">
+<!-- HERO BANNER SECTION -->
+<section class="hero-banner">
   <div class="hero-header">
-    <h1 class="hero-title"> <span class="logo">[>]</span>Programming Concepts Course</h1>
+    <h1 class="hero-title">
+      <span class="hero-accent">[>]</span>Programming Concepts Course
+    </h1>
     <p class="hero-subtitle">Курс з основ програмування для початківців</p>
     <a href="modules/about-the-course.qmd" class="btn-start">Перейти до курсу!</a>
   </div>
@@ -241,6 +37,40 @@ a:hover {
   <div class="image-container">
     <img src="images/hero-img.png" alt="Programming Concepts">
   </div>
-</div>
+</section>
+
+<!-- COURSE SELECTION SECTION -->
+<section class="course-choice">
+  <div class="section-header">
+    <h2 class="heading2">Оберіть свій курс</h2>
+    <p class="subheader">Підзаголовок</p>
+  </div>
+
+
+  <div class="cards-container">
+    <article class="card">
+      <div class="card-img-container">
+        <img src="" alt="" class="card-image">
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Прикладна математика</h3>
+        <a href="#" class="btn-link" aria-label="Перейти до курсу">
+          <img src="images/btn-icon.svg" alt="Arrow Right Icon" class="arrow-icon"> 
+        </a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-img-container">
+        <img src="" alt="" class="card-image">
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Бізнес Економіка</h3>
+        <a href="#" class="btn-link" aria-label="Перейти до курсу">
+          <img src="images/btn-icon.svg" alt="Arrow Right Icon" class="arrow-icon"> 
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
 ```
   
