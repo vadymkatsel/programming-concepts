@@ -43,30 +43,50 @@ format:
 <section class="course-choice">
   <div class="section-header">
     <h2 class="heading2">Оберіть свій курс</h2>
-    <p class="subheader">Підзаголовок</p>
+    <p class="subheader">Тут ви можете перейти до вашого курсу, або обрати інший, якщо хочете розширити свій погляд на певну тему</p>
   </div>
 
 
   <div class="cards-container">
     <article class="card">
       <div class="card-img-container">
-        <img src="" alt="" class="card-image">
+        <img src="images/math-card-img.jpg" alt="" class="card-image">
       </div>
       <div class="card-content">
         <h3 class="card-title">Прикладна математика</h3>
         <a href="#" class="btn-link" aria-label="Перейти до курсу">
-          <img src="images/btn-icon.svg" alt="Arrow Right Icon" class="arrow-icon"> 
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="49.6982" height="49.6982" rx="14" stroke="currentColor" stroke-width="2"/>
+            <path d="M43.1265 11.4635C43.1538 10.6355 42.5048 9.94219 41.6768 9.91489L28.1841 9.47008C27.3561 9.44278 26.6628 10.0919 26.6355 10.9198C26.6082 11.7478 27.2573 12.4412 28.0853 12.4685L40.0788 12.8638L39.6834 24.8573C39.6561 25.6853 40.3051 26.3786 41.1331 26.4059C41.9611 26.4332 42.6544 25.7842 42.6817 24.9562L43.1265 11.4635ZM10.0713 40.9559L11.0964 42.051L42.6525 12.5091L41.6274 11.4141L40.6022 10.319L9.04615 39.8609L10.0713 40.9559Z" fill="currentColor"/>
+            </svg>
         </a>
       </div>
     </article>
     <article class="card">
       <div class="card-img-container">
-        <img src="" alt="" class="card-image">
+        <img src="images/be-card-img.jpg" alt="" class="card-image">
       </div>
       <div class="card-content">
         <h3 class="card-title">Бізнес Економіка</h3>
         <a href="#" class="btn-link" aria-label="Перейти до курсу">
-          <img src="images/btn-icon.svg" alt="Arrow Right Icon" class="arrow-icon"> 
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="49.6982" height="49.6982" rx="14" stroke="currentColor" stroke-width="2"/>
+            <path d="M43.1265 11.4635C43.1538 10.6355 42.5048 9.94219 41.6768 9.91489L28.1841 9.47008C27.3561 9.44278 26.6628 10.0919 26.6355 10.9198C26.6082 11.7478 27.2573 12.4412 28.0853 12.4685L40.0788 12.8638L39.6834 24.8573C39.6561 25.6853 40.3051 26.3786 41.1331 26.4059C41.9611 26.4332 42.6544 25.7842 42.6817 24.9562L43.1265 11.4635ZM10.0713 40.9559L11.0964 42.051L42.6525 12.5091L41.6274 11.4141L40.6022 10.319L9.04615 39.8609L10.0713 40.9559Z" fill="currentColor"/>
+            </svg>
+        </a>
+      </div>
+    </article>
+    <article class="card card-inactive">
+      <div class="card-img-container">
+        <img src="images\coming-soon-card-img.jpg" alt="" class="card-image">
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Coming Soon...</h3>
+        <a href="#" class="btn-link" aria-label="Перейти до курсу">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="49.6982" height="49.6982" rx="14" stroke="currentColor" stroke-width="2"/>
+            <path d="M43.1265 11.4635C43.1538 10.6355 42.5048 9.94219 41.6768 9.91489L28.1841 9.47008C27.3561 9.44278 26.6628 10.0919 26.6355 10.9198C26.6082 11.7478 27.2573 12.4412 28.0853 12.4685L40.0788 12.8638L39.6834 24.8573C39.6561 25.6853 40.3051 26.3786 41.1331 26.4059C41.9611 26.4332 42.6544 25.7842 42.6817 24.9562L43.1265 11.4635ZM10.0713 40.9559L11.0964 42.051L42.6525 12.5091L41.6274 11.4141L40.6022 10.319L9.04615 39.8609L10.0713 40.9559Z" fill="currentColor"/>
+            </svg>
         </a>
       </div>
     </article>
