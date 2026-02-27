@@ -24,6 +24,9 @@ book:
     - part: "Списки"
       chapters: 
       - modules/lists-practice.qmd
+    - part: "Функції"
+      chapters:
+      - modules/functions-practice.qmd
   sidebar:
     collapse-level: 1
 
