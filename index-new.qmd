@@ -1,0 +1,83 @@
+---
+pagetitle: "Programming Concepts Course"
+title: "Головна"
+page-layout: custom  
+section-divs: false  
+toc: false           
+sidebar: false       
+jupyter: python3
+format:
+  html:
+    сss: main-new.css
+    include-in-header:
+      text: |
+        <link rel="icon" type="image/svg+xml" href="https://vadymkatsel.github.io/programming-concepts/images/favicon.svg">
+        <link rel="stylesheet" href="main.css">
+---
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```{=html}
+<div class ="landing-wrapper">
+    <header class="header">
+        <div class="logo">[&gt;]</div>
+
+        <nav class="desktop-nav">
+            <a href="#">GitHub</a>
+            <span class="separator">○</span>
+            <a href="#">Автори</a>
+            <span class="separator">○</span>
+            <a href="#">Про курс</a>
+        </nav>
+
+        <button class = "burger-btn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-card">
+            <div class="hero-top">
+                <h1 class="hero-title">
+                Programming<br>
+                Concepts<br>
+                <span class="text-accent">Course</span>
+                </h1>
+            </div>
+            
+            <div class="hero-bottom">
+                <hr class="accent-divider">
+                <p class="hero-desc">
+                Інтерактивний курс, що відкриває<br>
+                двері до світу програмування
+                </p>
+            </div>
+        </section>
+
+        <section class="courses-column">
+            <div class="course-card math-bg">
+                <div class="course-info">
+                    <h2 class="course-title">Прикладна<br>математика</h2>
+                    <p class="course-desc">Базові концепції, необхідні для розуміння алгоритмів</p>
+                </div>
+                
+                <a href="#" class="course-arrow-link" aria-label="Перейти до курсу Прикладна математика"></a>
+            </div>
+
+            <div class="course-card econ-bg">
+                <div class="course-info">
+                    <h2 class="course-title">Бізнес<br>економіка</h2>
+                    <p class="course-desc">Базові концепції, необхідні для розуміння алгоритмів</p>
+                </div>
+                
+                <a href="#" class="course-arrow-link" aria-label="Перейти до курсу Бізнес економіка"></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Vadym Katsel. All rights reserved.</p>
+    </footer>
+</div>
+```
