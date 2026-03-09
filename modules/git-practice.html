@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Practice Session 8 – Programming Concepts Course</title>
+<title>Practice Session 9 – Programming Concepts Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +30,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../modules/git-practice.html" rel="next">
-<link href="../modules/lists-practice.html" rel="prev">
+<link href="../modules/functions-practice.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -108,36 +72,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <link rel="icon" type="image/svg+xml" href="https://vadymkatsel.github.io/programming-concepts/images/favicon.svg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../style.css">
 </head>
@@ -311,7 +247,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключити бокову панель навігації" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/functions-practice.html">Функції</a></li><li class="breadcrumb-item"><a href="../modules/functions-practice.html"><span class="chapter-title">Practice Session 8</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/git-practice.html">Основи Git</a></li><li class="breadcrumb-item"><a href="../modules/git-practice.html"><span class="chapter-title">Practice Session 9</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключити бокову панель навігації" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Пошук" onclick="window.quartoOpenSearch();">
@@ -394,32 +330,32 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Функції</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Переключити розділ">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Переключити розділ">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/functions-practice.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Practice Session 8</span></a>
+  <a href="../modules/functions-practice.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Practice Session 8</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Основи Git</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Переключити розділ">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Переключити розділ">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/git-practice.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Practice Session 9</span></a>
+  <a href="../modules/git-practice.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Practice Session 9</span></a>
   </div>
 </li>
       </ul>
@@ -434,28 +370,10 @@ window.Quarto = {
     <h2 id="toc-title">Зміст</h2>
    
   <ul>
-  <li><a href="#вступ-до-функцій" id="toc-вступ-до-функцій" class="nav-link active" data-scroll-target="#вступ-до-функцій">📚 Вступ до функцій:</a></li>
-  <li><a href="#план-заняття" id="toc-план-заняття" class="nav-link" data-scroll-target="#план-заняття">📌 План заняття:</a></li>
-  <li><a href="#functions-cheat-sheet" id="toc-functions-cheat-sheet" class="nav-link" data-scroll-target="#functions-cheat-sheet">📝 Functions Cheat Sheet</a>
+  <li><a href="#основи-роботи-з-git" id="toc-основи-роботи-з-git" class="nav-link active" data-scroll-target="#основи-роботи-з-git"><i class="fa-duotone fa-brands fa-git-alt"></i> Основи роботи з Git</a>
   <ul class="collapse">
-  <li><a href="#анатомія-та-базові-концепти" id="toc-анатомія-та-базові-концепти" class="nav-link" data-scroll-target="#анатомія-та-базові-концепти">🛠 1. Анатомія та базові концепти</a></li>
-  <li><a href="#рекурсивні-функції" id="toc-рекурсивні-функції" class="nav-link" data-scroll-target="#рекурсивні-функції">🔄 2. Рекурсивні функції</a></li>
-  <li><a href="#анонімні-функції-lambda-вирази" id="toc-анонімні-функції-lambda-вирази" class="nav-link" data-scroll-target="#анонімні-функції-lambda-вирази">🥷 3. Анонімні функції (Lambda-вирази)</a></li>
-  </ul></li>
-  <li><a href="#функції-як-інструмент-для-організації-коду" id="toc-функції-як-інструмент-для-організації-коду" class="nav-link" data-scroll-target="#функції-як-інструмент-для-організації-коду">🛠️ Функції, як інструмент для організації коду</a>
-  <ul class="collapse">
-  <li><a href="#live-coding-1-робот-курєр" id="toc-live-coding-1-робот-курєр" class="nav-link" data-scroll-target="#live-coding-1-робот-курєр">👨‍💻 Live Coding 1: Робот кур’єр</a></li>
-  <li><a href="#guided-practice" id="toc-guided-practice" class="nav-link" data-scroll-target="#guided-practice">🛠 Guided Practice:</a></li>
-  </ul></li>
-  <li><a href="#рекурсивні-функції-1" id="toc-рекурсивні-функції-1" class="nav-link" data-scroll-target="#рекурсивні-функції-1">🔃 Рекурсивні функції</a>
-  <ul class="collapse">
-  <li><a href="#live-coding-2-факторіали-та-рекурсії" id="toc-live-coding-2-факторіали-та-рекурсії" class="nav-link" data-scroll-target="#live-coding-2-факторіали-та-рекурсії">👨‍💻 Live Coding 2: Факторіали та рекурсії</a></li>
-  <li><a href="#guided-practice-піднесення-до-степеня" id="toc-guided-practice-піднесення-до-степеня" class="nav-link" data-scroll-target="#guided-practice-піднесення-до-степеня">🛠 Guided Practice: Піднесення до степеня</a></li>
-  </ul></li>
-  <li><a href="#анонімні-функції-та-λ-вирази" id="toc-анонімні-функції-та-λ-вирази" class="nav-link" data-scroll-target="#анонімні-функції-та-λ-вирази">❔ Анонімні функції та λ-вирази</a>
-  <ul class="collapse">
-  <li><a href="#live-coding-3-обробка-даних---від-класичних-функцій-до-λ-виразів" id="toc-live-coding-3-обробка-даних---від-класичних-функцій-до-λ-виразів" class="nav-link" data-scroll-target="#live-coding-3-обробка-даних---від-класичних-функцій-до-λ-виразів">👨‍💻 Live Coding 3: Обробка даних - від класичних функцій до λ-виразів</a></li>
-  <li><a href="#guided-practice-бортовий-журнал-робота" id="toc-guided-practice-бортовий-журнал-робота" class="nav-link" data-scroll-target="#guided-practice-бортовий-журнал-робота">🛠 Guided Practice: Бортовий журнал робота</a></li>
+  <li><a href="#cheat-sheet" id="toc-cheat-sheet" class="nav-link" data-scroll-target="#cheat-sheet">📝 Cheat Sheet</a></li>
+  <li><a href="#експерименти-з-github-та-git" id="toc-експерименти-з-github-та-git" class="nav-link" data-scroll-target="#експерименти-з-github-та-git">🔎 Експерименти з GitHub та Git</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -464,9 +382,9 @@ window.Quarto = {
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/functions-practice.html">Функції</a></li><li class="breadcrumb-item"><a href="../modules/functions-practice.html"><span class="chapter-title">Practice Session 8</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/git-practice.html">Основи Git</a></li><li class="breadcrumb-item"><a href="../modules/git-practice.html"><span class="chapter-title">Practice Session 9</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Practice Session 8</span></h1>
+<h1 class="title"><span class="chapter-title">Practice Session 9</span></h1>
 </div>
 
 
@@ -483,205 +401,141 @@ window.Quarto = {
 </header>
 
 
-<section id="вступ-до-функцій" class="level2">
-<h2 class="anchored" data-anchor-id="вступ-до-функцій">📚 Вступ до функцій:</h2>
-<p>На сьогоднішній практиці ми попрактикуємося працювати з функціями - одним з найважливіших інструментів для організації та повторного використання коду в Python.</p>
-<p>Функції дозволяють нам розбивати складні задачі на менші, більш керовані частини, що робить наш код чистішим і легшим для розуміння.</p>
-<p>Вони також дозволяють нам уникнути повторення коду, що є однією з основних принципів програмування - Don’t Repeat Yourself.</p>
-</section>
-<section id="план-заняття" class="level2">
-<h2 class="anchored" data-anchor-id="план-заняття">📌 План заняття:</h2>
+<section id="основи-роботи-з-git" class="level2">
+<h2 class="anchored" data-anchor-id="основи-роботи-з-git"><i class="fa-duotone fa-brands fa-git-alt"></i> Основи роботи з Git</h2>
+<p>Під час сьогоднішнього воркшопу ви зможете на практиці познайомитися з такими інструментами як Git та GitHub. Ці інструменти є стандартом для індустрії в сфері контролю версій та дозволяють гнучко налаштувати спільну роботу багатьох людей над проєктом одночасно.</p>
+<p><strong>Git</strong> — це система контролю версій, яка дозволяє ефективно керувати та відслідковувати зміни у вашому проєкті.</p>
+<p><strong>GitHub</strong> — це платформа, розроблена для того, аби викладати ваші проєкти до глобальної мережі та надати можливість легко працювати над проєктами з іншими.</p>
+<section id="cheat-sheet" class="level3">
+<h3 class="anchored" data-anchor-id="cheat-sheet">📝 Cheat Sheet</h3>
 <ul>
-<li>💪🏻 Warm Up</li>
-<li>🛠️ Функції, як інструмент для організації коду (cтворення, рітьорн, аргументи та параметри)
-<ul>
-<li>👨‍💻 Live Coding 1: Робот кур’єр</li>
-</ul></li>
-<li>🔃 Рекурсивні функції
-<ul>
-<li>👨‍💻 Live Coding 2: Факторіали та рекурсії</li>
-</ul></li>
-<li>❔ Анонімні функції та λ-вирази
-<ul>
-<li>👨‍💻 Live Coding 3: Обробка даних - від класичних функцій до λ-виразів</li>
-</ul></li>
-<li>⚙️ Завдання для самостійного опрацювання</li>
+<li><p>Repository (Репозиторій / “Репа”): Папка з вашим проєктом, яка має суперсилу — запам’ятовувати всю історію змін кожного файлу. Буває локальним (на вашому комп’ютері) та віддаленим (на сервері GitHub).</p></li>
+<li><p>Commit (Коміт): Фіксація або “знімок” стану вашого коду в конкретний момент. У PyCharm це робиться через панель Commit. Ви позначаєте галочками файли, обов’язково пишете повідомлення (що саме змінили) і зберігаєте. Коміт зберігає зміни лише на вашому комп’ютері.</p></li>
+<li><p>Push (Пуш): Відправка ваших локальних комітів на віддалений сервер (на GitHub). Поки ви не зробите push (зелена стрілочка вгору↗ в PyCharm), ніхто у світі ваших змін не побачить.</p></li>
+<li><p>Pull (Пул): Завантаження нових змін із віддаленого сервера на ваш комп’ютер (синя стрілочка вниз↙ в PyCharm). Це оновлює ваш локальний код до найсвіжішої версії.</p></li>
+<li><p>Fork (Форк): Ваша особиста копія чужого репозиторію. Робиться не в PyCharm, а прямо на сайті GitHub. Дозволяє вільно експериментувати з кодом, не ризикуючи зламати оригінальний проєкт викладача чи колеги.</p></li>
+<li><p>Branch (Гілка): Ізольована копія коду всередині репозиторію. Ви ніби відгалужуєтесь від головної лінії (main), безпечно пишете свою функцію, а потім зливаєте її назад. Керування гілками у PyCharm зазвичай знаходиться в самому правому нижньому куті вікна.</p></li>
+<li><p>Merge Conflict (Конфлікт злиття): Ситуація, коли дві людини одночасно змінили один і той самий рядок у файлі, і Git не знає, чий варіант правильний. PyCharm має зручне вікно “Resolve Conflicts” із трьома колонками: зліва — ваш код, справа — код з сервера, по центру — фінальний результат, який ви збираєте вручну.</p></li>
+<li><p>Pull Request (PR): Запит на сайті GitHub, у якому ви просите власника оригінального репозиторію перевірити ваш код і додати його до головного проєкту.</p></li>
 </ul>
 </section>
-<section id="functions-cheat-sheet" class="level2">
-<h2 class="anchored" data-anchor-id="functions-cheat-sheet">📝 Functions Cheat Sheet</h2>
-<section id="анатомія-та-базові-концепти" class="level3">
-<h3 class="anchored" data-anchor-id="анатомія-та-базові-концепти">🛠 1. Анатомія та базові концепти</h3>
-<p>Створення: Використовуємо ключове слово def, ім’я (зрозуміле, що робить функція) та дужки.</p>
-<section id="параметри-vs-аргументи" class="level4">
-<h4 class="anchored" data-anchor-id="параметри-vs-аргументи">Параметри vs Аргументи:</h4>
-<ul>
-<li><p>Параметр — це змінна-заглушка в оголошенні функції (напр., <code>def get_area(radius):</code>). Це порожня коробка, яка чекає на дані.</p></li>
-<li><p>Аргумент — це реальне значення, яке ми передаємо під час виклику (напр., <code>get_area(5)</code>). Це те, що ми в цю коробку кладемо.</p></li>
-</ul>
-</section>
-<section id="return" class="level4">
-<h4 class="anchored" data-anchor-id="return">Return:</h4>
-<ul>
-<li><p>Функція має віддавати результат своєї роботи через return, а не виводити його через <code>print()</code>.</p></li>
-<li><p>Раннє повернення (Early Return): Команда <code>return</code> миттєво зупиняє роботу всієї функції. Це ідеально підходить для “відсіювання” невалідних даних на самому початку (наприклад, <code>if price &lt; 0: return "Помилка"</code>).</p></li>
-</ul>
-</section>
-<section id="scope-область-видимості" class="level4">
-<h4 class="anchored" data-anchor-id="scope-область-видимості">Scope (Область видимості):</h4>
-<ul>
-<li><p>Глобальні змінні/константи: Створюються поза функціями. Їх бачать усі (добре підходить для загальних налаштувань, напр., PI = 3.14).</p></li>
-<li><p>Локальні змінні: Створюються всередині функції. Вони народжуються під час виклику і назавжди зникають після return. Спроба викликати таку змінну ззовні призведе до помилки.</p></li>
-</ul>
-</section>
-</section>
-<section id="рекурсивні-функції" class="level3">
-<h3 class="anchored" data-anchor-id="рекурсивні-функції">🔄 2. Рекурсивні функції</h3>
-<p><em>Рекурсія — це підхід, при якому функція викликає саму себе. Щоб вона працювала і не “поклала” програму помилкою переповнення пам’яті (Stack Overflow), вона обов’язково має складатися з двох частин:</em></p>
-<ul>
-<li><p>База рекурсії: Умова виходу. Ситуація, при якій функція перестає викликати себе і просто повертає конкретне значення (наприклад, факторіал нуля дорівнює 1: <code>if n == 0: return 1</code>).</p></li>
-<li><p>Рекурсивний крок: Виклик цією ж функцією самої себе, але зі зміненими аргументами, які з кожним кроком наближають нас до бази (наприклад, <code>return n * factorial(n - 1)</code>).</p></li>
-</ul>
-</section>
-<section id="анонімні-функції-lambda-вирази" class="level3">
-<h3 class="anchored" data-anchor-id="анонімні-функції-lambda-вирази">🥷 3. Анонімні функції (Lambda-вирази)</h3>
-<p>Це міні-функції, які пишуться в один рядок і не мають імені. Їх використовують як “одноразовий” інструмент, коли писати повноцінну def немає сенсу.</p>
-<ul>
-<li><p>Синтаксис: <code>lambda arguments: expression</code></p></li>
-<li><p>Головне застосування: Передача лямбди як правила в інші функції, такі як <code>sort(), map(), filter()</code>.</p></li>
-</ul>
-<div id="95db789f" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Приклад: звичайне сортування вишикує слова за алфавітом.</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Але ми можемо передати лямбду як ключ (key), щоб відсортувати їх за довжиною:</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"яблуко"</span>, <span class="st">"кіт"</span>, <span class="st">"університет"</span>, <span class="st">"код"</span>]</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>words.sort(key<span class="op">=</span><span class="kw">lambda</span> word: <span class="bu">len</span>(word)) </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(words) </span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['кіт', 'код', 'яблуко', 'університет']</code></pre>
+<section id="експерименти-з-github-та-git" class="level3">
+<h3 class="anchored" data-anchor-id="експерименти-з-github-та-git">🔎 Експерименти з GitHub та Git</h3>
+<p>Сьогодні ми симулюємо реальний процес командної розробки. Ваше завдання — написати логіку для визначення того, чи отримає студент фінансування на основі його оцінок.</p>
+<p>Але робота програміста рідко буває ізольованою. Поки ви будете писати свій код, адміністрація оновить списки студентів в головному репозиторії. Вам доведеться не лише написати працюючий код, але й навчитися синхронізувати свою локальну версію з оновленнями колег та розв’язувати конфлікти версій.</p>
+<section id="fork" class="level4">
+<h4 class="anchored" data-anchor-id="fork"><i class="fa-duotone fa-solid fa-code-fork"></i> Fork</h4>
+<p>Перш ніж починати роботу над проєктом, нам потрібен сам репозиторій, в якому ми будемо працювати. Для того, аби отримати доступ до головного репозиторію вам потрібно зробити <code>Fork</code> — операцію, яка надає вам власну копію репозиторію на платформі GitHub.</p>
+<p>Перш за все, перейдіть за посиланням на <a href="https://github.com/vkatsel/Git-Pracice">головний репозиторій</a></p>
+<p>Після цього, натисність на кнопку Fork у верхній частині екрану</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fork.png" class="img-fluid figure-img"></p>
+<figcaption>Fork Interface</figcaption>
+</figure>
 </div>
+<p>Перед Вами з’явиться меню конфігурації репозиторію. Натисніть кнопку <code>Fork</code>, і магія - ви маєте власну копію головного репозиторію!</p>
+</section>
+<section id="clone" class="level4">
+<h4 class="anchored" data-anchor-id="clone"><i class="fa-duotone fa-solid fa-clone"></i> Clone</h4>
+<p>Тепер, коли в нас є власна копія репозиторію, нам потрібно якось з ним працювати. Поки вона є тільки на GitHub ми не можемо прямо писати внеї код та працювати повноцінно.</p>
+<p>Для того, аби репозиторій також був на вашому комп’ютері, нам потрібно зробити операцію <code>git clone</code>, яка створить <strong>локальну копію</strong> репозиторію.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/сlone-repo.png" class="img-fluid figure-img"></p>
+<figcaption>Clone Menu</figcaption>
+</figure>
 </div>
 </section>
-</section>
-<section id="функції-як-інструмент-для-організації-коду" class="level2">
-<h2 class="anchored" data-anchor-id="функції-як-інструмент-для-організації-коду">🛠️ Функції, як інструмент для організації коду</h2>
-<p>Функції в Python - це потужний інструмент для організації та повторного використання коду. Вони дозволяють нам розбивати складні задачі на менші, більш керовані частини, що робить наш код чистішим і легшим для розуміння.</p>
-<div id="5ee902da" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> function_name(parameters):</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Тіло функції</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    ...</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># return expression (не обов'язково)</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="branching" class="level4">
+<h4 class="anchored" data-anchor-id="branching"><i class="fa-duotone fa-solid fa-code-branch"></i> Branching</h4>
+<p>І тепер, коли ми нарешті маємо наш проєкт в IDE, правилом хорошого тону є створення окремої <em>гілки</em> для імплементації нових функцій програми.</p>
+<p>Для цього створімо гілку “gpa-calculation”</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/new-branch.png" class="img-fluid figure-img"></p>
+<figcaption>New Branch Creation</figcaption>
+</figure>
 </div>
-<section id="live-coding-1-робот-курєр" class="level3">
-<h3 class="anchored" data-anchor-id="live-coding-1-робот-курєр">👨‍💻 Live Coding 1: Робот кур’єр</h3>
-<p><strong>Контекст:</strong> Складський робот переміщується між стелажами по ортогональній сітці (може їхати тільки прямо і повертати на 90 градусів). Тому відстань між ним та ціллю обчислюється не по прямій, а за формулою мангеттенської відстані: <span class="math inline">\(d = |x_1 - x_2| + |y_1 - y_2|\)</span>.</p>
-<p>На кожну пройдену комірку сітки робот витрачає 1.5% заряду батареї. Необхідно написати функцію, яка розрахує загальну витрату заряду на поїздку від поточної позиції до заданої комірки.</p>
-<p><strong>Вхідні дані:</strong></p>
-<ul>
-<li>Координати старту: <code>x_start=2</code>, <code>y_start=2</code></li>
-<li>Координати цілі: <code>x_target=5</code>, <code>y_target=6</code>.</li>
-</ul>
-<p><strong>Очікуваний результат:</strong> Відсоток витраченої батареї. Якщо передані некоректні координати — повідомлення про помилку.</p>
 </section>
-<section id="guided-practice" class="level3">
-<h3 class="anchored" data-anchor-id="guided-practice">🛠 Guided Practice:</h3>
-<p><strong>Контекст:</strong> Наш робот отримує нове замовлення на доставку товару. Ми можемо порахувати скільки відсотків заряду витратить робот на доставку, але що якщо йому не вистачить заряду для виконання замовлення та повернення на базу? (координати бази завжди 0, 0)</p>
-<p>Напишіть функцію, яка визначить, чи вистачить роботу поточного заряду на весь цей маршрут.</p>
-<p><strong>Вхідні дані:</strong></p>
+<section id="implement" class="level4">
+<h4 class="anchored" data-anchor-id="implement"><i class="fa-duotone fa-solid fa-code"></i> Implement</h4>
+<p>І найцікавіше - ваше головне завдання. Оскільки ви долучилися до університетської IT команди, вашою першою задачею стала розробка алгоритму для визначення чи отримає студент фінансування. Для цього вам потрібно імплементувати функцію <code>сan_get_funding()</code>.</p>
+<p>Студент, що отримує фінансування, має відповідати наступним умовам: - GPA &gt; 80 - Немає оцінок менше за 60</p>
+<p>Функція має повертати <code>True</code> або <code>False</code> в залежності від оцінок студента</p>
+<p><strong>Вхідні дані:</strong> Двовимірний список з оцінками студентів <code>students_grades</code></p>
+<p>Кожен вкладений список відповідає одному студенту. Елементи вкладеного списку — це цілі числа від 0 до 100.</p>
+<p><strong>Вихідні дані:</strong> Значення <code>True</code> або <code>False</code></p>
+</section>
+<section id="commit" class="level4">
+<h4 class="anchored" data-anchor-id="commit"><i class="fa-duotone fa-solid fa-code-commit"></i> Commit</h4>
+<p>Після цього, аби зафіксувати вашу роботу, вам потрібно зробити коміт - знімок стану вашого файлу з кодом. Це зафіксує зміни, які ви внесли в історії гіта, як певну точку, з якою потім можна буде взаємодіяти.</p>
+<p>Для цього, відкрийте бокове меню налаштування коміту, оберіть файли, які хочете додати, та напишіть змістовне повідомлення про виконану роботу. Наприклад:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/commit.png" class="img-fluid figure-img"></p>
+<figcaption>Commit Example</figcaption>
+</figure>
+</div>
+</section>
+<section id="repeat" class="level4">
+<h4 class="anchored" data-anchor-id="repeat"><i class="fa-duotone fa-solid fa-repeat"></i> Repeat!</h4>
+<p>І от перед вами одразу ж постає наступна задача. На тій же гілці, реалізуйте в <code>main.py</code> просте обрахування статистики оцінок студентів. Вам потрібно вивести на екран наступну інформацію:</p>
 <ul>
-<li>Поточні координати робота: <code>current_x=2</code>, <code>current_y=2</code>.</li>
-<li>Координати цілі: <code>target_x=5</code>, <code>target_y=6</code>.</li>
-<li>Поточний рівень заряду (%): <code>current_battery=50</code></li>
+<li>Скільки студентів отримали фінансування</li>
+<li>Який середній GPA у всіх студентів</li>
+<li>Який середній GPA у тих студентів, що отримали фінансування</li>
 </ul>
-<p><strong>Очікуваний результат:</strong> <code>True</code> або <code>False</code> — чи вистачить заряду.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Порада
+<span class="screen-reader-only">Порада</span>Порада
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Для обчислення загальної відстані, яку має проїхати робот, можна скористатися функцією, яку ми написали в попередньому завданні для розрахунку відсотка витраченої батареї. Пам’ятайте, що робот має повернутися на базу після доставки товару, тому потрібно врахувати відстань від поточної позиції до цілі та від цілі до бази.</p>
+<p>Скористайтеся функцією, написаною раніше аби визначити чи отримає студент фінансування і використайте цикл <code>for</code>, аби порахувати статистичні дані.</p>
 </div>
 </div>
+<p>Після цього, зробіть ще один коміт, аби закріпити вашу роботу</p>
 </section>
-</section>
-<section id="рекурсивні-функції-1" class="level2">
-<h2 class="anchored" data-anchor-id="рекурсивні-функції-1">🔃 Рекурсивні функції</h2>
-<p>Рекурсія - це техніка програмування, при якій функція викликає сама себе для розв’язання задачі. Вона складається з двох основних компонентів: базового випадку, який зупиняє рекурсію, та рекурсивного кроку, який розбиває задачу на менші підзадачі.</p>
-<p>Вона часто використовується для розв’язання задач, які мають природну рекурсивну структуру, таких як обчислення факторіала, фібоначчі, обходу дерев та алгоритмів типу “розділяй та володарюй”.</p>
-<div id="d4f09855" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibonacci_recursive(n):</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">1</span>:  <span class="co"># Базовий випадок: F(0) = 0, F(1) = 1</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> n</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> fibonacci_recursive(n <span class="op">-</span> <span class="dv">1</span>) <span class="op">+</span> fibonacci_recursive(n <span class="op">-</span> <span class="dv">2</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fibonacci_recursive(<span class="dv">10</span>)) </span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>55</code></pre>
+<section id="git-push-and-pr" class="level4">
+<h4 class="anchored" data-anchor-id="git-push-and-pr"><i class="fa-duotone fa-solid fa-upload"></i> Git Push and PR</h4>
+<p>І ось, нарешті, настав той момент, коли всі задачі виконані. Але от халепа! Ви перевіряєте свій GitHub, і розумієте, що там немає ані вашої гілки, ані вашого написаного коду.</p>
+<p>Для того, аби виправити це неподобство, вам потрібно зробити <code>Push</code> - операцію, яка надсилає зміни з вашого локального репозиторію до віддаленго (того, що знаходиться на серверах GitHub)</p>
+<p>Для цього, після того як ви зробили коміт оберіть Push та необхідну гілку в інтерфейсі Pycharm</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/push.png" class="img-fluid figure-img"></p>
+<figcaption>Push Selection</figcaption>
+</figure>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/push-2.png" class="img-fluid figure-img"></p>
+<figcaption>Push Interface</figcaption>
+</figure>
 </div>
-<section id="live-coding-2-факторіали-та-рекурсії" class="level3">
-<h3 class="anchored" data-anchor-id="live-coding-2-факторіали-та-рекурсії">👨‍💻 Live Coding 2: Факторіали та рекурсії</h3>
-<p><strong>Контекст:</strong> Багато математичних операцій можна реалізувати за допомогою простих рекурсивних функцій. Однією з таких тривіальних задач = обчислення факторіала числа <code>n</code>, який визначається як добуток усіх цілих чисел від 1 до <code>n</code> включно.</p>
-<p><strong>Вхідні дані:</strong> Ціле число <code>n</code>, введене користувачем</p>
-<p><strong>Очікуваний результат:</strong> Результат обчислення <span class="math inline">\(n!\)</span> або повідомлення про помилку, якщо <code>n</code> є від’ємним числом.</p>
-</section>
-<section id="guided-practice-піднесення-до-степеня" class="level3">
-<h3 class="anchored" data-anchor-id="guided-practice-піднесення-до-степеня">🛠 Guided Practice: Піднесення до степеня</h3>
-<p><strong>Контекст:</strong> Ще однією класичною задачею, яка ілюструє концепцію рекурсії, є піднесення числа <code>x</code> до степеня <code>n</code>. Це можна реалізувати за допомогою рекурсивної функції, яка базується на визначенні степеня: <span class="math inline">\(x^n = x \cdot x^{n-1}\)</span> для <code>n &gt; 0</code></p>
-<p><strong>Вхідні дані:</strong> Два числа: основа <code>x</code> та показник степеня <code>n</code>, введені користувачем.</p>
-<p><strong>Очікуваний результат:</strong> Результат обчислення <span class="math inline">\(x^n\)</span> або повідомлення про помилку, якщо <code>n</code> є від’ємним числом.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>Коли ви переконаєтеся, що у вашому віддаленому репозиторії з’явилися зміни, вам також потрібно надіслати <code>Pull Request</code> для того, аби запропонувати додати зміни в головний репозиторій.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/push-changes.png" class="img-fluid figure-img"></p>
+<figcaption>Changes on GitHub</figcaption>
+</figure>
 </div>
-<div class="callout-title-container flex-fill">
-Порада
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/pull-request.png" class="img-fluid figure-img"></p>
+<figcaption>Pull Request Interface</figcaption>
+</figure>
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Перед написанням рекурсивної функції, подумайте, яким буде базовий випадок та крок рекурсії</p>
-</div>
-</div>
-</section>
-</section>
-<section id="анонімні-функції-та-λ-вирази" class="level2">
-<h2 class="anchored" data-anchor-id="анонімні-функції-та-λ-вирази">❔ Анонімні функції та λ-вирази</h2>
-<p>Анонімні функції, або λ-вирази, - це компактний спосіб створення функцій без імені. Вони особливо корисні, коли нам потрібно передати функцію як аргумент до іншої функції, наприклад, для сортування або фільтрації даних.</p>
-<p>Найчастіше λ-вирази використовуються з вбудованими функціями, такими як <code>sorted()</code>, <code>map()</code>, <code>filter()</code>, де вони дозволяють визначити логіку обробки даних без необхідності створювати окрему функцію за допомогою <code>def</code>.</p>
-<section id="live-coding-3-обробка-даних---від-класичних-функцій-до-λ-виразів" class="level3">
-<h3 class="anchored" data-anchor-id="live-coding-3-обробка-даних---від-класичних-функцій-до-λ-виразів">👨‍💻 Live Coding 3: Обробка даних - від класичних функцій до λ-виразів</h3>
-<p><strong>Контекст:</strong> Працюючи з даними, часто виникає потреба у швидкому редагуванні цих елементів за певним правилом. Наприклад, маючи список температур у Цельсіях, ми хочемо перетворити їх у Фаренгейти.</p>
-<p><strong>Вхідні дані:</strong> Список температур у Цельсіях: <code>celsius = [0, 20, 30, 100]</code></p>
-<p><strong>Очікуваний результат:</strong> Список температур у Фаренгейтах: <code>fahrenheit = [32.0, 68.0, 86.0, 212.0]</code></p>
-</section>
-<section id="guided-practice-бортовий-журнал-робота" class="level3">
-<h3 class="anchored" data-anchor-id="guided-practice-бортовий-журнал-робота">🛠 Guided Practice: Бортовий журнал робота</h3>
-<p><strong>Контекст:</strong> Наш робот кур’єр з попередніх завдань веде журнал своїх поїздок, де кожен запис містить відсоток заряду, витрачений на доставку.</p>
-<p>Ми хочемо швидко проаналізувати ці дані, спочатку відсортувавши їх за витратою заряду, а потім знайти всі поїздки, де витрачено більше 30% заряду.</p>
-<p><strong>Вхідні дані:</strong> Список витрат заряду на поїздки: <code>battery_usage = [25, 40, 15, 35, 10]</code></p>
-<p><strong>Очікуваний результат:</strong> Список відсортованих витрат заряду: <code>[10, 15, 25, 35, 40]</code>, список поїздок з витратою більше 30%: <code>[35, 40]</code></p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Попередження</span>Обмеження
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Для цієї задачі, використовуйте λ-функції та вбудовані функції <code>sorted()</code> та <code>filter()</code>, а не цикли чи інші методи.</p>
-</div>
-</div>
+<p>На цьому етапі ви освоїли базовий алгоритм командної роботи над проєктом, з чим Вас можна привітати!</p>
+<p>Цей алгоритм може варіюватися та змінюватися в залежності від поставлених задач та контексту, але він визначає основу командної роботи над проєктом.</p>
 
 
+</section>
 </section>
 </section>
 
@@ -1101,14 +955,11 @@ window.Quarto = {
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../modules/lists-practice.html" class="pagination-link" aria-label="Practice Session 6">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Practice Session 6</span></span>
+      <a href="../modules/functions-practice.html" class="pagination-link" aria-label="Practice Session 8">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Practice Session 8</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../modules/git-practice.html" class="pagination-link" aria-label="Practice Session 9">
-        <span class="nav-page-text"><span class="chapter-title">Practice Session 9</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
