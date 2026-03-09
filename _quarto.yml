@@ -30,9 +30,6 @@ book:
     - part: "Основи Git"
       chapters: 
         - modules/git-practice.qmd
-    - part: "Словники. List Comprehension"
-      chapters: 
-        - modules/dictionaries-lc-practice.qmd
   sidebar:
     collapse-level: 1
 
