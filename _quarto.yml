@@ -27,6 +27,9 @@ book:
     - part: "Функції"
       chapters:
       - modules/functions-practice.qmd
+    - part: "Основи Git"
+      chapters: 
+        - modules/git-practice.qmd
   sidebar:
     collapse-level: 1
 
