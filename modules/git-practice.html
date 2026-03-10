@@ -373,7 +373,16 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#основи-роботи-з-git" id="toc-основи-роботи-з-git" class="nav-link active" data-scroll-target="#основи-роботи-з-git"><i class="fa-duotone fa-brands fa-git-alt"></i> Основи роботи з Git</a>
   <ul class="collapse">
   <li><a href="#cheat-sheet" id="toc-cheat-sheet" class="nav-link" data-scroll-target="#cheat-sheet">📝 Cheat Sheet</a></li>
-  <li><a href="#експерименти-з-github-та-git" id="toc-експерименти-з-github-та-git" class="nav-link" data-scroll-target="#експерименти-з-github-та-git">🔎 Експерименти з GitHub та Git</a></li>
+  <li><a href="#експерименти-з-github-та-git" id="toc-експерименти-з-github-та-git" class="nav-link" data-scroll-target="#експерименти-з-github-та-git">🔎 Експерименти з GitHub та Git</a>
+  <ul class="collapse">
+  <li><a href="#fork" id="toc-fork" class="nav-link" data-scroll-target="#fork"><i class="fa-duotone fa-solid fa-code-fork"></i> Fork</a></li>
+  <li><a href="#clone" id="toc-clone" class="nav-link" data-scroll-target="#clone"><i class="fa-duotone fa-solid fa-clone"></i> Clone</a></li>
+  <li><a href="#branching" id="toc-branching" class="nav-link" data-scroll-target="#branching"><i class="fa-duotone fa-solid fa-code-branch"></i> Branching</a></li>
+  <li><a href="#implement" id="toc-implement" class="nav-link" data-scroll-target="#implement"><i class="fa-duotone fa-solid fa-code"></i> Implement</a></li>
+  <li><a href="#commit" id="toc-commit" class="nav-link" data-scroll-target="#commit"><i class="fa-duotone fa-solid fa-code-commit"></i> Commit</a></li>
+  <li><a href="#repeat" id="toc-repeat" class="nav-link" data-scroll-target="#repeat"><i class="fa-duotone fa-solid fa-repeat"></i> Repeat!</a></li>
+  <li><a href="#git-push-and-pr" id="toc-git-push-and-pr" class="nav-link" data-scroll-target="#git-push-and-pr"><i class="fa-duotone fa-solid fa-upload"></i> Git Push and PR</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -401,30 +410,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="основи-роботи-з-git" class="level2">
-<h2 class="anchored" data-anchor-id="основи-роботи-з-git"><i class="fa-duotone fa-brands fa-git-alt"></i> Основи роботи з Git</h2>
+<section id="основи-роботи-з-git" class="level1">
+<h1><i class="fa-duotone fa-brands fa-git-alt"></i> Основи роботи з Git</h1>
 <p>Під час сьогоднішнього воркшопу ви зможете на практиці познайомитися з такими інструментами як Git та GitHub. Ці інструменти є стандартом для індустрії в сфері контролю версій та дозволяють гнучко налаштувати спільну роботу багатьох людей над проєктом одночасно.</p>
 <p><strong>Git</strong> — це система контролю версій, яка дозволяє ефективно керувати та відслідковувати зміни у вашому проєкті.</p>
 <p><strong>GitHub</strong> — це платформа, розроблена для того, аби викладати ваші проєкти до глобальної мережі та надати можливість легко працювати над проєктами з іншими.</p>
-<section id="cheat-sheet" class="level3">
-<h3 class="anchored" data-anchor-id="cheat-sheet">📝 Cheat Sheet</h3>
+<section id="cheat-sheet" class="level2">
+<h2 class="anchored" data-anchor-id="cheat-sheet">📝 Cheat Sheet</h2>
 <ul>
-<li><p>Repository (Репозиторій / “Репа”): Папка з вашим проєктом, яка має суперсилу — запам’ятовувати всю історію змін кожного файлу. Буває локальним (на вашому комп’ютері) та віддаленим (на сервері GitHub).</p></li>
+<li><p>Repository (Репозиторій): Папка з вашим проєктом, яка має суперсилу — запам’ятовувати всю історію змін кожного файлу. Буває локальним (на вашому комп’ютері) та віддаленим (на сервері GitHub).</p></li>
 <li><p>Commit (Коміт): Фіксація або “знімок” стану вашого коду в конкретний момент. У PyCharm це робиться через панель Commit. Ви позначаєте галочками файли, обов’язково пишете повідомлення (що саме змінили) і зберігаєте. Коміт зберігає зміни лише на вашому комп’ютері.</p></li>
-<li><p>Push (Пуш): Відправка ваших локальних комітів на віддалений сервер (на GitHub). Поки ви не зробите push (зелена стрілочка вгору↗ в PyCharm), ніхто у світі ваших змін не побачить.</p></li>
+<li><p>Push (Пуш): Відправка ваших локальних комітів на віддалений сервер. Поки ви не зробите push (зелена стрілочка вгору↗ в PyCharm), ніхто у світі ваших змін не побачить.</p></li>
 <li><p>Pull (Пул): Завантаження нових змін із віддаленого сервера на ваш комп’ютер (синя стрілочка вниз↙ в PyCharm). Це оновлює ваш локальний код до найсвіжішої версії.</p></li>
 <li><p>Fork (Форк): Ваша особиста копія чужого репозиторію. Робиться не в PyCharm, а прямо на сайті GitHub. Дозволяє вільно експериментувати з кодом, не ризикуючи зламати оригінальний проєкт викладача чи колеги.</p></li>
-<li><p>Branch (Гілка): Ізольована копія коду всередині репозиторію. Ви ніби відгалужуєтесь від головної лінії (main), безпечно пишете свою функцію, а потім зливаєте її назад. Керування гілками у PyCharm зазвичай знаходиться в самому правому нижньому куті вікна.</p></li>
+<li><p>Branch (Гілка): Ізольована копія коду всередині репозиторію. Ви ніби відгалужуєтесь від головної гілки (main), безпечно пишете свою функцію, а потім зливаєте її назад. Керування гілками у PyCharm зазвичай знаходиться в самому правому нижньому куті вікна.</p></li>
 <li><p>Merge Conflict (Конфлікт злиття): Ситуація, коли дві людини одночасно змінили один і той самий рядок у файлі, і Git не знає, чий варіант правильний. PyCharm має зручне вікно “Resolve Conflicts” із трьома колонками: зліва — ваш код, справа — код з сервера, по центру — фінальний результат, який ви збираєте вручну.</p></li>
 <li><p>Pull Request (PR): Запит на сайті GitHub, у якому ви просите власника оригінального репозиторію перевірити ваш код і додати його до головного проєкту.</p></li>
 </ul>
 </section>
-<section id="експерименти-з-github-та-git" class="level3">
-<h3 class="anchored" data-anchor-id="експерименти-з-github-та-git">🔎 Експерименти з GitHub та Git</h3>
+<section id="експерименти-з-github-та-git" class="level2">
+<h2 class="anchored" data-anchor-id="експерименти-з-github-та-git">🔎 Експерименти з GitHub та Git</h2>
 <p>Сьогодні ми симулюємо реальний процес командної розробки. Ваше завдання — написати логіку для визначення того, чи отримає студент фінансування на основі його оцінок.</p>
 <p>Але робота програміста рідко буває ізольованою. Поки ви будете писати свій код, адміністрація оновить списки студентів в головному репозиторії. Вам доведеться не лише написати працюючий код, але й навчитися синхронізувати свою локальну версію з оновленнями колег та розв’язувати конфлікти версій.</p>
-<section id="fork" class="level4">
-<h4 class="anchored" data-anchor-id="fork"><i class="fa-duotone fa-solid fa-code-fork"></i> Fork</h4>
+<section id="fork" class="level3">
+<h3 class="anchored" data-anchor-id="fork"><i class="fa-duotone fa-solid fa-code-fork"></i> Fork</h3>
 <p>Перш ніж починати роботу над проєктом, нам потрібен сам репозиторій, в якому ми будемо працювати. Для того, аби отримати доступ до головного репозиторію вам потрібно зробити <code>Fork</code> — операцію, яка надає вам власну копію репозиторію на платформі GitHub.</p>
 <p>Перш за все, перейдіть за посиланням на <a href="https://github.com/vkatsel/Git-Pracice">головний репозиторій</a></p>
 <p>Після цього, натисність на кнопку Fork у верхній частині екрану</p>
@@ -436,8 +445,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>Перед Вами з’явиться меню конфігурації репозиторію. Натисніть кнопку <code>Fork</code>, і магія - ви маєте власну копію головного репозиторію!</p>
 </section>
-<section id="clone" class="level4">
-<h4 class="anchored" data-anchor-id="clone"><i class="fa-duotone fa-solid fa-clone"></i> Clone</h4>
+<section id="clone" class="level3">
+<h3 class="anchored" data-anchor-id="clone"><i class="fa-duotone fa-solid fa-clone"></i> Clone</h3>
 <p>Тепер, коли в нас є власна копія репозиторію, нам потрібно якось з ним працювати. Поки вона є тільки на GitHub ми не можемо прямо писати внеї код та працювати повноцінно.</p>
 <p>Для того, аби репозиторій також був на вашому комп’ютері, нам потрібно зробити операцію <code>git clone</code>, яка створить <strong>локальну копію</strong> репозиторію.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -447,8 +456,8 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="branching" class="level4">
-<h4 class="anchored" data-anchor-id="branching"><i class="fa-duotone fa-solid fa-code-branch"></i> Branching</h4>
+<section id="branching" class="level3">
+<h3 class="anchored" data-anchor-id="branching"><i class="fa-duotone fa-solid fa-code-branch"></i> Branching</h3>
 <p>І тепер, коли ми нарешті маємо наш проєкт в IDE, правилом хорошого тону є створення окремої <em>гілки</em> для імплементації нових функцій програми.</p>
 <p>Для цього створімо гілку “gpa-calculation”</p>
 <div class="quarto-figure quarto-figure-center">
@@ -458,17 +467,17 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="implement" class="level4">
-<h4 class="anchored" data-anchor-id="implement"><i class="fa-duotone fa-solid fa-code"></i> Implement</h4>
-<p>І найцікавіше - ваше головне завдання. Оскільки ви долучилися до університетської IT команди, вашою першою задачею стала розробка алгоритму для визначення чи отримає студент фінансування. Для цього вам потрібно імплементувати функцію <code>сan_get_funding()</code>.</p>
+<section id="implement" class="level3">
+<h3 class="anchored" data-anchor-id="implement"><i class="fa-duotone fa-solid fa-code"></i> Implement</h3>
+<p>І найцікавіше - ваше головне завдання. Оскільки ви долучилися до університетської IT команди, вашою першою задачею стала розробка алгоритму для визначення чи може певний студент отримати фінансування. Для цього вам потрібно імплементувати функцію <code>сan_get_funding()</code>, яка приймає список з оцінками студента.</p>
 <p>Студент, що отримує фінансування, має відповідати наступним умовам: - GPA &gt; 80 - Немає оцінок менше за 60</p>
 <p>Функція має повертати <code>True</code> або <code>False</code> в залежності від оцінок студента</p>
 <p><strong>Вхідні дані:</strong> Двовимірний список з оцінками студентів <code>students_grades</code></p>
 <p>Кожен вкладений список відповідає одному студенту. Елементи вкладеного списку — це цілі числа від 0 до 100.</p>
 <p><strong>Вихідні дані:</strong> Значення <code>True</code> або <code>False</code></p>
 </section>
-<section id="commit" class="level4">
-<h4 class="anchored" data-anchor-id="commit"><i class="fa-duotone fa-solid fa-code-commit"></i> Commit</h4>
+<section id="commit" class="level3">
+<h3 class="anchored" data-anchor-id="commit"><i class="fa-duotone fa-solid fa-code-commit"></i> Commit</h3>
 <p>Після цього, аби зафіксувати вашу роботу, вам потрібно зробити коміт - знімок стану вашого файлу з кодом. Це зафіксує зміни, які ви внесли в історії гіта, як певну точку, з якою потім можна буде взаємодіяти.</p>
 <p>Для цього, відкрийте бокове меню налаштування коміту, оберіть файли, які хочете додати, та напишіть змістовне повідомлення про виконану роботу. Наприклад:</p>
 <div class="quarto-figure quarto-figure-center">
@@ -478,8 +487,8 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="repeat" class="level4">
-<h4 class="anchored" data-anchor-id="repeat"><i class="fa-duotone fa-solid fa-repeat"></i> Repeat!</h4>
+<section id="repeat" class="level3">
+<h3 class="anchored" data-anchor-id="repeat"><i class="fa-duotone fa-solid fa-repeat"></i> Repeat!</h3>
 <p>І от перед вами одразу ж постає наступна задача. На тій же гілці, реалізуйте в <code>main.py</code> просте обрахування статистики оцінок студентів. Вам потрібно вивести на екран наступну інформацію:</p>
 <ul>
 <li>Скільки студентів отримали фінансування</li>
@@ -501,8 +510,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>Після цього, зробіть ще один коміт, аби закріпити вашу роботу</p>
 </section>
-<section id="git-push-and-pr" class="level4">
-<h4 class="anchored" data-anchor-id="git-push-and-pr"><i class="fa-duotone fa-solid fa-upload"></i> Git Push and PR</h4>
+<section id="git-push-and-pr" class="level3">
+<h3 class="anchored" data-anchor-id="git-push-and-pr"><i class="fa-duotone fa-solid fa-upload"></i> Git Push and PR</h3>
 <p>І ось, нарешті, настав той момент, коли всі задачі виконані. Але от халепа! Ви перевіряєте свій GitHub, і розумієте, що там немає ані вашої гілки, ані вашого написаного коду.</p>
 <p>Для того, аби виправити це неподобство, вам потрібно зробити <code>Push</code> - операцію, яка надсилає зміни з вашого локального репозиторію до віддаленго (того, що знаходиться на серверах GitHub)</p>
 <p>Для цього, після того як ви зробили коміт оберіть Push та необхідну гілку в інтерфейсі Pycharm</p>
