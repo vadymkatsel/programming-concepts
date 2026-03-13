@@ -25,8 +25,8 @@ book:
       chapters: 
       - modules/lists-practice.qmd
     - part: "Функції"
-      chapters:
-      - modules/functions-practice.qmd
+      # chapters:
+      # - modules/functions-practice.qmd
     - part: "Основи Git"
       chapters: 
         - modules/git-practice.qmd

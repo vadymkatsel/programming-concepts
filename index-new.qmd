@@ -28,9 +28,9 @@ format:
         <nav class="desktop-nav">
             <a href="#">GitHub</a>
             <span class="separator">○</span>
-            <a href="#">Автори</a>
+            <a href="#" class="disabled-link">Автори</a>
             <span class="separator">○</span>
-            <a href="#">Про курс</a>
+            <a href="#" class="disabled-link">Про курс</a>
         </nav>
 
         <button class = "burger-btn" aria-label="Menu">
@@ -41,7 +41,7 @@ format:
     </header>
 
     <main class="main-content">
-        <section class="hero-card">
+        <section class="hero-card glass-effect">
             <div class="hero-top">
                 <h1 class="hero-title">
                 Programming<br>
@@ -60,7 +60,7 @@ format:
         </section>
 
         <section class="courses-column">
-            <div class="course-card math-bg">
+            <div class="course-card math-bg glass-effect">
                 <div class="course-info">
                     <h2 class="course-title">Прикладна математика</h2>
                     <p class="course-desc">Базові концепції, необхідні для розуміння алгоритмів</p>
@@ -69,7 +69,7 @@ format:
                 <a href="#" class="arrow-link course-link" aria-label="Перейти до курсу Прикладна математика"></a>
             </div>
 
-            <div class="course-card econ-bg">
+            <div class="course-card econ-bg glass-effect">
                 <div class="course-info">
                     <h2 class="course-title">Бізнес економіка</h2>
                     <p class="course-desc">Базові концепції, необхідні для розуміння алгоритмів</p>
