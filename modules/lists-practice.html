@@ -566,7 +566,7 @@ window.Quarto = {
 <section id="зрізи-slicing" class="level3">
 <h3 class="anchored" data-anchor-id="зрізи-slicing">🔹 2. Зрізи (Slicing)</h3>
 <p>Загальний синтаксис: <code>list[start:stop:step]</code></p>
-<div id="98dde254" class="cell" data-execution_count="1">
+<div id="a26d93eb" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>]</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>arr[<span class="dv">1</span>:<span class="dv">4</span>]   <span class="co"># [20, 30, 40] - від індексу 1 до 3 включно</span></span>
@@ -577,7 +577,7 @@ window.Quarto = {
 </section>
 <section id="додавання-та-зміна" class="level3">
 <h3 class="anchored" data-anchor-id="додавання-та-зміна">🔹 3. Додавання та зміна</h3>
-<div id="fad167aa" class="cell" data-execution_count="2">
+<div id="4ee99945" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nums <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>nums.append(<span class="dv">4</span>)    <span class="co"># [1, 2, 3, 4] -&gt; Додає елемент в кінець (O(1))</span></span>
@@ -587,21 +587,21 @@ window.Quarto = {
 <section id="ітерація-цикли." class="level3">
 <h3 class="anchored" data-anchor-id="ітерація-цикли.">🔹 4. Ітерація (Цикли).</h3>
 <p>Два основні способи пробігтися по списку: - Коли потрібен тільки елемент</p>
-<div id="133a1e83" class="cell" data-execution_count="3">
+<div id="b8d5fce0" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> nums:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(item)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Коли потрібен індекс (наприклад, для формул <span class="math inline">\(y_{i+1} - y_i\)</span>):</li>
 </ul>
-<div id="0d1b9038" class="cell" data-execution_count="4">
+<div id="c56e5ff7" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(nums)):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Index: </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">, Value: </span><span class="sc">{</span>nums[i]<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Коли потрібно і те, і інше (Pythonic way):</li>
 </ul>
-<div id="e3297d87" class="cell" data-execution_count="5">
+<div id="b4209190" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, val <span class="kw">in</span> <span class="bu">enumerate</span>(nums):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Index: </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">, Value: </span><span class="sc">{</span>val<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -613,7 +613,7 @@ window.Quarto = {
 <section id="задача-1" class="level3">
 <h3 class="anchored" data-anchor-id="задача-1">Задача 1</h3>
 <p><strong>Умова:</strong> Вам надано список, який складається із чисел. Виведіть на екран всі невід’ємні числа, їх суму та середнє арифметичне.</p>
-<div id="3fba9005" class="cell" data-execution_count="6">
+<div id="fb665d18" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Input: arr <span class="op">=</span> [<span class="op">-</span><span class="dv">12</span>, <span class="dv">8</span>, <span class="op">-</span><span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">12</span>, <span class="op">-</span><span class="dv">9</span>, <span class="dv">14</span>]</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>Output: avg <span class="op">=</span> <span class="fl">10.0</span>, <span class="bu">sum</span> <span class="op">=</span> <span class="dv">40</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -621,7 +621,7 @@ window.Quarto = {
 <section id="задача-2" class="level3">
 <h3 class="anchored" data-anchor-id="задача-2">Задача 2</h3>
 <p><strong>Умова:</strong> Вам надано список, який складається із чисел. Створіть два нових списки з тільки парними та тільки непарними числами</p>
-<div id="6d069df3" class="cell" data-execution_count="7">
+<div id="6edafc16" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Input: arr <span class="op">=</span> [<span class="dv">54</span>, <span class="dv">43</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">14</span>, <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">9</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Output: even: <span class="dv">54</span> <span class="dv">2</span> <span class="dv">14</span> <span class="dv">18</span>, odd: <span class="dv">43</span> <span class="dv">5</span> <span class="dv">17</span> <span class="dv">19</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -629,7 +629,7 @@ window.Quarto = {
 <section id="задача-3" class="level3">
 <h3 class="anchored" data-anchor-id="задача-3">Задача 3</h3>
 <p><strong>Умова:</strong> Вам надано список, який складається із чисел. Виведіть на екран усі унікальні значення, присутні в списку</p>
-<div id="23f36e91" class="cell" data-execution_count="8">
+<div id="7b48abae" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Input: arr <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>]</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>Output: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -724,7 +724,7 @@ window.Quarto = {
 <section id="вкладені-списки-матриці-та-інші-речі-придумані-математиками" class="level2">
 <h2 class="anchored" data-anchor-id="вкладені-списки-матриці-та-інші-речі-придумані-математиками">📐 Вкладені списки, матриці, та інші речі придумані математиками</h2>
 <p>У Pyhon, як і в будь-якій іншій мові програмування, ми можемо представляти математичні одиниці, зокрема матриці, за допомогою різних інструментів. В контексті сьогоднішнього заняття, нам буде зручно зробити це за допомогою вкладених списків:</p>
-<div id="ec33b895" class="cell" data-execution_count="9">
+<div id="41e5f6eb" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>matrix <span class="op">=</span> [</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">1</span>, <span class="dv">2</span>],</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">3</span>, <span class="dv">4</span>],</span>
@@ -756,7 +756,7 @@ window.Quarto = {
 <p>Нижче надано скелет коду, який може стати вам у нагоді</p>
 </div>
 </div>
-<div id="532e7d26" class="cell" data-execution_count="10">
+<div id="a3439180" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(matrix[<span class="dv">0</span>]) <span class="op">!=</span> <span class="bu">len</span>(vector):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Error"</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
