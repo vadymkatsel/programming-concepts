@@ -284,5 +284,82 @@
       "Основи Git",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Practice Session 9</span>"
     ]
+  },
+  {
+    "objectID": "modules/dictionaries-lc-practice.html",
+    "href": "modules/dictionaries-lc-practice.html",
+    "title": "Practice Session 10",
+    "section": "",
+    "text": "📚 Словники, list comprehension та робота з даними",
+    "crumbs": [
+      "Словники. List Comprehension",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Practice Session 10</span>"
+    ]
+  },
+  {
+    "objectID": "modules/dictionaries-lc-practice.html#план-заняття",
+    "href": "modules/dictionaries-lc-practice.html#план-заняття",
+    "title": "Practice Session 10",
+    "section": "📌 План заняття:",
+    "text": "📌 План заняття:\n\n👨‍💻 Live coding 1: Словник, як база даних\n\n🛠 Guided Practice\n\n👨‍💻 Live coding 2: Словник, як база даних\n\n🛠 Guided Practice\n\n👨‍💻 Live Coding 3: Маніпуляції над даними з List Comprehension\n\n🛠 Guided Practice",
+    "crumbs": [
+      "Словники. List Comprehension",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Practice Session 10</span>"
+    ]
+  },
+  {
+    "objectID": "modules/dictionaries-lc-practice.html#cheat-sheet",
+    "href": "modules/dictionaries-lc-practice.html#cheat-sheet",
+    "title": "Practice Session 10",
+    "section": "📝 Cheat Sheet",
+    "text": "📝 Cheat Sheet\n\nБазова робота зі словниками (Dictionaries) Словник — це колекція пар ключ: значення. Ключі завжди унікальні.\n\n\n# Створення порожнього словника\nmy_dict = {}\n\n# Додавання або оновлення значення [cite: 25]\nmy_dict[\"new_key\"] = \"new_value\"\n\n# Вкладені словники (Словник у словнику)\ndb = {101: {\"name\": \"Alice\", \"grades\": [100, 90]}}\n\n# Доступ до вкладених даних\nalice_grades = db[101][\"grades\"] \n\n\nКорисні методи словників\n\n\n.get(key, default) — безпечний пошук. Повертає значення за ключем. Якщо ключа немає, повертає default (не крашить програму!).\n.pop(key, default) — безпечне видалення. Видаляє пару за ключем і повертає значення.\n.update(other_dict) — об’єднання. Додає до поточного словника ключі та значення з other_dict.\n\n\nІтерація по словнику (Цикли)\n\n\n# Пройтися тільки по ключах:\nfor key in my_dict.keys(): # або просто for key in my_dict:\n\n# Пройтися тільки по значеннях:\nfor value in my_dict.values():\n\n# Пройтися по парах ключ-значення:\nfor key, value in my_dict.items():\n\n\nКорисні методи для списків (в контексті словників)\n\n\n.append(item) — додає один елемент в кінець списку.\n.extend(list) — розширює поточний список елементами з іншого списку. Корисно, коли треба додати кілька оцінок одразу.\n\n\nList Comprehension (Генератори списків) Синтаксис для створення списків в один рядок. [що_додати for елемент in колекція if умова]\n\n\n# Приклад: витягнути всі імена з нашої бази\nnames = [data[\"name\"] for data in db.values()]\n\n# Приклад: імена лише тих студентів, у кого є більше 3 оцінок\ntop_students = [data[\"name\"] for data in db.values() if len(data[\"grades\"]) &gt; 3]",
+    "crumbs": [
+      "Словники. List Comprehension",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Practice Session 10</span>"
+    ]
+  },
+  {
+    "objectID": "modules/dictionaries-lc-practice.html#warm-up",
+    "href": "modules/dictionaries-lc-practice.html#warm-up",
+    "title": "Practice Session 10",
+    "section": "Warm Up",
+    "text": "Warm Up\n\nУ нас є словник з цінами: menu = {\"Latte\": 60, \"Americano\": 40}. Клієнт питає, скільки коштує Американо. Яким одним рядком коду ми можемо дістати цю цифру?\nІнфляція. Лате тепер коштує 70 грн. А ще ми додали в меню Капучино за 65 грн. Як оновити словник?\nКлієнт просить “Flat White”. Ми знаємо, що якщо написати menu[\"Flat White\"], програма впаде з помилкою KeyError, бо такого ключа немає. Як перевірити, чи є цей напій в меню, повертаючи True або False?",
+    "crumbs": [
+      "Словники. List Comprehension",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Practice Session 10</span>"
+    ]
+  },
+  {
+    "objectID": "modules/dictionaries-lc-practice.html#live-coding-1-словник-як-база-даних",
+    "href": "modules/dictionaries-lc-practice.html#live-coding-1-словник-як-база-даних",
+    "title": "Practice Session 10",
+    "section": "👨‍💻 Live coding 1: Словник, як база даних",
+    "text": "👨‍💻 Live coding 1: Словник, як база даних\n\n\n\n\n\n\nПопередженняDisclaimer\n\n\n\nОскільки ми продовжуємо працювати в нашому репозиторії з попередньої практики - обов’язково створіть\n\n\nКонтекст: Ми продовжуємо працювати з нашим попереднім проєктом, але тепер наша задача полягає в створенні бази даних, яка містить імена та ID cтудентів. Задача полягає в створенні такої структури, яка могла би вміщати в себе дані студентів, та з якою можна було би з легкістю проводити маніпуляції на кшталт додавання нових студентів, або видалення вже присутніх.\nВхідні дані: Набір пар: унікальний ID студента та його ім’я. Наприклад, \"Alice\", 1\nОчікуваний результат: Вивід імен та ID усіх студентів.\n\n🛠 Guided Practice:\nКонтекст: Зберігання імен та ID студентів дозволяє нам розв’язати певні, проте доволі обмежені задачі. Перед нами постала проблема розширення нашої бази даних до такого вигляду, аби вона могла зберігати не лише ім’я студента, а і список його оцінок. Вашою метою є створення словника, який би задовольняв наші потреби в збереженні даних, а потім вивести усі дані про студентів на екран.\n\n\n\n\n\n\nПорадаПоради щодо виконання\n\n\n\n\nСтворіть новий порожній словник\nІтеративно заповніть ключі та значення цього словника даними, які є у students_db\nДо кожного значення додайте пустий список оцінок. Формат значення: {\"name\": \"ім'я_студента\", \"grades\": []}\n[BONUS] Заповніть список оцінок одного зі студентів випадковими значеннями\n\n\n\nВхідні дані: Словник виду students_db = {ID: name} з попередньої задачі.\nОчікуваний результат: Оновлений cловник виду {ID: {\"name\": \"ім'я_студента\", \"grades\": []}}\n\n\n\n\n\n\nПриміткаПримітка\n\n\n\nПам’ятайте, що для того, аби додати значення до словника ви маєте скористатися синтаксисом на кшталт dictionary[new_key] = new_value",
+    "crumbs": [
+      "Словники. List Comprehension",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Practice Session 10</span>"
+    ]
+  },
+  {
+    "objectID": "modules/dictionaries-lc-practice.html#live-coding-2-адміністрація-даних",
+    "href": "modules/dictionaries-lc-practice.html#live-coding-2-адміністрація-даних",
+    "title": "Practice Session 10",
+    "section": "👨‍💻 Live Coding 2: Адміністрація даних",
+    "text": "👨‍💻 Live Coding 2: Адміністрація даних\nКонтекст: Наша новоспечена база даних працює! Проте, нашої з вами роботи виявилося замало, і окрім всіх речей, які ми зробили, нам потрібно вміти безпечно шукати студентів, відраховувати їх, та масово зараховувати нових студентів. Для того, аби ми могли зручно це робити, нам потрібно імплементувати три функції обгортки: search_student(db, id), expel_student(db, id) та add_students(db, students_dict)\nВхідні дані:\n\nНаша базова структура: db (словник студентів з попереднього завдання).\nДані для тестування функцій:\nДля пошуку: існуючий id (напр., 101) та неіснуючий (напр., 999).\nДля відрахування: id студента (напр., 102).\nДля зарахування: словник з новачками\n\n\nnew_students = {104: {\"name\": \"David\", \"grades\": []}, \n                105: {\"name\": \"Eve\", \"grades\": []}}\n\nОчікуваний результат:\n\nsearch_student(ab, id) безпечно повертає словник з даними студента або повідомлення “Не знайдено”.\nexpel_student(db, id) видаляє запис з db та повертає дані відрахованого студента (або сповіщає, якщо такого ID немає).\nadd_students(db, students_dict) розширює db новими записами (нічого не повертає, просто мутує оригінальний словник).\n\n\n🛠 Guided Practice:\nКонтекст: Ми покрили майже всі нюанси адміністрування нашої бази даних, окрім додавання оцінок для вже існуючих студентів. Вам потрібно написати функцію add_grade(db, student_id, grades), яка повинна знайти студента за його ID і додати нові оцінки до його списку “grades”. Якщо студента з таким ID не існує — вивести попередження.\nВхідні дані: База даних students_db з попереднього завдання. Спробуйте додати оцінки [95, 100] студенту з ID 101 та оцінку [80, 90] студенту з ID 999.\nОчікуваний результат: У студента 101 в списку оцінок мають з’явитися нові оцінки. При спробі додати оцінку студенту 999 на екран має вивестись повідомлення з помилкою.\n\n\n\n\n\n\nПорадаПоради щодо виконання\n\n\n\n\nВикористайте оператор in для перевірки наявності ID.\nВикористайте метод списків .extend(), щоб додати елементи до існуючого списку оцінок.",
+    "crumbs": [
+      "Словники. List Comprehension",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Practice Session 10</span>"
+    ]
+  },
+  {
+    "objectID": "modules/dictionaries-lc-practice.html#live-coding-3-маніпуляції-над-даними-з-list-comprehension",
+    "href": "modules/dictionaries-lc-practice.html#live-coding-3-маніпуляції-над-даними-з-list-comprehension",
+    "title": "Practice Session 10",
+    "section": "👨‍💻 Live Coding 3: Маніпуляції над даними з List Comprehension",
+    "text": "👨‍💻 Live Coding 3: Маніпуляції над даними з List Comprehension\nКонтекст: Наша база даних розростається, і часто нам не потрібна вся інформація одразу, а лише конкретні вибірки. Наприклад, нас просять надати просто список імен усіх студентів для розсилки, а потім — окремий список тих, хто має хоча б одну оцінку “100”.\nВхідні дані: Наша поточна база students_db\nОчікуваний результат:\n\nСписок усіх імен\nСписок тих, у кого є 100 балів\n\n\n🛠 Guided Practice:\nКонтекст: І як ваше фінальне завдання, вам потрібно вирахувати тих студентів, які, на жаль чи на щастя, залік цього терму не отримають. Умови отримання заліку: мати хоча би 3 оцінки. Всі, хто мають менше за 3 - залік не отримують\nВхідні дані: Ви можете оновити попередню базу даних, аби в різних студентів була різна кількість оцінок, або ж використати нову, запропоновану нижче:\n\ndb_for_test = {\n    101: {\"name\": \"Alice\", \"grades\": [100, 95, 90]}, # Здала все\n    102: {\"name\": \"Bob\", \"grades\": [70, 75]},        # Боржник\n    103: {\"name\": \"Charlie\", \"grades\": [85]}         # Боржник\n}\n\nОчікуваний результат: Список імен [\"Bob\", \"Charlie\"] студентів, які не отримають залік\n\n\n\n\n\n\nПопередженняОбмеження\n\n\n\nДля розв’язання цього завдання використовуйте тільки list comprehension!",
+    "crumbs": [
+      "Словники. List Comprehension",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Practice Session 10</span>"
+    ]
   }
 ]

@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Vadym Katsel [Creator &amp; Lead Developer]">
-<meta name="author" content="Yevhenii Kozolup [Content Consultant]">
-<meta name="dcterms.date" content="2026-03-16">
 
-<title>Вступний модуль – Programming Concepts Course</title>
+<title>Practice Session 10 – Programming Concepts Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,8 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../modules/variables-data-types-operations-practice.html" rel="next">
-<link href="../index.html" rel="prev">
+<link href="../modules/git-practice.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -75,24 +106,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Пошук"
   }
 }</script>
-<style>
-  body {
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)),
-      url('../images/construction.png');
-
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
-
-  body.quarto-dark {
-    background-image:
-      linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-      url('../images/construction.png');
-  }
-</style>
+<link rel="icon" type="image/svg+xml" href="https://vadymkatsel.github.io/programming-concepts/images/favicon.svg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
 <link rel="stylesheet" href="../style.css">
@@ -267,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключити бокову панель навігації" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/about-the-course.html">Вступ та підготовка до курсу</a></li><li class="breadcrumb-item"><a href="../modules/about-the-course.html"><span class="chapter-title">Вступний модуль</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/dictionaries-lc-practice.html">Словники. List Comprehension</a></li><li class="breadcrumb-item"><a href="../modules/dictionaries-lc-practice.html"><span class="chapter-title">Practice Session 10</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключити бокову панель навігації" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Пошук" onclick="window.quartoOpenSearch();">
@@ -302,16 +317,16 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Вступ та підготовка до курсу</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Переключити розділ">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Переключити розділ">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/about-the-course.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Вступний модуль</span></a>
+  <a href="../modules/about-the-course.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Вступний модуль</span></a>
   </div>
 </li>
       </ul>
@@ -382,16 +397,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Словники. List Comprehension</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Переключити розділ">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Переключити розділ">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/dictionaries-lc-practice.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Practice Session 10</span></a>
+  <a href="../modules/dictionaries-lc-practice.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Practice Session 10</span></a>
   </div>
 </li>
       </ul>
@@ -406,9 +421,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Зміст</h2>
    
   <ul>
-  <li><a href="#ласкаво-просимо-на-курс-з-основ-програмування" id="toc-ласкаво-просимо-на-курс-з-основ-програмування" class="nav-link active" data-scroll-target="#ласкаво-просимо-на-курс-з-основ-програмування">🎉 Ласкаво просимо на курс з Основ Програмування!</a>
+  <li><a href="#словники-list-comprehension-та-робота-з-даними" id="toc-словники-list-comprehension-та-робота-з-даними" class="nav-link active" data-scroll-target="#словники-list-comprehension-та-робота-з-даними">📚 Словники, list comprehension та робота з даними</a>
   <ul class="collapse">
-  <li><a href="#в-майбутньому-тут-щось-буде-а-поки-under-construction" id="toc-в-майбутньому-тут-щось-буде-а-поки-under-construction" class="nav-link" data-scroll-target="#в-майбутньому-тут-щось-буде-а-поки-under-construction">В майбутньому тут щось буде, а поки <strong>Under Construction 🚧</strong></a></li>
+  <li><a href="#план-заняття" id="toc-план-заняття" class="nav-link" data-scroll-target="#план-заняття">📌 План заняття:</a></li>
+  <li><a href="#cheat-sheet" id="toc-cheat-sheet" class="nav-link" data-scroll-target="#cheat-sheet">📝 Cheat Sheet</a></li>
+  <li><a href="#warm-up" id="toc-warm-up" class="nav-link" data-scroll-target="#warm-up">Warm Up</a></li>
+  <li><a href="#live-coding-1-словник-як-база-даних" id="toc-live-coding-1-словник-як-база-даних" class="nav-link" data-scroll-target="#live-coding-1-словник-як-база-даних">👨‍💻 Live coding 1: Словник, як база даних</a>
+  <ul class="collapse">
+  <li><a href="#guided-practice" id="toc-guided-practice" class="nav-link" data-scroll-target="#guided-practice">🛠 Guided Practice:</a></li>
+  </ul></li>
+  <li><a href="#live-coding-2-адміністрація-даних" id="toc-live-coding-2-адміністрація-даних" class="nav-link" data-scroll-target="#live-coding-2-адміністрація-даних">👨‍💻 Live Coding 2: Адміністрація даних</a>
+  <ul class="collapse">
+  <li><a href="#guided-practice-1" id="toc-guided-practice-1" class="nav-link" data-scroll-target="#guided-practice-1">🛠 Guided Practice:</a></li>
+  </ul></li>
+  <li><a href="#live-coding-3-маніпуляції-над-даними-з-list-comprehension" id="toc-live-coding-3-маніпуляції-над-даними-з-list-comprehension" class="nav-link" data-scroll-target="#live-coding-3-маніпуляції-над-даними-з-list-comprehension">👨‍💻 Live Coding 3: Маніпуляції над даними з List Comprehension</a>
+  <ul class="collapse">
+  <li><a href="#guided-practice-2" id="toc-guided-practice-2" class="nav-link" data-scroll-target="#guided-practice-2">🛠 Guided Practice:</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -417,29 +446,16 @@ ul.task-list li input[type="checkbox"] {
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/about-the-course.html">Вступ та підготовка до курсу</a></li><li class="breadcrumb-item"><a href="../modules/about-the-course.html"><span class="chapter-title">Вступний модуль</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/dictionaries-lc-practice.html">Словники. List Comprehension</a></li><li class="breadcrumb-item"><a href="../modules/dictionaries-lc-practice.html"><span class="chapter-title">Practice Session 10</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Вступний модуль</span></h1>
+<h1 class="title"><span class="chapter-title">Practice Session 10</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta column-body">
 
-    <div>
-    <div class="quarto-title-meta-heading">Автори</div>
-    <div class="quarto-title-meta-contents">
-             <p>Vadym Katsel [Creator &amp; Lead Developer] </p>
-             <p>Yevhenii Kozolup [Content Consultant] </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Дата публікації</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">2026-03-16</p>
-    </div>
-  </div>
   
     
   </div>
@@ -449,12 +465,227 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="ласкаво-просимо-на-курс-з-основ-програмування" class="level2">
-<h2 class="anchored" data-anchor-id="ласкаво-просимо-на-курс-з-основ-програмування">🎉 Ласкаво просимо на курс з Основ Програмування!</h2>
-<section id="в-майбутньому-тут-щось-буде-а-поки-under-construction" class="level3">
-<h3 class="anchored" data-anchor-id="в-майбутньому-тут-щось-буде-а-поки-under-construction">В майбутньому тут щось буде, а поки <strong>Under Construction 🚧</strong></h3>
+<section id="словники-list-comprehension-та-робота-з-даними" class="level1">
+<h1>📚 Словники, list comprehension та робота з даними</h1>
+<section id="план-заняття" class="level2">
+<h2 class="anchored" data-anchor-id="план-заняття">📌 План заняття:</h2>
+<ul>
+<li>👨‍💻 Live coding 1: Словник, як база даних
+<ul>
+<li>🛠 Guided Practice</li>
+</ul></li>
+<li>👨‍💻 Live coding 2: Словник, як база даних
+<ul>
+<li>🛠 Guided Practice</li>
+</ul></li>
+<li>👨‍💻 Live Coding 3: Маніпуляції над даними з List Comprehension
+<ul>
+<li>🛠 Guided Practice</li>
+</ul></li>
+</ul>
+</section>
+<section id="cheat-sheet" class="level2">
+<h2 class="anchored" data-anchor-id="cheat-sheet">📝 Cheat Sheet</h2>
+<ol type="1">
+<li>Базова робота зі словниками (Dictionaries) Словник — це колекція пар ключ: значення. Ключі завжди унікальні.</li>
+</ol>
+<div id="33fe3e87" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Створення порожнього словника</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {}</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Додавання або оновлення значення [cite: 25]</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>my_dict[<span class="st">"new_key"</span>] <span class="op">=</span> <span class="st">"new_value"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Вкладені словники (Словник у словнику)</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> {<span class="dv">101</span>: {<span class="st">"name"</span>: <span class="st">"Alice"</span>, <span class="st">"grades"</span>: [<span class="dv">100</span>, <span class="dv">90</span>]}}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Доступ до вкладених даних</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>alice_grades <span class="op">=</span> db[<span class="dv">101</span>][<span class="st">"grades"</span>] </span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="2" type="1">
+<li>Корисні методи словників</li>
+</ol>
+<ul>
+<li><p><code>.get(key, default)</code> — безпечний пошук. Повертає значення за ключем. Якщо ключа немає, повертає default (не крашить програму!).</p></li>
+<li><p><code>.pop(key, default)</code> — безпечне видалення. Видаляє пару за ключем і повертає значення.</p></li>
+<li><p><code>.update(other_dict)</code> — об’єднання. Додає до поточного словника ключі та значення з other_dict.</p></li>
+</ul>
+<ol start="3" type="1">
+<li>Ітерація по словнику (Цикли)</li>
+</ol>
+<div id="23f305ea" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Пройтися тільки по ключах:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key <span class="kw">in</span> my_dict.keys(): <span class="co"># або просто for key in my_dict:</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Пройтися тільки по значеннях:</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> value <span class="kw">in</span> my_dict.values():</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Пройтися по парах ключ-значення:</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> my_dict.items():</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="4" type="1">
+<li>Корисні методи для списків (в контексті словників)</li>
+</ol>
+<ul>
+<li><code>.append(item)</code> — додає один елемент в кінець списку.</li>
+<li><code>.extend(list)</code> — розширює поточний список елементами з іншого списку. Корисно, коли треба додати кілька оцінок одразу.</li>
+</ul>
+<ol start="5" type="1">
+<li>List Comprehension (Генератори списків) Синтаксис для створення списків в один рядок. <code>[що_додати for елемент in колекція if умова]</code></li>
+</ol>
+<div id="d6a0a8f1" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Приклад: витягнути всі імена з нашої бази</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [data[<span class="st">"name"</span>] <span class="cf">for</span> data <span class="kw">in</span> db.values()]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Приклад: імена лише тих студентів, у кого є більше 3 оцінок</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>top_students <span class="op">=</span> [data[<span class="st">"name"</span>] <span class="cf">for</span> data <span class="kw">in</span> db.values() <span class="cf">if</span> <span class="bu">len</span>(data[<span class="st">"grades"</span>]) <span class="op">&gt;</span> <span class="dv">3</span>]</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="warm-up" class="level2">
+<h2 class="anchored" data-anchor-id="warm-up">Warm Up</h2>
+<ul>
+<li><p>У нас є словник з цінами: <code>menu = {"Latte": 60, "Americano": 40}</code>. Клієнт питає, скільки коштує Американо. Яким одним рядком коду ми можемо дістати цю цифру?</p></li>
+<li><p>Інфляція. Лате тепер коштує 70 грн. А ще ми додали в меню Капучино за 65 грн. Як оновити словник?</p></li>
+<li><p>Клієнт просить “Flat White”. Ми знаємо, що якщо написати <code>menu["Flat White"]</code>, програма впаде з помилкою <code>KeyError</code>, бо такого ключа немає. Як перевірити, чи є цей напій в меню, повертаючи <code>True</code> або <code>False</code>?</p></li>
+</ul>
+</section>
+<section id="live-coding-1-словник-як-база-даних" class="level2">
+<h2 class="anchored" data-anchor-id="live-coding-1-словник-як-база-даних">👨‍💻 Live coding 1: Словник, як база даних</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Попередження</span>Disclaimer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Оскільки ми продовжуємо працювати в нашому репозиторії з попередньої практики - обов’язково створіть</p>
+</div>
+</div>
+<p><strong>Контекст:</strong> Ми продовжуємо працювати з нашим попереднім проєктом, але тепер наша задача полягає в створенні бази даних, яка містить імена та ID cтудентів. Задача полягає в створенні такої структури, яка могла би вміщати в себе дані студентів, та з якою можна було би з легкістю проводити маніпуляції на кшталт додавання нових студентів, або видалення вже присутніх.</p>
+<p><strong>Вхідні дані:</strong> Набір пар: унікальний ID студента та його ім’я. Наприклад, <code>"Alice", 1</code></p>
+<p><strong>Очікуваний результат:</strong> Вивід імен та ID усіх студентів.</p>
+<section id="guided-practice" class="level3">
+<h3 class="anchored" data-anchor-id="guided-practice">🛠 Guided Practice:</h3>
+<p><strong>Контекст:</strong> Зберігання імен та ID студентів дозволяє нам розв’язати певні, проте доволі обмежені задачі. Перед нами постала проблема розширення нашої бази даних до такого вигляду, аби вона могла зберігати не лише ім’я студента, а і список його оцінок. Вашою метою є створення словника, який би задовольняв наші потреби в збереженні даних, а потім вивести усі дані про студентів на екран.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Порада</span>Поради щодо виконання
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Створіть новий порожній словник</li>
+<li>Ітеративно заповніть ключі та значення цього словника даними, які є у <code>students_db</code></li>
+<li>До кожного значення додайте пустий список оцінок. Формат значення: <code>{"name": "ім'я_студента", "grades": []}</code></li>
+<li>[BONUS] Заповніть список оцінок одного зі студентів випадковими значеннями</li>
+</ul>
+</div>
+</div>
+<p><strong>Вхідні дані:</strong> Словник виду <code>students_db = {ID: name}</code> з попередньої задачі.</p>
+<p><strong>Очікуваний результат:</strong> Оновлений cловник виду <code>{ID: {"name": "ім'я_студента", "grades": []}}</code></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Примітка</span>Примітка
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Пам’ятайте, що для того, аби додати значення до словника ви маєте скористатися синтаксисом на кшталт <code>dictionary[new_key] = new_value</code></p>
+</div>
+</div>
+</section>
+</section>
+<section id="live-coding-2-адміністрація-даних" class="level2">
+<h2 class="anchored" data-anchor-id="live-coding-2-адміністрація-даних">👨‍💻 Live Coding 2: Адміністрація даних</h2>
+<p><strong>Контекст:</strong> Наша новоспечена база даних працює! Проте, нашої з вами роботи виявилося замало, і окрім всіх речей, які ми зробили, нам потрібно вміти безпечно шукати студентів, відраховувати їх, та масово зараховувати нових студентів. Для того, аби ми могли зручно це робити, нам потрібно імплементувати три функції обгортки: <code>search_student(db, id)</code>, <code>expel_student(db, id)</code> та <code>add_students(db, students_dict)</code></p>
+<p><strong>Вхідні дані</strong>:</p>
+<ul>
+<li>Наша базова структура: db (словник студентів з попереднього завдання).</li>
+<li>Дані для тестування функцій:</li>
+<li>Для пошуку: існуючий id (напр., 101) та неіснуючий (напр., 999).</li>
+<li>Для відрахування: id студента (напр., 102).</li>
+<li>Для зарахування: словник з новачками</li>
+</ul>
+<div id="8950dd02" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>new_students <span class="op">=</span> {<span class="dv">104</span>: {<span class="st">"name"</span>: <span class="st">"David"</span>, <span class="st">"grades"</span>: []}, </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                <span class="dv">105</span>: {<span class="st">"name"</span>: <span class="st">"Eve"</span>, <span class="st">"grades"</span>: []}}</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Очікуваний результат</strong>:</p>
+<ul>
+<li><code>search_student(ab, id)</code> безпечно повертає словник з даними студента або повідомлення “Не знайдено”.</li>
+<li><code>expel_student(db, id)</code> видаляє запис з db та повертає дані відрахованого студента (або сповіщає, якщо такого ID немає).</li>
+<li><code>add_students(db, students_dict)</code> розширює db новими записами (нічого не повертає, просто мутує оригінальний словник).</li>
+</ul>
+<section id="guided-practice-1" class="level3">
+<h3 class="anchored" data-anchor-id="guided-practice-1">🛠 Guided Practice:</h3>
+<p><strong>Контекст:</strong> Ми покрили майже всі нюанси адміністрування нашої бази даних, окрім додавання оцінок для вже існуючих студентів. Вам потрібно написати функцію <code>add_grade(db, student_id, grades)</code>, яка повинна знайти студента за його ID і додати нові оцінки до його списку “grades”. Якщо студента з таким ID не існує — вивести попередження.</p>
+<p><strong>Вхідні дані:</strong> База даних <code>students_db</code> з попереднього завдання. Спробуйте додати оцінки <code>[95, 100]</code> студенту з ID 101 та оцінку <code>[80, 90]</code> студенту з ID 999.</p>
+<p><strong>Очікуваний результат:</strong> У студента 101 в списку оцінок мають з’явитися нові оцінки. При спробі додати оцінку студенту 999 на екран має вивестись повідомлення з помилкою.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Порада</span>Поради щодо виконання
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Використайте оператор in для перевірки наявності ID.</li>
+<li>Використайте метод списків .extend(), щоб додати елементи до існуючого списку оцінок.</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="live-coding-3-маніпуляції-над-даними-з-list-comprehension" class="level2">
+<h2 class="anchored" data-anchor-id="live-coding-3-маніпуляції-над-даними-з-list-comprehension">👨‍💻 Live Coding 3: Маніпуляції над даними з List Comprehension</h2>
+<p><strong>Контекст:</strong> Наша база даних розростається, і часто нам не потрібна вся інформація одразу, а лише конкретні вибірки. Наприклад, нас просять надати просто список імен усіх студентів для розсилки, а потім — окремий список тих, хто має хоча б одну оцінку “100”.</p>
+<p><strong>Вхідні дані:</strong> Наша поточна база students_db</p>
+<p><strong>Очікуваний результат:</strong></p>
+<ul>
+<li>Список усіх імен</li>
+<li>Список тих, у кого є 100 балів</li>
+</ul>
+<section id="guided-practice-2" class="level3">
+<h3 class="anchored" data-anchor-id="guided-practice-2">🛠 Guided Practice:</h3>
+<p><strong>Контекст:</strong> І як ваше фінальне завдання, вам потрібно вирахувати тих студентів, які, на жаль чи на щастя, залік цього терму не отримають. Умови отримання заліку: мати хоча би 3 оцінки. Всі, хто мають менше за 3 - залік не отримують</p>
+<p><strong>Вхідні дані:</strong> Ви можете оновити попередню базу даних, аби в різних студентів була різна кількість оцінок, або ж використати нову, запропоновану нижче:</p>
+<div id="36b95f6b" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>db_for_test <span class="op">=</span> {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">101</span>: {<span class="st">"name"</span>: <span class="st">"Alice"</span>, <span class="st">"grades"</span>: [<span class="dv">100</span>, <span class="dv">95</span>, <span class="dv">90</span>]}, <span class="co"># Здала все</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">102</span>: {<span class="st">"name"</span>: <span class="st">"Bob"</span>, <span class="st">"grades"</span>: [<span class="dv">70</span>, <span class="dv">75</span>]},        <span class="co"># Боржник</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="dv">103</span>: {<span class="st">"name"</span>: <span class="st">"Charlie"</span>, <span class="st">"grades"</span>: [<span class="dv">85</span>]}         <span class="co"># Боржник</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Очікуваний результат:</strong> Список імен <code>["Bob", "Charlie"]</code> студентів, які не отримають залік</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Попередження</span>Обмеження
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Для розв’язання цього завдання використовуйте тільки list comprehension!</p>
+</div>
+</div>
 
 
+</section>
 </section>
 </section>
 
@@ -874,14 +1105,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="Головна">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Головна</span></span>
+      <a href="../modules/git-practice.html" class="pagination-link" aria-label="Practice Session 9">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Practice Session 9</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../modules/variables-data-types-operations-practice.html" class="pagination-link" aria-label="Practice Session 2">
-        <span class="nav-page-text"><span class="chapter-title">Practice Session 2</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
