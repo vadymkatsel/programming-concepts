@@ -12,7 +12,7 @@ format:
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 ---
 
-# <i class="fa-duotone fa-brands fa-git-alt"></i>  Основи роботи з Git
+## <i class="fa-duotone fa-brands fa-git-alt"></i>  Основи роботи з Git
 
 Під час сьогоднішнього воркшопу ви зможете на практиці познайомитися з такими інструментами як Git та GitHub. Ці інструменти є стандартом для індустрії в сфері контролю версій та дозволяють гнучко налаштувати спільну роботу багатьох людей над проєктом одночасно. 
 
