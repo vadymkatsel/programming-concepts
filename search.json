@@ -290,7 +290,7 @@
     "href": "modules/dictionaries-lc-practice.html",
     "title": "Practice Session 10",
     "section": "",
-    "text": "📚 Словники, list comprehension та робота з даними",
+    "text": "📚 Словники, list comprehension та робота з даними\nСьогодні ми навчимося зберігати та обробляти зв’язну інформацію ефективно. Розберемося, як словники дозволяють миттєво знаходити дані за ключем без прив’язки до індексів, і як list comprehensions допомагають фільтрувати ці дані всього в один рядок коду.",
     "crumbs": [
       "Словники. List Comprehension",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Practice Session 10</span>"
@@ -319,11 +319,11 @@
     ]
   },
   {
-    "objectID": "modules/dictionaries-lc-practice.html#warm-up",
-    "href": "modules/dictionaries-lc-practice.html#warm-up",
+    "objectID": "modules/dictionaries-lc-practice.html#coffee-warm-up",
+    "href": "modules/dictionaries-lc-practice.html#coffee-warm-up",
     "title": "Practice Session 10",
-    "section": "Warm Up",
-    "text": "Warm Up\n\nУ нас є словник з цінами: menu = {\"Latte\": 60, \"Americano\": 40}. Клієнт питає, скільки коштує Американо. Яким одним рядком коду ми можемо дістати цю цифру?\nІнфляція. Лате тепер коштує 70 грн. А ще ми додали в меню Капучино за 65 грн. Як оновити словник?\nКлієнт просить “Flat White”. Ми знаємо, що якщо написати menu[\"Flat White\"], програма впаде з помилкою KeyError, бо такого ключа немає. Як перевірити, чи є цей напій в меню, повертаючи True або False?",
+    "section": "☕Coffee Warm Up",
+    "text": "☕Coffee Warm Up\n\nУ нас є словник з цінами: menu = {\"Latte\": 60, \"Americano\": 40}. Клієнт питає, скільки коштує Американо. Яким одним рядком коду ми можемо дістати цю цифру?\nІнфляція. Лате тепер коштує 70 грн. А ще ми додали в меню Капучино за 65 грн. Як оновити словник?\nКлієнт просить “Flat White”. Ми знаємо, що якщо написати menu[\"Flat White\"], програма впаде з помилкою KeyError, бо такого ключа немає. Як перевірити, чи є цей напій в меню, повертаючи True або False?",
     "crumbs": [
       "Словники. List Comprehension",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Practice Session 10</span>"
