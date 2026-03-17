@@ -263,3 +263,9 @@ background: rgba(30, 30, 30, 0.4);
     padding-right: 2px;
   }
 }
+
+@media print {
+    nav {
+        display: none !important;
+    }
+}

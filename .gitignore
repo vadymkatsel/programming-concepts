@@ -13,3 +13,4 @@ _site/
 **/*.quarto_ipynb
 /_freeze/
 *_files/
+docs/

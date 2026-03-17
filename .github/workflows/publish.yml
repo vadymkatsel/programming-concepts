@@ -23,6 +23,11 @@ jobs:
 
       - run: pip install jupyter
 
+      - name: Install Dependencies
+        run: |
+          pip install jupyter
+          pip install pandas matplotlib numpy
+          
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
