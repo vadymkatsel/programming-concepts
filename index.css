@@ -107,8 +107,8 @@ body {
     height: 48px;
     background-color: var(--text-primary);
 
-    -webkit-mask: url('../images/arrow-icon.svg') no-repeat center / contain;
-    mask: url('../images/arrow-icon.svg') no-repeat center / contain;
+    -webkit-mask: url('../sources/arrow-icon.svg') no-repeat center / contain;
+    mask: url('../sources/arrow-icon.svg') no-repeat center / contain;
 
     transition: background-color 0.3s ease, transform 0.2s ease, border-color 2s ease !important;
 }
@@ -279,7 +279,7 @@ body {
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.6), 
         rgba(0, 0, 0, 0.9)  
-    ), url('images/math-card-img.jpg');
+    ), url('sources/math-card-img.jpg');
     
     background-size: cover;
     background-position: center;
@@ -293,7 +293,7 @@ body {
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.6), 
         rgba(0, 0, 0, 0.9) 
-    ), url(images/be-card-img.jpg);
+    ), url(sources/be-card-img.jpg);
 }
 
 /* HOVERS */
