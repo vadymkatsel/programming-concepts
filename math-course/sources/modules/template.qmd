@@ -1,0 +1,66 @@
+---
+title: "Practice Session N"
+toc: true
+lang: ua
+execute:
+  eval: false
+page-layout: full
+format:
+  html:
+    include-in-header: 
+    - text: |
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+---
+
+## Topic
+
+## 📌 План заняття: 
+-   
+
+### 👨‍💻 Live coding 1:
+
+**Контекст:** 
+
+**Вхідні дані:** 
+
+**Очікуваний результат:** 
+
+#### 🛠 Guided Practice:
+
+**Контекст:** 
+
+**Вхідні дані:** 
+
+**Очікуваний результат:** 
+
+### Live Coding 2: 
+
+**Контекст:** 
+
+**Вхідні дані:** 
+
+**Очікуваний результат:** 
+
+#### Guided Practice:
+
+**Контекст:** 
+
+**Вхідні дані:** 
+
+**Очікуваний результат:** 
+
+### Live Coding 3:
+
+**Контекст:** 
+
+**Вхідні дані:** 
+
+**Очікуваний результат:** 
+
+#### Guided Practice:
+
+**Контекст:** 
+
+**Вхідні дані:** 
+
+**Очікуваний результат:** 
