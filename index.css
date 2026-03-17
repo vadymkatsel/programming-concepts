@@ -90,6 +90,8 @@ body {
 
 .desktop-nav a {
     transition: color 0.2s ease;
+    color: var(--text-primary);
+    text-decoration: none;
 }
 
 .burger-btn {
@@ -216,6 +218,7 @@ body {
     border: none;
     border-radius: var(--radius-sm);
     opacity: 1;
+    margin-bottom: var(--space-md);
 }
 
 /* Courses section */
