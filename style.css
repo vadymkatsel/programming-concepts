@@ -109,6 +109,13 @@ h1 {
   font-weight: 700;
 }
 
+/* main.content {
+    background: rgba(255, 255, 255, 0.02); 
+    border-radius: 16px;
+    padding: 40px !important;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 20px;
+} */
 
 #title-block-header {
   padding-bottom: 10px;
@@ -184,14 +191,61 @@ div.sidebar-item-container a.sidebar-item-text.active {
    padding-left: 0.8rem !important; 
 }
 
-#quarto-sidebar {
-  background-color: color-mix(in srgb, var(--bg-body), transparent 30%);
-  border-right: 1px solid var(--border-color) !important;
-  border-left: 1px solid var(--border-color) !important;
+/* #quarto-sidebar {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  border-radius: 16px;
+  margin-top: 20px;
   
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition: all 0.3s ease;
+} */
+
+#quarto-sidebar,
+#quarto-margin-sidebar,
+main.content {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 16px !important;
+    
+    margin-top: 20px !important;
+    margin-bottom: 40px !important;
+    height: 100%;
+    
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+
+}
+
+#quarto-sidebar,
+#quarto-margin-sidebar {
+    position: sticky !important;
+    
+    top: 90px !important; 
+    
+    max-height: calc(100vh - 140px) !important; 
+    
+    overflow-y: auto !important; 
+    
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+main.content {
+    padding: 40px !important;
+    min-height: calc(100vh - 200px) !important;
+}
+
+
+#quarto-sidebar {
+    padding: 20px !important;
+}
+
+#quarto-margin-sidebar {
+    padding: 20px !important;
 }
 
 #quarto-margin-sidebar .nav-link {
