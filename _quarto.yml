@@ -5,6 +5,7 @@ project:
     - "index.html"
     - "index.css"
     - "style.css"
+    - "script.js"
     - "sources/"
     - "courses/**/sources/"
 
@@ -77,5 +78,8 @@ format:
     include-in-header:
       text: |
         <link rel="icon" type="image/svg+xml" href="https://vadymkatsel.github.io/programming-concepts/images/favicon.svg">
+    include-after-body:
+      text: |
+        <script src="/script.js"></script>
 
 
