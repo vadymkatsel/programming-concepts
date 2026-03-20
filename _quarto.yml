@@ -20,15 +20,16 @@ website:
   repo-url: "https://github.com/vadymkatsel/programming-concepts"
 
   navbar:
-      background: "#0d1117"
-      left:
-        - href: courses/math-course/index.qmd
+      logo: sources/logo.svg
+      right:
+        - href: courses/math-course/modules/index.qmd
           text: "Математика"
-        - href: courses/be-course/index.qmd
+        - href: courses/be-course/modules/index.qmd
           text: "Бізнес Економіка"
   
   sidebar:
     - id: math-sidebar
+      title: "Математика в IT"
       search: true 
       collapse-level: 1
       contents:
