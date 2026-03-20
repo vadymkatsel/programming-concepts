@@ -1,81 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Lilex:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-
-/* COLORS */
+ 
+/* ============================================================
+   TOKENS
+   ============================================================ */
 :root {
-  --bg-body: #FCF7F8;
-  --fg-text: #413C3A;
-  --fg-muted: #656d76;
-  --accent-color: #F97316;
-  --border-color: #d0d7de;
-  --code-bg: #EEE7E9;
-  --footer-bg: rgba(255, 255, 255, 0.75);
-  --footer-border: 1px solid rgba(0, 0, 0, 0.05);
-  --footer-text: #252525;
-  --footer-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
-
-  --sections-bg: rgba(0, 0, 0, 0.02);
+  --bg-body:        #FCF7F8;
+  --fg-text:        #413C3A;
+  --fg-muted:       #656d76;
+  --accent-color:   #F97316;
+  --border-color:   #d0d7de;
+  --code-bg:        #EEE7E9;
+  --sections-bg:    rgba(0, 0, 0, 0.02);
   --section-border: rgba(0, 0, 0, 0.05);
 }
-
-/* DARK THEME OVERRIDES */
+ 
 body.quarto-dark {
-  --bg-body: #0d1117;
-  --fg-text: #e6edf3;
-  --fg-muted: #848d97;
-  --accent-color: #2e8ffe;
-  --border-color: #30363d;
-  --code-bg: #161b22;
-  --footer-bg: rgba(30, 30, 30, 0.6);
-  --footer-border: 1px solid rgba(255, 255, 255, 0.1);
-  --footer-text: #e5e5e5;
-  --footer-shadow: 0 -5px 20px rgba(0, 0, 0, 0.4);
-
-  --sections-bg: rgba(255, 255, 255, 0.02);
+  --bg-body:        #0d1117;
+  --fg-text:        #e6edf3;
+  --fg-muted:       #848d97;
+  --accent-color:   #2e8ffe;
+  --border-color:   #30363d;
+  --code-bg:        #161b22;
+  --sections-bg:    rgba(255, 255, 255, 0.02);
   --section-border: rgba(255, 255, 255, 0.05);
 }
-
-/* TYPOGRAPHY */
+ 
+/* ============================================================
+   BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+ 
 body {
   font-family: system-ui, -apple-system, "Ubuntu", sans-serif;
   background-color: var(--bg-body);
   color: var(--fg-text);
   line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
   letter-spacing: -0.1px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
+ 
 p {
-  font-family: 'Ubuntu';
+  font-family: 'Ubuntu', sans-serif;
 }
-
+ 
 h1, h2, h3, h4, h5, h6 {
   color: var(--fg-text);
   font-weight: 700;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
-
-h1 {
-  font-weight: 700;
+ 
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
-
-/* CODE */
+ 
+a:hover {
+  text-decoration: underline;
+}
+ 
+/* ============================================================
+   CODE
+   ============================================================ */
 code, kbd, pre, samp, .sourceCode {
   font-family: 'Lilex', monospace !important;
   background-color: var(--code-bg);
 }
-
+ 
 div.sourceCode {
   background-color: var(--code-bg);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   margin-bottom: 1.5rem;
 }
-
+ 
 pre {
   padding: 1rem;
 }
-
+ 
 code:not(pre code) {
   background-color: var(--code-bg);
   color: var(--accent-color);
@@ -84,42 +90,34 @@ code:not(pre code) {
   font-size: 0.9em;
   border: 1px solid var(--border-color);
 }
-
-p code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode) {
-  background-color: var(--code-bg);
-  padding: 0.2em;
-}
-
-/* COMPONENTS */
-* {
-  box-sizing: border-box;
-}
-
+ 
+/* ============================================================
+   COMPONENTS
+   ============================================================ */
 .figure-img {
   display: block;
   width: 50%;
   border-radius: 12px;
 }
-
+ 
 .callout {
   border-radius: 8px;
   border: 1px solid var(--border-color);
 }
-
+ 
 .level3 {
   border-bottom: 2px solid var(--border-color);
   transition: color 0.2s ease;
 }
+ 
+#title-block-header {
+  padding-bottom: 10px;
+}
 
-/* NAVIGATION */
+/* ============================================================
+   NAVBAR
+   ============================================================ */
 
-
-/* TODO:
-1. Handle Responisveness
-2. Handle Hovers
-3. Handle beauty
-
-*/
 .navbar {
   margin: 20px auto 0 auto !important; 
   padding: 10px !important;
@@ -134,6 +132,30 @@ p code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode) {
   box-shadow: none !important;
   border-bottom: none !important;
   transition: all 0.3s ease;
+}
+
+nav .nav-link:hover {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.navbar .nav-link {
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  padding: 8px 12px !important;
+  margin: 0 4px;
+  font-weight: 600;
+}
+
+.navbar .nav-link.active {
+  border-radius: 16px;
+  transition: all 0.2s ease;
+  padding: 8px 12px !important;
+  margin: 0 4px;
+  font-weight: 600;
+  color: var(--accent-color);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 95%) !important;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%) !important;
 }
 
 #title-block-header {
@@ -167,6 +189,7 @@ p code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode) {
   -webkit-backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--border-color) !important;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
 }
 
 /* LINKS */
@@ -174,6 +197,7 @@ a {
   color: var(--accent-color);
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.2 ease;
 }
 
 a:hover {
@@ -183,6 +207,7 @@ a:hover {
 .pagination-link:hover {
   color: var(--accent-color) !important;
 }
+
 
 /* SIDEBAR */
 div.sidebar-item-container .sidebar-item-text {
@@ -307,15 +332,24 @@ footer.footer {
 }
 
 /* RESPONSIVE */
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 991px) {
   #quarto-margin-sidebar {
     border-right: 1px solid var(--border-color) !important;
     padding-right: 2px;
   }
 
+  header.fixed-top,
+  .headroom {
+    transform: none !important; 
+  }
+
+  .headroom--unpinned {
+      transform: none !important; 
+  }
+
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 991px) {
     #quarto-content {
         display: block !important; 
         width: 100% !important;      
@@ -346,6 +380,65 @@ footer.footer {
     .quarto-search-button {
       display: none;
     }
+
+    .quarto-secondary-nav {
+      margin: 10px auto 0 auto !important; 
+      padding: 4px 10px !important;
+      border-radius: 16px !important;
+      
+      background: var(--sections-bg) !important;
+      border: 1px solid var(--section-border) !important;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: none !important;
+      
+      position: static !important;
+    }
+
+    header.fixed-top,
+    .headroom {
+      transform: translateY(0); 
+      transition: transform 0.3s ease-in-out !important;
+    }
+    
+    .headroom--unpinned {
+      transform: translateY(-150%) !important; 
+    }
+
+    #quarto-sidebar.collapse.show {
+      position: fixed !important;
+      
+      top: calc(var(--nav-bottom, 120px) + 10px) !important;
+      left: var(--pill-left, 10px) !important;
+      width: var(--pill-width, calc(100% - 20px)) !important;
+      
+      max-height: min(55vh, calc(100dvh - var(--nav-bottom, 120px) - 30px)) !important;
+      height: auto !important;
+      overflow-y: auto !important;
+
+      margin-top: 0 !important;
+      display: block !important;
+      transform: none !important;
+      padding: 15px !important;
+      
+      z-index: 1050 !important;
+    }
+
+    #quarto-sidebar-glass {
+      display: none;
+    }
+
+    #quarto-sidebar .sidebar-menu-container {
+      padding-top: 0 !important;
+      margin-top: 5px !important;
+      white-space: normal;
+      max-height: 55vh !important;
+      overflow-y: auto;
+    }
+
+    #quarto-sidebar .sidebar-item {
+      margin-bottom: 2px !important;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -357,6 +450,10 @@ footer.footer {
 
   .nav-footer {
     margin-top: 0 !important;
+  }
+
+  .navbar-title {
+    display: none;
   }
 
   footer.footer {
