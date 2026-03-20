@@ -158,9 +158,9 @@ nav .nav-link:hover {
   border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%) !important;
 }
 
-#title-block-header {
-  padding-bottom: 10px;
-}
+/* ============================================================
+   BREADCRUMB / SECONDARY NAV
+   ============================================================ */
 
 #quarto-sidebar > div.mt-2.flex-shrink-0.align-items-center {
   display: none;
@@ -209,7 +209,9 @@ a:hover {
 }
 
 
-/* SIDEBAR */
+/* ============================================================
+   PANELS  (sidebar + margin sidebar + main)
+   ============================================================ */
 div.sidebar-item-container .sidebar-item-text {
   color: var(--fg-muted) !important;
   transition: color 0.2s ease;
@@ -273,6 +275,10 @@ main.content {
   padding: 20px !important;
 }
 
+/* ============================================================
+   SIDEBAR — items
+   ============================================================ */
+
 #quarto-margin-sidebar .nav-link {
   color: var(--fg-muted) !important;
 }
@@ -293,7 +299,9 @@ main.content {
   font-weight: 700;
 }
 
-/* FOOTER */
+/* ============================================================
+   FOOTER
+   ============================================================ */
 .nav-footer {
   margin: 0 auto !important;
 
@@ -331,142 +339,124 @@ footer.footer {
   justify-content: center;
 }
 
-/* RESPONSIVE */
-@media screen and (min-width: 991px) {
-  #quarto-margin-sidebar {
-    border-right: 1px solid var(--border-color) !important;
-    padding-right: 2px;
-  }
-
-  header.fixed-top,
-  .headroom {
-    transform: none !important; 
-  }
-
-  .headroom--unpinned {
-      transform: none !important; 
-  }
-
-}
-
+/* ============================================================
+   RESPONSIVE — tablet / mobile  (≤ 991px)
+   ============================================================ */
 @media screen and (max-width: 991px) {
-    #quarto-content {
-        display: block !important; 
-        width: 100% !important;      
-        max-width: 100vw !important;  
-        margin: 0 !important;        
-        padding: 10px !important;
-        overflow-x: hidden;          
-    }
-
-    main.content {
-        width: calc(100% - 20px) !important;
-        max-width: 100% !important;
-        margin: 0 auto 20px auto !important; 
-        padding: 20px !important;
-        min-height: auto !important;
-        box-sizing: border-box !important;
-    }
-
-    #quarto-margin-sidebar {
-      display: none !important;
-    }
-
-    .nav-footer {
-        width: calc(100% - 20px) !important; 
-        margin: 20px auto !important; 
-    }
-
-    .quarto-search-button {
-      display: none;
-    }
-
-    .quarto-secondary-nav {
-      margin: 10px auto 0 auto !important; 
-      padding: 4px 10px !important;
-      border-radius: 16px !important;
-      
-      background: var(--sections-bg) !important;
-      border: 1px solid var(--section-border) !important;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: none !important;
-      
-      position: static !important;
-    }
-
-    header.fixed-top,
-    .headroom {
-      transform: translateY(0); 
-      transition: transform 0.3s ease-in-out !important;
-    }
-    
-    .headroom--unpinned {
-      transform: translateY(-150%) !important; 
-    }
-
-    #quarto-sidebar.collapse.show {
-      position: fixed !important;
-      
-      top: calc(var(--nav-bottom, 120px) + 10px) !important;
-      left: var(--pill-left, 10px) !important;
-      width: var(--pill-width, calc(100% - 20px)) !important;
-      
-      max-height: min(55vh, calc(100dvh - var(--nav-bottom, 120px) - 30px)) !important;
-      height: auto !important;
-      overflow-y: auto !important;
-
-      margin-top: 0 !important;
-      display: block !important;
-      transform: none !important;
-      padding: 15px !important;
-      
-      z-index: 1050 !important;
-    }
-
-    #quarto-sidebar-glass {
-      display: none;
-    }
-
-    #quarto-sidebar .sidebar-menu-container {
-      padding-top: 0 !important;
-      margin-top: 5px !important;
-      white-space: normal;
-      max-height: 55vh !important;
-      overflow-y: auto;
-    }
-
-    #quarto-sidebar .sidebar-item {
-      margin-bottom: 2px !important;
-    }
-}
-
-@media screen and (max-width: 700px) {
+  #quarto-content {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    overflow-x: hidden;
+  }
+ 
   main.content {
-    max-width: calc(100% - 20px) !important;
-    min-width: 90% !important;
-    margin: 20px auto 20px auto !important
+    width: calc(100% - 20px) !important;
+    margin: 0 auto 20px auto !important;
+    padding: 20px !important;
+    min-height: auto !important;
   }
-
+ 
+  #quarto-margin-sidebar {
+    display: none !important;
+  }
+ 
   .nav-footer {
-    margin-top: 0 !important;
+    width: calc(100% - 20px) !important;
+    margin: 20px auto !important;
   }
-
-  .navbar-title {
+ 
+  .quarto-search-button {
     display: none;
   }
-
-  footer.footer {
-    padding-bottom: 10px !important;
+ 
+  .quarto-secondary-nav {
+    position: static !important;
+    margin: 10px auto 0 auto !important;
+    padding: 4px 10px !important;
+    border-radius: 16px !important;
+    background: var(--sections-bg) !important;
+    border: 1px solid var(--section-border) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: none !important;
   }
-
+ 
+  header.fixed-top,
+  .headroom {
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out !important;
+  }
+ 
+  .headroom--unpinned {
+    transform: translateY(-150%) !important;
+  }
+ 
+  /* Dropdown sidebar */
+  #quarto-sidebar.collapse.show {
+    position: fixed !important;
+    top: calc(var(--nav-bottom, 120px) + 10px) !important;
+    left: var(--pill-left, 10px) !important;
+    width: var(--pill-width, calc(100% - 20px)) !important;
+    max-height: calc(100dvh - var(--nav-bottom, 120px) - 30px) !important;
+    overflow-y: auto !important;
+    margin-top: 0 !important;
+    padding: 15px !important;
+    display: block !important;
+    transform: none !important;
+    z-index: 1050 !important;
+  }
+ 
+  #quarto-sidebar-glass {
+    display: none;
+  }
+ 
+  #quarto-sidebar .sidebar-menu-container {
+    padding-top: 0 !important;
+    margin-top: 5px !important;
+    white-space: normal;
+  }
+ 
+  #quarto-sidebar .sidebar-item {
+    margin-bottom: 2px !important;
+  }
+}
+ 
+/* ============================================================
+   RESPONSIVE — small mobile  (≤ 700px)
+   ============================================================ */
+@media screen and (max-width: 700px) {
   #quarto-content {
     padding: 0 !important;
   }
+ 
+  main.content {
+    max-width: calc(100% - 20px) !important;
+    min-width: 90% !important;
+    margin: 20px auto !important;
+  }
+ 
+  .nav-footer {
+    margin-top: 0 !important;
+  }
+ 
+  .navbar-title {
+    display: none;
+  }
+ 
+  footer.footer {
+    padding-bottom: 10px !important;
+  }
 }
-
+ 
+/* ============================================================
+   PRINT
+   ============================================================ */
 @media print {
   nav {
     display: none !important;
   }
 }
+ 
