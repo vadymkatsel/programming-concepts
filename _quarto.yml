@@ -109,8 +109,9 @@ format:
     number-sections: false
     favicon: images/favicon.svg
     include-in-header:
-      text: |
-        <link rel="icon" type="image/svg+xml" href="https://vadymkatsel.github.io/programming-concepts/images/favicon.svg">
+      - text: |
+          <link rel="icon" type="image/svg+xml" href="https://vadymkatsel.github.io/programming-concepts/images/favicon.svg"
+      - file: analytics.html
     include-after-body:
       text: |
         <script src="/script.js"></script>
