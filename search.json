@@ -1,365 +1,862 @@
 [
   {
-    "objectID": "modules/about-the-course.html",
-    "href": "modules/about-the-course.html",
-    "title": "Вступний модуль",
+    "objectID": "courses/be-course/modules/variables-data-types-operations-practice.html",
+    "href": "courses/be-course/modules/variables-data-types-operations-practice.html",
+    "title": "Практична №2",
     "section": "",
-    "text": "🎉 Ласкаво просимо на курс з Основ Програмування!",
-    "crumbs": [
-      "Вступ та підготовка до курсу",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Вступний модуль</span>"
-    ]
+    "text": "📌 Завдання 1\nУявіть, що Вам необхідно написати простий калькулятор вартості замовлення для ресторану. Вам необхідно, аби в користувача була можливість увести назву страви, її ціну, кількість замовлених порцій та знижку. Також необхідно врахувати, що на вартість обіду впливає податок на додану вартість (ПДВ), який становить 20%.\nПриклад виконання програми:\nEnter the name of the dish: Borshch\nEnter the price of the dish: 100\nEnter the quantity of portions: 2\nEnter the discount (%): 10\n\nThe total of &lt;quantity&gt; &lt;name&gt; will be &lt;total&gt; UAH, including &lt;tax&gt; UAH tax.\n\n\n🔍 Поради щодо виконання.\n\nВикористовуйте функцію input() для отримання даних від користувача.\nПеретворюйте введені дані у відповідні типи (наприклад, float для ціни та знижки, int для кількості).\nВикористовуйте змінні для збереження введених даних та обчислень.\nДля того, щоб вивести результат, використовуйте функцію print() та форматовані рядки.\n\n\n\n\n\n\n\nПорада\n\n\n\nДля цього завдання, ми знехтуємо правильністю вводу користувача, та приймемо як належне те, що користувач уводить тільки правильні дані."
   },
   {
-    "objectID": "modules/about-the-course.html#ласкаво-просимо-на-курс-з-основ-програмування",
-    "href": "modules/about-the-course.html#ласкаво-просимо-на-курс-з-основ-програмування",
-    "title": "Вступний модуль",
+    "objectID": "courses/be-course/modules/conditionals-practice.html",
+    "href": "courses/be-course/modules/conditionals-practice.html",
+    "title": "Практична №3 (Тиждень 3)",
     "section": "",
-    "text": "В майбутньому тут щось буде, а поки Under Construction 🚧",
-    "crumbs": [
-      "Вступ та підготовка до курсу",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Вступний модуль</span>"
-    ]
+    "text": "📌 Завдання: “Калькулятор Чайових / Розділення Рахунку”\nСьогодні ваше завдання буде полягати в тому, щоб написати програму, яка розраховує, скільки має заплатити кожна людина в ресторані, враховуючи чайові на основі якості обслуговування. Це завдання повністю фокусується на використанні if/elif/else для прийняття рішень.\n\n📝 Робота Програми\nВаша програма має працювати точно за таким сценарієм:\n\nОтримання даних:\n\nПрограма питає користувача про total_bill (загальний рахунок). Це значення має бути float.\nПрограма питає користувача про num_people (кількість людей, на яких ділиться рахунок). Це значення має бути int.\nПрограма питає користувача про service_level (якість обслуговування). Це str.\n\nПеревірка вхідних даних (Safety Check):\n\nПерш ніж робити будь-які розрахунки, програма має перевірити, чи num_people &gt; 0.\nЯкщо num_people &lt;= 0: Програма повинна вивести повідомлення про помилку (наприклад, \"Помилка: Кількість людей має бути 1 або більше.\") і завершити роботу (тобто, решта кроків не виконується).\nЯкщо num_people &gt; 0: Програма переходить до кроку 3. (Вся наступна логіка має бути “вкладена” всередину цієї if перевірки).\n\nВизначення відсотка чайових (Основна логіка):\n\nПрограма використовує “драбинку” if/elif/else для аналізу змінної service_level.\nЯкщо service_level == 'bad': відсоток чайових (tip_percent) становить 0.10 (10%).\nЯкщо service_level == 'ok': tip_percent становить 0.15 (15%).\nЯкщо service_level == 'good': tip_percent становить 0.20 (20%).\nelse (в усіх інших випадках): Якщо користувач ввів щось інше (напр., “amazing”, “жахливо”, “123”), програма має встановити tip_percent за замовчуванням, який дорівнює 0.15 (15%), і (необов’язково, але бажано) вивести повідомлення \"Невідомий рівень сервісу. Використовуємо стандартні 15%.\".\n\nРозрахунки (виконуються, тільки якщо num_people &gt; 0):\n\ntip_amount = total_bill * tip_percent\nfinal_bill = total_bill + tip_amount\nbill_per_person = final_bill / num_people\n\nВиведення результату:\n\nПрограма має вивести фінальний, гарно відформатований результат. Використовуйте f-strings та форматування :.2f або round(), щоб показати суми з двома знаками після коми (як копійки).\n\n\n\n\n📝 Приклади виводу:\n--- Bill divider ---\nEnter the total bill: 1500\nEnter the number of people: 4\nEnter the service level (good/ok/bad): good\n\n--- Your bill ---\nThe total amount: 1800.00\nIncluding tip (20%): 300.00 UAH\nEach person should pay: 450.00 UAH\n--- Bill divider ---\nEnter the total bill: 800\nEnter the number of people: 3\nEnter the service level (good/ok/bad): fantastic\n\n--- Your bill ---\nUknown service level. Setting tip percent to default (15%).\nThe total amount: 920.00\nIncluding  tip (15%): 120.00 UAH\nEach person should pay: 306.67 UAH\n--- Your bill ---\nEnter the total bill: 500\nEnter the number of people: 0\nEnter the service level (good/ok/bad): good\n\nError: Number of people must be greater than zero."
   },
   {
-    "objectID": "modules/variables-data-types-operations-practice.html",
-    "href": "modules/variables-data-types-operations-practice.html",
+    "objectID": "courses/be-course/modules/lists-practice.html",
+    "href": "courses/be-course/modules/lists-practice.html",
+    "title": "Практична №4.1",
+    "section": "",
+    "text": "Lists та їхні властивості\nLive coding №1: Трекер продажів\nLive coding №2: Інтерактивний ввід\nQ&A\nВаше завдання"
+  },
+  {
+    "objectID": "courses/be-course/modules/lists-practice.html#план-на-сьогодні",
+    "href": "courses/be-course/modules/lists-practice.html#план-на-сьогодні",
+    "title": "Практична №4.1",
+    "section": "",
+    "text": "Lists та їхні властивості\nLive coding №1: Трекер продажів\nLive coding №2: Інтерактивний ввід\nQ&A\nВаше завдання"
+  },
+  {
+    "objectID": "courses/be-course/modules/lists-practice.html#коробки",
+    "href": "courses/be-course/modules/lists-practice.html#коробки",
+    "title": "Практична №4.1",
+    "section": "📦 Коробки",
+    "text": "📦 Коробки\nДо сьогоднішнього дня всі наші дані ми зберігали у простих ‘коробках’ — змінних. name = 'Іван', price = 12.50. Це чудово, але що, якщо у вас 100 студентів? Або 1000 цін на акції?\n\nstudent1 = \"Alice\"\nstudent2 = \"Bob\"\nstudent3 = \"Peter\"\n.\n.\n.\nstudent1000 = \"Pablo\"\n\nСтворювати 1000 змінних — це жах. Нам потрібні контейнери."
+  },
+  {
+    "objectID": "courses/be-course/modules/lists-practice.html#контейнери",
+    "href": "courses/be-course/modules/lists-practice.html#контейнери",
+    "title": "Практична №4.1",
+    "section": "🫙 Контейнери",
+    "text": "🫙 Контейнери\nДля вирішення в цієї проблеми в Python є різні структури даних:\n\nList\nSet\nTuple\nDictionary\n\nУявіть, що Список (List) — це як шафа з пронумерованими поличками.\n\nstudents = [\"Alice\", \"Bob\", \"Peter\"]"
+  },
+  {
+    "objectID": "courses/be-course/modules/lists-practice.html#властивості-списків",
+    "href": "courses/be-course/modules/lists-practice.html#властивості-списків",
+    "title": "Практична №4.1",
+    "section": "📋 Властивості списків",
+    "text": "📋 Властивості списків\n\nІндексація почнається з 0\nВпорядковані (все буде лежати в тому порядку, в якому ви додали)\n\nstudents = [\"Alice\", \"Bob\", \"Peter\"]\n#              0       1       2\n\nЗмінювані (можна додавати, видаляти, змінювати елементи)\n\nstudents[1] = \"Robert\"  \n# students = [\"Alice\", \"Robert\", \"Peter\"]\nstudents.append(\"Maria\")\n# students = [\"Alice\", \"Robert\", \"Peter\", \"Maria\"]\nstudents.pop()\n# students = [\"Alice\", \"Robert\", \"Peter\"]\n\nПідтримка різних типів\n\nmixed_list = [1, \"Hello\", 3.14, True]"
+  },
+  {
+    "objectID": "courses/be-course/modules/lists-practice.html#live-coding-1",
+    "href": "courses/be-course/modules/lists-practice.html#live-coding-1",
+    "title": "Практична №4.1",
+    "section": "👨🏻‍💻 Live coding 1:",
+    "text": "👨🏻‍💻 Live coding 1:\n\nТрекер продажів\n\n\n\n\n\n\nNoneЗавдання\n\n\n\nУявімо, що нам потрібно відслідковувати продажі. Нам надали певні дані, потрібно їх якось зберегти і обробити.\n\n\nЩо саме потрібно зробити:\n\nЗаписати дані\nВивести дані по дням\nПоказати кількість днів, за яку в нас є дані\nВивести продажі за останній день\n\n\n\nОпрацювання даних\n\n\n\n\n\n\nТепер, коли маємо дані, давайте зробимо певний аналіз. Припустимо, що маємо такий список: sales_week = [1500, 2150, 1850, 2050, 1700]\n\n\n\nЗробімо наступне:\n\nПорахуймо суму продажів за тиждень\nЗнайдімо к-сть днів з низькими продажами (менше ніж 1800)\nЗнайдімо середній продаж за день"
+  },
+  {
+    "objectID": "courses/be-course/modules/lists-practice.html#live-coding-2-інтерактивний-ввід-даних",
+    "href": "courses/be-course/modules/lists-practice.html#live-coding-2-інтерактивний-ввід-даних",
+    "title": "Практична №4.1",
+    "section": "👨🏻‍💻 Live coding 2: Інтерактивний ввід даних",
+    "text": "👨🏻‍💻 Live coding 2: Інтерактивний ввід даних\nДавайте уявимо, що маємо завдання написати систему збору оцінок.\nПрограма має запитувати у користувача кілька значень і автоматично зберігати їх у список. В кінці, ми покажемо користувачу, що він ввів."
+  },
+  {
+    "objectID": "courses/be-course/modules/lists-practice.html#ваше-завдання",
+    "href": "courses/be-course/modules/lists-practice.html#ваше-завдання",
+    "title": "Практична №4.1",
+    "section": "🔍 Ваше завдання",
+    "text": "🔍 Ваше завдання\nВаше завдання буде об’єднувати в собі другий та третій Live Coding.\nВаша задача полягає в тому, аби написати програму, яка просить в користувача увести 5 оцінок. Ви маєте зберегти ці 5 оцінок у списку, після чого вивести на екран середній бал та кількість найвищих оцінок (ви можете використати 10 як найвищу оцінку). \nПриклад роботи програми:\n\n---Grades---\nPlease, enter grade 1: 9\nPlease, enter grade 2: 11\n11 is not supported. Please, choose between 0 and 10.\n\nPlease, enter grade 2: 10\nPlease, enter grade 3: djfhdj\nInvalid format, try again\n\nPlease, enter grade 3: 8\nPlease, enter grade 4: 7\nPlease, enter grade 5: 10\n\nThe mean grade is 8.8, and the number of top grades (10) is 2."
+  },
+  {
+    "objectID": "courses/be-course/modules/comprehensions-practice.html",
+    "href": "courses/be-course/modules/comprehensions-practice.html",
+    "title": "Lists & Dict Comprehension. Basic modules",
+    "section": "",
+    "text": "List Comprehension\nLive coding 1: Список транзакцій\nDict Comprehension\nLive coding 2: Інфляція та прайс листи\nBasic modules in Python\nLive coding 3: Щасливий чек"
+  },
+  {
+    "objectID": "courses/be-course/modules/comprehensions-practice.html#план",
+    "href": "courses/be-course/modules/comprehensions-practice.html#план",
+    "title": "Lists & Dict Comprehension. Basic modules",
+    "section": "",
+    "text": "List Comprehension\nLive coding 1: Список транзакцій\nDict Comprehension\nLive coding 2: Інфляція та прайс листи\nBasic modules in Python\nLive coding 3: Щасливий чек"
+  },
+  {
+    "objectID": "courses/be-course/modules/comprehensions-practice.html#list-comprehension",
+    "href": "courses/be-course/modules/comprehensions-practice.html#list-comprehension",
+    "title": "Lists & Dict Comprehension. Basic modules",
+    "section": "🔍 List Comprehension",
+    "text": "🔍 List Comprehension\nList Comprehension - це зручний спосіб створення списків у Python за допомогою короткого синтаксису.\n\n\n\n\n\n\nПримітка\n\n\n\nУявіть, що ви хочете створити список цін у гривнях, маючи список цін в доларах"
+  },
+  {
+    "objectID": "courses/be-course/modules/comprehensions-practice.html#без-list-comprehension",
+    "href": "courses/be-course/modules/comprehensions-practice.html#без-list-comprehension",
+    "title": "Lists & Dict Comprehension. Basic modules",
+    "section": "❌ Без List Comprehension",
+    "text": "❌ Без List Comprehension\n\nprices_usd = [10, 20, 50, 100]\nprices_uah = []\nfor price in prices_usd:\n    prices_uah.append(price * 41.5)\nprint(prices_uah)\n\n[415.0, 830.0, 2075.0, 4150.0]"
+  },
+  {
+    "objectID": "courses/be-course/modules/comprehensions-practice.html#з-list-comprehension",
+    "href": "courses/be-course/modules/comprehensions-practice.html#з-list-comprehension",
+    "title": "Lists & Dict Comprehension. Basic modules",
+    "section": "✅ З List Comprehension",
+    "text": "✅ З List Comprehension\n\nprices_usd = [10, 20, 50, 100]\nprices_uah = [price * 41.5 for price in prices_usd]\nprint(prices_uah)\n\n[415.0, 830.0, 2075.0, 4150.0]"
+  },
+  {
+    "objectID": "courses/be-course/modules/comprehensions-practice.html#live-coding-1-список-транзакцій",
+    "href": "courses/be-course/modules/comprehensions-practice.html#live-coding-1-список-транзакцій",
+    "title": "Lists & Dict Comprehension. Basic modules",
+    "section": "👨🏻‍💻 Live Coding 1: Список транзакцій",
+    "text": "👨🏻‍💻 Live Coding 1: Список транзакцій\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nУ нас є список транзакцій у доларах. Нам потрібно:\n\nПеревести їх у гривні (курс 41.5).\nВідфільтрувати транзакції менше 10$.\n\n\n\n\n📝 Ваше завдання:\n\n\n\n\n\n\nВажливоЗадача\n\n\n\nУ вас є “сирий” список транзакцій (деякі помилкові/від’ємні): raw_data = [100, -50, 20, 0, 500, -10]\nСтворіть список рядків receipts (чеків), використовуючи List Comprehension. Вимоги до одного рядка коду:\n\nБеремо тільки додатні транзакції (&gt; 0).\nДодаємо до суми 5% податку.\nРезультат має бути рядком (f-string): “Сума: 105.0 грн”.\n\n\n\nОчікуваний результат: ['Сума: 105.0 грн', 'Сума: 21.0 грн', 'Сума: 525.0 грн']"
+  },
+  {
+    "objectID": "courses/be-course/modules/comprehensions-practice.html#dict-comprehension",
+    "href": "courses/be-course/modules/comprehensions-practice.html#dict-comprehension",
+    "title": "Lists & Dict Comprehension. Basic modules",
+    "section": "🔍 Dict Comprehension",
+    "text": "🔍 Dict Comprehension\nЯк і List Comprehension, Dict Comprehension дозволяє створювати словники у зручний спосіб. Синтаксично, Dict Comprehension виглядає так:\n{key: value for (key, value) in iterable if condition}\n\nkeys = ['a','b','c','d','e']\nvalues = [1,2,3,4,5]  \n\n# but this line shows dict comprehension here  \nmyDict = { k:v for (k,v) in zip(keys, values)}  \n\nprint (myDict)\n\n{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}"
+  },
+  {
+    "objectID": "courses/be-course/modules/comprehensions-practice.html#live-coding-2-інфляція-та-прайс-листи",
+    "href": "courses/be-course/modules/comprehensions-practice.html#live-coding-2-інфляція-та-прайс-листи",
+    "title": "Lists & Dict Comprehension. Basic modules",
+    "section": "👨🏻‍💻 Live Coding 2: Інфляція та прайс листи",
+    "text": "👨🏻‍💻 Live Coding 2: Інфляція та прайс листи\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nУ нас є словник поточних цін на складі (в доларах). Нам потрібно:\n\nПеревести ціни в гривні (курс 41.5).\nВрахувати інфляцію (+10% до ціни).\n\n\n\nproducts_usd = {     'Apple': 1.5,     'Banana': 0.8,     'Avocado': 2.5,     'Mango': 3.0 } rate = 41.5\n\n📝 Ваше завдання:\n\n\n\n\n\n\nВажливоЗадача\n\n\n\nУ вас є портфель акцій у доларах: stocks_usd = {'AAPL': 150, 'GOOGL': 2800, 'TSLA': 700, 'AMZN': 3300} Курс: rate = 41.5\nСтворіть новий словник high_value_uah, в який потраплять:\n\nТільки ті акції, вартість яких у гривні перевищує 30 000 грн.\nЗначення мають бути вже в гривнях.\n\n\n\nПідказка: Вам доведеться помножити на курс і в частині value, і в частині if."
+  },
+  {
+    "objectID": "courses/be-course/modules/comprehensions-practice.html#basic-modules-in-python",
+    "href": "courses/be-course/modules/comprehensions-practice.html#basic-modules-in-python",
+    "title": "Lists & Dict Comprehension. Basic modules",
+    "section": "🔍 Basic modules in Python",
+    "text": "🔍 Basic modules in Python\nМодуль - це файл, який містить визначення функцій, класів і змінних, які можна використовувати в інших програмах.\nЦе означає що для багатьох програм, ми можемо перевикористати вже написаний код, аби не писати з нуля та зекономити час.\nPython має велику кількість вбудованих модулів, які можна імпортувати та використовувати у своїх програмах. Ось деякі з найпоширеніших:\n\nmath: Модуль для виконання математичних операцій.\nrandom: Модуль для генерації випадкових чисел.\ndatetime: Модуль для роботи з датами та часом."
+  },
+  {
+    "objectID": "courses/be-course/modules/comprehensions-practice.html#імпорт-та-використання-модулів",
+    "href": "courses/be-course/modules/comprehensions-practice.html#імпорт-та-використання-модулів",
+    "title": "Lists & Dict Comprehension. Basic modules",
+    "section": "📦 Імпорт та використання модулів",
+    "text": "📦 Імпорт та використання модулів\n\n\n\nПриклад використання модуля math\n\nimport math\n\nprice = 19.1\n\n# Округлення вгору (ceiling - стеля)\nprint(f\"Ceil: {math.ceil(price)}\")  # -&gt; 20\n\n# Округлення вниз (floor - підлога)\nprint(f\"Floor: {math.floor(price)}\")\n\n# Корінь квадратний\nprint(f\"Sqrt: {math.sqrt(144)}\")    \n\n\nCeil: 20\nFloor: 19\nSqrt: 12.0\n\n\n\nДля імпорту використовуємо ключове слово import\nПісля імпорту можна використовувати функції та змінні модуля, звертаючись до них через крапку (наприклад, math.ceil())."
+  },
+  {
+    "objectID": "courses/be-course/modules/comprehensions-practice.html#способи-імпорту-моудулів",
+    "href": "courses/be-course/modules/comprehensions-practice.html#способи-імпорту-моудулів",
+    "title": "Lists & Dict Comprehension. Basic modules",
+    "section": "⬇️ Способи імпорту моудулів",
+    "text": "⬇️ Способи імпорту моудулів\n\nІмпорт всього модуля\n\nimport math\n\n# Ми повинні звертатися через крапку: модуль.функція\nprint(math.sqrt(25))\n\n5.0\n\n\n\n\nІмпорт конкретної функції або змінної з модуля\n\nfrom math import ceil\n\n# Тепер можна писати назву функції без \"math.\"\nprice = 19.1\nprint(ceil(price)) # Округлення вгору -&gt; 20\n\n20\n\n\n\n\nІмпорт з псевдонімом (alias)\n\nimport matplotlib.pyplot as plt\n\n# Дані: Місяці та Продажі (тис. $)\nmonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May']\nsales = [10, 15, 13, 18, 25]\n\n# Ми використовуємо коротке \"plt\"\nplt.plot(months, sales)\nplt.title(\"Динаміка продажів\")\nplt.xlabel(\"Місяць\")\nplt.ylabel(\"Продажі ($)\")\nplt.show()"
+  },
+  {
+    "objectID": "courses/be-course/modules/comprehensions-practice.html#live-coding-3-генератор-чека",
+    "href": "courses/be-course/modules/comprehensions-practice.html#live-coding-3-генератор-чека",
+    "title": "Lists & Dict Comprehension. Basic modules",
+    "section": "👨🏻‍💻 Live Coding 3: Генератор чека",
+    "text": "👨🏻‍💻 Live Coding 3: Генератор чека\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nМи розробляємо систему лояльності. Клієнт робить покупку. Наша програма має:\n\nНадати йому випадкову знижку (5%, 10% або 20%).\nРозрахувати фінальну ціну і округлити її вгору.\nВидати чек з точною датою та часом."
+  },
+  {
+    "objectID": "courses/be-course/modules/midterm-revision.html",
+    "href": "courses/be-course/modules/midterm-revision.html",
+    "title": "Midterm Revision",
+    "section": "",
+    "text": "ПриміткаТЗ\n\n\n\nНапишіть програму, яка розраховує кінцеву суму транзакції. Для цього, запитайте в користувача суму транзакції (зчитати з консолі дійсне число). Якщо сума перевищує 1200.00, банк стягує комісію у розмірі 1.5% від суми. В іншому випадку комісія не стягується. Виведіть на екран суму комісії та кінцеву суму до сплати\n\n\n\n\n\nЗапитати у користувача суму транзакції\nПеревірити, чи перевищує сума 1200.00\nЯкщо так, обчислити комісію як 1.5% від суми\nВивести комісію та кінцеву суму до сплати"
+  },
+  {
+    "objectID": "courses/be-course/modules/midterm-revision.html#завдання-1",
+    "href": "courses/be-course/modules/midterm-revision.html#завдання-1",
+    "title": "Midterm Revision",
+    "section": "",
+    "text": "ПриміткаТЗ\n\n\n\nНапишіть програму, яка розраховує кінцеву суму транзакції. Для цього, запитайте в користувача суму транзакції (зчитати з консолі дійсне число). Якщо сума перевищує 1200.00, банк стягує комісію у розмірі 1.5% від суми. В іншому випадку комісія не стягується. Виведіть на екран суму комісії та кінцеву суму до сплати\n\n\n\n\n\nЗапитати у користувача суму транзакції\nПеревірити, чи перевищує сума 1200.00\nЯкщо так, обчислити комісію як 1.5% від суми\nВивести комісію та кінцеву суму до сплати"
+  },
+  {
+    "objectID": "courses/be-course/modules/midterm-revision.html#завдання-2",
+    "href": "courses/be-course/modules/midterm-revision.html#завдання-2",
+    "title": "Midterm Revision",
+    "section": "📝 Завдання 2",
+    "text": "📝 Завдання 2\n\n\n\n\n\n\nПриміткаТЗ\n\n\n\nСтворіть список monthly_profit з 12 дійсних чисел (від -3000 до 3000). Значення обирайте випадковим чином самостійно.\nОтже, у вашій програмі надано список monthly_profit, який містить фінансові результати компанії за рік, починаючи із січня.\nДодатні числа — це прибуток. Від’ємні числа — це збиток.\nНапишіть програмний код, з використанням якого, буде знаходитися перший місяць, у якому компанія зазнала збитків (прибуток менше 0), і виводить на екран його порядковий номер.\nЗверніть увагу, що програмний код має виконуватися для будь-якого списку monthly_profit, що відповідає умові. Тобто, якщо викладач замінить значення у списку, кож має працювати коректно.\n\n\n\nЯк вирішувати?\n\nСтворити список monthly_profit\nІтеруватися по списку з використанням циклу\nПеревірити кожне значення на від’ємність\nЯкщо знайдено від’ємне значення, вивести його порядковий номер і припинити цикл"
+  },
+  {
+    "objectID": "courses/be-course/modules/midterm-revision.html#завдання-3",
+    "href": "courses/be-course/modules/midterm-revision.html#завдання-3",
+    "title": "Midterm Revision",
+    "section": "📝 Завдання 3",
+    "text": "📝 Завдання 3\n\n\n\n\n\n\nПриміткаТЗ\n\n\n\nКористувач має ввести з клавіатури ціни на 10 товарів у доларах США.\nПоточний курс долара становить 41.5 грн.\nНапишіть програму, яка:\n\nПриймає 10 чисел (ціни в доларах). Кожне нове число запитується з нового рядка.\nПереводить кожну ціну в гривні.\nЗберігає у новий список лише ті ціни в гривнях, які не перевищують 1000 грн (бюджетні товари).\nВиводить підсумковий список бюджетних цін на екран.\n\n\n\n\nПриклад введення/виведення\nВведіть 10 цін у USD.\n\nEnter price 1 (USD): 20\nEnter price 2 (USD): 5\nEnter price 3 (USD): 25\nEnter price 4 (USD): 1\nEnter price 5 (USD): 15\nEnter price 6 (USD): 30\nEnter price 7 (USD): 24\nEnter price 8 (USD): 2\nEnter price 9 (USD): 18\nEnter price 10 (USD): 50\n\nПідсумковий список бюджетних цін (до 1000.0 грн):\n[830.0, 207.5, 41.5, 622.5, 996.0, 83.0, 747.0]\n\n\nЯк вирішувати?\n\nСтворити порожній список для збереження бюджетних цін\nЗа допомогою циклу прийняти 10 цін від користувача\nПеревести кожну ціну в гривні, помноживши на 41.5\nЯкщо переведена ціна менша за 1000 гривень - додаємо її до списку\nВрешті, виводимо список бюджетних цін на екран"
+  },
+  {
+    "objectID": "courses/be-course/modules/midterm-revision.html#завдання-4",
+    "href": "courses/be-course/modules/midterm-revision.html#завдання-4",
+    "title": "Midterm Revision",
+    "section": "📝 Завдання 4",
+    "text": "📝 Завдання 4\n\n\n\n\n\n\nПриміткаТЗ\n\n\n\nПеред вами стоїть задача написати “Симулятор банкомату”.\nПрограма має працювати наступним чином:\n\nСпочатку ви маєте показати користувачу меню доступних операцій:\n\n\nПеревірити баланс\nЗняти гроші\nПоповнити рахунок\nВийти\n\n\nВ залежності від вибраної операції (користувач має увести відповідний номер), програма має виконати відповідну дію.\nБаланс користувача початково встановлюється на 1000 гривень.\nЯкщо користувач вводить недоступну команду (що завгодно окрім 1, 2, 3 чи 4), програма має вивести повідомлення про помилку і знову показати меню. - Програма працює доти, доки користувач не обере завершити роботу (опція 4).\n\n\n\n\nПриклад введення/виведення\n------------------------------------\nСимулятор Банкомату\n1. Перевірити баланс\n2. Зняти гроші\n3. Поповнити рахунок\n4. Вийти\n------------------------------------\nВведіть операцію (1, 2, 3, 4): 1\n\n--- Ваш поточний баланс: 1000.00 грн ---\n\n------------------------------------\nСимулятор Банкомату\n1. Перевірити баланс\n2. Зняти гроші\n3. Поповнити рахунок\n4. Вийти\n------------------------------------\nВведіть операцію (1, 2, 3, 4): 3\nВведіть суму поповнення (грн): 200.50\n\nРахунок успішно поповнено на 200.50 грн.\n\n------------------------------------\nСимулятор Банкомату\n1. Перевірити баланс\n2. Зняти гроші\n3. Поповнити рахунок\n4. Вийти\n------------------------------------\nВведіть операцію (1, 2, 3, 4): 2\nВведіть суму зняття (грн): 500\n\nУспішно знято 500.00 грн.\n\n------------------------------------\nСимулятор Банкомату\n1. Перевірити баланс\n2. Зняти гроші\n3. Поповнити рахунок\n4. Вийти\n------------------------------------\nВведіть операцію (1, 2, 3, 4): 2\nВведіть суму зняття (грн): 800\n\nПомилка: Недостатньо коштів або сума недійсна/від'ємна.\n\n------------------------------------\nСимулятор Банкомату\n1. Перевірити баланс\n2. Зняти гроші\n3. Поповнити рахунок\n4. Вийти\n------------------------------------\nВведіть операцію (1, 2, 3, 4): 9\n\n*** Помилка: Невірна команда. Спробуйте ще раз (1-4). ***\n\n------------------------------------\nСимулятор Банкомату\n1. Перевірити баланс\n2. Зняти гроші\n3. Поповнити рахунок\n4. Вийти\n------------------------------------\nВведіть операцію (1, 2, 3, 4): 4\n\nДякуємо за користування! До побачення.\n\n\nЯк вирішувати?\n\nВстановити початковий баланс користувача на 1000 гривень\nЗапустити цикл роботи банкомату\nПоказати меню доступних операцій та попросити ввід\nВ залежності від вибору користувача виконати відповідну дію:\n\nЯкщо вибір 1: показати поточний баланс\nЯкщо вибір 2: запросити суму для зняття, перевірити наявність коштів, оновити баланс\nЯкщо вибір 3: запросити суму для поповнення, оновити баланс\nЯкщо вибір 4: завершити роботу програми\nЯкщо недійсний ввід: вивести повідомлення про помилку і повторити цикл"
+  },
+  {
+    "objectID": "courses/be-course/modules/dictionaries-tuples-sets-practice.html",
+    "href": "courses/be-course/modules/dictionaries-tuples-sets-practice.html",
+    "title": "Практична №4.2",
+    "section": "",
+    "text": "Dictionaries\nLive coding\nTuples and sets\nQ&A\nYour task\nВоркфлоу:"
+  },
+  {
+    "objectID": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#план-на-сьогодні",
+    "href": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#план-на-сьогодні",
+    "title": "Практична №4.2",
+    "section": "",
+    "text": "Dictionaries\nLive coding\nTuples and sets\nQ&A\nYour task"
+  },
+  {
+    "objectID": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#що-таке-словники-і-навіщо-вони-потрібні",
+    "href": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#що-таке-словники-і-навіщо-вони-потрібні",
+    "title": "Практична №4.2",
+    "section": "❓ Що таке словники і навіщо вони потрібні?",
+    "text": "❓ Що таке словники і навіщо вони потрібні?\nМинулого разу ми вивчили Списки (Lists). Вони ідеальні для впорядкованих даних: sales = [1500, 2100, 1850]\nНаприклад, у нас є студенти та їхні оцінки.” “Як би ми це зробили списками?”"
+  },
+  {
+    "objectID": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#паралельні-списки",
+    "href": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#паралельні-списки",
+    "title": "Практична №4.2",
+    "section": "📋📋 Паралельні списки",
+    "text": "📋📋 Паралельні списки\n\nstudents = ['Олена', 'Іван', 'Марія']\ngrades = [10, 8, 12]\n\nЦе жахливо. Як дістати оцінку Івана?\nТреба знайти ‘Івана’ в students. (Він на індексі 1).\nПотім взяти елемент з індексом 1 зі списку grades. -&gt; 8. Це складно, і все ламається, якщо ми видалимо ‘Олену’"
+  },
+  {
+    "objectID": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#рішення-майже-всіх-проблем",
+    "href": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#рішення-майже-всіх-проблем",
+    "title": "Практична №4.2",
+    "section": "💡 Рішення (майже) всіх проблем",
+    "text": "💡 Рішення (майже) всіх проблем\nТут нам на допомогу приходять словники!\nСловник - це структура даних, яка зберігає пари “ключ-значення”.\n\nstudent_grades = {\n  'Олена': 10,\n  'Іван': 8,\n  'Марія': 12,\n  'key': value\n}\n\nЯк дістати оцінку? Дуже просто:\n\nprint( student_grades['Іван'] )\n#         our dict      key\n# We're using a key to get a value"
+  },
+  {
+    "objectID": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#властивості-словників",
+    "href": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#властивості-словників",
+    "title": "Практична №4.2",
+    "section": " Властивості словників",
+    "text": "Властивості словників\n\nСловники зберігають дані у вигляді key : value\n\nЦе “серце” словника. Кожен елемент — це пара.\nstudent = { 'name': 'Олена', 'course': 2 }\n'name' — це Ключ (Key).\n'Олена’ — це Значення (Value).\n\nПравила ключів:\n\nУнікальні: один ключ не може мати два значення. Якщо ви спробуєте старе значення просто перезапишеться.\nЗазвичайключами є рядки або числа. Списки не можуть бути ключами\n\nГоловні операції:\n\nДоступ: отримуємо значення за ключем\n\n\n\n  print( student['name'] ) # -&gt; 'Олена'\n# print( student[0] ) # -&gt; ПОМИЛКА!\n\n\nДодавання/заміна: Однаковий синтаксис. Якщо ключ є — змінює, якщо немає — створює.\n\n\nstudent['course'] = 3     # Змінить 2 на 3\nstudent['email'] = 'a@kse.ua' # Додасть нову пару\n\n\nПеревірка: Оператор in (який ви знаєте зі списків) перевіряє наявність ключа.\n\n\nif 'email' in student:\n    print(\"Email вже є!\")\n\n\nДовжина: len() рахує кількість пар.\n\n\nlen(student) # -&gt; 3 (name, course, email)\n\n\nПеребір: for key, value in studnet.items()"
+  },
+  {
+    "objectID": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#live-coding",
+    "href": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#live-coding",
+    "title": "Практична №4.2",
+    "section": "👨🏻‍💻 Live coding",
+    "text": "👨🏻‍💻 Live coding\n\n\n\n\n\n\nNoneЗавдання\n\n\n\nМи створюємо профіль для одного юзера. Нам треба його створити, а потім оновити дані.\n\n\nЗадача:\n\nСтворити словник user_profile з ключами username (значення “alice”) та status (значення “online”).\nВивести status юзера “alice”.\nОновити status на “offline”.\nДодати новий ключ email зі значенням “alice@kse.ua”.\nВивести фінальний словник.\n\n\n\n\n\n\n\nМи маємо той самий профіль. Нам треба, по-перше, безпечно перевірити, чи є у нього email, а по-друге, гарно вивести весь профіль.\n\n\n\nЗадача:\n\nВзяти user_profile з минулого кроку.\nПеревірити, чи існує ключ “email”.\nЯкщо так, вивести f\"Email: {user_profile['email']}\".\nЯкщо ні, вивести \"Email не вказано\".\nПеребрати весь словник і вивести всі пари “Ключ -&gt; Значення”."
+  },
+  {
+    "objectID": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#спецінструменти",
+    "href": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#спецінструменти",
+    "title": "Практична №4.2",
+    "section": "⚒️ Спецінструменти:",
+    "text": "⚒️ Спецінструменти:\n\nTuples (кортежі)\n\nЩо це? Це як список, але НЕЗМІННИЙ (immutable).\nАналогія: “Список, залитий у бетон”.\nСинтаксис: () (круглі дужки) my_tuple = (1, ‘a’, True)\nГоловна фішка: Їх не можна змінити після створення.\n\n\nconfig_tuple = ('admin', 'pass123', 'kse.ua')\nprint(f\"Юзер: {config_tuple[0]}, Сервер: {config_tuple[2]}\")\n\n# А тепер спробуємо змінити:\n# config_tuple[0] = 'guest' \n# ^ Це миттєво викличе TypeError: 'tuple' object does not support item assignment\n\n\n\nSets (множини)\n\nЩо це? Це як список, але тільки УНІКАЛЬНІ елементи, і без порядку.\nАналогія: “Клуб унікальних”.\nСинтаксис: set([ … ]) або {1, 2, 3}\n\nУвага! {} — це порожній словник. Порожня множина створюється так: my_set = set().\n\nvisitors = ['Іван', 'Анна', 'Іван', 'Петро', 'Анна', 'Марія', 'Іван']\nprint(f\"Список гостей (з дублікатами): {visitors}\")\n\nunique_visitors = set(visitors)\nprint(f\"Унікальні гості (без дублікатів): {unique_visitors}\")\nprint(f\"Кількість унікальних: {len(unique_visitors)}\")\n\n\n# Студенти, що взяли курс з Економіки\necon_students = {'Іван', 'Анна', 'Петро', 'Марія'}\n\n# Студенти, що взяли курс зі Статистики\nstat_students = {'Анна', 'Петро', 'Давид', 'Софія'}\n\n# 1. Хто ходить на ОБИДВА курси? (Перетин)\nboth_courses = econ_students & stat_students\nprint(f\"Ходять на обидва курси: {both_courses}\")\n\n# 2. Хто ходить ТІЛЬКИ на Економіку? (Різниця)\nonly_econ = econ_students - stat_students\nprint(f\"Ходять тільки на Економіку: {only_econ}\")\n\n# 3. Який загальний список унікальних студентів? (Об'єднання)\nall_students = econ_students | stat_students\nprint(f\"Всі унікальні студенти: {all_students}\")"
+  },
+  {
+    "objectID": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#задача-менеджер-інвентарю",
+    "href": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#задача-менеджер-інвентарю",
+    "title": "Практична №4.2",
+    "section": "🔍 Задача: “Менеджер Інвентарю”",
+    "text": "🔍 Задача: “Менеджер Інвентарю”"
+  },
+  {
+    "objectID": "courses/math-course/modules/variables-data-types-operations-practice.html",
+    "href": "courses/math-course/modules/variables-data-types-operations-practice.html",
     "title": "Practice Session 2",
     "section": "",
-    "text": "🧊 План заняття: Верхівка айсберга\nНа сьогоднішньому занятті ми спробуємо змусити комп’ютер підкорятися нашим наказам, пірнемо в світ математичних операцій та напишемо наші перші програми - і все це завдяки неймовірній мові програмування Python.\nДетальніше про наш план:",
+    "text": "На сьогоднішньому занятті ми спробуємо змусити комп’ютер підкорятися нашим наказам, пірнемо в світ математичних операцій та напишемо наші перші програми - і все це завдяки неймовірній мові програмування Python.\nДетальніше про наш план:\n\nЦілі числа\n\n👨‍💻 Live Coding: Конвертація часу\n🛠 Guided Practice: Reverse Engineering\n\nДійсні числа\n\n👨‍💻 Live Coding: Рух тіла\n🛠 Guided Practice: Евклідова відстань\n\nСамостійна робота\n\nПроблема з яблуками\nГіпотенуза трикутника\nСума цифр\n\n🐛 Bug Hunter",
     "crumbs": [
+      "Математика",
       "Змінні, типи даних. Математичні операції в Python",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Practice Session 2</span>"
+      "Practice Session 2"
     ]
   },
   {
-    "objectID": "modules/variables-data-types-operations-practice.html#план-заняття-верхівка-айсберга",
-    "href": "modules/variables-data-types-operations-practice.html#план-заняття-верхівка-айсберга",
+    "objectID": "courses/math-course/modules/variables-data-types-operations-practice.html#план-заняття-верхівка-айсберга",
+    "href": "courses/math-course/modules/variables-data-types-operations-practice.html#план-заняття-верхівка-айсберга",
     "title": "Practice Session 2",
     "section": "",
-    "text": "Цілі числа\n\n👨‍💻 Live Coding: Конвертація часу\n🛠 Guided Practice: Reverse Engineering\n\nДійсні числа\n\n👨‍💻 Live Coding: Рух тіла\n🛠 Guided Practice: Евклідова відстань\n\nСамостійна робота\n\nПроблема з яблуками\nГіпотенуза трикутника\nСума цифр\n\n🐛 Bug Hunter",
+    "text": "На сьогоднішньому занятті ми спробуємо змусити комп’ютер підкорятися нашим наказам, пірнемо в світ математичних операцій та напишемо наші перші програми - і все це завдяки неймовірній мові програмування Python.\nДетальніше про наш план:\n\nЦілі числа\n\n👨‍💻 Live Coding: Конвертація часу\n🛠 Guided Practice: Reverse Engineering\n\nДійсні числа\n\n👨‍💻 Live Coding: Рух тіла\n🛠 Guided Practice: Евклідова відстань\n\nСамостійна робота\n\nПроблема з яблуками\nГіпотенуза трикутника\nСума цифр\n\n🐛 Bug Hunter",
     "crumbs": [
+      "Математика",
       "Змінні, типи даних. Математичні операції в Python",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Practice Session 2</span>"
+      "Practice Session 2"
     ]
   },
   {
-    "objectID": "modules/variables-data-types-operations-practice.html#operations-cheat-sheet",
-    "href": "modules/variables-data-types-operations-practice.html#operations-cheat-sheet",
+    "objectID": "courses/math-course/modules/variables-data-types-operations-practice.html#operations-cheat-sheet",
+    "href": "courses/math-course/modules/variables-data-types-operations-practice.html#operations-cheat-sheet",
     "title": "Practice Session 2",
     "section": "📝 Operations Cheat Sheet",
     "text": "📝 Operations Cheat Sheet\n\n\n\nОперація\nОпис\nПриклад\nРезультат\n\n\n\n\n*\nМноження\n2 * 3\n6\n\n\n**\nПіднесення до степеня\n2 ** 3\n8\n\n\n/\nДілення (завжди float)\n7 / 2\n3.5\n\n\n//\nЦілочисельне ділення\n7 // 2\n3\n\n\n%\nОстача від ділення\n7 % 2\n1",
     "crumbs": [
+      "Математика",
       "Змінні, типи даних. Математичні операції в Python",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Practice Session 2</span>"
+      "Practice Session 2"
     ]
   },
   {
-    "objectID": "modules/variables-data-types-operations-practice.html#цілі-числа",
-    "href": "modules/variables-data-types-operations-practice.html#цілі-числа",
+    "objectID": "courses/math-course/modules/variables-data-types-operations-practice.html#цілі-числа",
+    "href": "courses/math-course/modules/variables-data-types-operations-practice.html#цілі-числа",
     "title": "Practice Session 2",
     "section": "🔢 Цілі числа",
     "text": "🔢 Цілі числа\nПерш ніж ми перейдемо до вирішення певних проблем, маємо поглянти на типову помилку початківців у програмуванні.\n\na = input(\"Введіть перше число: \")\nb = input(\"Введіть друге число: \")\nprint(a + b)\n\nЧому запропонований код не виконається так, як очікується?\n\n👨‍💻 Live Coding: Конвертація часу\nКонтекст: Ми розробляємо підсистему для роботи з сервером. Час роботи, який повертає сервер подано в секундах. Наша задача - перевести кількість секунд у зрозумілий для користувача формат: години, хвилини, секунди.\nВхідні дані: Кількість секунд s = 5490.\nВихідні дані: Кількість годин, хвилин, та секунд.\n\n\n🛠 Guided Practice: Reverse Engineering\nКонтекст: Тепер, припустимо, що користувач хоче ввести свій час, та передати його на сервер. Він користується форматом години, хвилини, секунди. Оскільки сервер розуміє тільки час в секундах, нам потрібно перевести наданий користувачем час у секунди.\nВхідні дані: Ввід від користувача hours=int(input()), minutes=int(input()), seconds=int(input()).\nВихідні дані: Загальний час у секундах",
     "crumbs": [
+      "Математика",
       "Змінні, типи даних. Математичні операції в Python",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Practice Session 2</span>"
+      "Practice Session 2"
     ]
   },
   {
-    "objectID": "modules/variables-data-types-operations-practice.html#дійсні-числа",
-    "href": "modules/variables-data-types-operations-practice.html#дійсні-числа",
+    "objectID": "courses/math-course/modules/variables-data-types-operations-practice.html#дійсні-числа",
+    "href": "courses/math-course/modules/variables-data-types-operations-practice.html#дійсні-числа",
     "title": "Practice Session 2",
     "section": "💠 Дійсні числа",
     "text": "💠 Дійсні числа\nНа цьому етапі, в гру вступає, її величність, floating point, яка дозволяє нам розширити кількість можливих чисел в нескінченну кількість разів (майже). Але для того, аби оперувати цими числами, на відміну від цілих чисел, ми будемо користуватись типом float.\n\n👨‍💻 Live Coding: Рух тіла\nКонтекст: Ми працюємо з обчисленням руху об’єкту в комп’ютерній грі. Ми маємо машину, яка рухається з прискоренням, та знаємо початкову швидкість \\(v_0\\), прискорення \\(a\\) та час \\(t\\). Наша задача - знайти зміщення \\(S\\) за наступною формулою:\n\\[S = v_0 t + \\frac{at^2}{2}\\]\nВхідні дані: Початкова швидкість v = 10, a=20,t=10`.\nВихідні дані: Зміщення\n\n\n🛠 Guided Practice: Евклідова відстань\nКонтекст: Працюючи над тією ж відеогрою, перед нами постала задача вирахувати відстань між спостерігачем і ціллю. Ми знаємо координати спостерігача \\(A(x_1, y_1)\\) та цілі \\(B(x_2, y_2)\\). Для цього потрібно скористатись наступною формулою: \\[ d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} \\]\nВхідні дані: x1 = 10, x2=5, y1 = 20, y2 = 3\nВихідні дані: Відстань d\n\n\n\n\n\n\nПорадаПідказка\n\n\n\nДля вирішення даної задачі маєте скористатися оператором піднесення до степеня **",
     "crumbs": [
+      "Математика",
       "Змінні, типи даних. Математичні операції в Python",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Practice Session 2</span>"
+      "Practice Session 2"
     ]
   },
   {
-    "objectID": "modules/variables-data-types-operations-practice.html#самойтійна-робота",
-    "href": "modules/variables-data-types-operations-practice.html#самойтійна-робота",
+    "objectID": "courses/math-course/modules/variables-data-types-operations-practice.html#самойтійна-робота",
+    "href": "courses/math-course/modules/variables-data-types-operations-practice.html#самойтійна-робота",
     "title": "Practice Session 2",
     "section": "Самойтійна робота",
     "text": "Самойтійна робота\n\nПроблема з яблуками (Integers)\n\\(N\\) школярів ділять \\(K\\) яблук порівну, залишок, що не ділиться, залишається у кошику.\nВхідні дані: Два числа \\(N\\) і \\(K\\).\nВихідні дані: Два числа: скільки яблук дісталося кожному студенту і скільки залишилось у кошику.\n\n\nГіпотенуза трикутника (Floats)\nДано два катети прямокутного трикутника. Знайдіть гіпотенузу.\nВхідні дані: Два числа \\(a\\) і \\(b\\).\nВихідні дані: Довжина гіпотенузи.\n\n\nСума цифр\nДано трицифрове число (наприклад, 179). Знайдіть суму його цифр.\n\n\n\n\n\n\nПопередженняОбмеження\n\n\n\nНе можна використовувати цикли або перетворення в рядок.\n\n\n\n\n\n\n\n\nПорадаПідказка\n\n\n\nДля вирішення даної задачі маєте скористатися оператороми цілочисельного ділення та ділення з остачею аби отримати та відкинути останню цифру.",
     "crumbs": [
+      "Математика",
       "Змінні, типи даних. Математичні операції в Python",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Practice Session 2</span>"
+      "Practice Session 2"
     ]
   },
   {
-    "objectID": "modules/variables-data-types-operations-practice.html#bug-hunter",
-    "href": "modules/variables-data-types-operations-practice.html#bug-hunter",
+    "objectID": "courses/math-course/modules/variables-data-types-operations-practice.html#bug-hunter",
+    "href": "courses/math-course/modules/variables-data-types-operations-practice.html#bug-hunter",
     "title": "Practice Session 2",
     "section": "🐛 Bug Hunter",
     "text": "🐛 Bug Hunter\nІ нарешті, остання частина нашої практики - Bug Hunter! Погляньте на фрагменти коду, та поясніть, чому вони не виконаються, або виконаються не так, як очікується.\n\n№1\n\nwidth = input(\"Введіть ширину: \")\nheight = input(\"Введіть висоту: \")\n\narea = width * height\nprint(f\"Площа: {area}\")\n\n\n\n№2\n\nnum1 = 10\nnum2 = 20\n\naverage = num1 + num2 / 2\nprint(f\"Середнє значення: {average}\")\n\n\n\n№3\n\nR = 5\npi = 3.14159\n\nlength = 2 * pi * r \nprint(length)\n\n\n\n№4\n\nx = 10\ny = 0,5\n\nresult = x + y\nprint(result)",
     "crumbs": [
+      "Математика",
       "Змінні, типи даних. Математичні операції в Python",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Practice Session 2</span>"
+      "Practice Session 2"
     ]
   },
   {
-    "objectID": "modules/lists-practice.html",
-    "href": "modules/lists-practice.html",
+    "objectID": "courses/math-course/modules/dictionaries-lc-practice.html",
+    "href": "courses/math-course/modules/dictionaries-lc-practice.html",
+    "title": "Practice Session 10",
+    "section": "",
+    "text": "Сьогодні ми навчимося зберігати та обробляти зв’язну інформацію ефективно. Розберемося, як словники дозволяють миттєво знаходити дані за ключем без прив’язки до індексів, і як list comprehensions допомагають фільтрувати ці дані всього в один рядок коду."
+  },
+  {
+    "objectID": "courses/math-course/modules/dictionaries-lc-practice.html#словники-list-comprehension-та-робота-з-даними",
+    "href": "courses/math-course/modules/dictionaries-lc-practice.html#словники-list-comprehension-та-робота-з-даними",
+    "title": "Practice Session 10",
+    "section": "",
+    "text": "Сьогодні ми навчимося зберігати та обробляти зв’язну інформацію ефективно. Розберемося, як словники дозволяють миттєво знаходити дані за ключем без прив’язки до індексів, і як list comprehensions допомагають фільтрувати ці дані всього в один рядок коду."
+  },
+  {
+    "objectID": "courses/math-course/modules/dictionaries-lc-practice.html#план-заняття",
+    "href": "courses/math-course/modules/dictionaries-lc-practice.html#план-заняття",
+    "title": "Practice Session 10",
+    "section": "📌 План заняття:",
+    "text": "📌 План заняття:\n\n👨‍💻 Live coding 1: Словник, як база даних\n\n🛠 Guided Practice\n\n👨‍💻 Live coding 2: Словник, як база даних\n\n🛠 Guided Practice\n\n👨‍💻 Live Coding 3: Маніпуляції над даними з List Comprehension\n\n🛠 Guided Practice"
+  },
+  {
+    "objectID": "courses/math-course/modules/dictionaries-lc-practice.html#cheat-sheet",
+    "href": "courses/math-course/modules/dictionaries-lc-practice.html#cheat-sheet",
+    "title": "Practice Session 10",
+    "section": "📝 Cheat Sheet",
+    "text": "📝 Cheat Sheet\n\nБазова робота зі словниками (Dictionaries) Словник — це колекція пар ключ: значення. Ключі завжди унікальні.\n\n\n# Створення порожнього словника\nmy_dict = {}\n\n# Додавання або оновлення значення\nmy_dict[\"new_key\"] = \"new_value\"\n\n# Вкладені словники (Словник у словнику)\ndb = {101: {\"name\": \"Alice\", \"grades\": [100, 90]}}\n\n# Доступ до вкладених даних\nalice_grades = db[101][\"grades\"] \n\n\nКорисні методи словників\n\n\n.get(key, default) — безпечний пошук. Повертає значення за ключем. Якщо ключа немає, повертає default (не крашить програму!).\n.pop(key, default) — безпечне видалення. Видаляє пару за ключем і повертає значення.\n.update(other_dict) — об’єднання. Додає до поточного словника ключі та значення з other_dict.\n\n\nІтерація по словнику (Цикли)\n\n\n# Пройтися тільки по ключах:\nfor key in my_dict.keys(): # або просто for key in my_dict:\n\n# Пройтися тільки по значеннях:\nfor value in my_dict.values():\n\n# Пройтися по парах ключ-значення:\nfor key, value in my_dict.items():\n\n\nКорисні методи для списків (в контексті словників)\n\n\n.append(item) — додає один елемент в кінець списку.\n.extend(list) — розширює поточний список елементами з іншого списку. Корисно, коли треба додати кілька оцінок одразу.\n\n\nList Comprehension (Генератори списків) Синтаксис для створення списків в один рядок. [що_додати for елемент in колекція if умова]\n\n\n# Приклад: витягнути всі імена з нашої бази\nnames = [data[\"name\"] for data in db.values()]\n\n# Приклад: імена лише тих студентів, у кого є більше 3 оцінок\ntop_students = [data[\"name\"] for data in db.values() if len(data[\"grades\"]) &gt; 3]"
+  },
+  {
+    "objectID": "courses/math-course/modules/dictionaries-lc-practice.html#coffee-warm-up",
+    "href": "courses/math-course/modules/dictionaries-lc-practice.html#coffee-warm-up",
+    "title": "Practice Session 10",
+    "section": "☕Coffee Warm Up",
+    "text": "☕Coffee Warm Up\n\nУ нас є словник з цінами: menu = {\"Latte\": 60, \"Americano\": 40}. Клієнт питає, скільки коштує Американо. Яким одним рядком коду ми можемо дістати цю цифру?\nІнфляція. Лате тепер коштує 70 грн. А ще ми додали в меню Капучино за 65 грн. Як оновити словник?\nКлієнт просить “Flat White”. Ми знаємо, що якщо написати menu[\"Flat White\"], програма впаде з помилкою KeyError, бо такого ключа немає. Як перевірити, чи є цей напій в меню, повертаючи True або False?"
+  },
+  {
+    "objectID": "courses/math-course/modules/dictionaries-lc-practice.html#live-coding-1-словник-як-база-даних",
+    "href": "courses/math-course/modules/dictionaries-lc-practice.html#live-coding-1-словник-як-база-даних",
+    "title": "Practice Session 10",
+    "section": "👨‍💻 Live coding 1: Словник, як база даних",
+    "text": "👨‍💻 Live coding 1: Словник, як база даних\n\n\n\n\n\n\nПопередженняDisclaimer\n\n\n\nОскільки ми продовжуємо працювати в нашому репозиторії з попередньої практики - обов’язково створіть\n\n\nКонтекст: Ми продовжуємо працювати з нашим попереднім проєктом, але тепер наша задача полягає в створенні бази даних, яка містить імена та ID cтудентів. Задача полягає в створенні такої структури, яка могла би вміщати в себе дані студентів, та з якою можна було би з легкістю проводити маніпуляції на кшталт додавання нових студентів, або видалення вже присутніх.\nВхідні дані: Набір пар: унікальний ID студента та його ім’я. Наприклад, \"Alice\", 1\nОчікуваний результат: Вивід імен та ID усіх студентів.\n\n🛠 Guided Practice:\nКонтекст: Зберігання імен та ID студентів дозволяє нам розв’язати певні, проте доволі обмежені задачі. Перед нами постала проблема розширення нашої бази даних до такого вигляду, аби вона могла зберігати не лише ім’я студента, а і список його оцінок. Вашою метою є створення словника, який би задовольняв наші потреби в збереженні даних, а потім вивести усі дані про студентів на екран.\n\n\n\n\n\n\nПорадаПоради щодо виконання\n\n\n\n\nСтворіть новий порожній словник\nІтеративно заповніть ключі та значення цього словника даними, які є у students_db\nДо кожного значення додайте пустий список оцінок. Формат значення: {\"name\": \"ім'я_студента\", \"grades\": []}\n[BONUS] Заповніть список оцінок одного зі студентів випадковими значеннями\n\n\n\nВхідні дані: Словник виду students_db = {ID: name} з попередньої задачі.\nОчікуваний результат: Оновлений cловник виду {ID: {\"name\": \"ім'я_студента\", \"grades\": []}}\n\n\n\n\n\n\nПриміткаПримітка\n\n\n\nПам’ятайте, що для того, аби додати значення до словника ви маєте скористатися синтаксисом на кшталт dictionary[new_key] = new_value"
+  },
+  {
+    "objectID": "courses/math-course/modules/dictionaries-lc-practice.html#live-coding-2-адміністрація-даних",
+    "href": "courses/math-course/modules/dictionaries-lc-practice.html#live-coding-2-адміністрація-даних",
+    "title": "Practice Session 10",
+    "section": "👨‍💻 Live Coding 2: Адміністрація даних",
+    "text": "👨‍💻 Live Coding 2: Адміністрація даних\nКонтекст: Наша новоспечена база даних працює! Проте, нашої з вами роботи виявилося замало, і окрім всіх речей, які ми зробили, нам потрібно вміти безпечно шукати студентів, відраховувати їх, та масово зараховувати нових студентів. Для того, аби ми могли зручно це робити, нам потрібно імплементувати три функції обгортки: search_student(db, id), expel_student(db, id) та add_students(db, students_dict)\nВхідні дані:\n\nНаша базова структура: db (словник студентів з попереднього завдання).\nДані для тестування функцій:\nДля пошуку: існуючий id (напр., 101) та неіснуючий (напр., 999).\nДля відрахування: id студента (напр., 102).\nДля зарахування: словник з новачками\n\n\nnew_students = {104: {\"name\": \"David\", \"grades\": []}, \n                105: {\"name\": \"Eve\", \"grades\": []}}\n\nОчікуваний результат:\n\nsearch_student(ab, id) безпечно повертає словник з даними студента або повідомлення “Не знайдено”.\nexpel_student(db, id) видаляє запис з db та повертає дані відрахованого студента (або сповіщає, якщо такого ID немає).\nadd_students(db, students_dict) розширює db новими записами (нічого не повертає, просто мутує оригінальний словник).\n\n\n🛠 Guided Practice:\nКонтекст: Ми покрили майже всі нюанси адміністрування нашої бази даних, окрім додавання оцінок для вже існуючих студентів. Вам потрібно написати функцію add_grade(db, student_id, grades), яка повинна знайти студента за його ID і додати нові оцінки до його списку “grades”. Якщо студента з таким ID не існує — вивести попередження.\nВхідні дані: База даних students_db з попереднього завдання. Спробуйте додати оцінки [95, 100] студенту з ID 101 та оцінку [80, 90] студенту з ID 999.\nОчікуваний результат: У студента 101 в списку оцінок мають з’явитися нові оцінки. При спробі додати оцінку студенту 999 на екран має вивестись повідомлення з помилкою.\n\n\n\n\n\n\nПорадаПоради щодо виконання\n\n\n\n\nВикористайте оператор in для перевірки наявності ID.\nВикористайте метод списків .extend(), щоб додати елементи до існуючого списку оцінок."
+  },
+  {
+    "objectID": "courses/math-course/modules/dictionaries-lc-practice.html#live-coding-3-маніпуляції-над-даними-з-list-comprehension",
+    "href": "courses/math-course/modules/dictionaries-lc-practice.html#live-coding-3-маніпуляції-над-даними-з-list-comprehension",
+    "title": "Practice Session 10",
+    "section": "👨‍💻 Live Coding 3: Маніпуляції над даними з List Comprehension",
+    "text": "👨‍💻 Live Coding 3: Маніпуляції над даними з List Comprehension\nКонтекст: Наша база даних розростається, і часто нам не потрібна вся інформація одразу, а лише конкретні вибірки. Наприклад, нас просять надати просто список імен усіх студентів для розсилки, а потім — окремий список тих, хто має хоча б одну оцінку “100”.\nВхідні дані: Наша поточна база students_db\nОчікуваний результат:\n\nСписок усіх імен\nСписок тих, у кого є 100 балів\n\n\n🛠 Guided Practice:\nКонтекст: І як ваше фінальне завдання, вам потрібно вирахувати тих студентів, які, на жаль чи на щастя, залік цього терму не отримають. Умови отримання заліку: мати хоча би 3 оцінки. Всі, хто мають менше за 3 - залік не отримують\nВхідні дані: Ви можете оновити попередню базу даних, аби в різних студентів була різна кількість оцінок, або ж використати нову, запропоновану нижче:\n\ndb_for_test = {\n    101: {\"name\": \"Alice\", \"grades\": [100, 95, 90]}, # Здала все\n    102: {\"name\": \"Bob\", \"grades\": [70, 75]},        # Боржник\n    103: {\"name\": \"Charlie\", \"grades\": [85]}         # Боржник\n}\n\nОчікуваний результат: Список імен [\"Bob\", \"Charlie\"] студентів, які не отримають залік\n\n\n\n\n\n\nПопередженняОбмеження\n\n\n\nДля розв’язання цього завдання використовуйте тільки list comprehension!"
+  },
+  {
+    "objectID": "courses/math-course/modules/lists-practice.html",
+    "href": "courses/math-course/modules/lists-practice.html",
     "title": "Practice Session 6",
     "section": "",
-    "text": "📚 Вступ до списків:\nНа сьогоднішній практиці ми попрактикуємося працювати зі списками – однією з найбільш фундаментальних структур даних у мові програмування Python. Списки - гнучкий інструмент, який дозволяє нам проводити різноманітні маніпуляції з даними, що є однією з основних задач програмування.",
+    "text": "На сьогоднішній практиці ми попрактикуємося працювати зі списками – однією з найбільш фундаментальних структур даних у мові програмування Python. Списки - гнучкий інструмент, який дозволяє нам проводити різноманітні маніпуляції з даними, що є однією з основних задач програмування.",
     "crumbs": [
+      "Математика",
       "Списки",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practice Session 6</span>"
+      "Practice Session 6"
     ]
   },
   {
-    "objectID": "modules/lists-practice.html#план-заняття",
-    "href": "modules/lists-practice.html#план-заняття",
+    "objectID": "courses/math-course/modules/lists-practice.html#вступ-до-списків",
+    "href": "courses/math-course/modules/lists-practice.html#вступ-до-списків",
+    "title": "Practice Session 6",
+    "section": "",
+    "text": "На сьогоднішній практиці ми попрактикуємося працювати зі списками – однією з найбільш фундаментальних структур даних у мові програмування Python. Списки - гнучкий інструмент, який дозволяє нам проводити різноманітні маніпуляції з даними, що є однією з основних задач програмування.",
+    "crumbs": [
+      "Математика",
+      "Списки",
+      "Practice Session 6"
+    ]
+  },
+  {
+    "objectID": "courses/math-course/modules/lists-practice.html#план-заняття",
+    "href": "courses/math-course/modules/lists-practice.html#план-заняття",
     "title": "Practice Session 6",
     "section": "📌 План заняття:",
     "text": "📌 План заняття:\n\n💪🏻 Warm Up\n🧩 Алгоритмічна класика\n📈 Списки, як аналітичний інструмент\n📐 Вкладені списки, матриці, та інші речі придумані математиками\n⚙️ Завдання для самостійного опрацювання",
     "crumbs": [
+      "Математика",
       "Списки",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practice Session 6</span>"
+      "Practice Session 6"
     ]
   },
   {
-    "objectID": "modules/lists-practice.html#lists-cheat-sheet",
-    "href": "modules/lists-practice.html#lists-cheat-sheet",
+    "objectID": "courses/math-course/modules/lists-practice.html#lists-cheat-sheet",
+    "href": "courses/math-course/modules/lists-practice.html#lists-cheat-sheet",
     "title": "Practice Session 6",
     "section": "📝 Lists Cheat Sheet",
     "text": "📝 Lists Cheat Sheet\nТут зібрані основні операції, які знадобляться вам для виконання завдань.\n\n🔹 1. Створення та доступ\n\n\n\nОперація\nСинтаксис\nОпис\n\n\n\n\nСтворення\nlst = [1, 2, 3]\nСтворити список із даними\n\n\nПустий список\nlst = []\nІніціалізація пустим списком\n\n\nПерший елемент\nlst[0]\nІндексація починається з 0\n\n\nОстанній елемент\nlst[-1]\nНегативний індекс рахує з кінця\n\n\nДовжина\nlen(lst)\nКількість елементів у списку\n\n\n\n\n\n🔹 2. Зрізи (Slicing)\nЗагальний синтаксис: list[start:stop:step]\n\narr = [10, 20, 30, 40, 50]\n\narr[1:4]   # [20, 30, 40] - від індексу 1 до 3 включно\narr[:3]    # [10, 20, 30] - перші 3 елементи\narr[::2]   # [10, 30, 50] - кожен другий елемент\narr[::-1]  # [50, 40, 30, 20, 10] - розворот списку\n\n\n\n🔹 3. Додавання та зміна\n\nnums = [1, 2, 3]\n\nnums.append(4)    # [1, 2, 3, 4] -&gt; Додає елемент в кінець (O(1))\nnums[0] = 100     # [100, 2, 3, 4] -&gt; Змінює існуючий елемент\n\n\n\n🔹 4. Ітерація (Цикли).\nДва основні способи пробігтися по списку: - Коли потрібен тільки елемент\n\nfor item in nums:\n    print(item)\n\n\nКоли потрібен індекс (наприклад, для формул \\(y_{i+1} - y_i\\)):\n\n\nfor i in range(len(nums)):\n    print(f\"Index: {i}, Value: {nums[i]}\")\n\n\nКоли потрібно і те, і інше (Pythonic way):\n\n\nfor i, val in enumerate(nums):\n    print(f\"Index: {i}, Value: {val}\")",
     "crumbs": [
+      "Математика",
       "Списки",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practice Session 6</span>"
+      "Practice Session 6"
     ]
   },
   {
-    "objectID": "modules/lists-practice.html#warm-up",
-    "href": "modules/lists-practice.html#warm-up",
+    "objectID": "courses/math-course/modules/lists-practice.html#warm-up",
+    "href": "courses/math-course/modules/lists-practice.html#warm-up",
     "title": "Practice Session 6",
     "section": "💪🏻 Warm Up",
     "text": "💪🏻 Warm Up\nПеред тим як перейти до серйозніших задач, давайте пригадаємо основи роботи зі списками на більш тривіальних завданнях.\n\nЗадача 1\nУмова: Вам надано список, який складається із чисел. Виведіть на екран всі невід’ємні числа, їх суму та середнє арифметичне.\n\nInput: arr = [-12, 8, -7, 6, 12, -9, 14]\nOutput: avg = 10.0, sum = 40\n\n\n\nЗадача 2\nУмова: Вам надано список, який складається із чисел. Створіть два нових списки з тільки парними та тільки непарними числами\n\nInput: arr = [54, 43, 2, 5, 14, 17, 18, 9]\nOutput: even: 54 2 14 18, odd: 43 5 17 19\n\n\n\nЗадача 3\nУмова: Вам надано список, який складається із чисел. Виведіть на екран усі унікальні значення, присутні в списку\n\nInput: arr = [1, 2, 2, 3, 4, 5, 5]\nOutput: [1, 2, 3, 4, 5]\n\n\n\n\n\n\n\nПримітка\n\n\n\nЗавдання вищі були взяті з GeeksForGeeks",
     "crumbs": [
+      "Математика",
       "Списки",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practice Session 6</span>"
+      "Practice Session 6"
     ]
   },
   {
-    "objectID": "modules/lists-practice.html#алгоритмічна-класика",
-    "href": "modules/lists-practice.html#алгоритмічна-класика",
+    "objectID": "courses/math-course/modules/lists-practice.html#алгоритмічна-класика",
+    "href": "courses/math-course/modules/lists-practice.html#алгоритмічна-класика",
     "title": "Practice Session 6",
     "section": "🧩 Алгоритмічна класика",
     "text": "🧩 Алгоритмічна класика\nУ цьому блоці ми зосередимося не на вивченні синтаксису мови, а на алгоритмічному мисленні. Більшість складних обчислювальних задач — від сортування великих даних до моделювання фізичних процесів — базуються на вмінні ефективно маніпулювати елементами за їх індексами.\nОдним із класичних типів задач, які постають перед нами – це задачі на два вказівники. Використання тактики “двох вказівників” дозволяє швидко та ефективно розв’язати деякі з проблем.\n\n👨‍💻 Live Coding 1: Два вказівники\nКонтекст: Ми працюємо над розробкою бази даних. У нас є список заповнений певними значеннями, але от халепа! Виявилось, що значення в ньому знаходяться в оберненому порядку. Нам потрібно “перевернути” значення в списку, при тому не створюючи нового списку.\nВхідні дані: список arr = [50, 40, 30, 20, 10]\nВихідні дані: обернений список arr = [10, 20, 30, 40, 50]\n\n\n\n\n\n\nПопередженняОбмеження\n\n\n\nНе можна використовувати list slicing, оскільки це створить новий список. Маємо користуватись тільки циклами та модифікацією поточного списку\n\n\n\n\n🛠 Guided Practice: Списки-паліндроми\nКонтекст: У прикладній математиці та обробці сигналів часто виникає потреба перевірити функцію на парність або симетрію відносно центру. У програмуванні масив, який читається однаково зліва направо та справа наліво, називають паліндромом. Ваше завдання — визначити, чи є даний список симетричним.\nМатематична модель: Вектор \\(A\\) є симетричним, якщо для всіх \\(i\\) виконується умова: \\[A[i] == A[n-1-i]\\]\nВхідні дані:\n\nВаріант 1: arr = [1, 2, 3, 2, 1]\nВаріант 2: arr = [1, 2, 3, 4, 5]\n\nВихідні дані:\n\nВаріант 1: True\nВаріант 2: False",
     "crumbs": [
+      "Математика",
       "Списки",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practice Session 6</span>"
+      "Practice Session 6"
     ]
   },
   {
-    "objectID": "modules/lists-practice.html#списки-як-аналітичний-інструмент",
-    "href": "modules/lists-practice.html#списки-як-аналітичний-інструмент",
+    "objectID": "courses/math-course/modules/lists-practice.html#списки-як-аналітичний-інструмент",
+    "href": "courses/math-course/modules/lists-practice.html#списки-як-аналітичний-інструмент",
     "title": "Practice Session 6",
     "section": "📈 Списки, як аналітичний інструмент",
     "text": "📈 Списки, як аналітичний інструмент\n\n👨‍💻 Live Coding 2: Ковзне середнє\nКонтекст: Ми працюємо з даними температурного датчика. Датчик дешевий, тому іноді він видає різкі стрибки. Якщо побудувати графік, він буде різким та не відображатиме справжніх тенденцій. Нам потрібно згладити цей ряд, щоб побачити справжній тренд.\nДля цього використовують фільтр ковзного середнього. Суть полягає в підміні групи точок (вікно) на їх середнє арифметичне.\n\\(y_i = \\frac{1}{k} \\sum_{j=0}^{k-1} x_{i+j}\\).\nВхідні дані: noisy_data = [10, 12, 30, 14, 11, 13, 12, 18], Розмір вікна \\(k = 3\\).\nВихідні дані: [17.3, 18.7, 18.3, 12.7, 12.0, 14.3]\n\n\n🛠 Guided Practice:\nКонтекст: Сучасні фітнес-браслети та смартфони рахують кроки за допомогою акселерометра. Цей датчик вимірює прискорення (G-force).Коли ви стоїте, датчик показує \\(\\approx 1.0G\\) (сила тяжіння).Коли ви робите крок (удар ногою об землю), виникає різкий сплеск перевантаження - пік.Ваша задача — написати ядро алгоритму для підрахунку кроків.\nЛогіка імплементації:\n\nМи вважаємо, що крок відбувся в момент часу \\(i\\), якщо: Значення сигналу є локальним максимумом (більше за сусідів):\\[a_{i-1} &lt; a_i &gt; a_{i+1}\\]\nСила удару має бути достатньо великою, щоб це не було випадковим шумом. Встановимо поріг \\(1.5G\\): \\[a_i &gt; 1.5\\] Вхідні дані: g_forces = [0.98, 1.02, 1.85, 1.20, 0.99, 1.01, 2.10, 1.60, 0.98]\n\nВихідні дані: кількість кроків та список зі значеннями піків peaks = [1.85, 2.10]\n\n\n\n\n\n\nПопередженняОбережно з індексами!\n\n\n\nПродумайте, як саме запустити цикл, аби не вилізти за межі списку.",
     "crumbs": [
+      "Математика",
       "Списки",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practice Session 6</span>"
+      "Practice Session 6"
     ]
   },
   {
-    "objectID": "modules/lists-practice.html#вкладені-списки-матриці-та-інші-речі-придумані-математиками",
-    "href": "modules/lists-practice.html#вкладені-списки-матриці-та-інші-речі-придумані-математиками",
+    "objectID": "courses/math-course/modules/lists-practice.html#вкладені-списки-матриці-та-інші-речі-придумані-математиками",
+    "href": "courses/math-course/modules/lists-practice.html#вкладені-списки-матриці-та-інші-речі-придумані-математиками",
     "title": "Practice Session 6",
     "section": "📐 Вкладені списки, матриці, та інші речі придумані математиками",
     "text": "📐 Вкладені списки, матриці, та інші речі придумані математиками\nУ Pyhon, як і в будь-якій іншій мові програмування, ми можемо представляти математичні одиниці, зокрема матриці, за допомогою різних інструментів. В контексті сьогоднішнього заняття, нам буде зручно зробити це за допомогою вкладених списків:\n\nmatrix = [\n    [1, 2],\n    [3, 4],\n    [5, 6]\n]\n\n\n👨‍💻 Live Coding 3: Транспонування\nКонтекст: Уявіть, що ви працюєте з набором даних, представленим вкладеним списком. Зазвичай рядок стовпець - це дані про об’єкт, я рядок це набір різних об’єктів Але для деяких алгоритмів машинного навчання (або для візуалізацій) нам потрібно поміняти їх місцями: щоб рядки стали набором об’єктів, а стовпці — даними про ці об’єкти.\nМатематично це операція транспонування (\\(A^T\\)).\nВхідні дані: матриця \\(3 \\times 2\\): data = [[1, 2], [3, 4], [5, 6]]\nВихідні дані: матриця \\(2 \\times 3\\): transposed_data = [[1, 3, 5], [2, 4, 6]\n\n\n🛠 Guided Practice: множення матриці на вектор\nКонтекст: І насамкінець, головна операція лінійної алгебри – множення. У робототехніці та комп’ютерній графіці постійно потрібно перераховувати координати. Наприклад, рука робота повертається на певний кут. Щоб знати, де опиниться її кінець, ми множимо матрицю повороту на вектор поточних координат.\nВхідні дані: matrix = [[1, 2], [3, 4], [5, 6]], vector = [10, 20]\nВихідні дані: вектор довжини 3.\n\n\n\n\n\n\nПорада💡 Підказка\n\n\n\nНижче надано скелет коду, який може стати вам у нагоді\n\n\n\nif len(matrix[0]) != len(vector):\n    print(\"Error\")\nelse:\n    result = []\n    for i in range(len(matrix)):\n        row_sum = 0\n        # ToDo: Complete the code below this comment\n\n\n\n        # ..........................................\n        result.append(row_sum)",
     "crumbs": [
+      "Математика",
       "Списки",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practice Session 6</span>"
+      "Practice Session 6"
     ]
   },
   {
-    "objectID": "modules/lists-practice.html#завдання-для-самостійного-опрацювання",
-    "href": "modules/lists-practice.html#завдання-для-самостійного-опрацювання",
+    "objectID": "courses/math-course/modules/lists-practice.html#завдання-для-самостійного-опрацювання",
+    "href": "courses/math-course/modules/lists-practice.html#завдання-для-самостійного-опрацювання",
     "title": "Practice Session 6",
     "section": "⚙️ Завдання для самостійного опрацювання",
     "text": "⚙️ Завдання для самостійного опрацювання\n\nE-Olymp 8956\nE-Olymp 8963\nE-Olymp 8967",
     "crumbs": [
+      "Математика",
       "Списки",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practice Session 6</span>"
+      "Practice Session 6"
     ]
   },
   {
-    "objectID": "modules/functions-practice.html",
-    "href": "modules/functions-practice.html",
+    "objectID": "courses/math-course/modules/lists-practice-not-approved.html",
+    "href": "courses/math-course/modules/lists-practice-not-approved.html",
+    "title": "Practice Session 6",
+    "section": "",
+    "text": "На сьогоднішній практиці ми попрактикуємося працювати зі списками – однією з найбільш фундаментальних структур даних у мові програмування Python. Списки - гнучкий інструмент, який дозволяє нам проводити різноманітні маніпуляції з даними, що є однією з основних задач програмування."
+  },
+  {
+    "objectID": "courses/math-course/modules/lists-practice-not-approved.html#вступ-до-списків",
+    "href": "courses/math-course/modules/lists-practice-not-approved.html#вступ-до-списків",
+    "title": "Practice Session 6",
+    "section": "",
+    "text": "На сьогоднішній практиці ми попрактикуємося працювати зі списками – однією з найбільш фундаментальних структур даних у мові програмування Python. Списки - гнучкий інструмент, який дозволяє нам проводити різноманітні маніпуляції з даними, що є однією з основних задач програмування."
+  },
+  {
+    "objectID": "courses/math-course/modules/lists-practice-not-approved.html#план-заняття",
+    "href": "courses/math-course/modules/lists-practice-not-approved.html#план-заняття",
+    "title": "Practice Session 6",
+    "section": "📌 План заняття:",
+    "text": "📌 План заняття:\n\n🧩 Алгоритмічна класика\n\n👨‍💻 Live Coding 1: Два вказівники\n🛠 Guided Practice: Кумулятивна сума\n👨‍💻 Live Coding 2:Скінченна різниця\n🛠 Guided Practice: Ковзне середнє\n\n💡 List Comprehension\n\n👨‍💻 Live Coding 3: Декартів добуток\n🛠 Guided Practice: трійки Піфагора\n\n📐 Операції над матрицями, або вкладені списки\n\n👨‍💻 Live Coding 3: Транспонування\n🛠 Guided Practice: множення матриці на вектор"
+  },
+  {
+    "objectID": "courses/math-course/modules/lists-practice-not-approved.html#lists-cheat-sheet",
+    "href": "courses/math-course/modules/lists-practice-not-approved.html#lists-cheat-sheet",
+    "title": "Practice Session 6",
+    "section": "📝 Lists Cheat Sheet",
+    "text": "📝 Lists Cheat Sheet\nТут зібрані основні операції, які знадобляться вам для виконання завдань.\n\n🔹 1. Створення та доступ\n\n\n\nОперація\nСинтаксис\nОпис\n\n\n\n\nСтворення\nlst = [1, 2, 3]\nСтворити список із даними\n\n\nПустий список\nlst = []\nІніціалізація пустим списком\n\n\nПерший елемент\nlst[0]\nІндексація починається з 0\n\n\nОстанній елемент\nlst[-1]\nНегативний індекс рахує з кінця\n\n\nДовжина\nlen(lst)\nКількість елементів у списку\n\n\n\n\n\n🔹 2. Зрізи (Slicing)\nЗагальний синтаксис: list[start:stop:step]\n\narr = [10, 20, 30, 40, 50]\n\narr[1:4]   # [20, 30, 40] - від індексу 1 до 3 включно\narr[:3]    # [10, 20, 30] - перші 3 елементи\narr[::2]   # [10, 30, 50] - кожен другий елемент\narr[::-1]  # [50, 40, 30, 20, 10] - розворот списку\n\n\n\n🔹 3. Додавання та зміна\n\nnums = [1, 2, 3]\n\nnums.append(4)    # [1, 2, 3, 4] -&gt; Додає елемент в кінець (O(1))\nnums[0] = 100     # [100, 2, 3, 4] -&gt; Змінює існуючий елемент\n\n\n\n🔹 4. Ітерація (Цикли).\nДва основні способи пробігтися по списку: - Коли потрібен тільки елемент\n\nfor item in nums:\n    print(item)\n\n\nКоли потрібен індекс (наприклад, для формул \\(y_{i+1} - y_i\\)):\n\n\nfor i in range(len(nums)):\n    print(f\"Index: {i}, Value: {nums[i]}\")\n\n\nКоли потрібно і те, і інше (Pythonic way):\n\n\nfor i, val in enumerate(nums):\n    print(f\"Index: {i}, Value: {val}\")"
+  },
+  {
+    "objectID": "courses/math-course/modules/lists-practice-not-approved.html#алгоритмічна-класика",
+    "href": "courses/math-course/modules/lists-practice-not-approved.html#алгоритмічна-класика",
+    "title": "Practice Session 6",
+    "section": "🧩 Алгоритмічна класика",
+    "text": "🧩 Алгоритмічна класика\nВ межах цього блоку ми попрактикуємося працювати зі списками алгоритмічно:\n\n👨‍💻 Live Coding 1: Два вказівники\nКонтекст: Ми працюємо над розробкою бази даних. У нас є список заповнений певними значеннями, але от халепа! Виявилось, що значення в ньому знаходяться в оберненому порядку. Нам потрібно “перевернути” значення в списку, при тому не створюючи нового списку.\nВхідні дані: список arr = [50, 40, 30, 20, 10]\nВихідні дані: обернений список arr = [10, 20, 30, 40, 50]\n\n\n\n\n\n\nПопередженняОбмеження\n\n\n\nНе можна використовувати list slicing, оскільки це створить новий список. Маємо користуватись тільки циклами та модифікацією поточного списку\n\n\n\n\n🛠 Guided Practice: Кумулятивна сума\nКонтекст: Маємо список із чисел від 1 до 5. Нам потрібно знайти список часткових сум цих чисел за наступною формулою:\n\\(b_i = \\sum_{k=0}^{i} a_k\\)\nабо рекурентно:\n\\(b_i = b_{i-1} + a_i\\).\nВхідні дані: arr = [1, 2, 3, 4, 5]\nВихідні дані: arr = [1, 3, 6, 10, 15]\n\n\n👨‍💻 Live Coding 2: Скінченна різниця\nКонтекст: При роботі з дискретними даними (сигналами, часовими рядами) ми не можемо взяти аналітичну похідну. Натомість використовують чисельні методи. Найпростіший спосіб оцінити швидкість зміни функції — обчислити скінченні різниці.\nУ вас є дані з датчика положення робота, які записуються кожну секунду (дискретний час).\nМасив positions містить координати в метрах.\nНам потрібно отримати масив швидкостей робота на кожному проміжку. Оскільки час між замірами \\(\\Delta t = 1c\\), швидкість дорівнює просто різниці координат:\n\\[v_i = \\frac{x_{i+1} - x_i}{\\Delta t} = x_{i+1} - x_i\\]\nВхідні дані: positions = [1, 4, 9, 16, 25, 36]\nВихідні дані: velocities = [3, 5, 7, 9, 11]\n\n\n🛠 Guided Practice: Ковзне середнє\nКонтекст: Ми працюємо з даними, переданими з gps датчика. Під час перегляду даних, ми бачиму дивні цифри, які наврядчи відповідають реальності.\nМи хочемо побачити загальний тренд. Для цього використовують фільтр ковзного середнього. Ми замінюємо групу точок (вікно) на їх середнє арифметичне.\n\\(y_i = \\frac{1}{k} \\sum_{j=0}^{k-1} x_{i+j}\\).\nВхідні дані: noisy_data = [10, 12, 100, 14, 11, 13] Розмір вікна \\(k = 3\\).\nВихідні дані: [40.66, 42.0, 41.66, 12.66]"
+  },
+  {
+    "objectID": "courses/math-course/modules/lists-practice-not-approved.html#list-comprehension",
+    "href": "courses/math-course/modules/lists-practice-not-approved.html#list-comprehension",
+    "title": "Practice Session 6",
+    "section": "💡 List Comprehension",
+    "text": "💡 List Comprehension\nУ Python перед нами часто постає задача створення нових списків та заповнення нових даних: з тих даних, що ми вже маємо, або нових даних. Дотепер, нам була доступна опція створення списку за допомогою циклу. Припустимо, що нам потрібно створити список з квадратів парних чисел від 1 до 10:\n\nsquares = []\nfor i in range(10):\n    if (i % 2 == 0):\n        squares.append(i**2)\n\nЦей підхід є непоганим і доволі логічним, проте аби ефективніше працювати зі списками, розробники Python придумали таку річ як List Comprehension. Вона дозволяє нам ефективно створювати нові списки всього в один рядок. Наступний фрагмент коду буде аналогічним до попереднього:\n\nsquares = [i**2 for i in range(10) if i % 2 == 0]\n\nЗагальна структура виглядає наступним чином:\n[expression for item in iterable if condition]\n[expression_if_true if condition else expression_if_false for item in iterable]\n\n👨‍💻 Live Coding 3: Декартів добуток\nКонтекст: З метою проведення математичного дослідження, перед нами постала задача опису множини. У математиці ми зазвичай описуємо множини наступним чином: \\(S = \\{x^2 \\mid x \\in \\mathbb{Z}, 0 \\le x \\le 10, x \\text{ is even}\\}\\) або \\(A \\times B = \\{(a, b) \\mid a \\in A, b \\in B\\}\\).\nВхідні дані: Дві множини: A = [1, 2, 3], B = [4, 5]\nВихідні дані: - Декартів добуток \\(A \\times B\\): [(1, 4), (1, 5), (2, 4), (2, 5), (3, 4), (3, 5)]\n\n\n🛠 Guided Practice: трійки Піфагора\nКонтекст: Продовжуючи наше дослідження, нам потрібно також знайти всі цілочисельні трійки \\((a, b, c)\\), які задовольняють теорему Піфагора: \\(a^2 + b^2 = c^2\\).\nВхідні дані: Максимальне число \\(N = 20\\).\nВихідні дані: Список кортежів: [(3, 4, 5), (5, 12, 13), (6, 8, 10), (8, 15, 17), (9, 12, 15), (12, 16, 20)]\n\n\n\n\n\n\nПопередженняОбмеження\n\n\n\nЩоб уникнути дублікатів (типу \\(3^2+4^2=5^2\\) і \\(4^2+3^2=5^2\\)), вводимо обмеження: \\(1 \\le a &lt; b &lt; c \\le N\\)."
+  },
+  {
+    "objectID": "courses/math-course/modules/lists-practice-not-approved.html#операції-над-матрицями-або-вкладені-списки",
+    "href": "courses/math-course/modules/lists-practice-not-approved.html#операції-над-матрицями-або-вкладені-списки",
+    "title": "Practice Session 6",
+    "section": "📐 Операції над матрицями, або вкладені списки",
+    "text": "📐 Операції над матрицями, або вкладені списки\nУ Pyhon, як і в будь-якій іншій мові програмування, ми звичайно можемо представити матриці. В контексті сьогоднішнього заняття, нам буде зручно зробити це за допомогою вкладених списків:\n\nmatrix = [\n    [1, 2],\n    [3, 4],\n    [5, 6]\n]\n\n\n👨‍💻 Live Coding 4: Транспонування\nКонтекст: Математики, особливо ті що працюють з лінійною алгеброю, часто використовують програмування для спрощення обрахунків і свого життя. Зараз нам потрібно буде виконати базову операцію (\\(A^T\\)) - транспонування матриці.\nВхідні дані: матриця \\(3 \\times 2\\): matrix = [[1, 2], [3, 4], [5, 6]]\nВихідні дані: матриця \\(2 \\times 3\\): transposed = [[1, 3, 5], [2, 4, 6]\n\n\n🛠 Guided Practice: множення матриці на вектор\nКонтекст: І насамкінець, головна операція лінійної алгебри – множення. В контексті цієї задачі вам потрібно меремножити матрицю на вектор.\nВхідні дані: matrix = [[1, 2], [3, 4], [5, 6]], vector = [10, 20]\nВихідні дані: вектор довжини 3.\n\n\n\n\n\n\nПорада💡 Підказка\n\n\n\nНижче надано скелет коду, який може стати вам у нагоді\n\n\n\nif len(matrix[0]) != len(vector):\n    print(\"Error\")\nelse:\n    result = []\n    for i in range(len(matrix)):\n        row_sum = 0\n        # ToDo: Complete the code below this comment\n\n\n\n        # ..........................................\n        result.append(row_sum)"
+  },
+  {
+    "objectID": "courses/math-course/modules/template.html#план-заняття",
+    "href": "courses/math-course/modules/template.html#план-заняття",
+    "title": "Practice Session N",
+    "section": "## 📌 План заняття:",
+    "text": "## 📌 План заняття:\n\n👨‍💻 Live coding 1:\nКонтекст:\nВхідні дані:\nОчікуваний результат:\n\n🛠 Guided Practice:\nКонтекст:\nВхідні дані:\nОчікуваний результат:\n\n\n\nLive Coding 2:\nКонтекст:\nВхідні дані:\nОчікуваний результат:\n\nGuided Practice:\nКонтекст:\nВхідні дані:\nОчікуваний результат:\n\n\n\nLive Coding 3:\nКонтекст:\nВхідні дані:\nОчікуваний результат:\n\nGuided Practice:\nКонтекст:\nВхідні дані:\nОчікуваний результат:"
+  },
+  {
+    "objectID": "courses/math-course/modules/git-practice.html",
+    "href": "courses/math-course/modules/git-practice.html",
+    "title": "Practice Session 9",
+    "section": "",
+    "text": "Під час сьогоднішнього воркшопу ви зможете на практиці познайомитися з такими інструментами як Git та GitHub. Ці інструменти є стандартом для індустрії в сфері контролю версій та дозволяють гнучко налаштувати спільну роботу багатьох людей над проєктом одночасно.\nGit — це система контролю версій, яка дозволяє ефективно керувати та відслідковувати зміни у вашому проєкті.\nGitHub — це платформа, розроблена для того, аби викладати ваші проєкти до глобальної мережі та надати можливість легко працювати над проєктами з іншими.\n\n\n\nRepository (Репозиторій / “Репа”): Папка з вашим проєктом, яка має суперсилу — запам’ятовувати всю історію змін кожного файлу. Буває локальним (на вашому комп’ютері) та віддаленим (на сервері GitHub).\nCommit (Коміт): Фіксація або “знімок” стану вашого коду в конкретний момент. У PyCharm це робиться через панель Commit. Ви позначаєте галочками файли, обов’язково пишете повідомлення (що саме змінили) і зберігаєте. Коміт зберігає зміни лише на вашому комп’ютері.\nPush (Пуш): Відправка ваших локальних комітів на віддалений сервер (на GitHub). Поки ви не зробите push (зелена стрілочка вгору↗ в PyCharm), ніхто у світі ваших змін не побачить.\nPull (Пул): Завантаження нових змін із віддаленого сервера на ваш комп’ютер (синя стрілочка вниз↙ в PyCharm). Це оновлює ваш локальний код до найсвіжішої версії.\nFork (Форк): Ваша особиста копія чужого репозиторію. Робиться не в PyCharm, а прямо на сайті GitHub. Дозволяє вільно експериментувати з кодом, не ризикуючи зламати оригінальний проєкт викладача чи колеги.\nBranch (Гілка): Ізольована копія коду всередині репозиторію. Ви ніби відгалужуєтесь від головної лінії (main), безпечно пишете свою функцію, а потім зливаєте її назад. Керування гілками у PyCharm зазвичай знаходиться в самому правому нижньому куті вікна.\nMerge Conflict (Конфлікт злиття): Ситуація, коли дві людини одночасно змінили один і той самий рядок у файлі, і Git не знає, чий варіант правильний. PyCharm має зручне вікно “Resolve Conflicts” із трьома колонками: зліва — ваш код, справа — код з сервера, по центру — фінальний результат, який ви збираєте вручну.\nPull Request (PR): Запит на сайті GitHub, у якому ви просите власника оригінального репозиторію перевірити ваш код і додати його до головного проєкту.\n\n\n\n\nСьогодні ми симулюємо реальний процес командної розробки. Ваше завдання — написати логіку для визначення того, чи отримає студент фінансування на основі його оцінок.\nАле робота програміста рідко буває ізольованою. Поки ви будете писати свій код, адміністрація оновить списки студентів в головному репозиторії. Вам доведеться не лише написати працюючий код, але й навчитися синхронізувати свою локальну версію з оновленнями колег та розв’язувати конфлікти версій.\n\n\nПерш ніж починати роботу над проєктом, нам потрібен сам репозиторій, в якому ми будемо працювати. Для того, аби отримати доступ до головного репозиторію вам потрібно зробити Fork — операцію, яка надає вам власну копію репозиторію на платформі GitHub.\nПерш за все, перейдіть за посиланням на головний репозиторій\nПісля цього, натисність на кнопку Fork у верхній частині екрану\n\n\n\nFork Interface\n\n\nПеред Вами з’явиться меню конфігурації репозиторію. Натисніть кнопку Fork, і магія - ви маєте власну копію головного репозиторію!\n\n\n\nТепер, коли в нас є власна копія репозиторію, нам потрібно якось з ним працювати. Поки вона є тільки на GitHub ми не можемо прямо писати внеї код та працювати повноцінно.\nДля того, аби репозиторій також був на вашому комп’ютері, нам потрібно зробити операцію git clone, яка створить локальну копію репозиторію.\n\n\n\nClone Menu\n\n\n\n\n\nІ тепер, коли ми нарешті маємо наш проєкт в IDE, правилом хорошого тону є створення окремої гілки для імплементації нових функцій програми.\nДля цього створімо гілку “gpa-calculation”\n\n\n\nNew Branch Creation\n\n\n\n\n\nІ найцікавіше - ваше головне завдання. Оскільки ви долучилися до університетської IT команди, вашою першою задачею стала розробка алгоритму для визначення чи отримає студент фінансування. Для цього вам потрібно імплементувати функцію сan_get_funding().\nСтудент, що отримує фінансування, має відповідати наступним умовам: - GPA &gt; 80 - Немає оцінок менше за 60\nФункція має повертати True або False в залежності від оцінок студента\nВхідні дані: Двовимірний список з оцінками студентів students_grades\nКожен вкладений список відповідає одному студенту. Елементи вкладеного списку — це цілі числа від 0 до 100.\nВихідні дані: Значення True або False\n\n\n\nПісля цього, аби зафіксувати вашу роботу, вам потрібно зробити коміт - знімок стану вашого файлу з кодом. Це зафіксує зміни, які ви внесли в історії гіта, як певну точку, з якою потім можна буде взаємодіяти.\nДля цього, відкрийте бокове меню налаштування коміту, оберіть файли, які хочете додати, та напишіть змістовне повідомлення про виконану роботу. Наприклад:\n\n\n\nCommit Example\n\n\n\n\n\nІ от перед вами одразу ж постає наступна задача. На тій же гілці, реалізуйте в main.py просте обрахування статистики оцінок студентів. Вам потрібно вивести на екран наступну інформацію:\n\nСкільки студентів отримали фінансування\nЯкий середній GPA у всіх студентів\nЯкий середній GPA у тих студентів, що отримали фінансування\n\n\n\n\n\n\n\nПорадаПорада\n\n\n\nСкористайтеся функцією, написаною раніше аби визначити чи отримає студент фінансування і використайте цикл for, аби порахувати статистичні дані.\n\n\nПісля цього, зробіть ще один коміт, аби закріпити вашу роботу\n\n\n\nІ ось, нарешті, настав той момент, коли всі задачі виконані. Але от халепа! Ви перевіряєте свій GitHub, і розумієте, що там немає ані вашої гілки, ані вашого написаного коду.\nДля того, аби виправити це неподобство, вам потрібно зробити Push - операцію, яка надсилає зміни з вашого локального репозиторію до віддаленго (того, що знаходиться на серверах GitHub)\nДля цього, після того як ви зробили коміт оберіть Push та необхідну гілку в інтерфейсі Pycharm\n\n\n\nPush Selection\n\n\n\n\n\nPush Interface\n\n\nКоли ви переконаєтеся, що у вашому віддаленому репозиторії з’явилися зміни, вам також потрібно надіслати Pull Request для того, аби запропонувати додати зміни в головний репозиторій.\n\n\n\nChanges on GitHub\n\n\n\n\n\nPull Request Interface\n\n\nНа цьому етапі ви освоїли базовий алгоритм командної роботи над проєктом, з чим Вас можна привітати!\nЦей алгоритм може варіюватися та змінюватися в залежності від поставлених задач та контексту, але він визначає основу командної роботи над проєктом.",
+    "crumbs": [
+      "Математика",
+      "Основи Git",
+      "Practice Session 9"
+    ]
+  },
+  {
+    "objectID": "courses/math-course/modules/git-practice.html#основи-роботи-з-git",
+    "href": "courses/math-course/modules/git-practice.html#основи-роботи-з-git",
+    "title": "Practice Session 9",
+    "section": "",
+    "text": "Під час сьогоднішнього воркшопу ви зможете на практиці познайомитися з такими інструментами як Git та GitHub. Ці інструменти є стандартом для індустрії в сфері контролю версій та дозволяють гнучко налаштувати спільну роботу багатьох людей над проєктом одночасно.\nGit — це система контролю версій, яка дозволяє ефективно керувати та відслідковувати зміни у вашому проєкті.\nGitHub — це платформа, розроблена для того, аби викладати ваші проєкти до глобальної мережі та надати можливість легко працювати над проєктами з іншими.\n\n\n\nRepository (Репозиторій / “Репа”): Папка з вашим проєктом, яка має суперсилу — запам’ятовувати всю історію змін кожного файлу. Буває локальним (на вашому комп’ютері) та віддаленим (на сервері GitHub).\nCommit (Коміт): Фіксація або “знімок” стану вашого коду в конкретний момент. У PyCharm це робиться через панель Commit. Ви позначаєте галочками файли, обов’язково пишете повідомлення (що саме змінили) і зберігаєте. Коміт зберігає зміни лише на вашому комп’ютері.\nPush (Пуш): Відправка ваших локальних комітів на віддалений сервер (на GitHub). Поки ви не зробите push (зелена стрілочка вгору↗ в PyCharm), ніхто у світі ваших змін не побачить.\nPull (Пул): Завантаження нових змін із віддаленого сервера на ваш комп’ютер (синя стрілочка вниз↙ в PyCharm). Це оновлює ваш локальний код до найсвіжішої версії.\nFork (Форк): Ваша особиста копія чужого репозиторію. Робиться не в PyCharm, а прямо на сайті GitHub. Дозволяє вільно експериментувати з кодом, не ризикуючи зламати оригінальний проєкт викладача чи колеги.\nBranch (Гілка): Ізольована копія коду всередині репозиторію. Ви ніби відгалужуєтесь від головної лінії (main), безпечно пишете свою функцію, а потім зливаєте її назад. Керування гілками у PyCharm зазвичай знаходиться в самому правому нижньому куті вікна.\nMerge Conflict (Конфлікт злиття): Ситуація, коли дві людини одночасно змінили один і той самий рядок у файлі, і Git не знає, чий варіант правильний. PyCharm має зручне вікно “Resolve Conflicts” із трьома колонками: зліва — ваш код, справа — код з сервера, по центру — фінальний результат, який ви збираєте вручну.\nPull Request (PR): Запит на сайті GitHub, у якому ви просите власника оригінального репозиторію перевірити ваш код і додати його до головного проєкту.\n\n\n\n\nСьогодні ми симулюємо реальний процес командної розробки. Ваше завдання — написати логіку для визначення того, чи отримає студент фінансування на основі його оцінок.\nАле робота програміста рідко буває ізольованою. Поки ви будете писати свій код, адміністрація оновить списки студентів в головному репозиторії. Вам доведеться не лише написати працюючий код, але й навчитися синхронізувати свою локальну версію з оновленнями колег та розв’язувати конфлікти версій.\n\n\nПерш ніж починати роботу над проєктом, нам потрібен сам репозиторій, в якому ми будемо працювати. Для того, аби отримати доступ до головного репозиторію вам потрібно зробити Fork — операцію, яка надає вам власну копію репозиторію на платформі GitHub.\nПерш за все, перейдіть за посиланням на головний репозиторій\nПісля цього, натисність на кнопку Fork у верхній частині екрану\n\n\n\nFork Interface\n\n\nПеред Вами з’явиться меню конфігурації репозиторію. Натисніть кнопку Fork, і магія - ви маєте власну копію головного репозиторію!\n\n\n\nТепер, коли в нас є власна копія репозиторію, нам потрібно якось з ним працювати. Поки вона є тільки на GitHub ми не можемо прямо писати внеї код та працювати повноцінно.\nДля того, аби репозиторій також був на вашому комп’ютері, нам потрібно зробити операцію git clone, яка створить локальну копію репозиторію.\n\n\n\nClone Menu\n\n\n\n\n\nІ тепер, коли ми нарешті маємо наш проєкт в IDE, правилом хорошого тону є створення окремої гілки для імплементації нових функцій програми.\nДля цього створімо гілку “gpa-calculation”\n\n\n\nNew Branch Creation\n\n\n\n\n\nІ найцікавіше - ваше головне завдання. Оскільки ви долучилися до університетської IT команди, вашою першою задачею стала розробка алгоритму для визначення чи отримає студент фінансування. Для цього вам потрібно імплементувати функцію сan_get_funding().\nСтудент, що отримує фінансування, має відповідати наступним умовам: - GPA &gt; 80 - Немає оцінок менше за 60\nФункція має повертати True або False в залежності від оцінок студента\nВхідні дані: Двовимірний список з оцінками студентів students_grades\nКожен вкладений список відповідає одному студенту. Елементи вкладеного списку — це цілі числа від 0 до 100.\nВихідні дані: Значення True або False\n\n\n\nПісля цього, аби зафіксувати вашу роботу, вам потрібно зробити коміт - знімок стану вашого файлу з кодом. Це зафіксує зміни, які ви внесли в історії гіта, як певну точку, з якою потім можна буде взаємодіяти.\nДля цього, відкрийте бокове меню налаштування коміту, оберіть файли, які хочете додати, та напишіть змістовне повідомлення про виконану роботу. Наприклад:\n\n\n\nCommit Example\n\n\n\n\n\nІ от перед вами одразу ж постає наступна задача. На тій же гілці, реалізуйте в main.py просте обрахування статистики оцінок студентів. Вам потрібно вивести на екран наступну інформацію:\n\nСкільки студентів отримали фінансування\nЯкий середній GPA у всіх студентів\nЯкий середній GPA у тих студентів, що отримали фінансування\n\n\n\n\n\n\n\nПорадаПорада\n\n\n\nСкористайтеся функцією, написаною раніше аби визначити чи отримає студент фінансування і використайте цикл for, аби порахувати статистичні дані.\n\n\nПісля цього, зробіть ще один коміт, аби закріпити вашу роботу\n\n\n\nІ ось, нарешті, настав той момент, коли всі задачі виконані. Але от халепа! Ви перевіряєте свій GitHub, і розумієте, що там немає ані вашої гілки, ані вашого написаного коду.\nДля того, аби виправити це неподобство, вам потрібно зробити Push - операцію, яка надсилає зміни з вашого локального репозиторію до віддаленго (того, що знаходиться на серверах GitHub)\nДля цього, після того як ви зробили коміт оберіть Push та необхідну гілку в інтерфейсі Pycharm\n\n\n\nPush Selection\n\n\n\n\n\nPush Interface\n\n\nКоли ви переконаєтеся, що у вашому віддаленому репозиторії з’явилися зміни, вам також потрібно надіслати Pull Request для того, аби запропонувати додати зміни в головний репозиторій.\n\n\n\nChanges on GitHub\n\n\n\n\n\nPull Request Interface\n\n\nНа цьому етапі ви освоїли базовий алгоритм командної роботи над проєктом, з чим Вас можна привітати!\nЦей алгоритм може варіюватися та змінюватися в залежності від поставлених задач та контексту, але він визначає основу командної роботи над проєктом.",
+    "crumbs": [
+      "Математика",
+      "Основи Git",
+      "Practice Session 9"
+    ]
+  },
+  {
+    "objectID": "courses/math-course/modules/functions-practice.html",
+    "href": "courses/math-course/modules/functions-practice.html",
     "title": "Practice Session 8",
     "section": "",
-    "text": "📚 Вступ до функцій:\nНа сьогоднішній практиці ми попрактикуємося працювати з функціями - одним з найважливіших інструментів для організації та повторного використання коду в Python.\nФункції дозволяють нам розбивати складні задачі на менші, більш керовані частини, що робить наш код чистішим і легшим для розуміння.\nВони також дозволяють нам уникнути повторення коду, що є однією з основних принципів програмування - Don’t Repeat Yourself.",
+    "text": "На сьогоднішній практиці ми попрактикуємося працювати з функціями - одним з найважливіших інструментів для організації та повторного використання коду в Python.\nФункції дозволяють нам розбивати складні задачі на менші, більш керовані частини, що робить наш код чистішим і легшим для розуміння.\nВони також дозволяють нам уникнути повторення коду, що є однією з основних принципів програмування - Don’t Repeat Yourself.",
     "crumbs": [
+      "Математика",
       "Функції",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Practice Session 8</span>"
+      "Practice Session 8"
     ]
   },
   {
-    "objectID": "modules/functions-practice.html#план-заняття",
-    "href": "modules/functions-practice.html#план-заняття",
+    "objectID": "courses/math-course/modules/functions-practice.html#вступ-до-функцій",
+    "href": "courses/math-course/modules/functions-practice.html#вступ-до-функцій",
+    "title": "Practice Session 8",
+    "section": "",
+    "text": "На сьогоднішній практиці ми попрактикуємося працювати з функціями - одним з найважливіших інструментів для організації та повторного використання коду в Python.\nФункції дозволяють нам розбивати складні задачі на менші, більш керовані частини, що робить наш код чистішим і легшим для розуміння.\nВони також дозволяють нам уникнути повторення коду, що є однією з основних принципів програмування - Don’t Repeat Yourself.",
+    "crumbs": [
+      "Математика",
+      "Функції",
+      "Practice Session 8"
+    ]
+  },
+  {
+    "objectID": "courses/math-course/modules/functions-practice.html#план-заняття",
+    "href": "courses/math-course/modules/functions-practice.html#план-заняття",
     "title": "Practice Session 8",
     "section": "📌 План заняття:",
     "text": "📌 План заняття:\n\n💪🏻 Warm Up\n🛠️ Функції, як інструмент для організації коду (cтворення, рітьорн, аргументи та параметри)\n\n👨‍💻 Live Coding 1: Робот кур’єр\n\n🔃 Рекурсивні функції\n\n👨‍💻 Live Coding 2: Факторіали та рекурсії\n\n❔ Анонімні функції та λ-вирази\n\n👨‍💻 Live Coding 3: Обробка даних - від класичних функцій до λ-виразів\n\n⚙️ Завдання для самостійного опрацювання",
     "crumbs": [
+      "Математика",
       "Функції",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Practice Session 8</span>"
+      "Practice Session 8"
     ]
   },
   {
-    "objectID": "modules/functions-practice.html#functions-cheat-sheet",
-    "href": "modules/functions-practice.html#functions-cheat-sheet",
+    "objectID": "courses/math-course/modules/functions-practice.html#functions-cheat-sheet",
+    "href": "courses/math-course/modules/functions-practice.html#functions-cheat-sheet",
     "title": "Practice Session 8",
     "section": "📝 Functions Cheat Sheet",
     "text": "📝 Functions Cheat Sheet\n\n🛠 1. Анатомія та базові концепти\nСтворення: Використовуємо ключове слово def, ім’я (зрозуміле, що робить функція) та дужки.\n\nПараметри vs Аргументи:\n\nПараметр — це змінна-заглушка в оголошенні функції (напр., def get_area(radius):). Це порожня коробка, яка чекає на дані.\nАргумент — це реальне значення, яке ми передаємо під час виклику (напр., get_area(5)). Це те, що ми в цю коробку кладемо.\n\n\n\nReturn:\n\nФункція має віддавати результат своєї роботи через return, а не виводити його через print().\nРаннє повернення (Early Return): Команда return миттєво зупиняє роботу всієї функції. Це ідеально підходить для “відсіювання” невалідних даних на самому початку (наприклад, if price &lt; 0: return \"Помилка\").\n\n\n\nScope (Область видимості):\n\nГлобальні змінні/константи: Створюються поза функціями. Їх бачать усі (добре підходить для загальних налаштувань, напр., PI = 3.14).\nЛокальні змінні: Створюються всередині функції. Вони народжуються під час виклику і назавжди зникають після return. Спроба викликати таку змінну ззовні призведе до помилки.\n\n\n\n\n🔄 2. Рекурсивні функції\nРекурсія — це підхід, при якому функція викликає саму себе. Щоб вона працювала і не “поклала” програму помилкою переповнення пам’яті (Stack Overflow), вона обов’язково має складатися з двох частин:\n\nБаза рекурсії: Умова виходу. Ситуація, при якій функція перестає викликати себе і просто повертає конкретне значення (наприклад, факторіал нуля дорівнює 1: if n == 0: return 1).\nРекурсивний крок: Виклик цією ж функцією самої себе, але зі зміненими аргументами, які з кожним кроком наближають нас до бази (наприклад, return n * factorial(n - 1)).\n\n\n\n🥷 3. Анонімні функції (Lambda-вирази)\nЦе міні-функції, які пишуться в один рядок і не мають імені. Їх використовують як “одноразовий” інструмент, коли писати повноцінну def немає сенсу.\n\nСинтаксис: lambda arguments: expression\nГоловне застосування: Передача лямбди як правила в інші функції, такі як sort(), map(), filter().\n\n\n# Приклад: звичайне сортування вишикує слова за алфавітом.\n# Але ми можемо передати лямбду як ключ (key), щоб відсортувати їх за довжиною:\n\nwords = [\"яблуко\", \"кіт\", \"університет\", \"код\"]\nwords.sort(key=lambda word: len(word)) \nprint(words) \n\n['кіт', 'код', 'яблуко', 'університет']",
     "crumbs": [
+      "Математика",
       "Функції",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Practice Session 8</span>"
+      "Practice Session 8"
     ]
   },
   {
-    "objectID": "modules/functions-practice.html#функції-як-інструмент-для-організації-коду",
-    "href": "modules/functions-practice.html#функції-як-інструмент-для-організації-коду",
+    "objectID": "courses/math-course/modules/functions-practice.html#функції-як-інструмент-для-організації-коду",
+    "href": "courses/math-course/modules/functions-practice.html#функції-як-інструмент-для-організації-коду",
     "title": "Practice Session 8",
     "section": "🛠️ Функції, як інструмент для організації коду",
     "text": "🛠️ Функції, як інструмент для організації коду\nФункції в Python - це потужний інструмент для організації та повторного використання коду. Вони дозволяють нам розбивати складні задачі на менші, більш керовані частини, що робить наш код чистішим і легшим для розуміння.\n\ndef function_name(parameters):\n    # Тіло функції\n    ...\n    # return expression (не обов'язково)\n\n\n👨‍💻 Live Coding 1: Робот кур’єр\nКонтекст: Складський робот переміщується між стелажами по ортогональній сітці (може їхати тільки прямо і повертати на 90 градусів). Тому відстань між ним та ціллю обчислюється не по прямій, а за формулою мангеттенської відстані: \\(d = |x_1 - x_2| + |y_1 - y_2|\\).\nНа кожну пройдену комірку сітки робот витрачає 1.5% заряду батареї. Необхідно написати функцію, яка розрахує загальну витрату заряду на поїздку від поточної позиції до заданої комірки.\nВхідні дані:\n\nКоординати старту: x_start=2, y_start=2\nКоординати цілі: x_target=5, y_target=6.\n\nОчікуваний результат: Відсоток витраченої батареї. Якщо передані некоректні координати — повідомлення про помилку.\n\n\n🛠 Guided Practice:\nКонтекст: Наш робот отримує нове замовлення на доставку товару. Ми можемо порахувати скільки відсотків заряду витратить робот на доставку, але що якщо йому не вистачить заряду для виконання замовлення та повернення на базу? (координати бази завжди 0, 0)\nНапишіть функцію, яка визначить, чи вистачить роботу поточного заряду на весь цей маршрут.\nВхідні дані:\n\nПоточні координати робота: current_x=2, current_y=2.\nКоординати цілі: target_x=5, target_y=6.\nПоточний рівень заряду (%): current_battery=50\n\nОчікуваний результат: True або False — чи вистачить заряду.\n\n\n\n\n\n\nПорада\n\n\n\nДля обчислення загальної відстані, яку має проїхати робот, можна скористатися функцією, яку ми написали в попередньому завданні для розрахунку відсотка витраченої батареї. Пам’ятайте, що робот має повернутися на базу після доставки товару, тому потрібно врахувати відстань від поточної позиції до цілі та від цілі до бази.",
     "crumbs": [
+      "Математика",
       "Функції",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Practice Session 8</span>"
+      "Practice Session 8"
     ]
   },
   {
-    "objectID": "modules/functions-practice.html#рекурсивні-функції-1",
-    "href": "modules/functions-practice.html#рекурсивні-функції-1",
+    "objectID": "courses/math-course/modules/functions-practice.html#рекурсивні-функції-1",
+    "href": "courses/math-course/modules/functions-practice.html#рекурсивні-функції-1",
     "title": "Practice Session 8",
     "section": "🔃 Рекурсивні функції",
     "text": "🔃 Рекурсивні функції\nРекурсія - це техніка програмування, при якій функція викликає сама себе для розв’язання задачі. Вона складається з двох основних компонентів: базового випадку, який зупиняє рекурсію, та рекурсивного кроку, який розбиває задачу на менші підзадачі.\nВона часто використовується для розв’язання задач, які мають природну рекурсивну структуру, таких як обчислення факторіала, фібоначчі, обходу дерев та алгоритмів типу “розділяй та володарюй”.\n\ndef fibonacci_recursive(n):\n    if n &lt;= 1:  # Базовий випадок: F(0) = 0, F(1) = 1\n        return n\n    else:\n        return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)\n\nprint(fibonacci_recursive(10)) \n\n55\n\n\n\n👨‍💻 Live Coding 2: Факторіали та рекурсії\nКонтекст: Багато математичних операцій можна реалізувати за допомогою простих рекурсивних функцій. Однією з таких тривіальних задач = обчислення факторіала числа n, який визначається як добуток усіх цілих чисел від 1 до n включно.\nВхідні дані: Ціле число n, введене користувачем\nОчікуваний результат: Результат обчислення \\(n!\\) або повідомлення про помилку, якщо n є від’ємним числом.\n\n\n🛠 Guided Practice: Піднесення до степеня\nКонтекст: Ще однією класичною задачею, яка ілюструє концепцію рекурсії, є піднесення числа x до степеня n. Це можна реалізувати за допомогою рекурсивної функції, яка базується на визначенні степеня: \\(x^n = x \\cdot x^{n-1}\\) для n &gt; 0\nВхідні дані: Два числа: основа x та показник степеня n, введені користувачем.\nОчікуваний результат: Результат обчислення \\(x^n\\) або повідомлення про помилку, якщо n є від’ємним числом.\n\n\n\n\n\n\nПорада\n\n\n\nПеред написанням рекурсивної функції, подумайте, яким буде базовий випадок та крок рекурсії",
     "crumbs": [
+      "Математика",
       "Функції",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Practice Session 8</span>"
+      "Practice Session 8"
     ]
   },
   {
-    "objectID": "modules/functions-practice.html#анонімні-функції-та-λ-вирази",
-    "href": "modules/functions-practice.html#анонімні-функції-та-λ-вирази",
+    "objectID": "courses/math-course/modules/functions-practice.html#анонімні-функції-та-λ-вирази",
+    "href": "courses/math-course/modules/functions-practice.html#анонімні-функції-та-λ-вирази",
     "title": "Practice Session 8",
     "section": "❔ Анонімні функції та λ-вирази",
     "text": "❔ Анонімні функції та λ-вирази\nАнонімні функції, або λ-вирази, - це компактний спосіб створення функцій без імені. Вони особливо корисні, коли нам потрібно передати функцію як аргумент до іншої функції, наприклад, для сортування або фільтрації даних.\nНайчастіше λ-вирази використовуються з вбудованими функціями, такими як sorted(), map(), filter(), де вони дозволяють визначити логіку обробки даних без необхідності створювати окрему функцію за допомогою def.\n\n👨‍💻 Live Coding 3: Обробка даних - від класичних функцій до λ-виразів\nКонтекст: Працюючи з даними, часто виникає потреба у швидкому редагуванні цих елементів за певним правилом. Наприклад, маючи список температур у Цельсіях, ми хочемо перетворити їх у Фаренгейти.\nВхідні дані: Список температур у Цельсіях: celsius = [0, 20, 30, 100]\nОчікуваний результат: Список температур у Фаренгейтах: fahrenheit = [32.0, 68.0, 86.0, 212.0]\n\n\n🛠 Guided Practice: Бортовий журнал робота\nКонтекст: Наш робот кур’єр з попередніх завдань веде журнал своїх поїздок, де кожен запис містить відсоток заряду, витрачений на доставку.\nМи хочемо швидко проаналізувати ці дані, спочатку відсортувавши їх за витратою заряду, а потім знайти всі поїздки, де витрачено більше 30% заряду.\nВхідні дані: Список витрат заряду на поїздки: battery_usage = [25, 40, 15, 35, 10]\nОчікуваний результат: Список відсортованих витрат заряду: [10, 15, 25, 35, 40], список поїздок з витратою більше 30%: [35, 40]\n\n\n\n\n\n\nПопередженняОбмеження\n\n\n\nДля цієї задачі, використовуйте λ-функції та вбудовані функції sorted() та filter(), а не цикли чи інші методи.",
     "crumbs": [
+      "Математика",
       "Функції",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Practice Session 8</span>"
+      "Practice Session 8"
     ]
   },
   {
-    "objectID": "modules/git-practice.html",
-    "href": "modules/git-practice.html",
-    "title": "Practice Session 9",
+    "objectID": "courses/be-course/modules/files-practice.html",
+    "href": "courses/be-course/modules/files-practice.html",
+    "title": "Базова робота з файлами",
     "section": "",
-    "text": "Основи роботи з Git\nПід час сьогоднішнього воркшопу ви зможете на практиці познайомитися з такими інструментами як Git та GitHub. Ці інструменти є стандартом для індустрії в сфері контролю версій та дозволяють гнучко налаштувати спільну роботу багатьох людей над проєктом одночасно.\nGit — це система контролю версій, яка дозволяє ефективно керувати та відслідковувати зміни у вашому проєкті.\nGitHub — це платформа, розроблена для того, аби викладати ваші проєкти до глобальної мережі та надати можливість легко працювати над проєктами з іншими.",
-    "crumbs": [
-      "Основи Git",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Practice Session 9</span>"
-    ]
+    "text": "Робота з файлами в Python\nВідкриття, читання, та закриття файлів\nLive coding 1: Читання файлу\nКонструкція with. Запис у файли\nМодулі для роботи з файлами\nLive coding 2"
   },
   {
-    "objectID": "modules/git-practice.html#cheat-sheet",
-    "href": "modules/git-practice.html#cheat-sheet",
-    "title": "Practice Session 9",
-    "section": "📝 Cheat Sheet",
-    "text": "📝 Cheat Sheet\n\nRepository (Репозиторій): Папка з вашим проєктом, яка має суперсилу — запам’ятовувати всю історію змін кожного файлу. Буває локальним (на вашому комп’ютері) та віддаленим (на сервері GitHub).\nCommit (Коміт): Фіксація або “знімок” стану вашого коду в конкретний момент. У PyCharm це робиться через панель Commit. Ви позначаєте галочками файли, обов’язково пишете повідомлення (що саме змінили) і зберігаєте. Коміт зберігає зміни лише на вашому комп’ютері.\nPush (Пуш): Відправка ваших локальних комітів на віддалений сервер. Поки ви не зробите push (зелена стрілочка вгору↗ в PyCharm), ніхто у світі ваших змін не побачить.\nPull (Пул): Завантаження нових змін із віддаленого сервера на ваш комп’ютер (синя стрілочка вниз↙ в PyCharm). Це оновлює ваш локальний код до найсвіжішої версії.\nFork (Форк): Ваша особиста копія чужого репозиторію. Робиться не в PyCharm, а прямо на сайті GitHub. Дозволяє вільно експериментувати з кодом, не ризикуючи зламати оригінальний проєкт викладача чи колеги.\nBranch (Гілка): Ізольована копія коду всередині репозиторію. Ви ніби відгалужуєтесь від головної гілки (main), безпечно пишете свою функцію, а потім зливаєте її назад. Керування гілками у PyCharm зазвичай знаходиться в самому правому нижньому куті вікна.\nMerge Conflict (Конфлікт злиття): Ситуація, коли дві людини одночасно змінили один і той самий рядок у файлі, і Git не знає, чий варіант правильний. PyCharm має зручне вікно “Resolve Conflicts” із трьома колонками: зліва — ваш код, справа — код з сервера, по центру — фінальний результат, який ви збираєте вручну.\nPull Request (PR): Запит на сайті GitHub, у якому ви просите власника оригінального репозиторію перевірити ваш код і додати його до головного проєкту.",
-    "crumbs": [
-      "Основи Git",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Practice Session 9</span>"
-    ]
-  },
-  {
-    "objectID": "modules/git-practice.html#експерименти-з-github-та-git",
-    "href": "modules/git-practice.html#експерименти-з-github-та-git",
-    "title": "Practice Session 9",
-    "section": "🔎 Експерименти з GitHub та Git",
-    "text": "🔎 Експерименти з GitHub та Git\nСьогодні ми симулюємо реальний процес командної розробки. Ваше завдання — написати логіку для визначення того, чи отримає студент фінансування на основі його оцінок.\nАле робота програміста рідко буває ізольованою. Поки ви будете писати свій код, адміністрація оновить списки студентів в головному репозиторії. Вам доведеться не лише написати працюючий код, але й навчитися синхронізувати свою локальну версію з оновленнями колег та розв’язувати конфлікти версій.\n\n Fork\nПерш ніж починати роботу над проєктом, нам потрібен сам репозиторій, в якому ми будемо працювати. Для того, аби отримати доступ до головного репозиторію вам потрібно зробити Fork — операцію, яка надає вам власну копію репозиторію на платформі GitHub.\nПерш за все, перейдіть за посиланням на головний репозиторій\nПісля цього, натисність на кнопку Fork у верхній частині екрану\n\n\n\nFork Interface\n\n\nПеред Вами з’явиться меню конфігурації репозиторію. Натисніть кнопку Fork, і магія - ви маєте власну копію головного репозиторію!\n\n\n Clone\nТепер, коли в нас є власна копія репозиторію, нам потрібно якось з ним працювати. Поки вона є тільки на GitHub ми не можемо прямо писати внеї код та працювати повноцінно.\nДля того, аби репозиторій також був на вашому комп’ютері, нам потрібно зробити операцію git clone, яка створить локальну копію репозиторію.\n\n\n\nClone Menu\n\n\n\n\n Branching\nІ тепер, коли ми нарешті маємо наш проєкт в IDE, правилом хорошого тону є створення окремої гілки для імплементації нових функцій програми.\nДля цього створімо гілку “gpa-calculation”\n\n\n\nNew Branch Creation\n\n\n\n\n Implement\nІ найцікавіше - ваше головне завдання. Оскільки ви долучилися до університетської IT команди, вашою першою задачею стала розробка алгоритму для визначення чи може певний студент отримати фінансування. Для цього вам потрібно імплементувати функцію сan_get_funding(), яка приймає список з оцінками студента.\nСтудент, що отримує фінансування, має відповідати наступним умовам:\n\nGPA &gt; 80\nНемає оцінок менше за 60\n\nВхідні дані: Двовимірний список з оцінками студентів students_grades\nКожен вкладений список відповідає одному студенту. Елементи вкладеного списку — це цілі числа від 0 до 100.\nВихідні дані: Значення True або False\n\n\n Commit\nПісля цього, аби зафіксувати вашу роботу, вам потрібно зробити коміт - знімок стану вашого файлу з кодом. Це зафіксує зміни, які ви внесли в історії гіта, як певну точку, з якою потім можна буде взаємодіяти.\nДля цього, відкрийте бокове меню налаштування коміту, оберіть файли, які хочете додати, та напишіть змістовне повідомлення про виконану роботу. Наприклад:\n\n\n\nCommit Example\n\n\n\n\n Repeat!\nІ от перед вами одразу ж постає наступна задача. На тій же гілці, реалізуйте в main.py просте обрахування статистики оцінок студентів. Вам потрібно вивести на екран наступну інформацію:\n\nСкільки студентів отримали фінансування\nЯкий середній GPA у всіх студентів\nЯкий середній GPA у тих студентів, що отримали фінансування\n\n\n\n\n\n\n\nПорадаПорада\n\n\n\nСкористайтеся функцією, написаною раніше аби визначити чи отримає студент фінансування і використайте цикл for, аби порахувати статистичні дані.\n\n\nПісля цього, зробіть ще один коміт, аби закріпити вашу роботу\n\n\n Git Push and PR\nІ ось, нарешті, настав той момент, коли всі задачі виконані. Але от халепа! Ви перевіряєте свій GitHub, і розумієте, що там немає ані вашої гілки, ані вашого написаного коду.\nДля того, аби виправити це неподобство, вам потрібно зробити Push - операцію, яка надсилає зміни з вашого локального репозиторію до віддаленго (того, що знаходиться на серверах GitHub)\nДля цього, після того як ви зробили коміт оберіть Push та необхідну гілку в інтерфейсі Pycharm\n\n\n\nPush Selection\n\n\n\n\n\nPush Interface\n\n\nКоли ви переконаєтеся, що у вашому віддаленому репозиторії з’явилися зміни, вам також потрібно надіслати Pull Request для того, аби запропонувати додати зміни в головний репозиторій.\n\n\n\nChanges on GitHub\n\n\n\n\n\nPull Request Interface\n\n\nНа цьому етапі ви освоїли базовий алгоритм командної роботи над проєктом, з чим Вас можна привітати!\nЦей алгоритм може варіюватися та змінюватися в залежності від поставлених задач та контексту, але він визначає основу командної роботи над проєктом.",
-    "crumbs": [
-      "Основи Git",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Practice Session 9</span>"
-    ]
-  },
-  {
-    "objectID": "modules/dictionaries-lc-practice.html",
-    "href": "modules/dictionaries-lc-practice.html",
-    "title": "Practice Session 10",
+    "objectID": "courses/be-course/modules/files-practice.html#план",
+    "href": "courses/be-course/modules/files-practice.html#план",
+    "title": "Базова робота з файлами",
     "section": "",
-    "text": "📚 Словники, list comprehension та робота з даними\nСьогодні ми навчимося зберігати та обробляти зв’язну інформацію ефективно. Розберемося, як словники дозволяють миттєво знаходити дані за ключем без прив’язки до індексів, і як list comprehensions допомагають фільтрувати ці дані всього в один рядок коду.",
-    "crumbs": [
-      "Словники. List Comprehension",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Practice Session 10</span>"
-    ]
+    "text": "Робота з файлами в Python\nВідкриття, читання, та закриття файлів\nLive coding 1: Читання файлу\nКонструкція with. Запис у файли\nМодулі для роботи з файлами\nLive coding 2"
   },
   {
-    "objectID": "modules/dictionaries-lc-practice.html#план-заняття",
-    "href": "modules/dictionaries-lc-practice.html#план-заняття",
-    "title": "Practice Session 10",
-    "section": "📌 План заняття:",
-    "text": "📌 План заняття:\n\n👨‍💻 Live coding 1: Словник, як база даних\n\n🛠 Guided Practice\n\n👨‍💻 Live coding 2: Словник, як база даних\n\n🛠 Guided Practice\n\n👨‍💻 Live Coding 3: Маніпуляції над даними з List Comprehension\n\n🛠 Guided Practice",
-    "crumbs": [
-      "Словники. List Comprehension",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Practice Session 10</span>"
-    ]
+    "objectID": "courses/be-course/modules/files-practice.html#робота-з-файлами-в-python",
+    "href": "courses/be-course/modules/files-practice.html#робота-з-файлами-в-python",
+    "title": "Базова робота з файлами",
+    "section": "🔍 Робота з файлами в Python",
+    "text": "🔍 Робота з файлами в Python\nРообота з файлами у мові програмування Python стосується процесу відкриття, читання, запису та закриття файлів на диску. Python надає вбудовані функції та методи для ефективної роботи з файлами різних типів, таких як текстові файли, бінарні файли, CSV-файли тощо.\n\nНавіщо потрібна робота з файлами?\n\nДля збереження даних\nДля обробки великих обсягів інформації\nДля доступу до зовнішніх ресурсів"
   },
   {
-    "objectID": "modules/dictionaries-lc-practice.html#cheat-sheet",
-    "href": "modules/dictionaries-lc-practice.html#cheat-sheet",
-    "title": "Practice Session 10",
-    "section": "📝 Cheat Sheet",
-    "text": "📝 Cheat Sheet\n\nБазова робота зі словниками (Dictionaries) Словник — це колекція пар ключ: значення. Ключі завжди унікальні.\n\n\n# Створення порожнього словника\nmy_dict = {}\n\n# Додавання або оновлення значення\nmy_dict[\"new_key\"] = \"new_value\"\n\n# Вкладені словники (Словник у словнику)\ndb = {101: {\"name\": \"Alice\", \"grades\": [100, 90]}}\n\n# Доступ до вкладених даних\nalice_grades = db[101][\"grades\"] \n\n\nКорисні методи словників\n\n\n.get(key, default) — безпечний пошук. Повертає значення за ключем. Якщо ключа немає, повертає default (не крашить програму!).\n.pop(key, default) — безпечне видалення. Видаляє пару за ключем і повертає значення.\n.update(other_dict) — об’єднання. Додає до поточного словника ключі та значення з other_dict.\n\n\nІтерація по словнику (Цикли)\n\n\n# Пройтися тільки по ключах:\nfor key in my_dict.keys(): # або просто for key in my_dict:\n\n# Пройтися тільки по значеннях:\nfor value in my_dict.values():\n\n# Пройтися по парах ключ-значення:\nfor key, value in my_dict.items():\n\n\nКорисні методи для списків (в контексті словників)\n\n\n.append(item) — додає один елемент в кінець списку.\n.extend(list) — розширює поточний список елементами з іншого списку. Корисно, коли треба додати кілька оцінок одразу.\n\n\nList Comprehension (Генератори списків) Синтаксис для створення списків в один рядок. [що_додати for елемент in колекція if умова]\n\n\n# Приклад: витягнути всі імена з нашої бази\nnames = [data[\"name\"] for data in db.values()]\n\n# Приклад: імена лише тих студентів, у кого є більше 3 оцінок\ntop_students = [data[\"name\"] for data in db.values() if len(data[\"grades\"]) &gt; 3]",
-    "crumbs": [
-      "Словники. List Comprehension",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Practice Session 10</span>"
-    ]
+    "objectID": "courses/be-course/modules/files-practice.html#відкриття-та-закриття-файлів",
+    "href": "courses/be-course/modules/files-practice.html#відкриття-та-закриття-файлів",
+    "title": "Базова робота з файлами",
+    "section": "🔓 Відкриття та закриття файлів",
+    "text": "🔓 Відкриття та закриття файлів\n\nВідкриття файлів\nАби мати змогу працювати з певним файлом в Python, його потрібно спочатку відкрити за допомогою вбудованої функції open(). Ця функція приймає два основні аргументи: шлях до файлу та режим відкриття файлу.\n\nfile = open('example.txt', 'r')\n            #шлях         #режим\n\n\n\nЧитання файлів\nПісля відкриття файлу можна прочитати його вміст за допомогою різних методів, таких як read(), readline(), або readlines().\n\n\n\nФайл data.txt\n\nРядок 1\nРядок 2\nРядок 3\n\n\n\nfile = open('data.txt', 'r')\nall_content = file.read() #Читає весь вміст файлу\ncontent_list = file.readlines() #Читає всі рядки у вигляді списку\nline = file.readline() #Читає один рядок за раз\n\n\n\nЗакриття файлів\nПісля завершення роботи з файлом його слід обов’язково закрити за допомогою методу close(), щоб звільнити ресурси системи."
   },
   {
-    "objectID": "modules/dictionaries-lc-practice.html#coffee-warm-up",
-    "href": "modules/dictionaries-lc-practice.html#coffee-warm-up",
-    "title": "Practice Session 10",
-    "section": "☕Coffee Warm Up",
-    "text": "☕Coffee Warm Up\n\nУ нас є словник з цінами: menu = {\"Latte\": 60, \"Americano\": 40}. Клієнт питає, скільки коштує Американо. Яким одним рядком коду ми можемо дістати цю цифру?\nІнфляція. Лате тепер коштує 70 грн. А ще ми додали в меню Капучино за 65 грн. Як оновити словник?\nКлієнт просить “Flat White”. Ми знаємо, що якщо написати menu[\"Flat White\"], програма впаде з помилкою KeyError, бо такого ключа немає. Як перевірити, чи є цей напій в меню, повертаючи True або False?",
-    "crumbs": [
-      "Словники. List Comprehension",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Practice Session 10</span>"
-    ]
+    "objectID": "courses/be-course/modules/files-practice.html#live-coding-1-читання-файлу",
+    "href": "courses/be-course/modules/files-practice.html#live-coding-1-читання-файлу",
+    "title": "Базова робота з файлами",
+    "section": "👨🏻‍💻 Live Coding 1: Читання файлу",
+    "text": "👨🏻‍💻 Live Coding 1: Читання файлу\n\n\n\n\n\n\nПриміткаЗавдання\n\n\n\nУ нас є текстовий файл data.txt, який містить кілька рядків тексту. Нам потрібно прочитати цей файл і вивести рядок з макксимальною довжиною.\n\n\n\n\n\ndata.txt\n\nHello, world!\nPython is great for file handling.\nHellooooo, world!!!!!\nFile handling is essential for data processing.\n\n\n\n\n\n\n\n\nВажливоВаше завдання\n\n\n\nПрочитайте файл log.txt і знайдіть рядок з повідомлення ‘Error’, виведіть на екран цей рядок та його порядковий номер.\n💡 Для успішного виконання, маєте використати метод startswith\n\n\n\n\n\nlog.txt\n\nSystem started successfully.\nError: Connection failed.\nWarning: Low disk space.\nOK.\nProcess completed."
   },
   {
-    "objectID": "modules/dictionaries-lc-practice.html#live-coding-1-словник-як-база-даних",
-    "href": "modules/dictionaries-lc-practice.html#live-coding-1-словник-як-база-даних",
-    "title": "Practice Session 10",
-    "section": "👨‍💻 Live coding 1: Словник, як база даних",
-    "text": "👨‍💻 Live coding 1: Словник, як база даних\n\n\n\n\n\n\nПопередженняDisclaimer\n\n\n\nОскільки ми продовжуємо працювати в нашому репозиторії з попередньої практики - обов’язково створіть\n\n\nКонтекст: Ми продовжуємо працювати з нашим попереднім проєктом, але тепер наша задача полягає в створенні бази даних, яка містить імена та ID cтудентів. Задача полягає в створенні такої структури, яка могла би вміщати в себе дані студентів, та з якою можна було би з легкістю проводити маніпуляції на кшталт додавання нових студентів, або видалення вже присутніх.\nВхідні дані: Набір пар: унікальний ID студента та його ім’я. Наприклад, \"Alice\", 1\nОчікуваний результат: Вивід імен та ID усіх студентів.\n\n🛠 Guided Practice:\nКонтекст: Зберігання імен та ID студентів дозволяє нам розв’язати певні, проте доволі обмежені задачі. Перед нами постала проблема розширення нашої бази даних до такого вигляду, аби вона могла зберігати не лише ім’я студента, а і список його оцінок. Вашою метою є створення словника, який би задовольняв наші потреби в збереженні даних, а потім вивести усі дані про студентів на екран.\n\n\n\n\n\n\nПорадаПоради щодо виконання\n\n\n\n\nСтворіть новий порожній словник\nІтеративно заповніть ключі та значення цього словника даними, які є у students_db\nДо кожного значення додайте пустий список оцінок. Формат значення: {\"name\": \"ім'я_студента\", \"grades\": []}\n[BONUS] Заповніть список оцінок одного зі студентів випадковими значеннями\n\n\n\nВхідні дані: Словник виду students_db = {ID: name} з попередньої задачі.\nОчікуваний результат: Оновлений cловник виду {ID: {\"name\": \"ім'я_студента\", \"grades\": []}}\n\n\n\n\n\n\nПриміткаПримітка\n\n\n\nПам’ятайте, що для того, аби додати значення до словника ви маєте скористатися синтаксисом на кшталт dictionary[new_key] = new_value",
-    "crumbs": [
-      "Словники. List Comprehension",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Practice Session 10</span>"
-    ]
+    "objectID": "courses/be-course/modules/files-practice.html#коснтрукція-with.-запис-у-файли",
+    "href": "courses/be-course/modules/files-practice.html#коснтрукція-with.-запис-у-файли",
+    "title": "Базова робота з файлами",
+    "section": "📂 Коснтрукція with. Запис у файли",
+    "text": "📂 Коснтрукція with. Запис у файли\n\nКоснтрукція with\nКонструкція with створена для спрощення роботи з файлами. Її перевага в тому, що вона автоматично відкриває та закриває файл для нас.\n\nwith open(\"data.txt\", \"r\") as file:\n  content = file.read()\n  print(content)\n\n\n\nЗапис у файли\nУ Python, запис у файл здійснюється за допомогою режиму “w”. Він свторює файл, якщо його не існує, або переписує вже існуючий. Також, як і у впиадку читання, маємо спеціальний метод write для запису у файл.\n\nwith open(\"newfile.txt\", \"w\") as file:\n  file.write(\"This is a new file!\\n\")\n  file.write(\"This is line 2\\n\")"
   },
   {
-    "objectID": "modules/dictionaries-lc-practice.html#live-coding-2-адміністрація-даних",
-    "href": "modules/dictionaries-lc-practice.html#live-coding-2-адміністрація-даних",
-    "title": "Practice Session 10",
-    "section": "👨‍💻 Live Coding 2: Адміністрація даних",
-    "text": "👨‍💻 Live Coding 2: Адміністрація даних\nКонтекст: Наша новоспечена база даних працює! Проте, нашої з вами роботи виявилося замало, і окрім всіх речей, які ми зробили, нам потрібно вміти безпечно шукати студентів, відраховувати їх, та масово зараховувати нових студентів. Для того, аби ми могли зручно це робити, нам потрібно імплементувати три функції обгортки: search_student(db, id), expel_student(db, id) та add_students(db, students_dict)\nВхідні дані:\n\nНаша базова структура: db (словник студентів з попереднього завдання).\nДані для тестування функцій:\nДля пошуку: існуючий id (напр., 101) та неіснуючий (напр., 999).\nДля відрахування: id студента (напр., 102).\nДля зарахування: словник з новачками\n\n\nnew_students = {104: {\"name\": \"David\", \"grades\": []}, \n                105: {\"name\": \"Eve\", \"grades\": []}}\n\nОчікуваний результат:\n\nsearch_student(ab, id) безпечно повертає словник з даними студента або повідомлення “Не знайдено”.\nexpel_student(db, id) видаляє запис з db та повертає дані відрахованого студента (або сповіщає, якщо такого ID немає).\nadd_students(db, students_dict) розширює db новими записами (нічого не повертає, просто мутує оригінальний словник).\n\n\n🛠 Guided Practice:\nКонтекст: Ми покрили майже всі нюанси адміністрування нашої бази даних, окрім додавання оцінок для вже існуючих студентів. Вам потрібно написати функцію add_grade(db, student_id, grades), яка повинна знайти студента за його ID і додати нові оцінки до його списку “grades”. Якщо студента з таким ID не існує — вивести попередження.\nВхідні дані: База даних students_db з попереднього завдання. Спробуйте додати оцінки [95, 100] студенту з ID 101 та оцінку [80, 90] студенту з ID 999.\nОчікуваний результат: У студента 101 в списку оцінок мають з’явитися нові оцінки. При спробі додати оцінку студенту 999 на екран має вивестись повідомлення з помилкою.\n\n\n\n\n\n\nПорадаПоради щодо виконання\n\n\n\n\nВикористайте оператор in для перевірки наявності ID.\nВикористайте метод списків .extend(), щоб додати елементи до існуючого списку оцінок.",
-    "crumbs": [
-      "Словники. List Comprehension",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Practice Session 10</span>"
-    ]
+    "objectID": "courses/be-course/modules/files-practice.html#модулі-для-роботи-з-файлами-.csv",
+    "href": "courses/be-course/modules/files-practice.html#модулі-для-роботи-з-файлами-.csv",
+    "title": "Базова робота з файлами",
+    "section": "📦 Модулі для роботи з файлами .csv",
+    "text": "📦 Модулі для роботи з файлами .csv\n\nЩо таке .csv?\n.csv це простий формат файлу, створений щоб зберігати дату у табличному вигляді як значення, розділені комами. Перший рядок, зазвичай слугує заголовком, який показує що означає кожна колонка\n\n\n\nfile.csv\n\nname,age,year-of-birth\nvasya,18,2007\nolena,20,2005\nvolodya,17,2008\n\n\n\n\nМодуль csv\nАби працювати з .csv файлами, нам потрібно імпортувати відповідний модуль, який дає нам потрібний функціонал.\n\nimport csv\n\nwith open('file.csv' 'r') as csvfile:\n  reader = csv.DictReader(csvfile, delimeter=',')\n  for row in reader:\n    print(row['name'], row['age'], row['year-of-birth'])\n\n\n\nЗапис у .csv файл\nЗапис у .csv файл також здійснюється за допомогою модуля csv, але з використанням класу DictWriter. Для цього, нам потрібно мати таку ж структуру, яку повертає DictReader – словник з ключами, що відповідають заголовкам колонок.\nТакож, ми маємо різні варіанти режимів запису:\n\n'w' - створює новий файл або переписує існуючий\n'a' - додає нові рядки в кінець існуючого файлу\n\n\nimport csv\n\nfiltered_data = [\n    {'Name': 'Olena', 'Role': 'Dev', 'Salary': 3000},\n    {'Name': 'Ivan', 'Role': 'Manager', 'Salary': 2500},\n    {'Name': 'Maria', 'Role': 'CEO', 'Salary': 5000}\n]\n\nheaders = ['Name', 'Role', 'Salary']\n\nwith open('report.csv', 'w', newline='', encoding='utf-8') as csvfile:\n    writer = csv.DictWriter(csvfile, fieldnames=headers)\n    writer.writeheader()\n\n    writer.writerows(filtered_data)\n    \n    # Варіант Б: Записувати по одному рядку (якщо ми обробляємо в циклі)\n    # for person in filtered_data:\n    #     writer.writerow(person)"
   },
   {
-    "objectID": "modules/dictionaries-lc-practice.html#live-coding-3-маніпуляції-над-даними-з-list-comprehension",
-    "href": "modules/dictionaries-lc-practice.html#live-coding-3-маніпуляції-над-даними-з-list-comprehension",
-    "title": "Practice Session 10",
-    "section": "👨‍💻 Live Coding 3: Маніпуляції над даними з List Comprehension",
-    "text": "👨‍💻 Live Coding 3: Маніпуляції над даними з List Comprehension\nКонтекст: Наша база даних розростається, і часто нам не потрібна вся інформація одразу, а лише конкретні вибірки. Наприклад, нас просять надати просто список імен усіх студентів для розсилки, а потім — окремий список тих, хто має хоча б одну оцінку “100”.\nВхідні дані: Наша поточна база students_db\nОчікуваний результат:\n\nСписок усіх імен\nСписок тих, у кого є 100 балів\n\n\n🛠 Guided Practice:\nКонтекст: І як ваше фінальне завдання, вам потрібно вирахувати тих студентів, які, на жаль чи на щастя, залік цього терму не отримають. Умови отримання заліку: мати хоча би 3 оцінки. Всі, хто мають менше за 3 - залік не отримують\nВхідні дані: Ви можете оновити попередню базу даних, аби в різних студентів була різна кількість оцінок, або ж використати нову, запропоновану нижче:\n\ndb_for_test = {\n    101: {\"name\": \"Alice\", \"grades\": [100, 95, 90]}, # Здала все\n    102: {\"name\": \"Bob\", \"grades\": [70, 75]},        # Боржник\n    103: {\"name\": \"Charlie\", \"grades\": [85]}         # Боржник\n}\n\nОчікуваний результат: Список імен [\"Bob\", \"Charlie\"] студентів, які не отримають залік\n\n\n\n\n\n\nПопередженняОбмеження\n\n\n\nДля розв’язання цього завдання використовуйте тільки list comprehension!",
-    "crumbs": [
-      "Словники. List Comprehension",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Practice Session 10</span>"
-    ]
+    "objectID": "courses/be-course/modules/files-practice.html#live-coding-2",
+    "href": "courses/be-course/modules/files-practice.html#live-coding-2",
+    "title": "Базова робота з файлами",
+    "section": "👨🏻‍💻 Live coding 2:",
+    "text": "👨🏻‍💻 Live coding 2:\n\n\n\n\n\n\nПриміткаЗавдання\n\n\n\nНам надано .csv файл з колонками, які відповідають за ім’я, роль, та заробітню плату людини. Нам потріно прочитати файл та відфільтрувати тільки тих людей, які заробляють більше 1800 доларів, та вивести їх на екран. Для виконання потрібно скористатися csv.DictReader()\n\n\n\n\n\nstaff.csv\n\nName,Position,Salary\nIvan,Manager,1200\nOlena,Developer,2500\nPetro,Analyst,1800\nMaria,Lead,3000\nVasyl,Intern,500\n\n\n\n\n\n\n\n\nВажливоВаше завдання\n\n\n\nМаючи ті самі дані, запишіть відфілтровані дані у новий файл filtered_data.csv. Використайте csv.DictWriter()"
+  },
+  {
+    "objectID": "courses/be-course/modules/ATM-simulator-task.html",
+    "href": "courses/be-course/modules/ATM-simulator-task.html",
+    "title": "Практична №4 (Тиждень 3)",
+    "section": "",
+    "text": "📌 Завдання: “Симулятор банкомату”.\nСьогодні ви виконаєте свій перший крутий міні-проєкт. Перед вами стоїть задача написати “Симулятор банкомату”.\nПрограма має працювати наступним чином:\n\nСпочатку ви маєте показати користувачу меню доступних операцій:\n1. Перевірити баланс\n2. Зняти гроші\n3. Поповнити рахунок\n4. Вийти\nВ залежності від вибраної операції (користувач має увести відповідний номер), програма має виконати відповідну дію.\nБаланс користувача початково встановлюється на 1000 гривень.\nЯкщо користувач вводить недоступну команду (що завгодно окрім 0, 1, 2, 3 чи 4), програма має вивести повідомлення про помилку і знову показати меню. - Програма працює доти, доки користувач не обере завершити роботу (опція 4).\n\nПриклад роботи програми:\n\n--- M-Bank ATM ---\n1. Перевірити баланс\n2. Покласти кошти (Депозит)\n3. Зняти кошти\n4. Вихід\nВведіть номер опції (1-4): 1\nВаш поточний баланс: 1000.0 грн\n\n--- M-Bank ATM ---\n1. Перевірити баланс\n2. Покласти кошти (Депозит)\n3. Зняти кошти\n4. Вихід\nВведіть номер опції (1-4): 2\nВведіть суму для депозиту: 500\nУспішно! Ваш новий баланс: 1500.0 грн\n\n--- M-Bank ATM ---\n1. Перевірити баланс\n2. Покласти кошти (Депозит)\n3. Зняти кошти\n4. Вихід\nВведіть номер опції (1-4): 3\nВведіть суму для зняття: 2000\n\nПомилка: Недостатньо коштів. На вашому рахунку лише 1500.0 грн\n\n--- M-Bank ATM ---\n1. Перевірити баланс\n2. Покласти кошти (Депозит)\n3. Зняти кошти\n4. Вихід\nВведіть номер опції (1-4): 3\nВведіть суму для зняття: 700\nЗаберіть ваші кошти. Залишок на рахунку: 800.0 грн\n\n--- M-Bank ATM ---\n1. Перевірити баланс\n2. Покласти кошти (Депозит)\n3. Зняти кошти\n4. Вихід\nВведіть номер опції (1-4): 5\nНевірний вибір. Будь ласка, введіть число від 1 до 4.\n\n--- M-Bank ATM ---\n1. Перевірити баланс\n2. Покласти кошти (Депозит)\n3. Зняти кошти\n4. Вихід\nВведіть номер опції (1-4): 4\nДякуємо за використання M-Bank! До побачення.\n\n\n🔍 Поради щодо виконання.\n\nВикористовуйте цикл while, щоб програма продовжувала працювати, доки користувач не обере вийти.\nВикористовуйте умовні оператори if, elif та else для обробки вибору користувача.\nВикористовуйте змінну для збереження балансу користувача і оновлюйте її відповідно до операцій депозиту та зняття коштів.\nНе забудьте обробити випадки, коли користувач намагається зняти більше грошей, ніж є на рахунку.\nДодайте повідомлення про помилки для недійсних вводів."
+  },
+  {
+    "objectID": "courses/be-course/modules/strings-practice.html",
+    "href": "courses/be-course/modules/strings-practice.html",
+    "title": "Практична №5.1: Робота з рядками",
+    "section": "",
+    "text": "Що таке рядки\nРядок як структура даних\nLive coding 1\nОперації з рядками\nLive coding 2\nВаше завдання та QA"
+  },
+  {
+    "objectID": "courses/be-course/modules/strings-practice.html#план-на-сьогодні",
+    "href": "courses/be-course/modules/strings-practice.html#план-на-сьогодні",
+    "title": "Практична №5.1: Робота з рядками",
+    "section": "",
+    "text": "Що таке рядки\nРядок як структура даних\nLive coding 1\nОперації з рядками\nLive coding 2\nВаше завдання та QA"
+  },
+  {
+    "objectID": "courses/be-course/modules/strings-practice.html#що-таке-рядки-і-як-вони-працюють",
+    "href": "courses/be-course/modules/strings-practice.html#що-таке-рядки-і-як-вони-працюють",
+    "title": "Практична №5.1: Робота з рядками",
+    "section": "❓ Що таке рядки і як вони працюють?",
+    "text": "❓ Що таке рядки і як вони працюють?\n\nРядок\nЦе послідовність символів, які використовуються для зберігання та представлення текстової інформації в програмуванні. Рядки можуть містити літери, цифри, пробіли, спеціальні символи та інші знаки.\n\n\nСинтаксис\n\nОдинарні: 'Привіт, світе!'\nПодвійні: \"Це теж рядок\"\nПотрійні: \"\"\"Для багаторядкового тексту\"\"\""
+  },
+  {
+    "objectID": "courses/be-course/modules/strings-practice.html#рядок-як-структура-даних",
+    "href": "courses/be-course/modules/strings-practice.html#рядок-як-структура-даних",
+    "title": "Практична №5.1: Робота з рядками",
+    "section": "🫙 Рядок як структура даних",
+    "text": "🫙 Рядок як структура даних\nЗ попередньо визначення випливає те, що рядок є послідовністю символів. Це означає, що кожен символ у рядку має свою позицію (індекс), починаючи з нуля.\n\ntext = \"Hello, World!\"\n\nprint(f\"{text[0]} {text[1]} {text[2]} {text[3]} {text[4]}\")  \n\nH e l l o\n\n\n\nЦе означає що ми можемо робити наступне:\n\nОтримати доступ до будь якого символу за індексом\nІтеруватися по кожному символу в рядку\n\n\nprint(\"--- По символах: ---\")\nfor char in \"Hello\":\n    print(f\"Символ: {char}\")\n\n--- По символах: ---\nСимвол: H\nСимвол: e\nСимвол: l\nСимвол: l\nСимвол: o\n\n\n\n\n🛑 Attention, Immutability!\nРядки в Python є незмінними (immutable), що означає, що після створення рядка його вміст не може бути змінений. Будь-які операції, які здаються зміною рядка, насправді створюють новий рядок.\n\nmy_string = \"Hello\"\nmy_string[0] = \"J\"   # -&gt; ЦЕ ВИКЛИЧЕ ПОМИЛКУ!\n\nЩоб змінити рядок, потрібно створювати новий"
+  },
+  {
+    "objectID": "courses/be-course/modules/strings-practice.html#live-coding-1-валідація-єдрпоу",
+    "href": "courses/be-course/modules/strings-practice.html#live-coding-1-валідація-єдрпоу",
+    "title": "Практична №5.1: Робота з рядками",
+    "section": "💻 Live coding 1: валідація ЄДРПОУ",
+    "text": "💻 Live coding 1: валідація ЄДРПОУ\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nУявіть, що нам треба перевірити код ЄДРПОУ (податковий код компанії), який вводить користувач.\n\n\n\nБізнес-правила для цього коду:\n\nВін повинен містити рівно 8 цифр\nВін не повинен містити жодних букв чи інших символів"
+  },
+  {
+    "objectID": "courses/be-course/modules/strings-practice.html#операції-над-рядками",
+    "href": "courses/be-course/modules/strings-practice.html#операції-над-рядками",
+    "title": "Практична №5.1: Робота з рядками",
+    "section": "Операції над рядками",
+    "text": "Операції над рядками\n\n“Очисні” існтрументи\n\n.strip() - видаляє пробіли на початку і в кінці рядка\n\n\ndirty = \"   1,500.25  \"\nclean = dirty.strip()\nprint(clean)\n\n1,500.25\n\n\n\n.lower()/.upper() - перетворює всі символи рядка в нижній регістр\n\n\nmessy_input = \"uAh\"\nif messy_input.lower() == \"uah\":\n    print(\"Це гривня!\")\n\nЦе гривня!\n\n\n\n\n“Хірургічні” інстурменти\n\n.replace(old, new) - замінює всі входження old на new\n\n\nprice = \"1,500.25 грн\"\n# Можна робити \"ланцюжок\" (chaining)\nclean_price = price.replace(\",\", \".\").replace(\" грн\", \"\")\n# clean_price -&gt; \"1.500.25\"\n\n\n.split(separator) - розбиває рядок на список підрядків за вказаним роздільником\n\n\nreport_line = \"Дохід: 1,200.50\"\nparts = report_line.split(\":\")\nprint(parts)\n\n['Дохід', ' 1,200.50']\n\n\n\n\nПеревірка вмісту рядка\n\nОператор in - перевіряє, чи існує підрядок всередині рядка. Повертає True або False\n\n\nreport = \"Дохід: 500 грн\"\nif \"грн\" in report.lower():\n    print(\"Це гривня!\")\n\nЦе гривня!\n\n\n\n.startswith(substring)/.endswith(substrig) - перевіряє, чи починається рядок з вказаного підрядка\n\n\niban = \"UA1234567890\"\nemail = \"student@kse.ua\"\n\n# Перевірка банківського рахунку\nif iban.startswith(\"UA\"):\n    print(\"Це український IBAN.\")\n\n# Перевірка корпоративної пошти\nif email.endswith(\"@kse.ua\"):\n    print(\"Це корпоративна пошта KSE.\")\n\nЦе український IBAN.\nЦе корпоративна пошта KSE.\n\n\n\n.find(substring) - шукає підрядок у рядку і повертає індекс першого входження або -1, якщо не знайдено\n\n\nreport = \"ID: 456 | User: Alice\"\n\n# Знаходимо, де починається \"User: \"\nuser_start_index = report.find(\"User: \")\nprint(f\"Початок 'User: ': {user_start_index}\") # -&gt; 10\n\nПочаток 'User: ': 10"
+  },
+  {
+    "objectID": "courses/be-course/modules/strings-practice.html#live-coding-2-extracting-data",
+    "href": "courses/be-course/modules/strings-practice.html#live-coding-2-extracting-data",
+    "title": "Практична №5.1: Робота з рядками",
+    "section": "💻 Live coding 2: Extracting data",
+    "text": "💻 Live coding 2: Extracting data\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nУ нас є рядок raw_record = \"INFO: User 'alice' | TRANSACTION_ID: 831 | AMOUNT: 1,500.25$ \". Нам потрібно витягнути звідти тільки деякі дані\n\n\nНам не потрібен ID транзакції, нам потрібна тільки сума (1,500.25$), і нам треба перетворити її на float (1500.25), щоб ми могли з нею рахувати."
+  },
+  {
+    "objectID": "courses/be-course/modules/strings-practice.html#ваше-завдання-та-qa",
+    "href": "courses/be-course/modules/strings-practice.html#ваше-завдання-та-qa",
+    "title": "Практична №5.1: Робота з рядками",
+    "section": "🎯 Ваше завдання та QA",
+    "text": "🎯 Ваше завдання та QA\n\n\n\n\n\n\nПриміткаЗавдання\n\n\n\nНаписати програму, яка просить користувача ввести один рядок у форматі “Ім’я, email@domain.com” і витягує з нього чисте доменне ім’я (наприклад, kse.com.ua) та ім’я користувача\n\n\n\n⚒️ Воркфлоу:\n\nПрограма просить користувача ввести рядок: user_input = input(\"Введіть дані (формат 'Ім'я, email@domain.com'): \")\nПриклад вводу: Іван Петренко, ivan.petrenko@kse.com.ua (зверніть увагу на можливі пробіли).\nВикористовуючи ланцюжок методів, які ми вивчили (в основному .split() та .strip()), програма має вивести домен.\nОкрім цього, нехай програма також виведе ім’я користувача\nОчікуваний результат роботи програми:\n\nEnter data: Ivan Petrenko, ivan.petrenko@kse.com.ua\n# Ваш вивід\nName: Ivan Petrenko, Domain: kse.com.ua\n\n\n\n💡 Поради до виконання\n\nСкористайтеся методом .split(), аби відрізати потрібну частинку рядка. Зверніть увагу на сам ввід, ви можете використати як роздільник символ “,” ( ну або щось інше _ )\nНе забудьте прибрати зайві пробіли та символи (якщо буде така необхідність)\nПрипустимо, що користувач уводить тільки правильні дані"
+  },
+  {
+    "objectID": "courses/be-course/modules/libraries-json-practice.html",
+    "href": "courses/be-course/modules/libraries-json-practice.html",
+    "title": "Робота з JSON. Робота з бібліотеками matplotlib, pandas та numpy",
+    "section": "",
+    "text": "Робота з файлами .json в Python\nLive coding 1: Читання файлу\nБібліотеки: pandas, matplotlib, numpy\nLive coding 2"
+  },
+  {
+    "objectID": "courses/be-course/modules/libraries-json-practice.html#план",
+    "href": "courses/be-course/modules/libraries-json-practice.html#план",
+    "title": "Робота з JSON. Робота з бібліотеками matplotlib, pandas та numpy",
+    "section": "",
+    "text": "Робота з файлами .json в Python\nLive coding 1: Читання файлу\nБібліотеки: pandas, matplotlib, numpy\nLive coding 2"
+  },
+  {
+    "objectID": "courses/be-course/modules/libraries-json-practice.html#робота-з-.json",
+    "href": "courses/be-course/modules/libraries-json-practice.html#робота-з-.json",
+    "title": "Робота з JSON. Робота з бібліотеками matplotlib, pandas та numpy",
+    "section": "🔍 Робота з .json",
+    "text": "🔍 Робота з .json\n\nЩо таке JSON?\nJSON (від Java Script Object Notation) – легкий,текстоорієнтований формат обміну даних, який використовується здебільшого для передачі даних між серверами та веб застосунками, а також використовується для легкого опрацювання великої кількості даних.\nJSON, по суті, являє собою колекцію пар ключ: значення, і може зберігати всі відомі вам типи даних.\n\n\nЧитання .json файлів\nМова програмування Python має вбудований модуль для роботи з такими файлами:\n\n\n\ndata.json\n\n{\n  \"Name\": \"Vasya\",\n  \"Age\": 28,\n  \"Address\": {\n    \"work\": \"Kyiv, Mykoly Shapaka 3 street\",\n    \"home\": null\n  }\n}\n\n\n\nimport json\n\nwith open('data.json', 'r') as file:\n  file = json.load(file)\n  print(data['Name'], data['Age'], data['Address']['work'])\n\n\n\nЗапис у .json файл\nЗапис до файлу виконується схожим чином. Нам потрібно мати словник, так використати метод json.dump\n\nimport json\n\ndict_data = {\n  \"Name\": \"Vasya\",\n  \"Age\": 28,\n  \"Address\": {\n    \"work\": \"Kyiv, вулиця Миколи Шпака 3\",\n    \"home\": null\n  }\n}\n\nwith open('data.json', 'w') as file:\n  json.dump(dict_data, file, indent=4)"
+  },
+  {
+    "objectID": "courses/be-course/modules/libraries-json-practice.html#live-coding",
+    "href": "courses/be-course/modules/libraries-json-practice.html#live-coding",
+    "title": "Робота з JSON. Робота з бібліотеками matplotlib, pandas та numpy",
+    "section": "👨🏻‍💻 Live coding:",
+    "text": "👨🏻‍💻 Live coding:\n\n\n\n\n\n\nПримітка\n\n\n\nУ нас є .json файл з даними про покупця в магазині техніки. Нам потрібно відкрити його та провести певний аналіз, а саме знайти середню ціну одного замовлення (item), певного користувача\n\n\n\n\n\ndata.json\n\n{\n  \"orderId\": \"PO-12345\",\n  \"customer\": {\n    \"name\": \"Jane Smith\",\n    \"email\": \"jane@example.com\",\n    \"address\": {\n      \"street\": \"123 Main St\",\n      \"city\": \"Anytown\",\n      \"zip\": \"12345\"\n    }\n  },\n  \"items\": [\n    { \"sku\": \"ABC-001\", \"name\": \"Laptop\", \"price\": 1100.99 },\n    { \"sku\": \"XYZ-002\", \"name\": \"Phone\", \"price\": 780.50 },\n    { \"sku\": \"QWE-005\", \"name\": \"Tablet\", \"price\": 900.00 }\n  ],\n  \"totalAmount\": 49.49,\n  \"shipped\": true,\n  \"notes\": null\n}\n\n\n\n\n\n\n\n\nПримітка\n\n\n\nМаючи той самий data.json файл, додайте до items ще один типовий елемент. Порахуйте середню вартість одного item. Запишіть отримані дані у новий файл new_data.json"
+  },
+  {
+    "objectID": "courses/be-course/modules/libraries-json-practice.html#бібліотеки-pandas-matplotlib-та-numpy",
+    "href": "courses/be-course/modules/libraries-json-practice.html#бібліотеки-pandas-matplotlib-та-numpy",
+    "title": "Робота з JSON. Робота з бібліотеками matplotlib, pandas та numpy",
+    "section": "📚 Бібліотеки: pandas, matplotlib та numpy",
+    "text": "📚 Бібліотеки: pandas, matplotlib та numpy"
+  },
+  {
+    "objectID": "courses/be-course/modules/functions-practice.html",
+    "href": "courses/be-course/modules/functions-practice.html",
+    "title": "Functions basics",
+    "section": "",
+    "text": "Функції в Python\nLive coding 1: Конвертер валют\nLive coding 2: Функції з логікою"
+  },
+  {
+    "objectID": "courses/be-course/modules/functions-practice.html#план",
+    "href": "courses/be-course/modules/functions-practice.html#план",
+    "title": "Functions basics",
+    "section": "",
+    "text": "Функції в Python\nLive coding 1: Конвертер валют\nLive coding 2: Функції з логікою"
+  },
+  {
+    "objectID": "courses/be-course/modules/functions-practice.html#функції-в-python",
+    "href": "courses/be-course/modules/functions-practice.html#функції-в-python",
+    "title": "Functions basics",
+    "section": "🔍 Функції в Python",
+    "text": "🔍 Функції в Python\nФункції в Python — це блоки коду, які виконують певне завдання і можуть бути повторно використані в програмі. Вони допомагають організувати код, зробити його більш читабельним і зменшити дублювання.\n\nВиди функцій в Python\n\nВбудовані функції: Це функції, які вже визначені в Python і готові до використання, наприклад, print(), len(), type().\nКористувацькі функції: Це функції, які ви визначаєте самостійно для виконання конкретних завдань у вашій програмі.\n\n\n\n\n\n❌ Без функцій\n\nsalary_ivan = 15000\ntax_ivan = salary_ivan * 0.195\nnet_ivan = salary_ivan - tax_ivan\nprint(f\"Ivan: {net_ivan}\")\n\nsalary_maria = 22000\ntax_maria = salary_maria * 0.195\nnet_maria = salary_maria - tax_maria\nprint(f\"Maria: {net_maria}\")\n\nsalary_petro = 18000\ntax_petro = salary_petro * 0.195\nnet_petro = salary_petro - tax_petro\nprint(f\"Petro: {net_petro}\")\n\nIvan: 12075.0\nMaria: 17710.0\nPetro: 14490.0\n\n\n\n\n\n✅ З функціями\n\ndef get_net_salary(salary):\n    tax = salary * 0.195 \n    return salary - tax\n\n# Використання\nprint(f\"Ivan: {get_net_salary(15000)}\")\nprint(f\"Maria: {get_net_salary(22000)}\")\nprint(f\"Petro: {get_net_salary(18000)}\")\n\nIvan: 12075.0\nMaria: 17710.0\nPetro: 14490.0\n\n\n\n\n\n\nВизначення функції\nФункція визначається за допомогою ключового слова def, за яким слідує ім’я функції та круглі дужки з параметрами (якщо є). Тіло функції відступає від лівого краю.\n\ndef function_name(parameters):\n    # Тіло функції\n    ...\n    # return expression (не обов'язково)\n\n\n\nПараметри та аргументи\n\ndef greet():\n    print(\"Hello, World!\")\n    \ngreet()  # Виклик функції\n\nHello, World!\n\n\n\ndef greet(name):\n    print(f\"Hello, {name}!\")\n\ngreet(\"Vadym\")  # Виклик функції з аргументом\n\nHello, Vadym!\n\n\n\n\n↩︎️ Return\nreturn використовується для повернення значення з функції. Якщо функція не має return, вона повертає None за замовчуванням.\n\ndef add(a, b):\n    return a + b\n  \nresult = add(5, 3)\nprint(result)  # Виведе: 8\n\n8"
+  },
+  {
+    "objectID": "courses/be-course/modules/functions-practice.html#live-coding-1-конвертер-валют",
+    "href": "courses/be-course/modules/functions-practice.html#live-coding-1-конвертер-валют",
+    "title": "Functions basics",
+    "section": "👨🏻‍💻 Live coding 1: Конвертер валют",
+    "text": "👨🏻‍💻 Live coding 1: Конвертер валют\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nНаписати функцію, яка приймає суму в доларах та конвертує її в гривні за курсом 41.5 грн за долар.\n\n\n\n📝 Ваше завдання\n\n\n\n\n\n\nВажливоТЗ\n\n\n\nНапишіть функцію, яка приймає ціну товару та відсоток знижки, а повертає фінальні ціну товару"
+  },
+  {
+    "objectID": "courses/be-course/modules/functions-practice.html#передача-аргументів-у-функцію",
+    "href": "courses/be-course/modules/functions-practice.html#передача-аргументів-у-функцію",
+    "title": "Functions basics",
+    "section": "↪️ Передача аргументів у функцію",
+    "text": "↪️ Передача аргументів у функцію\n\nАргументи за замовчуванням\nМи можемо задати значення аргументу “по дефолту”. Якщо користувач його не передасть, Python візьме наше значення.\n\ndef greet(name, msg=\"Good morning!\"):\n    print(f\"{msg}, {name}\")\n\ngreet(\"Vadym\")             # Використає дефолтне повідомлення\ngreet(\"Vadym\", \"Hi\")       # Перезапише своїм\n\nGood morning!, Vadym\nHi, Vadym\n\n\n\n\nПозиційні аргументи\nПозиційні аргументи передаються у функцію відповідно до порядку параметрів.\n\ndef nameAge(name, age):\n    print(\"Hi, I am\", name)\n    print(\"My age is \", age)\n\nprint(\"Case-1:\")\nnameAge(\"Vadym\", 18)\n\nprint(\"\\nCase-2:\")\nnameAge(18, \"Vadym\")\n\nCase-1:\nHi, I am Vadym\nMy age is  18\n\nCase-2:\nHi, I am 18\nMy age is  Vadym\n\n\n\n\nІменовані аргументи\nІменовані аргументи дозволяють передавати значення параметрів за їхніми іменами, незалежно від порядку.\n\ndef student(fname, lname):\n    print(fname, lname)\n\nstudent(fname='Vadym', lname='Practice')\nstudent(lname='Practice', fname='Vadym')\n\nVadym Practice\nVadym Practice"
+  },
+  {
+    "objectID": "courses/be-course/modules/functions-practice.html#live-coding-2",
+    "href": "courses/be-course/modules/functions-practice.html#live-coding-2",
+    "title": "Functions basics",
+    "section": "👨🏻‍💻 Live coding 2",
+    "text": "👨🏻‍💻 Live coding 2\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nНаписати функцію яка вирішить, чи може студент отримати фінансування, в залежності від його оцінок (функція має приймати список) - Студент може отримати фінансування якщо його середній бал &gt; 80 - Якщо в студента є хоча би одна оцінка менше за 60 - фінансування отримати не можна\n\n\n\n📝 Ваше завдання\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nНапишіть функцію, яка конвертує оцінки студента в буквенний еквівалент. Функція має приймати список з оцінками від 0 до 100, і повернути список з оцінками від F до A. Правила наступні:\n\n90 - 100 = А\n80 - 90 = B\n70 - 80 = C\n60 - 70 = E\n0 - 60 = F\n\nЯкщо оцінка менша за 0 або більша за 100 функція виводить Error та повертає пустий список."
   }
 ]
