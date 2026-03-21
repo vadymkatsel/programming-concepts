@@ -55,7 +55,7 @@ website:
 
         - section: "Словники. List Comprehension"
           contents:
-            - courses\math-course\modules\dictionaries-lc-practice.qmd
+            - courses/math-course/modules/dictionaries-lc-practice.qmd
       active-modes: [courses/math-course]
 
     - id: be-sidebar
@@ -68,34 +68,34 @@ website:
   
         - section: "Змінні, типи даних. Математичні операції в Python"
           contents: 
-            - courses\be-course\modules\variables-data-types-operations-practice.qmd
+            - courses/be-course/modules/variables-data-types-operations-practice.qmd
             
         - section: "Логічні розгалудження"
           contents: 
-            - courses\be-course\modules\conditionals-practice.qmd
-            - courses\be-course\modules\ATM-simulator-task.qmd
+            - courses/be-course/modules/conditionals-practice.qmd
+            - courses/be-course/modules/ATM-simulator-task.qmd
 
         - section: "Списки та словники"
           contents: 
-            - courses\be-course\modules\lists-practice.qmd
-            - courses\be-course\modules\dictionaries-tuples-sets-practice.qmd
-            - courses\be-course\modules\comprehensions-practice.qmd
+            - courses/be-course/modules/lists-practice.qmd
+            - courses/be-course/modules/dictionaries-tuples-sets-practice.qmd
+            - courses/be-course/modules/comprehensions-practice.qmd
 
         - section: "Рядки"
           contents:
-            - courses\be-course\modules\strings-practice.qmd
+            - courses/be-course/modules/strings-practice.qmd
 
         - section: "Функції"
           contents: 
-            - courses\be-course\modules\functions-practice.qmd
+            - courses/be-course/modules/functions-practice.qmd
 
         - section: "Робота з файлами"
           contents: 
-            - courses\be-course\modules\files-practice.qmd
+            - courses/be-course/modules/files-practice.qmd
 
         - section: "Бібліотеки, JSON"
           contents: 
-            - courses\be-course\modules\libraries-json-practice.qmd
+            - courses/be-course/modules/libraries-json-practice.qmd
 
       active-modes: [courses/be-course]
 
