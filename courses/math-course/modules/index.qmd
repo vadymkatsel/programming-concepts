@@ -10,26 +10,6 @@ lang: ua
 execute:
   eval: false
 page-layout: full
-include-in-header:
-  text: |
-    <style>
-      body {
-        background-image: 
-          linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)),
-          url('/courses/math-course/sources/construction.png');
-        
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-      }
-
-      body.quarto-dark {
-        background-image: 
-          linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-          url('/courses/math-course/sources/construction.png');
-      }
-    </style>
 ---
 
 <div style="text-align: center; padding: 100px 20px; opacity: 0.6;">
