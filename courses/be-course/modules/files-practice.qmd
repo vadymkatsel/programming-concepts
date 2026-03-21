@@ -1,0 +1,226 @@
+---
+title: "Базова робота з файлами"
+affiliation: "Programming Concepts"
+author: Vadym Katsel
+date: today
+date-format: "YYYY-MM-DD"
+toc: true
+lang: ua
+format: 
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+---
+
+##  📌 План
+- Робота з файлами в Python
+- Відкриття, читання, та закриття файлів
+- Live coding 1: Читання файлу
+- Конструкція with. Запис у файли
+- Модулі для роботи з файлами
+- Live coding 2
+
+## 🔍 Робота з файлами в Python
+
+Рообота з файлами у мові програмування Python стосується процесу відкриття, читання, запису та закриття файлів на диску. Python надає вбудовані функції та методи для ефективної роботи з файлами різних типів, таких як **текстові файли**, бінарні файли, **CSV-файли** тощо.
+
+### Навіщо потрібна робота з файлами?
+- Для збереження даних
+- Для обробки великих обсягів інформації
+- Для доступу до зовнішніх ресурсів
+
+## 🔓 Відкриття та закриття файлів
+
+### Відкриття файлів
+
+Аби мати змогу працювати з певним файлом в Python, його потрібно спочатку відкрити за допомогою вбудованої функції `open()`. Ця функція приймає два основні аргументи: шлях до файлу та режим відкриття файлу.
+
+```{python}
+#| eval: false
+
+file = open('example.txt', 'r')
+            #шлях         #режим
+```
+
+### Читання файлів
+
+Після відкриття файлу можна прочитати його вміст за допомогою різних методів, таких як `read()`, `readline()`, або `readlines()`.
+
+```{python}
+#| filename: "Файл data.txt"
+#| eval: false
+
+Рядок 1
+Рядок 2
+Рядок 3
+```
+
+```{python}
+#| eval: false
+
+file = open('data.txt', 'r')
+all_content = file.read() #Читає весь вміст файлу
+content_list = file.readlines() #Читає всі рядки у вигляді списку
+line = file.readline() #Читає один рядок за раз
+```
+
+### Закриття файлів
+
+Після завершення роботи з файлом його слід обов'язково закрити за допомогою методу `close()`, щоб звільнити ресурси системи.
+
+## 👨🏻‍💻 Live Coding 1: Читання файлу
+
+::: callout-note
+## Завдання
+
+У нас є текстовий файл `data.txt`, який містить кілька рядків тексту. Нам потрібно прочитати цей файл і вивести рядок з макксимальною довжиною.
+:::
+
+```{python}
+#| filename: "data.txt"
+#| eval: false
+
+Hello, world!
+Python is great for file handling.
+Hellooooo, world!!!!!
+File handling is essential for data processing.
+
+```
+
+::: callout-important
+## Ваше завдання
+
+Прочитайте файл `log.txt` і знайдіть рядок з повідомлення  'Error', виведіть на екран цей рядок та його порядковий номер.
+
+💡 Для успішного виконання, маєте використати метод `startswith`
+:::
+
+```{python}
+#| filename: "log.txt"
+#| eval: false
+System started successfully.
+Error: Connection failed.
+Warning: Low disk space.
+OK.
+Process completed.
+```
+
+## 📂 Коснтрукція with. Запис у файли
+
+### Коснтрукція with
+
+Конструкція `with` створена для спрощення роботи з файлами. Її перевага в тому, що вона автоматично відкриває та закриває файл для нас.
+
+```{python}
+#| eval: false
+
+with open("data.txt", "r") as file:
+  content = file.read()
+  print(content)
+
+```
+
+### Запис у файли
+
+У Python, запис у файл здійснюється за допомогою режиму "w". Він свторює файл, якщо його не існує, або переписує вже існуючий. Також, як і у впиадку читання, маємо спеціальний метод `write` для запису у файл.
+
+```{python}
+#| eval: false
+
+with open("newfile.txt", "w") as file:
+  file.write("This is a new file!\n")
+  file.write("This is line 2\n")
+```
+
+## 📦 Модулі для роботи з файлами `.csv`
+
+### Що таке `.csv`?
+
+`.csv` це простий формат файлу, створений щоб зберігати дату у табличному вигляді як **значення, розділені комами**. Перший рядок, зазвичай слугує заголовком, який показує що означає кожна колонка
+
+```{python}
+#| filename: "file.csv"
+#| eval: false
+
+name,age,year-of-birth
+vasya,18,2007
+olena,20,2005
+volodya,17,2008
+
+```
+ 
+### Модуль csv
+
+Аби працювати з `.csv` файлами, нам потрібно імпортувати відповідний модуль, який дає нам потрібний функціонал.
+
+```{python}
+#| eval: false
+import csv
+
+with open('file.csv' 'r') as csvfile:
+  reader = csv.DictReader(csvfile, delimeter=',')
+  for row in reader:
+    print(row['name'], row['age'], row['year-of-birth'])
+
+```
+
+### Запис у `.csv` файл
+
+Запис у `.csv` файл також здійснюється за допомогою модуля `csv`, але з використанням класу `DictWriter`. Для цього, нам потрібно мати таку ж структуру, яку повертає DictReader -- словник з ключами, що відповідають заголовкам колонок.
+
+Також, ми маємо різні варіанти режимів запису:
+
+- `'w'` - створює новий файл або переписує існуючий
+- `'a'` - додає нові рядки в кінець існуючого файлу
+
+```{python}
+#| eval: false
+
+import csv
+
+filtered_data = [
+    {'Name': 'Olena', 'Role': 'Dev', 'Salary': 3000},
+    {'Name': 'Ivan', 'Role': 'Manager', 'Salary': 2500},
+    {'Name': 'Maria', 'Role': 'CEO', 'Salary': 5000}
+]
+
+headers = ['Name', 'Role', 'Salary']
+
+with open('report.csv', 'w', newline='', encoding='utf-8') as csvfile:
+    writer = csv.DictWriter(csvfile, fieldnames=headers)
+    writer.writeheader()
+
+    writer.writerows(filtered_data)
+    
+    # Варіант Б: Записувати по одному рядку (якщо ми обробляємо в циклі)
+    # for person in filtered_data:
+    #     writer.writerow(person)
+```
+
+
+## 👨🏻‍💻 Live coding 2: 
+
+::: callout-note
+## Завдання
+Нам надано `.csv` файл з колонками, які відповідають за ім'я, роль, та заробітню плату людини. Нам потріно прочитати файл та відфільтрувати тільки тих людей, які заробляють більше 1800 доларів, та вивести їх на екран. Для виконання потрібно скористатися `csv.DictReader()` 
+:::
+
+```{python}
+#| filename: "staff.csv"
+#| eval: false
+
+Name,Position,Salary
+Ivan,Manager,1200
+Olena,Developer,2500
+Petro,Analyst,1800
+Maria,Lead,3000
+Vasyl,Intern,500
+```
+
+::: callout-important
+## Ваше завдання
+Маючи ті самі дані, запишіть відфілтровані дані у новий файл `filtered_data.csv`. Використайте `csv.DictWriter()`
+:::
+
+

@@ -32,6 +32,9 @@ include-in-header:
     </style>
 ---
 
-## 🎉 Ласкаво просимо на курс з Основ Програмування!
+<div style="text-align: center; padding: 100px 20px; opacity: 0.6;">
 
-### В майбутньому тут щось буде, а поки **Under Construction 🚧**
+## 🚧 Модуль у розробці
+### Повертайтеся незабаром!
+
+</div>

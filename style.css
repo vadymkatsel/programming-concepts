@@ -5,6 +5,7 @@
    ============================================================ */
 :root {
   --bg-body:        #FCF7F8;
+  --bg-body-decoration: rgba(0, 0, 120, 0.03);
   --fg-text:        #413C3A;
   --fg-muted:       #656d76;
   --accent-color:   #F97316;
@@ -16,6 +17,7 @@
  
 body.quarto-dark {
   --bg-body:        #0d1117;
+  --bg-body-decoration: rgba(255, 255, 255, 0.03);
   --fg-text:        #e6edf3;
   --fg-muted:       #848d97;
   --accent-color:   #2e8ffe;
@@ -39,6 +41,11 @@ body {
   line-height: 1.6;
   letter-spacing: -0.1px;
   transition: background-color 0.3s ease, color 0.3s ease;
+
+  background-image: 
+    linear-gradient(var(--bg-body-decoration) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bg-body-decoration) 1px, transparent 1px);
+  background-size: 50px 50px;
 }
  
 p {
@@ -109,7 +116,7 @@ code:not(pre code) {
   border-bottom: 2px solid var(--border-color);
   transition: color 0.2s ease;
 }
- 
+
 #title-block-header {
   padding-bottom: 10px;
 }
@@ -240,15 +247,15 @@ div.sidebar-item-container a.sidebar-item-text.active {
 main.content {
   background: var(--sections-bg) !important;
   border: 1px solid var(--section-border) !important;
-  border-radius: 16px !important;
-
+    border-radius: 16px !important;
+    
   margin-top: 30px !important;
   margin-bottom: 30px !important;
   align-self: stretch;
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: all 0.3s ease;
+    
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
 }
 
 #quarto-sidebar,
@@ -337,6 +344,16 @@ footer.footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+@media screen and (min-width: 991px) {
+  header.fixed-top,
+  #quarto-header,
+  .headroom {
+    transform: none !important; 
+    transition: none !important;
+  }
 }
 
 /* ============================================================
