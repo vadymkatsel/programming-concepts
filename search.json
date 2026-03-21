@@ -4,154 +4,264 @@
     "href": "courses/be-course/modules/variables-data-types-operations-practice.html",
     "title": "Практична №2",
     "section": "",
-    "text": "📌 Завдання 1\nУявіть, що Вам необхідно написати простий калькулятор вартості замовлення для ресторану. Вам необхідно, аби в користувача була можливість увести назву страви, її ціну, кількість замовлених порцій та знижку. Також необхідно врахувати, що на вартість обіду впливає податок на додану вартість (ПДВ), який становить 20%.\nПриклад виконання програми:\nEnter the name of the dish: Borshch\nEnter the price of the dish: 100\nEnter the quantity of portions: 2\nEnter the discount (%): 10\n\nThe total of &lt;quantity&gt; &lt;name&gt; will be &lt;total&gt; UAH, including &lt;tax&gt; UAH tax.\n\n\n🔍 Поради щодо виконання.\n\nВикористовуйте функцію input() для отримання даних від користувача.\nПеретворюйте введені дані у відповідні типи (наприклад, float для ціни та знижки, int для кількості).\nВикористовуйте змінні для збереження введених даних та обчислень.\nДля того, щоб вивести результат, використовуйте функцію print() та форматовані рядки.\n\n\n\n\n\n\n\nПорада\n\n\n\nДля цього завдання, ми знехтуємо правильністю вводу користувача, та приймемо як належне те, що користувач уводить тільки правильні дані."
+    "text": "📌 Завдання 1\nУявіть, що Вам необхідно написати простий калькулятор вартості замовлення для ресторану. Вам необхідно, аби в користувача була можливість увести назву страви, її ціну, кількість замовлених порцій та знижку. Також необхідно врахувати, що на вартість обіду впливає податок на додану вартість (ПДВ), який становить 20%.\nПриклад виконання програми:\nEnter the name of the dish: Borshch\nEnter the price of the dish: 100\nEnter the quantity of portions: 2\nEnter the discount (%): 10\n\nThe total of &lt;quantity&gt; &lt;name&gt; will be &lt;total&gt; UAH, including &lt;tax&gt; UAH tax.\n\n\n🔍 Поради щодо виконання.\n\nВикористовуйте функцію input() для отримання даних від користувача.\nПеретворюйте введені дані у відповідні типи (наприклад, float для ціни та знижки, int для кількості).\nВикористовуйте змінні для збереження введених даних та обчислень.\nДля того, щоб вивести результат, використовуйте функцію print() та форматовані рядки.\n\n\n\n\n\n\n\nПорада\n\n\n\nДля цього завдання, ми знехтуємо правильністю вводу користувача, та приймемо як належне те, що користувач уводить тільки правильні дані.",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Змінні, типи даних. Математичні операції в Python",
+      "Практична №2"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/conditionals-practice.html",
     "href": "courses/be-course/modules/conditionals-practice.html",
     "title": "Практична №3 (Тиждень 3)",
     "section": "",
-    "text": "📌 Завдання: “Калькулятор Чайових / Розділення Рахунку”\nСьогодні ваше завдання буде полягати в тому, щоб написати програму, яка розраховує, скільки має заплатити кожна людина в ресторані, враховуючи чайові на основі якості обслуговування. Це завдання повністю фокусується на використанні if/elif/else для прийняття рішень.\n\n📝 Робота Програми\nВаша програма має працювати точно за таким сценарієм:\n\nОтримання даних:\n\nПрограма питає користувача про total_bill (загальний рахунок). Це значення має бути float.\nПрограма питає користувача про num_people (кількість людей, на яких ділиться рахунок). Це значення має бути int.\nПрограма питає користувача про service_level (якість обслуговування). Це str.\n\nПеревірка вхідних даних (Safety Check):\n\nПерш ніж робити будь-які розрахунки, програма має перевірити, чи num_people &gt; 0.\nЯкщо num_people &lt;= 0: Програма повинна вивести повідомлення про помилку (наприклад, \"Помилка: Кількість людей має бути 1 або більше.\") і завершити роботу (тобто, решта кроків не виконується).\nЯкщо num_people &gt; 0: Програма переходить до кроку 3. (Вся наступна логіка має бути “вкладена” всередину цієї if перевірки).\n\nВизначення відсотка чайових (Основна логіка):\n\nПрограма використовує “драбинку” if/elif/else для аналізу змінної service_level.\nЯкщо service_level == 'bad': відсоток чайових (tip_percent) становить 0.10 (10%).\nЯкщо service_level == 'ok': tip_percent становить 0.15 (15%).\nЯкщо service_level == 'good': tip_percent становить 0.20 (20%).\nelse (в усіх інших випадках): Якщо користувач ввів щось інше (напр., “amazing”, “жахливо”, “123”), програма має встановити tip_percent за замовчуванням, який дорівнює 0.15 (15%), і (необов’язково, але бажано) вивести повідомлення \"Невідомий рівень сервісу. Використовуємо стандартні 15%.\".\n\nРозрахунки (виконуються, тільки якщо num_people &gt; 0):\n\ntip_amount = total_bill * tip_percent\nfinal_bill = total_bill + tip_amount\nbill_per_person = final_bill / num_people\n\nВиведення результату:\n\nПрограма має вивести фінальний, гарно відформатований результат. Використовуйте f-strings та форматування :.2f або round(), щоб показати суми з двома знаками після коми (як копійки).\n\n\n\n\n📝 Приклади виводу:\n--- Bill divider ---\nEnter the total bill: 1500\nEnter the number of people: 4\nEnter the service level (good/ok/bad): good\n\n--- Your bill ---\nThe total amount: 1800.00\nIncluding tip (20%): 300.00 UAH\nEach person should pay: 450.00 UAH\n--- Bill divider ---\nEnter the total bill: 800\nEnter the number of people: 3\nEnter the service level (good/ok/bad): fantastic\n\n--- Your bill ---\nUknown service level. Setting tip percent to default (15%).\nThe total amount: 920.00\nIncluding  tip (15%): 120.00 UAH\nEach person should pay: 306.67 UAH\n--- Your bill ---\nEnter the total bill: 500\nEnter the number of people: 0\nEnter the service level (good/ok/bad): good\n\nError: Number of people must be greater than zero."
+    "text": "📌 Завдання: “Калькулятор Чайових / Розділення Рахунку”\nСьогодні ваше завдання буде полягати в тому, щоб написати програму, яка розраховує, скільки має заплатити кожна людина в ресторані, враховуючи чайові на основі якості обслуговування. Це завдання повністю фокусується на використанні if/elif/else для прийняття рішень.\n\n📝 Робота Програми\nВаша програма має працювати точно за таким сценарієм:\n\nОтримання даних:\n\nПрограма питає користувача про total_bill (загальний рахунок). Це значення має бути float.\nПрограма питає користувача про num_people (кількість людей, на яких ділиться рахунок). Це значення має бути int.\nПрограма питає користувача про service_level (якість обслуговування). Це str.\n\nПеревірка вхідних даних (Safety Check):\n\nПерш ніж робити будь-які розрахунки, програма має перевірити, чи num_people &gt; 0.\nЯкщо num_people &lt;= 0: Програма повинна вивести повідомлення про помилку (наприклад, \"Помилка: Кількість людей має бути 1 або більше.\") і завершити роботу (тобто, решта кроків не виконується).\nЯкщо num_people &gt; 0: Програма переходить до кроку 3. (Вся наступна логіка має бути “вкладена” всередину цієї if перевірки).\n\nВизначення відсотка чайових (Основна логіка):\n\nПрограма використовує “драбинку” if/elif/else для аналізу змінної service_level.\nЯкщо service_level == 'bad': відсоток чайових (tip_percent) становить 0.10 (10%).\nЯкщо service_level == 'ok': tip_percent становить 0.15 (15%).\nЯкщо service_level == 'good': tip_percent становить 0.20 (20%).\nelse (в усіх інших випадках): Якщо користувач ввів щось інше (напр., “amazing”, “жахливо”, “123”), програма має встановити tip_percent за замовчуванням, який дорівнює 0.15 (15%), і (необов’язково, але бажано) вивести повідомлення \"Невідомий рівень сервісу. Використовуємо стандартні 15%.\".\n\nРозрахунки (виконуються, тільки якщо num_people &gt; 0):\n\ntip_amount = total_bill * tip_percent\nfinal_bill = total_bill + tip_amount\nbill_per_person = final_bill / num_people\n\nВиведення результату:\n\nПрограма має вивести фінальний, гарно відформатований результат. Використовуйте f-strings та форматування :.2f або round(), щоб показати суми з двома знаками після коми (як копійки).\n\n\n\n\n📝 Приклади виводу:\n--- Bill divider ---\nEnter the total bill: 1500\nEnter the number of people: 4\nEnter the service level (good/ok/bad): good\n\n--- Your bill ---\nThe total amount: 1800.00\nIncluding tip (20%): 300.00 UAH\nEach person should pay: 450.00 UAH\n--- Bill divider ---\nEnter the total bill: 800\nEnter the number of people: 3\nEnter the service level (good/ok/bad): fantastic\n\n--- Your bill ---\nUknown service level. Setting tip percent to default (15%).\nThe total amount: 920.00\nIncluding  tip (15%): 120.00 UAH\nEach person should pay: 306.67 UAH\n--- Your bill ---\nEnter the total bill: 500\nEnter the number of people: 0\nEnter the service level (good/ok/bad): good\n\nError: Number of people must be greater than zero.",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Логічні розгалудження",
+      "Практична №3 (Тиждень 3)"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/lists-practice.html",
     "href": "courses/be-course/modules/lists-practice.html",
     "title": "Практична №4.1",
     "section": "",
-    "text": "Lists та їхні властивості\nLive coding №1: Трекер продажів\nLive coding №2: Інтерактивний ввід\nQ&A\nВаше завдання"
+    "text": "Lists та їхні властивості\nLive coding №1: Трекер продажів\nLive coding №2: Інтерактивний ввід\nQ&A\nВаше завдання",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Практична №4.1"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/lists-practice.html#план-на-сьогодні",
     "href": "courses/be-course/modules/lists-practice.html#план-на-сьогодні",
     "title": "Практична №4.1",
     "section": "",
-    "text": "Lists та їхні властивості\nLive coding №1: Трекер продажів\nLive coding №2: Інтерактивний ввід\nQ&A\nВаше завдання"
+    "text": "Lists та їхні властивості\nLive coding №1: Трекер продажів\nLive coding №2: Інтерактивний ввід\nQ&A\nВаше завдання",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Практична №4.1"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/lists-practice.html#коробки",
     "href": "courses/be-course/modules/lists-practice.html#коробки",
     "title": "Практична №4.1",
     "section": "📦 Коробки",
-    "text": "📦 Коробки\nДо сьогоднішнього дня всі наші дані ми зберігали у простих ‘коробках’ — змінних. name = 'Іван', price = 12.50. Це чудово, але що, якщо у вас 100 студентів? Або 1000 цін на акції?\n\nstudent1 = \"Alice\"\nstudent2 = \"Bob\"\nstudent3 = \"Peter\"\n.\n.\n.\nstudent1000 = \"Pablo\"\n\nСтворювати 1000 змінних — це жах. Нам потрібні контейнери."
+    "text": "📦 Коробки\nДо сьогоднішнього дня всі наші дані ми зберігали у простих ‘коробках’ — змінних. name = 'Іван', price = 12.50. Це чудово, але що, якщо у вас 100 студентів? Або 1000 цін на акції?\n\nstudent1 = \"Alice\"\nstudent2 = \"Bob\"\nstudent3 = \"Peter\"\n.\n.\n.\nstudent1000 = \"Pablo\"\n\nСтворювати 1000 змінних — це жах. Нам потрібні контейнери.",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Практична №4.1"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/lists-practice.html#контейнери",
     "href": "courses/be-course/modules/lists-practice.html#контейнери",
     "title": "Практична №4.1",
     "section": "🫙 Контейнери",
-    "text": "🫙 Контейнери\nДля вирішення в цієї проблеми в Python є різні структури даних:\n\nList\nSet\nTuple\nDictionary\n\nУявіть, що Список (List) — це як шафа з пронумерованими поличками.\n\nstudents = [\"Alice\", \"Bob\", \"Peter\"]"
+    "text": "🫙 Контейнери\nДля вирішення в цієї проблеми в Python є різні структури даних:\n\nList\nSet\nTuple\nDictionary\n\nУявіть, що Список (List) — це як шафа з пронумерованими поличками.\n\nstudents = [\"Alice\", \"Bob\", \"Peter\"]",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Практична №4.1"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/lists-practice.html#властивості-списків",
     "href": "courses/be-course/modules/lists-practice.html#властивості-списків",
     "title": "Практична №4.1",
     "section": "📋 Властивості списків",
-    "text": "📋 Властивості списків\n\nІндексація почнається з 0\nВпорядковані (все буде лежати в тому порядку, в якому ви додали)\n\nstudents = [\"Alice\", \"Bob\", \"Peter\"]\n#              0       1       2\n\nЗмінювані (можна додавати, видаляти, змінювати елементи)\n\nstudents[1] = \"Robert\"  \n# students = [\"Alice\", \"Robert\", \"Peter\"]\nstudents.append(\"Maria\")\n# students = [\"Alice\", \"Robert\", \"Peter\", \"Maria\"]\nstudents.pop()\n# students = [\"Alice\", \"Robert\", \"Peter\"]\n\nПідтримка різних типів\n\nmixed_list = [1, \"Hello\", 3.14, True]"
+    "text": "📋 Властивості списків\n\nІндексація почнається з 0\nВпорядковані (все буде лежати в тому порядку, в якому ви додали)\n\nstudents = [\"Alice\", \"Bob\", \"Peter\"]\n#              0       1       2\n\nЗмінювані (можна додавати, видаляти, змінювати елементи)\n\nstudents[1] = \"Robert\"  \n# students = [\"Alice\", \"Robert\", \"Peter\"]\nstudents.append(\"Maria\")\n# students = [\"Alice\", \"Robert\", \"Peter\", \"Maria\"]\nstudents.pop()\n# students = [\"Alice\", \"Robert\", \"Peter\"]\n\nПідтримка різних типів\n\nmixed_list = [1, \"Hello\", 3.14, True]",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Практична №4.1"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/lists-practice.html#live-coding-1",
     "href": "courses/be-course/modules/lists-practice.html#live-coding-1",
     "title": "Практична №4.1",
     "section": "👨🏻‍💻 Live coding 1:",
-    "text": "👨🏻‍💻 Live coding 1:\n\nТрекер продажів\n\n\n\n\n\n\nNoneЗавдання\n\n\n\nУявімо, що нам потрібно відслідковувати продажі. Нам надали певні дані, потрібно їх якось зберегти і обробити.\n\n\nЩо саме потрібно зробити:\n\nЗаписати дані\nВивести дані по дням\nПоказати кількість днів, за яку в нас є дані\nВивести продажі за останній день\n\n\n\nОпрацювання даних\n\n\n\n\n\n\nТепер, коли маємо дані, давайте зробимо певний аналіз. Припустимо, що маємо такий список: sales_week = [1500, 2150, 1850, 2050, 1700]\n\n\n\nЗробімо наступне:\n\nПорахуймо суму продажів за тиждень\nЗнайдімо к-сть днів з низькими продажами (менше ніж 1800)\nЗнайдімо середній продаж за день"
+    "text": "👨🏻‍💻 Live coding 1:\n\nТрекер продажів\n\n\n\n\n\n\nNoneЗавдання\n\n\n\nУявімо, що нам потрібно відслідковувати продажі. Нам надали певні дані, потрібно їх якось зберегти і обробити.\n\n\nЩо саме потрібно зробити:\n\nЗаписати дані\nВивести дані по дням\nПоказати кількість днів, за яку в нас є дані\nВивести продажі за останній день\n\n\n\nОпрацювання даних\n\n\n\n\n\n\nТепер, коли маємо дані, давайте зробимо певний аналіз. Припустимо, що маємо такий список: sales_week = [1500, 2150, 1850, 2050, 1700]\n\n\n\nЗробімо наступне:\n\nПорахуймо суму продажів за тиждень\nЗнайдімо к-сть днів з низькими продажами (менше ніж 1800)\nЗнайдімо середній продаж за день",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Практична №4.1"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/lists-practice.html#live-coding-2-інтерактивний-ввід-даних",
     "href": "courses/be-course/modules/lists-practice.html#live-coding-2-інтерактивний-ввід-даних",
     "title": "Практична №4.1",
     "section": "👨🏻‍💻 Live coding 2: Інтерактивний ввід даних",
-    "text": "👨🏻‍💻 Live coding 2: Інтерактивний ввід даних\nДавайте уявимо, що маємо завдання написати систему збору оцінок.\nПрограма має запитувати у користувача кілька значень і автоматично зберігати їх у список. В кінці, ми покажемо користувачу, що він ввів."
+    "text": "👨🏻‍💻 Live coding 2: Інтерактивний ввід даних\nДавайте уявимо, що маємо завдання написати систему збору оцінок.\nПрограма має запитувати у користувача кілька значень і автоматично зберігати їх у список. В кінці, ми покажемо користувачу, що він ввів.",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Практична №4.1"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/lists-practice.html#ваше-завдання",
     "href": "courses/be-course/modules/lists-practice.html#ваше-завдання",
     "title": "Практична №4.1",
     "section": "🔍 Ваше завдання",
-    "text": "🔍 Ваше завдання\nВаше завдання буде об’єднувати в собі другий та третій Live Coding.\nВаша задача полягає в тому, аби написати програму, яка просить в користувача увести 5 оцінок. Ви маєте зберегти ці 5 оцінок у списку, після чого вивести на екран середній бал та кількість найвищих оцінок (ви можете використати 10 як найвищу оцінку). \nПриклад роботи програми:\n\n---Grades---\nPlease, enter grade 1: 9\nPlease, enter grade 2: 11\n11 is not supported. Please, choose between 0 and 10.\n\nPlease, enter grade 2: 10\nPlease, enter grade 3: djfhdj\nInvalid format, try again\n\nPlease, enter grade 3: 8\nPlease, enter grade 4: 7\nPlease, enter grade 5: 10\n\nThe mean grade is 8.8, and the number of top grades (10) is 2."
+    "text": "🔍 Ваше завдання\nВаше завдання буде об’єднувати в собі другий та третій Live Coding.\nВаша задача полягає в тому, аби написати програму, яка просить в користувача увести 5 оцінок. Ви маєте зберегти ці 5 оцінок у списку, після чого вивести на екран середній бал та кількість найвищих оцінок (ви можете використати 10 як найвищу оцінку). \nПриклад роботи програми:\n\n---Grades---\nPlease, enter grade 1: 9\nPlease, enter grade 2: 11\n11 is not supported. Please, choose between 0 and 10.\n\nPlease, enter grade 2: 10\nPlease, enter grade 3: djfhdj\nInvalid format, try again\n\nPlease, enter grade 3: 8\nPlease, enter grade 4: 7\nPlease, enter grade 5: 10\n\nThe mean grade is 8.8, and the number of top grades (10) is 2.",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Практична №4.1"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/comprehensions-practice.html",
     "href": "courses/be-course/modules/comprehensions-practice.html",
     "title": "Lists & Dict Comprehension. Basic modules",
     "section": "",
-    "text": "List Comprehension\nLive coding 1: Список транзакцій\nDict Comprehension\nLive coding 2: Інфляція та прайс листи\nBasic modules in Python\nLive coding 3: Щасливий чек"
+    "text": "List Comprehension\nLive coding 1: Список транзакцій\nDict Comprehension\nLive coding 2: Інфляція та прайс листи\nBasic modules in Python\nLive coding 3: Щасливий чек",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Lists & Dict Comprehension. Basic modules"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/comprehensions-practice.html#план",
     "href": "courses/be-course/modules/comprehensions-practice.html#план",
     "title": "Lists & Dict Comprehension. Basic modules",
     "section": "",
-    "text": "List Comprehension\nLive coding 1: Список транзакцій\nDict Comprehension\nLive coding 2: Інфляція та прайс листи\nBasic modules in Python\nLive coding 3: Щасливий чек"
+    "text": "List Comprehension\nLive coding 1: Список транзакцій\nDict Comprehension\nLive coding 2: Інфляція та прайс листи\nBasic modules in Python\nLive coding 3: Щасливий чек",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Lists & Dict Comprehension. Basic modules"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/comprehensions-practice.html#list-comprehension",
     "href": "courses/be-course/modules/comprehensions-practice.html#list-comprehension",
     "title": "Lists & Dict Comprehension. Basic modules",
     "section": "🔍 List Comprehension",
-    "text": "🔍 List Comprehension\nList Comprehension - це зручний спосіб створення списків у Python за допомогою короткого синтаксису.\n\n\n\n\n\n\nПримітка\n\n\n\nУявіть, що ви хочете створити список цін у гривнях, маючи список цін в доларах"
+    "text": "🔍 List Comprehension\nList Comprehension - це зручний спосіб створення списків у Python за допомогою короткого синтаксису.\n\n\n\n\n\n\nПримітка\n\n\n\nУявіть, що ви хочете створити список цін у гривнях, маючи список цін в доларах",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Lists & Dict Comprehension. Basic modules"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/comprehensions-practice.html#без-list-comprehension",
     "href": "courses/be-course/modules/comprehensions-practice.html#без-list-comprehension",
     "title": "Lists & Dict Comprehension. Basic modules",
     "section": "❌ Без List Comprehension",
-    "text": "❌ Без List Comprehension\n\nprices_usd = [10, 20, 50, 100]\nprices_uah = []\nfor price in prices_usd:\n    prices_uah.append(price * 41.5)\nprint(prices_uah)\n\n[415.0, 830.0, 2075.0, 4150.0]"
+    "text": "❌ Без List Comprehension\n\nprices_usd = [10, 20, 50, 100]\nprices_uah = []\nfor price in prices_usd:\n    prices_uah.append(price * 41.5)\nprint(prices_uah)\n\n[415.0, 830.0, 2075.0, 4150.0]",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Lists & Dict Comprehension. Basic modules"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/comprehensions-practice.html#з-list-comprehension",
     "href": "courses/be-course/modules/comprehensions-practice.html#з-list-comprehension",
     "title": "Lists & Dict Comprehension. Basic modules",
     "section": "✅ З List Comprehension",
-    "text": "✅ З List Comprehension\n\nprices_usd = [10, 20, 50, 100]\nprices_uah = [price * 41.5 for price in prices_usd]\nprint(prices_uah)\n\n[415.0, 830.0, 2075.0, 4150.0]"
+    "text": "✅ З List Comprehension\n\nprices_usd = [10, 20, 50, 100]\nprices_uah = [price * 41.5 for price in prices_usd]\nprint(prices_uah)\n\n[415.0, 830.0, 2075.0, 4150.0]",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Lists & Dict Comprehension. Basic modules"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/comprehensions-practice.html#live-coding-1-список-транзакцій",
     "href": "courses/be-course/modules/comprehensions-practice.html#live-coding-1-список-транзакцій",
     "title": "Lists & Dict Comprehension. Basic modules",
     "section": "👨🏻‍💻 Live Coding 1: Список транзакцій",
-    "text": "👨🏻‍💻 Live Coding 1: Список транзакцій\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nУ нас є список транзакцій у доларах. Нам потрібно:\n\nПеревести їх у гривні (курс 41.5).\nВідфільтрувати транзакції менше 10$.\n\n\n\n\n📝 Ваше завдання:\n\n\n\n\n\n\nВажливоЗадача\n\n\n\nУ вас є “сирий” список транзакцій (деякі помилкові/від’ємні): raw_data = [100, -50, 20, 0, 500, -10]\nСтворіть список рядків receipts (чеків), використовуючи List Comprehension. Вимоги до одного рядка коду:\n\nБеремо тільки додатні транзакції (&gt; 0).\nДодаємо до суми 5% податку.\nРезультат має бути рядком (f-string): “Сума: 105.0 грн”.\n\n\n\nОчікуваний результат: ['Сума: 105.0 грн', 'Сума: 21.0 грн', 'Сума: 525.0 грн']"
+    "text": "👨🏻‍💻 Live Coding 1: Список транзакцій\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nУ нас є список транзакцій у доларах. Нам потрібно:\n\nПеревести їх у гривні (курс 41.5).\nВідфільтрувати транзакції менше 10$.\n\n\n\n\n📝 Ваше завдання:\n\n\n\n\n\n\nВажливоЗадача\n\n\n\nУ вас є “сирий” список транзакцій (деякі помилкові/від’ємні): raw_data = [100, -50, 20, 0, 500, -10]\nСтворіть список рядків receipts (чеків), використовуючи List Comprehension. Вимоги до одного рядка коду:\n\nБеремо тільки додатні транзакції (&gt; 0).\nДодаємо до суми 5% податку.\nРезультат має бути рядком (f-string): “Сума: 105.0 грн”.\n\n\n\nОчікуваний результат: ['Сума: 105.0 грн', 'Сума: 21.0 грн', 'Сума: 525.0 грн']",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Lists & Dict Comprehension. Basic modules"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/comprehensions-practice.html#dict-comprehension",
     "href": "courses/be-course/modules/comprehensions-practice.html#dict-comprehension",
     "title": "Lists & Dict Comprehension. Basic modules",
     "section": "🔍 Dict Comprehension",
-    "text": "🔍 Dict Comprehension\nЯк і List Comprehension, Dict Comprehension дозволяє створювати словники у зручний спосіб. Синтаксично, Dict Comprehension виглядає так:\n{key: value for (key, value) in iterable if condition}\n\nkeys = ['a','b','c','d','e']\nvalues = [1,2,3,4,5]  \n\n# but this line shows dict comprehension here  \nmyDict = { k:v for (k,v) in zip(keys, values)}  \n\nprint (myDict)\n\n{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}"
+    "text": "🔍 Dict Comprehension\nЯк і List Comprehension, Dict Comprehension дозволяє створювати словники у зручний спосіб. Синтаксично, Dict Comprehension виглядає так:\n{key: value for (key, value) in iterable if condition}\n\nkeys = ['a','b','c','d','e']\nvalues = [1,2,3,4,5]  \n\n# but this line shows dict comprehension here  \nmyDict = { k:v for (k,v) in zip(keys, values)}  \n\nprint (myDict)\n\n{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Lists & Dict Comprehension. Basic modules"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/comprehensions-practice.html#live-coding-2-інфляція-та-прайс-листи",
     "href": "courses/be-course/modules/comprehensions-practice.html#live-coding-2-інфляція-та-прайс-листи",
     "title": "Lists & Dict Comprehension. Basic modules",
     "section": "👨🏻‍💻 Live Coding 2: Інфляція та прайс листи",
-    "text": "👨🏻‍💻 Live Coding 2: Інфляція та прайс листи\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nУ нас є словник поточних цін на складі (в доларах). Нам потрібно:\n\nПеревести ціни в гривні (курс 41.5).\nВрахувати інфляцію (+10% до ціни).\n\n\n\nproducts_usd = {     'Apple': 1.5,     'Banana': 0.8,     'Avocado': 2.5,     'Mango': 3.0 } rate = 41.5\n\n📝 Ваше завдання:\n\n\n\n\n\n\nВажливоЗадача\n\n\n\nУ вас є портфель акцій у доларах: stocks_usd = {'AAPL': 150, 'GOOGL': 2800, 'TSLA': 700, 'AMZN': 3300} Курс: rate = 41.5\nСтворіть новий словник high_value_uah, в який потраплять:\n\nТільки ті акції, вартість яких у гривні перевищує 30 000 грн.\nЗначення мають бути вже в гривнях.\n\n\n\nПідказка: Вам доведеться помножити на курс і в частині value, і в частині if."
+    "text": "👨🏻‍💻 Live Coding 2: Інфляція та прайс листи\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nУ нас є словник поточних цін на складі (в доларах). Нам потрібно:\n\nПеревести ціни в гривні (курс 41.5).\nВрахувати інфляцію (+10% до ціни).\n\n\n\nproducts_usd = {     'Apple': 1.5,     'Banana': 0.8,     'Avocado': 2.5,     'Mango': 3.0 } rate = 41.5\n\n📝 Ваше завдання:\n\n\n\n\n\n\nВажливоЗадача\n\n\n\nУ вас є портфель акцій у доларах: stocks_usd = {'AAPL': 150, 'GOOGL': 2800, 'TSLA': 700, 'AMZN': 3300} Курс: rate = 41.5\nСтворіть новий словник high_value_uah, в який потраплять:\n\nТільки ті акції, вартість яких у гривні перевищує 30 000 грн.\nЗначення мають бути вже в гривнях.\n\n\n\nПідказка: Вам доведеться помножити на курс і в частині value, і в частині if.",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Lists & Dict Comprehension. Basic modules"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/comprehensions-practice.html#basic-modules-in-python",
     "href": "courses/be-course/modules/comprehensions-practice.html#basic-modules-in-python",
     "title": "Lists & Dict Comprehension. Basic modules",
     "section": "🔍 Basic modules in Python",
-    "text": "🔍 Basic modules in Python\nМодуль - це файл, який містить визначення функцій, класів і змінних, які можна використовувати в інших програмах.\nЦе означає що для багатьох програм, ми можемо перевикористати вже написаний код, аби не писати з нуля та зекономити час.\nPython має велику кількість вбудованих модулів, які можна імпортувати та використовувати у своїх програмах. Ось деякі з найпоширеніших:\n\nmath: Модуль для виконання математичних операцій.\nrandom: Модуль для генерації випадкових чисел.\ndatetime: Модуль для роботи з датами та часом."
+    "text": "🔍 Basic modules in Python\nМодуль - це файл, який містить визначення функцій, класів і змінних, які можна використовувати в інших програмах.\nЦе означає що для багатьох програм, ми можемо перевикористати вже написаний код, аби не писати з нуля та зекономити час.\nPython має велику кількість вбудованих модулів, які можна імпортувати та використовувати у своїх програмах. Ось деякі з найпоширеніших:\n\nmath: Модуль для виконання математичних операцій.\nrandom: Модуль для генерації випадкових чисел.\ndatetime: Модуль для роботи з датами та часом.",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Lists & Dict Comprehension. Basic modules"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/comprehensions-practice.html#імпорт-та-використання-модулів",
     "href": "courses/be-course/modules/comprehensions-practice.html#імпорт-та-використання-модулів",
     "title": "Lists & Dict Comprehension. Basic modules",
     "section": "📦 Імпорт та використання модулів",
-    "text": "📦 Імпорт та використання модулів\n\n\n\nПриклад використання модуля math\n\nimport math\n\nprice = 19.1\n\n# Округлення вгору (ceiling - стеля)\nprint(f\"Ceil: {math.ceil(price)}\")  # -&gt; 20\n\n# Округлення вниз (floor - підлога)\nprint(f\"Floor: {math.floor(price)}\")\n\n# Корінь квадратний\nprint(f\"Sqrt: {math.sqrt(144)}\")    \n\n\nCeil: 20\nFloor: 19\nSqrt: 12.0\n\n\n\nДля імпорту використовуємо ключове слово import\nПісля імпорту можна використовувати функції та змінні модуля, звертаючись до них через крапку (наприклад, math.ceil())."
+    "text": "📦 Імпорт та використання модулів\n\n\n\nПриклад використання модуля math\n\nimport math\n\nprice = 19.1\n\n# Округлення вгору (ceiling - стеля)\nprint(f\"Ceil: {math.ceil(price)}\")  # -&gt; 20\n\n# Округлення вниз (floor - підлога)\nprint(f\"Floor: {math.floor(price)}\")\n\n# Корінь квадратний\nprint(f\"Sqrt: {math.sqrt(144)}\")    \n\n\nCeil: 20\nFloor: 19\nSqrt: 12.0\n\n\n\nДля імпорту використовуємо ключове слово import\nПісля імпорту можна використовувати функції та змінні модуля, звертаючись до них через крапку (наприклад, math.ceil()).",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Lists & Dict Comprehension. Basic modules"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/comprehensions-practice.html#способи-імпорту-моудулів",
     "href": "courses/be-course/modules/comprehensions-practice.html#способи-імпорту-моудулів",
     "title": "Lists & Dict Comprehension. Basic modules",
     "section": "⬇️ Способи імпорту моудулів",
-    "text": "⬇️ Способи імпорту моудулів\n\nІмпорт всього модуля\n\nimport math\n\n# Ми повинні звертатися через крапку: модуль.функція\nprint(math.sqrt(25))\n\n5.0\n\n\n\n\nІмпорт конкретної функції або змінної з модуля\n\nfrom math import ceil\n\n# Тепер можна писати назву функції без \"math.\"\nprice = 19.1\nprint(ceil(price)) # Округлення вгору -&gt; 20\n\n20\n\n\n\n\nІмпорт з псевдонімом (alias)\n\nimport matplotlib.pyplot as plt\n\n# Дані: Місяці та Продажі (тис. $)\nmonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May']\nsales = [10, 15, 13, 18, 25]\n\n# Ми використовуємо коротке \"plt\"\nplt.plot(months, sales)\nplt.title(\"Динаміка продажів\")\nplt.xlabel(\"Місяць\")\nplt.ylabel(\"Продажі ($)\")\nplt.show()"
+    "text": "⬇️ Способи імпорту моудулів\n\nІмпорт всього модуля\n\nimport math\n\n# Ми повинні звертатися через крапку: модуль.функція\nprint(math.sqrt(25))\n\n5.0\n\n\n\n\nІмпорт конкретної функції або змінної з модуля\n\nfrom math import ceil\n\n# Тепер можна писати назву функції без \"math.\"\nprice = 19.1\nprint(ceil(price)) # Округлення вгору -&gt; 20\n\n20\n\n\n\n\nІмпорт з псевдонімом (alias)\n\nimport matplotlib.pyplot as plt\n\n# Дані: Місяці та Продажі (тис. $)\nmonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May']\nsales = [10, 15, 13, 18, 25]\n\n# Ми використовуємо коротке \"plt\"\nplt.plot(months, sales)\nplt.title(\"Динаміка продажів\")\nplt.xlabel(\"Місяць\")\nplt.ylabel(\"Продажі ($)\")\nplt.show()",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Lists & Dict Comprehension. Basic modules"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/comprehensions-practice.html#live-coding-3-генератор-чека",
     "href": "courses/be-course/modules/comprehensions-practice.html#live-coding-3-генератор-чека",
     "title": "Lists & Dict Comprehension. Basic modules",
     "section": "👨🏻‍💻 Live Coding 3: Генератор чека",
-    "text": "👨🏻‍💻 Live Coding 3: Генератор чека\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nМи розробляємо систему лояльності. Клієнт робить покупку. Наша програма має:\n\nНадати йому випадкову знижку (5%, 10% або 20%).\nРозрахувати фінальну ціну і округлити її вгору.\nВидати чек з точною датою та часом."
+    "text": "👨🏻‍💻 Live Coding 3: Генератор чека\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nМи розробляємо систему лояльності. Клієнт робить покупку. Наша програма має:\n\nНадати йому випадкову знижку (5%, 10% або 20%).\nРозрахувати фінальну ціну і округлити її вгору.\nВидати чек з точною датою та часом.",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Lists & Dict Comprehension. Basic modules"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/midterm-revision.html",
@@ -193,63 +303,108 @@
     "href": "courses/be-course/modules/dictionaries-tuples-sets-practice.html",
     "title": "Практична №4.2",
     "section": "",
-    "text": "Dictionaries\nLive coding\nTuples and sets\nQ&A\nYour task\nВоркфлоу:"
+    "text": "Dictionaries\nLive coding\nTuples and sets\nQ&A\nYour task\nВоркфлоу:",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Практична №4.2"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#план-на-сьогодні",
     "href": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#план-на-сьогодні",
     "title": "Практична №4.2",
     "section": "",
-    "text": "Dictionaries\nLive coding\nTuples and sets\nQ&A\nYour task"
+    "text": "Dictionaries\nLive coding\nTuples and sets\nQ&A\nYour task",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Практична №4.2"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#що-таке-словники-і-навіщо-вони-потрібні",
     "href": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#що-таке-словники-і-навіщо-вони-потрібні",
     "title": "Практична №4.2",
     "section": "❓ Що таке словники і навіщо вони потрібні?",
-    "text": "❓ Що таке словники і навіщо вони потрібні?\nМинулого разу ми вивчили Списки (Lists). Вони ідеальні для впорядкованих даних: sales = [1500, 2100, 1850]\nНаприклад, у нас є студенти та їхні оцінки.” “Як би ми це зробили списками?”"
+    "text": "❓ Що таке словники і навіщо вони потрібні?\nМинулого разу ми вивчили Списки (Lists). Вони ідеальні для впорядкованих даних: sales = [1500, 2100, 1850]\nНаприклад, у нас є студенти та їхні оцінки.” “Як би ми це зробили списками?”",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Практична №4.2"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#паралельні-списки",
     "href": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#паралельні-списки",
     "title": "Практична №4.2",
     "section": "📋📋 Паралельні списки",
-    "text": "📋📋 Паралельні списки\n\nstudents = ['Олена', 'Іван', 'Марія']\ngrades = [10, 8, 12]\n\nЦе жахливо. Як дістати оцінку Івана?\nТреба знайти ‘Івана’ в students. (Він на індексі 1).\nПотім взяти елемент з індексом 1 зі списку grades. -&gt; 8. Це складно, і все ламається, якщо ми видалимо ‘Олену’"
+    "text": "📋📋 Паралельні списки\n\nstudents = ['Олена', 'Іван', 'Марія']\ngrades = [10, 8, 12]\n\nЦе жахливо. Як дістати оцінку Івана?\nТреба знайти ‘Івана’ в students. (Він на індексі 1).\nПотім взяти елемент з індексом 1 зі списку grades. -&gt; 8. Це складно, і все ламається, якщо ми видалимо ‘Олену’",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Практична №4.2"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#рішення-майже-всіх-проблем",
     "href": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#рішення-майже-всіх-проблем",
     "title": "Практична №4.2",
     "section": "💡 Рішення (майже) всіх проблем",
-    "text": "💡 Рішення (майже) всіх проблем\nТут нам на допомогу приходять словники!\nСловник - це структура даних, яка зберігає пари “ключ-значення”.\n\nstudent_grades = {\n  'Олена': 10,\n  'Іван': 8,\n  'Марія': 12,\n  'key': value\n}\n\nЯк дістати оцінку? Дуже просто:\n\nprint( student_grades['Іван'] )\n#         our dict      key\n# We're using a key to get a value"
+    "text": "💡 Рішення (майже) всіх проблем\nТут нам на допомогу приходять словники!\nСловник - це структура даних, яка зберігає пари “ключ-значення”.\n\nstudent_grades = {\n  'Олена': 10,\n  'Іван': 8,\n  'Марія': 12,\n  'key': value\n}\n\nЯк дістати оцінку? Дуже просто:\n\nprint( student_grades['Іван'] )\n#         our dict      key\n# We're using a key to get a value",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Практична №4.2"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#властивості-словників",
     "href": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#властивості-словників",
     "title": "Практична №4.2",
     "section": " Властивості словників",
-    "text": "Властивості словників\n\nСловники зберігають дані у вигляді key : value\n\nЦе “серце” словника. Кожен елемент — це пара.\nstudent = { 'name': 'Олена', 'course': 2 }\n'name' — це Ключ (Key).\n'Олена’ — це Значення (Value).\n\nПравила ключів:\n\nУнікальні: один ключ не може мати два значення. Якщо ви спробуєте старе значення просто перезапишеться.\nЗазвичайключами є рядки або числа. Списки не можуть бути ключами\n\nГоловні операції:\n\nДоступ: отримуємо значення за ключем\n\n\n\n  print( student['name'] ) # -&gt; 'Олена'\n# print( student[0] ) # -&gt; ПОМИЛКА!\n\n\nДодавання/заміна: Однаковий синтаксис. Якщо ключ є — змінює, якщо немає — створює.\n\n\nstudent['course'] = 3     # Змінить 2 на 3\nstudent['email'] = 'a@kse.ua' # Додасть нову пару\n\n\nПеревірка: Оператор in (який ви знаєте зі списків) перевіряє наявність ключа.\n\n\nif 'email' in student:\n    print(\"Email вже є!\")\n\n\nДовжина: len() рахує кількість пар.\n\n\nlen(student) # -&gt; 3 (name, course, email)\n\n\nПеребір: for key, value in studnet.items()"
+    "text": "Властивості словників\n\nСловники зберігають дані у вигляді key : value\n\nЦе “серце” словника. Кожен елемент — це пара.\nstudent = { 'name': 'Олена', 'course': 2 }\n'name' — це Ключ (Key).\n'Олена’ — це Значення (Value).\n\nПравила ключів:\n\nУнікальні: один ключ не може мати два значення. Якщо ви спробуєте старе значення просто перезапишеться.\nЗазвичайключами є рядки або числа. Списки не можуть бути ключами\n\nГоловні операції:\n\nДоступ: отримуємо значення за ключем\n\n\n\n  print( student['name'] ) # -&gt; 'Олена'\n# print( student[0] ) # -&gt; ПОМИЛКА!\n\n\nДодавання/заміна: Однаковий синтаксис. Якщо ключ є — змінює, якщо немає — створює.\n\n\nstudent['course'] = 3     # Змінить 2 на 3\nstudent['email'] = 'a@kse.ua' # Додасть нову пару\n\n\nПеревірка: Оператор in (який ви знаєте зі списків) перевіряє наявність ключа.\n\n\nif 'email' in student:\n    print(\"Email вже є!\")\n\n\nДовжина: len() рахує кількість пар.\n\n\nlen(student) # -&gt; 3 (name, course, email)\n\n\nПеребір: for key, value in studnet.items()",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Практична №4.2"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#live-coding",
     "href": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#live-coding",
     "title": "Практична №4.2",
     "section": "👨🏻‍💻 Live coding",
-    "text": "👨🏻‍💻 Live coding\n\n\n\n\n\n\nNoneЗавдання\n\n\n\nМи створюємо профіль для одного юзера. Нам треба його створити, а потім оновити дані.\n\n\nЗадача:\n\nСтворити словник user_profile з ключами username (значення “alice”) та status (значення “online”).\nВивести status юзера “alice”.\nОновити status на “offline”.\nДодати новий ключ email зі значенням “alice@kse.ua”.\nВивести фінальний словник.\n\n\n\n\n\n\n\nМи маємо той самий профіль. Нам треба, по-перше, безпечно перевірити, чи є у нього email, а по-друге, гарно вивести весь профіль.\n\n\n\nЗадача:\n\nВзяти user_profile з минулого кроку.\nПеревірити, чи існує ключ “email”.\nЯкщо так, вивести f\"Email: {user_profile['email']}\".\nЯкщо ні, вивести \"Email не вказано\".\nПеребрати весь словник і вивести всі пари “Ключ -&gt; Значення”."
+    "text": "👨🏻‍💻 Live coding\n\n\n\n\n\n\nNoneЗавдання\n\n\n\nМи створюємо профіль для одного юзера. Нам треба його створити, а потім оновити дані.\n\n\nЗадача:\n\nСтворити словник user_profile з ключами username (значення “alice”) та status (значення “online”).\nВивести status юзера “alice”.\nОновити status на “offline”.\nДодати новий ключ email зі значенням “alice@kse.ua”.\nВивести фінальний словник.\n\n\n\n\n\n\n\nМи маємо той самий профіль. Нам треба, по-перше, безпечно перевірити, чи є у нього email, а по-друге, гарно вивести весь профіль.\n\n\n\nЗадача:\n\nВзяти user_profile з минулого кроку.\nПеревірити, чи існує ключ “email”.\nЯкщо так, вивести f\"Email: {user_profile['email']}\".\nЯкщо ні, вивести \"Email не вказано\".\nПеребрати весь словник і вивести всі пари “Ключ -&gt; Значення”.",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Практична №4.2"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#спецінструменти",
     "href": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#спецінструменти",
     "title": "Практична №4.2",
     "section": "⚒️ Спецінструменти:",
-    "text": "⚒️ Спецінструменти:\n\nTuples (кортежі)\n\nЩо це? Це як список, але НЕЗМІННИЙ (immutable).\nАналогія: “Список, залитий у бетон”.\nСинтаксис: () (круглі дужки) my_tuple = (1, ‘a’, True)\nГоловна фішка: Їх не можна змінити після створення.\n\n\nconfig_tuple = ('admin', 'pass123', 'kse.ua')\nprint(f\"Юзер: {config_tuple[0]}, Сервер: {config_tuple[2]}\")\n\n# А тепер спробуємо змінити:\n# config_tuple[0] = 'guest' \n# ^ Це миттєво викличе TypeError: 'tuple' object does not support item assignment\n\n\n\nSets (множини)\n\nЩо це? Це як список, але тільки УНІКАЛЬНІ елементи, і без порядку.\nАналогія: “Клуб унікальних”.\nСинтаксис: set([ … ]) або {1, 2, 3}\n\nУвага! {} — це порожній словник. Порожня множина створюється так: my_set = set().\n\nvisitors = ['Іван', 'Анна', 'Іван', 'Петро', 'Анна', 'Марія', 'Іван']\nprint(f\"Список гостей (з дублікатами): {visitors}\")\n\nunique_visitors = set(visitors)\nprint(f\"Унікальні гості (без дублікатів): {unique_visitors}\")\nprint(f\"Кількість унікальних: {len(unique_visitors)}\")\n\n\n# Студенти, що взяли курс з Економіки\necon_students = {'Іван', 'Анна', 'Петро', 'Марія'}\n\n# Студенти, що взяли курс зі Статистики\nstat_students = {'Анна', 'Петро', 'Давид', 'Софія'}\n\n# 1. Хто ходить на ОБИДВА курси? (Перетин)\nboth_courses = econ_students & stat_students\nprint(f\"Ходять на обидва курси: {both_courses}\")\n\n# 2. Хто ходить ТІЛЬКИ на Економіку? (Різниця)\nonly_econ = econ_students - stat_students\nprint(f\"Ходять тільки на Економіку: {only_econ}\")\n\n# 3. Який загальний список унікальних студентів? (Об'єднання)\nall_students = econ_students | stat_students\nprint(f\"Всі унікальні студенти: {all_students}\")"
+    "text": "⚒️ Спецінструменти:\n\nTuples (кортежі)\n\nЩо це? Це як список, але НЕЗМІННИЙ (immutable).\nАналогія: “Список, залитий у бетон”.\nСинтаксис: () (круглі дужки) my_tuple = (1, ‘a’, True)\nГоловна фішка: Їх не можна змінити після створення.\n\n\nconfig_tuple = ('admin', 'pass123', 'kse.ua')\nprint(f\"Юзер: {config_tuple[0]}, Сервер: {config_tuple[2]}\")\n\n# А тепер спробуємо змінити:\n# config_tuple[0] = 'guest' \n# ^ Це миттєво викличе TypeError: 'tuple' object does not support item assignment\n\n\n\nSets (множини)\n\nЩо це? Це як список, але тільки УНІКАЛЬНІ елементи, і без порядку.\nАналогія: “Клуб унікальних”.\nСинтаксис: set([ … ]) або {1, 2, 3}\n\nУвага! {} — це порожній словник. Порожня множина створюється так: my_set = set().\n\nvisitors = ['Іван', 'Анна', 'Іван', 'Петро', 'Анна', 'Марія', 'Іван']\nprint(f\"Список гостей (з дублікатами): {visitors}\")\n\nunique_visitors = set(visitors)\nprint(f\"Унікальні гості (без дублікатів): {unique_visitors}\")\nprint(f\"Кількість унікальних: {len(unique_visitors)}\")\n\n\n# Студенти, що взяли курс з Економіки\necon_students = {'Іван', 'Анна', 'Петро', 'Марія'}\n\n# Студенти, що взяли курс зі Статистики\nstat_students = {'Анна', 'Петро', 'Давид', 'Софія'}\n\n# 1. Хто ходить на ОБИДВА курси? (Перетин)\nboth_courses = econ_students & stat_students\nprint(f\"Ходять на обидва курси: {both_courses}\")\n\n# 2. Хто ходить ТІЛЬКИ на Економіку? (Різниця)\nonly_econ = econ_students - stat_students\nprint(f\"Ходять тільки на Економіку: {only_econ}\")\n\n# 3. Який загальний список унікальних студентів? (Об'єднання)\nall_students = econ_students | stat_students\nprint(f\"Всі унікальні студенти: {all_students}\")",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Практична №4.2"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#задача-менеджер-інвентарю",
     "href": "courses/be-course/modules/dictionaries-tuples-sets-practice.html#задача-менеджер-інвентарю",
     "title": "Практична №4.2",
     "section": "🔍 Задача: “Менеджер Інвентарю”",
-    "text": "🔍 Задача: “Менеджер Інвентарю”"
+    "text": "🔍 Задача: “Менеджер Інвентарю”",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Списки та словники",
+      "Практична №4.2"
+    ]
   },
   {
     "objectID": "courses/math-course/modules/variables-data-types-operations-practice.html",
@@ -340,56 +495,96 @@
     "href": "courses/math-course/modules/dictionaries-lc-practice.html",
     "title": "Practice Session 10",
     "section": "",
-    "text": "Сьогодні ми навчимося зберігати та обробляти зв’язну інформацію ефективно. Розберемося, як словники дозволяють миттєво знаходити дані за ключем без прив’язки до індексів, і як list comprehensions допомагають фільтрувати ці дані всього в один рядок коду."
+    "text": "Сьогодні ми навчимося зберігати та обробляти зв’язну інформацію ефективно. Розберемося, як словники дозволяють миттєво знаходити дані за ключем без прив’язки до індексів, і як list comprehensions допомагають фільтрувати ці дані всього в один рядок коду.",
+    "crumbs": [
+      "Математика",
+      "Словники. List Comprehension",
+      "Practice Session 10"
+    ]
   },
   {
     "objectID": "courses/math-course/modules/dictionaries-lc-practice.html#словники-list-comprehension-та-робота-з-даними",
     "href": "courses/math-course/modules/dictionaries-lc-practice.html#словники-list-comprehension-та-робота-з-даними",
     "title": "Practice Session 10",
     "section": "",
-    "text": "Сьогодні ми навчимося зберігати та обробляти зв’язну інформацію ефективно. Розберемося, як словники дозволяють миттєво знаходити дані за ключем без прив’язки до індексів, і як list comprehensions допомагають фільтрувати ці дані всього в один рядок коду."
+    "text": "Сьогодні ми навчимося зберігати та обробляти зв’язну інформацію ефективно. Розберемося, як словники дозволяють миттєво знаходити дані за ключем без прив’язки до індексів, і як list comprehensions допомагають фільтрувати ці дані всього в один рядок коду.",
+    "crumbs": [
+      "Математика",
+      "Словники. List Comprehension",
+      "Practice Session 10"
+    ]
   },
   {
     "objectID": "courses/math-course/modules/dictionaries-lc-practice.html#план-заняття",
     "href": "courses/math-course/modules/dictionaries-lc-practice.html#план-заняття",
     "title": "Practice Session 10",
     "section": "📌 План заняття:",
-    "text": "📌 План заняття:\n\n👨‍💻 Live coding 1: Словник, як база даних\n\n🛠 Guided Practice\n\n👨‍💻 Live coding 2: Словник, як база даних\n\n🛠 Guided Practice\n\n👨‍💻 Live Coding 3: Маніпуляції над даними з List Comprehension\n\n🛠 Guided Practice"
+    "text": "📌 План заняття:\n\n👨‍💻 Live coding 1: Словник, як база даних\n\n🛠 Guided Practice\n\n👨‍💻 Live coding 2: Словник, як база даних\n\n🛠 Guided Practice\n\n👨‍💻 Live Coding 3: Маніпуляції над даними з List Comprehension\n\n🛠 Guided Practice",
+    "crumbs": [
+      "Математика",
+      "Словники. List Comprehension",
+      "Practice Session 10"
+    ]
   },
   {
     "objectID": "courses/math-course/modules/dictionaries-lc-practice.html#cheat-sheet",
     "href": "courses/math-course/modules/dictionaries-lc-practice.html#cheat-sheet",
     "title": "Practice Session 10",
     "section": "📝 Cheat Sheet",
-    "text": "📝 Cheat Sheet\n\nБазова робота зі словниками (Dictionaries) Словник — це колекція пар ключ: значення. Ключі завжди унікальні.\n\n\n# Створення порожнього словника\nmy_dict = {}\n\n# Додавання або оновлення значення\nmy_dict[\"new_key\"] = \"new_value\"\n\n# Вкладені словники (Словник у словнику)\ndb = {101: {\"name\": \"Alice\", \"grades\": [100, 90]}}\n\n# Доступ до вкладених даних\nalice_grades = db[101][\"grades\"] \n\n\nКорисні методи словників\n\n\n.get(key, default) — безпечний пошук. Повертає значення за ключем. Якщо ключа немає, повертає default (не крашить програму!).\n.pop(key, default) — безпечне видалення. Видаляє пару за ключем і повертає значення.\n.update(other_dict) — об’єднання. Додає до поточного словника ключі та значення з other_dict.\n\n\nІтерація по словнику (Цикли)\n\n\n# Пройтися тільки по ключах:\nfor key in my_dict.keys(): # або просто for key in my_dict:\n\n# Пройтися тільки по значеннях:\nfor value in my_dict.values():\n\n# Пройтися по парах ключ-значення:\nfor key, value in my_dict.items():\n\n\nКорисні методи для списків (в контексті словників)\n\n\n.append(item) — додає один елемент в кінець списку.\n.extend(list) — розширює поточний список елементами з іншого списку. Корисно, коли треба додати кілька оцінок одразу.\n\n\nList Comprehension (Генератори списків) Синтаксис для створення списків в один рядок. [що_додати for елемент in колекція if умова]\n\n\n# Приклад: витягнути всі імена з нашої бази\nnames = [data[\"name\"] for data in db.values()]\n\n# Приклад: імена лише тих студентів, у кого є більше 3 оцінок\ntop_students = [data[\"name\"] for data in db.values() if len(data[\"grades\"]) &gt; 3]"
+    "text": "📝 Cheat Sheet\n\nБазова робота зі словниками (Dictionaries) Словник — це колекція пар ключ: значення. Ключі завжди унікальні.\n\n\n# Створення порожнього словника\nmy_dict = {}\n\n# Додавання або оновлення значення\nmy_dict[\"new_key\"] = \"new_value\"\n\n# Вкладені словники (Словник у словнику)\ndb = {101: {\"name\": \"Alice\", \"grades\": [100, 90]}}\n\n# Доступ до вкладених даних\nalice_grades = db[101][\"grades\"] \n\n\nКорисні методи словників\n\n\n.get(key, default) — безпечний пошук. Повертає значення за ключем. Якщо ключа немає, повертає default (не крашить програму!).\n.pop(key, default) — безпечне видалення. Видаляє пару за ключем і повертає значення.\n.update(other_dict) — об’єднання. Додає до поточного словника ключі та значення з other_dict.\n\n\nІтерація по словнику (Цикли)\n\n\n# Пройтися тільки по ключах:\nfor key in my_dict.keys(): # або просто for key in my_dict:\n\n# Пройтися тільки по значеннях:\nfor value in my_dict.values():\n\n# Пройтися по парах ключ-значення:\nfor key, value in my_dict.items():\n\n\nКорисні методи для списків (в контексті словників)\n\n\n.append(item) — додає один елемент в кінець списку.\n.extend(list) — розширює поточний список елементами з іншого списку. Корисно, коли треба додати кілька оцінок одразу.\n\n\nList Comprehension (Генератори списків) Синтаксис для створення списків в один рядок. [що_додати for елемент in колекція if умова]\n\n\n# Приклад: витягнути всі імена з нашої бази\nnames = [data[\"name\"] for data in db.values()]\n\n# Приклад: імена лише тих студентів, у кого є більше 3 оцінок\ntop_students = [data[\"name\"] for data in db.values() if len(data[\"grades\"]) &gt; 3]",
+    "crumbs": [
+      "Математика",
+      "Словники. List Comprehension",
+      "Practice Session 10"
+    ]
   },
   {
     "objectID": "courses/math-course/modules/dictionaries-lc-practice.html#coffee-warm-up",
     "href": "courses/math-course/modules/dictionaries-lc-practice.html#coffee-warm-up",
     "title": "Practice Session 10",
     "section": "☕Coffee Warm Up",
-    "text": "☕Coffee Warm Up\n\nУ нас є словник з цінами: menu = {\"Latte\": 60, \"Americano\": 40}. Клієнт питає, скільки коштує Американо. Яким одним рядком коду ми можемо дістати цю цифру?\nІнфляція. Лате тепер коштує 70 грн. А ще ми додали в меню Капучино за 65 грн. Як оновити словник?\nКлієнт просить “Flat White”. Ми знаємо, що якщо написати menu[\"Flat White\"], програма впаде з помилкою KeyError, бо такого ключа немає. Як перевірити, чи є цей напій в меню, повертаючи True або False?"
+    "text": "☕Coffee Warm Up\n\nУ нас є словник з цінами: menu = {\"Latte\": 60, \"Americano\": 40}. Клієнт питає, скільки коштує Американо. Яким одним рядком коду ми можемо дістати цю цифру?\nІнфляція. Лате тепер коштує 70 грн. А ще ми додали в меню Капучино за 65 грн. Як оновити словник?\nКлієнт просить “Flat White”. Ми знаємо, що якщо написати menu[\"Flat White\"], програма впаде з помилкою KeyError, бо такого ключа немає. Як перевірити, чи є цей напій в меню, повертаючи True або False?",
+    "crumbs": [
+      "Математика",
+      "Словники. List Comprehension",
+      "Practice Session 10"
+    ]
   },
   {
     "objectID": "courses/math-course/modules/dictionaries-lc-practice.html#live-coding-1-словник-як-база-даних",
     "href": "courses/math-course/modules/dictionaries-lc-practice.html#live-coding-1-словник-як-база-даних",
     "title": "Practice Session 10",
     "section": "👨‍💻 Live coding 1: Словник, як база даних",
-    "text": "👨‍💻 Live coding 1: Словник, як база даних\n\n\n\n\n\n\nПопередженняDisclaimer\n\n\n\nОскільки ми продовжуємо працювати в нашому репозиторії з попередньої практики - обов’язково створіть\n\n\nКонтекст: Ми продовжуємо працювати з нашим попереднім проєктом, але тепер наша задача полягає в створенні бази даних, яка містить імена та ID cтудентів. Задача полягає в створенні такої структури, яка могла би вміщати в себе дані студентів, та з якою можна було би з легкістю проводити маніпуляції на кшталт додавання нових студентів, або видалення вже присутніх.\nВхідні дані: Набір пар: унікальний ID студента та його ім’я. Наприклад, \"Alice\", 1\nОчікуваний результат: Вивід імен та ID усіх студентів.\n\n🛠 Guided Practice:\nКонтекст: Зберігання імен та ID студентів дозволяє нам розв’язати певні, проте доволі обмежені задачі. Перед нами постала проблема розширення нашої бази даних до такого вигляду, аби вона могла зберігати не лише ім’я студента, а і список його оцінок. Вашою метою є створення словника, який би задовольняв наші потреби в збереженні даних, а потім вивести усі дані про студентів на екран.\n\n\n\n\n\n\nПорадаПоради щодо виконання\n\n\n\n\nСтворіть новий порожній словник\nІтеративно заповніть ключі та значення цього словника даними, які є у students_db\nДо кожного значення додайте пустий список оцінок. Формат значення: {\"name\": \"ім'я_студента\", \"grades\": []}\n[BONUS] Заповніть список оцінок одного зі студентів випадковими значеннями\n\n\n\nВхідні дані: Словник виду students_db = {ID: name} з попередньої задачі.\nОчікуваний результат: Оновлений cловник виду {ID: {\"name\": \"ім'я_студента\", \"grades\": []}}\n\n\n\n\n\n\nПриміткаПримітка\n\n\n\nПам’ятайте, що для того, аби додати значення до словника ви маєте скористатися синтаксисом на кшталт dictionary[new_key] = new_value"
+    "text": "👨‍💻 Live coding 1: Словник, як база даних\n\n\n\n\n\n\nПопередженняDisclaimer\n\n\n\nОскільки ми продовжуємо працювати в нашому репозиторії з попередньої практики - обов’язково створіть\n\n\nКонтекст: Ми продовжуємо працювати з нашим попереднім проєктом, але тепер наша задача полягає в створенні бази даних, яка містить імена та ID cтудентів. Задача полягає в створенні такої структури, яка могла би вміщати в себе дані студентів, та з якою можна було би з легкістю проводити маніпуляції на кшталт додавання нових студентів, або видалення вже присутніх.\nВхідні дані: Набір пар: унікальний ID студента та його ім’я. Наприклад, \"Alice\", 1\nОчікуваний результат: Вивід імен та ID усіх студентів.\n\n🛠 Guided Practice:\nКонтекст: Зберігання імен та ID студентів дозволяє нам розв’язати певні, проте доволі обмежені задачі. Перед нами постала проблема розширення нашої бази даних до такого вигляду, аби вона могла зберігати не лише ім’я студента, а і список його оцінок. Вашою метою є створення словника, який би задовольняв наші потреби в збереженні даних, а потім вивести усі дані про студентів на екран.\n\n\n\n\n\n\nПорадаПоради щодо виконання\n\n\n\n\nСтворіть новий порожній словник\nІтеративно заповніть ключі та значення цього словника даними, які є у students_db\nДо кожного значення додайте пустий список оцінок. Формат значення: {\"name\": \"ім'я_студента\", \"grades\": []}\n[BONUS] Заповніть список оцінок одного зі студентів випадковими значеннями\n\n\n\nВхідні дані: Словник виду students_db = {ID: name} з попередньої задачі.\nОчікуваний результат: Оновлений cловник виду {ID: {\"name\": \"ім'я_студента\", \"grades\": []}}\n\n\n\n\n\n\nПриміткаПримітка\n\n\n\nПам’ятайте, що для того, аби додати значення до словника ви маєте скористатися синтаксисом на кшталт dictionary[new_key] = new_value",
+    "crumbs": [
+      "Математика",
+      "Словники. List Comprehension",
+      "Practice Session 10"
+    ]
   },
   {
     "objectID": "courses/math-course/modules/dictionaries-lc-practice.html#live-coding-2-адміністрація-даних",
     "href": "courses/math-course/modules/dictionaries-lc-practice.html#live-coding-2-адміністрація-даних",
     "title": "Practice Session 10",
     "section": "👨‍💻 Live Coding 2: Адміністрація даних",
-    "text": "👨‍💻 Live Coding 2: Адміністрація даних\nКонтекст: Наша новоспечена база даних працює! Проте, нашої з вами роботи виявилося замало, і окрім всіх речей, які ми зробили, нам потрібно вміти безпечно шукати студентів, відраховувати їх, та масово зараховувати нових студентів. Для того, аби ми могли зручно це робити, нам потрібно імплементувати три функції обгортки: search_student(db, id), expel_student(db, id) та add_students(db, students_dict)\nВхідні дані:\n\nНаша базова структура: db (словник студентів з попереднього завдання).\nДані для тестування функцій:\nДля пошуку: існуючий id (напр., 101) та неіснуючий (напр., 999).\nДля відрахування: id студента (напр., 102).\nДля зарахування: словник з новачками\n\n\nnew_students = {104: {\"name\": \"David\", \"grades\": []}, \n                105: {\"name\": \"Eve\", \"grades\": []}}\n\nОчікуваний результат:\n\nsearch_student(ab, id) безпечно повертає словник з даними студента або повідомлення “Не знайдено”.\nexpel_student(db, id) видаляє запис з db та повертає дані відрахованого студента (або сповіщає, якщо такого ID немає).\nadd_students(db, students_dict) розширює db новими записами (нічого не повертає, просто мутує оригінальний словник).\n\n\n🛠 Guided Practice:\nКонтекст: Ми покрили майже всі нюанси адміністрування нашої бази даних, окрім додавання оцінок для вже існуючих студентів. Вам потрібно написати функцію add_grade(db, student_id, grades), яка повинна знайти студента за його ID і додати нові оцінки до його списку “grades”. Якщо студента з таким ID не існує — вивести попередження.\nВхідні дані: База даних students_db з попереднього завдання. Спробуйте додати оцінки [95, 100] студенту з ID 101 та оцінку [80, 90] студенту з ID 999.\nОчікуваний результат: У студента 101 в списку оцінок мають з’явитися нові оцінки. При спробі додати оцінку студенту 999 на екран має вивестись повідомлення з помилкою.\n\n\n\n\n\n\nПорадаПоради щодо виконання\n\n\n\n\nВикористайте оператор in для перевірки наявності ID.\nВикористайте метод списків .extend(), щоб додати елементи до існуючого списку оцінок."
+    "text": "👨‍💻 Live Coding 2: Адміністрація даних\nКонтекст: Наша новоспечена база даних працює! Проте, нашої з вами роботи виявилося замало, і окрім всіх речей, які ми зробили, нам потрібно вміти безпечно шукати студентів, відраховувати їх, та масово зараховувати нових студентів. Для того, аби ми могли зручно це робити, нам потрібно імплементувати три функції обгортки: search_student(db, id), expel_student(db, id) та add_students(db, students_dict)\nВхідні дані:\n\nНаша базова структура: db (словник студентів з попереднього завдання).\nДані для тестування функцій:\nДля пошуку: існуючий id (напр., 101) та неіснуючий (напр., 999).\nДля відрахування: id студента (напр., 102).\nДля зарахування: словник з новачками\n\n\nnew_students = {104: {\"name\": \"David\", \"grades\": []}, \n                105: {\"name\": \"Eve\", \"grades\": []}}\n\nОчікуваний результат:\n\nsearch_student(ab, id) безпечно повертає словник з даними студента або повідомлення “Не знайдено”.\nexpel_student(db, id) видаляє запис з db та повертає дані відрахованого студента (або сповіщає, якщо такого ID немає).\nadd_students(db, students_dict) розширює db новими записами (нічого не повертає, просто мутує оригінальний словник).\n\n\n🛠 Guided Practice:\nКонтекст: Ми покрили майже всі нюанси адміністрування нашої бази даних, окрім додавання оцінок для вже існуючих студентів. Вам потрібно написати функцію add_grade(db, student_id, grades), яка повинна знайти студента за його ID і додати нові оцінки до його списку “grades”. Якщо студента з таким ID не існує — вивести попередження.\nВхідні дані: База даних students_db з попереднього завдання. Спробуйте додати оцінки [95, 100] студенту з ID 101 та оцінку [80, 90] студенту з ID 999.\nОчікуваний результат: У студента 101 в списку оцінок мають з’явитися нові оцінки. При спробі додати оцінку студенту 999 на екран має вивестись повідомлення з помилкою.\n\n\n\n\n\n\nПорадаПоради щодо виконання\n\n\n\n\nВикористайте оператор in для перевірки наявності ID.\nВикористайте метод списків .extend(), щоб додати елементи до існуючого списку оцінок.",
+    "crumbs": [
+      "Математика",
+      "Словники. List Comprehension",
+      "Practice Session 10"
+    ]
   },
   {
     "objectID": "courses/math-course/modules/dictionaries-lc-practice.html#live-coding-3-маніпуляції-над-даними-з-list-comprehension",
     "href": "courses/math-course/modules/dictionaries-lc-practice.html#live-coding-3-маніпуляції-над-даними-з-list-comprehension",
     "title": "Practice Session 10",
     "section": "👨‍💻 Live Coding 3: Маніпуляції над даними з List Comprehension",
-    "text": "👨‍💻 Live Coding 3: Маніпуляції над даними з List Comprehension\nКонтекст: Наша база даних розростається, і часто нам не потрібна вся інформація одразу, а лише конкретні вибірки. Наприклад, нас просять надати просто список імен усіх студентів для розсилки, а потім — окремий список тих, хто має хоча б одну оцінку “100”.\nВхідні дані: Наша поточна база students_db\nОчікуваний результат:\n\nСписок усіх імен\nСписок тих, у кого є 100 балів\n\n\n🛠 Guided Practice:\nКонтекст: І як ваше фінальне завдання, вам потрібно вирахувати тих студентів, які, на жаль чи на щастя, залік цього терму не отримають. Умови отримання заліку: мати хоча би 3 оцінки. Всі, хто мають менше за 3 - залік не отримують\nВхідні дані: Ви можете оновити попередню базу даних, аби в різних студентів була різна кількість оцінок, або ж використати нову, запропоновану нижче:\n\ndb_for_test = {\n    101: {\"name\": \"Alice\", \"grades\": [100, 95, 90]}, # Здала все\n    102: {\"name\": \"Bob\", \"grades\": [70, 75]},        # Боржник\n    103: {\"name\": \"Charlie\", \"grades\": [85]}         # Боржник\n}\n\nОчікуваний результат: Список імен [\"Bob\", \"Charlie\"] студентів, які не отримають залік\n\n\n\n\n\n\nПопередженняОбмеження\n\n\n\nДля розв’язання цього завдання використовуйте тільки list comprehension!"
+    "text": "👨‍💻 Live Coding 3: Маніпуляції над даними з List Comprehension\nКонтекст: Наша база даних розростається, і часто нам не потрібна вся інформація одразу, а лише конкретні вибірки. Наприклад, нас просять надати просто список імен усіх студентів для розсилки, а потім — окремий список тих, хто має хоча б одну оцінку “100”.\nВхідні дані: Наша поточна база students_db\nОчікуваний результат:\n\nСписок усіх імен\nСписок тих, у кого є 100 балів\n\n\n🛠 Guided Practice:\nКонтекст: І як ваше фінальне завдання, вам потрібно вирахувати тих студентів, які, на жаль чи на щастя, залік цього терму не отримають. Умови отримання заліку: мати хоча би 3 оцінки. Всі, хто мають менше за 3 - залік не отримують\nВхідні дані: Ви можете оновити попередню базу даних, аби в різних студентів була різна кількість оцінок, або ж використати нову, запропоновану нижче:\n\ndb_for_test = {\n    101: {\"name\": \"Alice\", \"grades\": [100, 95, 90]}, # Здала все\n    102: {\"name\": \"Bob\", \"grades\": [70, 75]},        # Боржник\n    103: {\"name\": \"Charlie\", \"grades\": [85]}         # Боржник\n}\n\nОчікуваний результат: Список імен [\"Bob\", \"Charlie\"] студентів, які не отримають залік\n\n\n\n\n\n\nПопередженняОбмеження\n\n\n\nДля розв’язання цього завдання використовуйте тільки list comprehension!",
+    "crumbs": [
+      "Математика",
+      "Словники. List Comprehension",
+      "Practice Session 10"
+    ]
   },
   {
     "objectID": "courses/math-course/modules/lists-practice.html",
@@ -668,195 +863,335 @@
     "href": "courses/be-course/modules/files-practice.html",
     "title": "Базова робота з файлами",
     "section": "",
-    "text": "Робота з файлами в Python\nВідкриття, читання, та закриття файлів\nLive coding 1: Читання файлу\nКонструкція with. Запис у файли\nМодулі для роботи з файлами\nLive coding 2"
+    "text": "Робота з файлами в Python\nВідкриття, читання, та закриття файлів\nLive coding 1: Читання файлу\nКонструкція with. Запис у файли\nМодулі для роботи з файлами\nLive coding 2",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Робота з файлами",
+      "Базова робота з файлами"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/files-practice.html#план",
     "href": "courses/be-course/modules/files-practice.html#план",
     "title": "Базова робота з файлами",
     "section": "",
-    "text": "Робота з файлами в Python\nВідкриття, читання, та закриття файлів\nLive coding 1: Читання файлу\nКонструкція with. Запис у файли\nМодулі для роботи з файлами\nLive coding 2"
+    "text": "Робота з файлами в Python\nВідкриття, читання, та закриття файлів\nLive coding 1: Читання файлу\nКонструкція with. Запис у файли\nМодулі для роботи з файлами\nLive coding 2",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Робота з файлами",
+      "Базова робота з файлами"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/files-practice.html#робота-з-файлами-в-python",
     "href": "courses/be-course/modules/files-practice.html#робота-з-файлами-в-python",
     "title": "Базова робота з файлами",
     "section": "🔍 Робота з файлами в Python",
-    "text": "🔍 Робота з файлами в Python\nРообота з файлами у мові програмування Python стосується процесу відкриття, читання, запису та закриття файлів на диску. Python надає вбудовані функції та методи для ефективної роботи з файлами різних типів, таких як текстові файли, бінарні файли, CSV-файли тощо.\n\nНавіщо потрібна робота з файлами?\n\nДля збереження даних\nДля обробки великих обсягів інформації\nДля доступу до зовнішніх ресурсів"
+    "text": "🔍 Робота з файлами в Python\nРообота з файлами у мові програмування Python стосується процесу відкриття, читання, запису та закриття файлів на диску. Python надає вбудовані функції та методи для ефективної роботи з файлами різних типів, таких як текстові файли, бінарні файли, CSV-файли тощо.\n\nНавіщо потрібна робота з файлами?\n\nДля збереження даних\nДля обробки великих обсягів інформації\nДля доступу до зовнішніх ресурсів",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Робота з файлами",
+      "Базова робота з файлами"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/files-practice.html#відкриття-та-закриття-файлів",
     "href": "courses/be-course/modules/files-practice.html#відкриття-та-закриття-файлів",
     "title": "Базова робота з файлами",
     "section": "🔓 Відкриття та закриття файлів",
-    "text": "🔓 Відкриття та закриття файлів\n\nВідкриття файлів\nАби мати змогу працювати з певним файлом в Python, його потрібно спочатку відкрити за допомогою вбудованої функції open(). Ця функція приймає два основні аргументи: шлях до файлу та режим відкриття файлу.\n\nfile = open('example.txt', 'r')\n            #шлях         #режим\n\n\n\nЧитання файлів\nПісля відкриття файлу можна прочитати його вміст за допомогою різних методів, таких як read(), readline(), або readlines().\n\n\n\nФайл data.txt\n\nРядок 1\nРядок 2\nРядок 3\n\n\n\nfile = open('data.txt', 'r')\nall_content = file.read() #Читає весь вміст файлу\ncontent_list = file.readlines() #Читає всі рядки у вигляді списку\nline = file.readline() #Читає один рядок за раз\n\n\n\nЗакриття файлів\nПісля завершення роботи з файлом його слід обов’язково закрити за допомогою методу close(), щоб звільнити ресурси системи."
+    "text": "🔓 Відкриття та закриття файлів\n\nВідкриття файлів\nАби мати змогу працювати з певним файлом в Python, його потрібно спочатку відкрити за допомогою вбудованої функції open(). Ця функція приймає два основні аргументи: шлях до файлу та режим відкриття файлу.\n\nfile = open('example.txt', 'r')\n            #шлях         #режим\n\n\n\nЧитання файлів\nПісля відкриття файлу можна прочитати його вміст за допомогою різних методів, таких як read(), readline(), або readlines().\n\n\n\nФайл data.txt\n\nРядок 1\nРядок 2\nРядок 3\n\n\n\nfile = open('data.txt', 'r')\nall_content = file.read() #Читає весь вміст файлу\ncontent_list = file.readlines() #Читає всі рядки у вигляді списку\nline = file.readline() #Читає один рядок за раз\n\n\n\nЗакриття файлів\nПісля завершення роботи з файлом його слід обов’язково закрити за допомогою методу close(), щоб звільнити ресурси системи.",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Робота з файлами",
+      "Базова робота з файлами"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/files-practice.html#live-coding-1-читання-файлу",
     "href": "courses/be-course/modules/files-practice.html#live-coding-1-читання-файлу",
     "title": "Базова робота з файлами",
     "section": "👨🏻‍💻 Live Coding 1: Читання файлу",
-    "text": "👨🏻‍💻 Live Coding 1: Читання файлу\n\n\n\n\n\n\nПриміткаЗавдання\n\n\n\nУ нас є текстовий файл data.txt, який містить кілька рядків тексту. Нам потрібно прочитати цей файл і вивести рядок з макксимальною довжиною.\n\n\n\n\n\ndata.txt\n\nHello, world!\nPython is great for file handling.\nHellooooo, world!!!!!\nFile handling is essential for data processing.\n\n\n\n\n\n\n\n\nВажливоВаше завдання\n\n\n\nПрочитайте файл log.txt і знайдіть рядок з повідомлення ‘Error’, виведіть на екран цей рядок та його порядковий номер.\n💡 Для успішного виконання, маєте використати метод startswith\n\n\n\n\n\nlog.txt\n\nSystem started successfully.\nError: Connection failed.\nWarning: Low disk space.\nOK.\nProcess completed."
+    "text": "👨🏻‍💻 Live Coding 1: Читання файлу\n\n\n\n\n\n\nПриміткаЗавдання\n\n\n\nУ нас є текстовий файл data.txt, який містить кілька рядків тексту. Нам потрібно прочитати цей файл і вивести рядок з макксимальною довжиною.\n\n\n\n\n\ndata.txt\n\nHello, world!\nPython is great for file handling.\nHellooooo, world!!!!!\nFile handling is essential for data processing.\n\n\n\n\n\n\n\n\nВажливоВаше завдання\n\n\n\nПрочитайте файл log.txt і знайдіть рядок з повідомлення ‘Error’, виведіть на екран цей рядок та його порядковий номер.\n💡 Для успішного виконання, маєте використати метод startswith\n\n\n\n\n\nlog.txt\n\nSystem started successfully.\nError: Connection failed.\nWarning: Low disk space.\nOK.\nProcess completed.",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Робота з файлами",
+      "Базова робота з файлами"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/files-practice.html#коснтрукція-with.-запис-у-файли",
     "href": "courses/be-course/modules/files-practice.html#коснтрукція-with.-запис-у-файли",
     "title": "Базова робота з файлами",
     "section": "📂 Коснтрукція with. Запис у файли",
-    "text": "📂 Коснтрукція with. Запис у файли\n\nКоснтрукція with\nКонструкція with створена для спрощення роботи з файлами. Її перевага в тому, що вона автоматично відкриває та закриває файл для нас.\n\nwith open(\"data.txt\", \"r\") as file:\n  content = file.read()\n  print(content)\n\n\n\nЗапис у файли\nУ Python, запис у файл здійснюється за допомогою режиму “w”. Він свторює файл, якщо його не існує, або переписує вже існуючий. Також, як і у впиадку читання, маємо спеціальний метод write для запису у файл.\n\nwith open(\"newfile.txt\", \"w\") as file:\n  file.write(\"This is a new file!\\n\")\n  file.write(\"This is line 2\\n\")"
+    "text": "📂 Коснтрукція with. Запис у файли\n\nКоснтрукція with\nКонструкція with створена для спрощення роботи з файлами. Її перевага в тому, що вона автоматично відкриває та закриває файл для нас.\n\nwith open(\"data.txt\", \"r\") as file:\n  content = file.read()\n  print(content)\n\n\n\nЗапис у файли\nУ Python, запис у файл здійснюється за допомогою режиму “w”. Він свторює файл, якщо його не існує, або переписує вже існуючий. Також, як і у впиадку читання, маємо спеціальний метод write для запису у файл.\n\nwith open(\"newfile.txt\", \"w\") as file:\n  file.write(\"This is a new file!\\n\")\n  file.write(\"This is line 2\\n\")",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Робота з файлами",
+      "Базова робота з файлами"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/files-practice.html#модулі-для-роботи-з-файлами-.csv",
     "href": "courses/be-course/modules/files-practice.html#модулі-для-роботи-з-файлами-.csv",
     "title": "Базова робота з файлами",
     "section": "📦 Модулі для роботи з файлами .csv",
-    "text": "📦 Модулі для роботи з файлами .csv\n\nЩо таке .csv?\n.csv це простий формат файлу, створений щоб зберігати дату у табличному вигляді як значення, розділені комами. Перший рядок, зазвичай слугує заголовком, який показує що означає кожна колонка\n\n\n\nfile.csv\n\nname,age,year-of-birth\nvasya,18,2007\nolena,20,2005\nvolodya,17,2008\n\n\n\n\nМодуль csv\nАби працювати з .csv файлами, нам потрібно імпортувати відповідний модуль, який дає нам потрібний функціонал.\n\nimport csv\n\nwith open('file.csv' 'r') as csvfile:\n  reader = csv.DictReader(csvfile, delimeter=',')\n  for row in reader:\n    print(row['name'], row['age'], row['year-of-birth'])\n\n\n\nЗапис у .csv файл\nЗапис у .csv файл також здійснюється за допомогою модуля csv, але з використанням класу DictWriter. Для цього, нам потрібно мати таку ж структуру, яку повертає DictReader – словник з ключами, що відповідають заголовкам колонок.\nТакож, ми маємо різні варіанти режимів запису:\n\n'w' - створює новий файл або переписує існуючий\n'a' - додає нові рядки в кінець існуючого файлу\n\n\nimport csv\n\nfiltered_data = [\n    {'Name': 'Olena', 'Role': 'Dev', 'Salary': 3000},\n    {'Name': 'Ivan', 'Role': 'Manager', 'Salary': 2500},\n    {'Name': 'Maria', 'Role': 'CEO', 'Salary': 5000}\n]\n\nheaders = ['Name', 'Role', 'Salary']\n\nwith open('report.csv', 'w', newline='', encoding='utf-8') as csvfile:\n    writer = csv.DictWriter(csvfile, fieldnames=headers)\n    writer.writeheader()\n\n    writer.writerows(filtered_data)\n    \n    # Варіант Б: Записувати по одному рядку (якщо ми обробляємо в циклі)\n    # for person in filtered_data:\n    #     writer.writerow(person)"
+    "text": "📦 Модулі для роботи з файлами .csv\n\nЩо таке .csv?\n.csv це простий формат файлу, створений щоб зберігати дату у табличному вигляді як значення, розділені комами. Перший рядок, зазвичай слугує заголовком, який показує що означає кожна колонка\n\n\n\nfile.csv\n\nname,age,year-of-birth\nvasya,18,2007\nolena,20,2005\nvolodya,17,2008\n\n\n\n\nМодуль csv\nАби працювати з .csv файлами, нам потрібно імпортувати відповідний модуль, який дає нам потрібний функціонал.\n\nimport csv\n\nwith open('file.csv' 'r') as csvfile:\n  reader = csv.DictReader(csvfile, delimeter=',')\n  for row in reader:\n    print(row['name'], row['age'], row['year-of-birth'])\n\n\n\nЗапис у .csv файл\nЗапис у .csv файл також здійснюється за допомогою модуля csv, але з використанням класу DictWriter. Для цього, нам потрібно мати таку ж структуру, яку повертає DictReader – словник з ключами, що відповідають заголовкам колонок.\nТакож, ми маємо різні варіанти режимів запису:\n\n'w' - створює новий файл або переписує існуючий\n'a' - додає нові рядки в кінець існуючого файлу\n\n\nimport csv\n\nfiltered_data = [\n    {'Name': 'Olena', 'Role': 'Dev', 'Salary': 3000},\n    {'Name': 'Ivan', 'Role': 'Manager', 'Salary': 2500},\n    {'Name': 'Maria', 'Role': 'CEO', 'Salary': 5000}\n]\n\nheaders = ['Name', 'Role', 'Salary']\n\nwith open('report.csv', 'w', newline='', encoding='utf-8') as csvfile:\n    writer = csv.DictWriter(csvfile, fieldnames=headers)\n    writer.writeheader()\n\n    writer.writerows(filtered_data)\n    \n    # Варіант Б: Записувати по одному рядку (якщо ми обробляємо в циклі)\n    # for person in filtered_data:\n    #     writer.writerow(person)",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Робота з файлами",
+      "Базова робота з файлами"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/files-practice.html#live-coding-2",
     "href": "courses/be-course/modules/files-practice.html#live-coding-2",
     "title": "Базова робота з файлами",
     "section": "👨🏻‍💻 Live coding 2:",
-    "text": "👨🏻‍💻 Live coding 2:\n\n\n\n\n\n\nПриміткаЗавдання\n\n\n\nНам надано .csv файл з колонками, які відповідають за ім’я, роль, та заробітню плату людини. Нам потріно прочитати файл та відфільтрувати тільки тих людей, які заробляють більше 1800 доларів, та вивести їх на екран. Для виконання потрібно скористатися csv.DictReader()\n\n\n\n\n\nstaff.csv\n\nName,Position,Salary\nIvan,Manager,1200\nOlena,Developer,2500\nPetro,Analyst,1800\nMaria,Lead,3000\nVasyl,Intern,500\n\n\n\n\n\n\n\n\nВажливоВаше завдання\n\n\n\nМаючи ті самі дані, запишіть відфілтровані дані у новий файл filtered_data.csv. Використайте csv.DictWriter()"
+    "text": "👨🏻‍💻 Live coding 2:\n\n\n\n\n\n\nПриміткаЗавдання\n\n\n\nНам надано .csv файл з колонками, які відповідають за ім’я, роль, та заробітню плату людини. Нам потріно прочитати файл та відфільтрувати тільки тих людей, які заробляють більше 1800 доларів, та вивести їх на екран. Для виконання потрібно скористатися csv.DictReader()\n\n\n\n\n\nstaff.csv\n\nName,Position,Salary\nIvan,Manager,1200\nOlena,Developer,2500\nPetro,Analyst,1800\nMaria,Lead,3000\nVasyl,Intern,500\n\n\n\n\n\n\n\n\nВажливоВаше завдання\n\n\n\nМаючи ті самі дані, запишіть відфілтровані дані у новий файл filtered_data.csv. Використайте csv.DictWriter()",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Робота з файлами",
+      "Базова робота з файлами"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/ATM-simulator-task.html",
     "href": "courses/be-course/modules/ATM-simulator-task.html",
     "title": "Практична №4 (Тиждень 3)",
     "section": "",
-    "text": "📌 Завдання: “Симулятор банкомату”.\nСьогодні ви виконаєте свій перший крутий міні-проєкт. Перед вами стоїть задача написати “Симулятор банкомату”.\nПрограма має працювати наступним чином:\n\nСпочатку ви маєте показати користувачу меню доступних операцій:\n1. Перевірити баланс\n2. Зняти гроші\n3. Поповнити рахунок\n4. Вийти\nВ залежності від вибраної операції (користувач має увести відповідний номер), програма має виконати відповідну дію.\nБаланс користувача початково встановлюється на 1000 гривень.\nЯкщо користувач вводить недоступну команду (що завгодно окрім 0, 1, 2, 3 чи 4), програма має вивести повідомлення про помилку і знову показати меню. - Програма працює доти, доки користувач не обере завершити роботу (опція 4).\n\nПриклад роботи програми:\n\n--- M-Bank ATM ---\n1. Перевірити баланс\n2. Покласти кошти (Депозит)\n3. Зняти кошти\n4. Вихід\nВведіть номер опції (1-4): 1\nВаш поточний баланс: 1000.0 грн\n\n--- M-Bank ATM ---\n1. Перевірити баланс\n2. Покласти кошти (Депозит)\n3. Зняти кошти\n4. Вихід\nВведіть номер опції (1-4): 2\nВведіть суму для депозиту: 500\nУспішно! Ваш новий баланс: 1500.0 грн\n\n--- M-Bank ATM ---\n1. Перевірити баланс\n2. Покласти кошти (Депозит)\n3. Зняти кошти\n4. Вихід\nВведіть номер опції (1-4): 3\nВведіть суму для зняття: 2000\n\nПомилка: Недостатньо коштів. На вашому рахунку лише 1500.0 грн\n\n--- M-Bank ATM ---\n1. Перевірити баланс\n2. Покласти кошти (Депозит)\n3. Зняти кошти\n4. Вихід\nВведіть номер опції (1-4): 3\nВведіть суму для зняття: 700\nЗаберіть ваші кошти. Залишок на рахунку: 800.0 грн\n\n--- M-Bank ATM ---\n1. Перевірити баланс\n2. Покласти кошти (Депозит)\n3. Зняти кошти\n4. Вихід\nВведіть номер опції (1-4): 5\nНевірний вибір. Будь ласка, введіть число від 1 до 4.\n\n--- M-Bank ATM ---\n1. Перевірити баланс\n2. Покласти кошти (Депозит)\n3. Зняти кошти\n4. Вихід\nВведіть номер опції (1-4): 4\nДякуємо за використання M-Bank! До побачення.\n\n\n🔍 Поради щодо виконання.\n\nВикористовуйте цикл while, щоб програма продовжувала працювати, доки користувач не обере вийти.\nВикористовуйте умовні оператори if, elif та else для обробки вибору користувача.\nВикористовуйте змінну для збереження балансу користувача і оновлюйте її відповідно до операцій депозиту та зняття коштів.\nНе забудьте обробити випадки, коли користувач намагається зняти більше грошей, ніж є на рахунку.\nДодайте повідомлення про помилки для недійсних вводів."
+    "text": "📌 Завдання: “Симулятор банкомату”.\nСьогодні ви виконаєте свій перший крутий міні-проєкт. Перед вами стоїть задача написати “Симулятор банкомату”.\nПрограма має працювати наступним чином:\n\nСпочатку ви маєте показати користувачу меню доступних операцій:\n1. Перевірити баланс\n2. Зняти гроші\n3. Поповнити рахунок\n4. Вийти\nВ залежності від вибраної операції (користувач має увести відповідний номер), програма має виконати відповідну дію.\nБаланс користувача початково встановлюється на 1000 гривень.\nЯкщо користувач вводить недоступну команду (що завгодно окрім 0, 1, 2, 3 чи 4), програма має вивести повідомлення про помилку і знову показати меню. - Програма працює доти, доки користувач не обере завершити роботу (опція 4).\n\nПриклад роботи програми:\n\n--- M-Bank ATM ---\n1. Перевірити баланс\n2. Покласти кошти (Депозит)\n3. Зняти кошти\n4. Вихід\nВведіть номер опції (1-4): 1\nВаш поточний баланс: 1000.0 грн\n\n--- M-Bank ATM ---\n1. Перевірити баланс\n2. Покласти кошти (Депозит)\n3. Зняти кошти\n4. Вихід\nВведіть номер опції (1-4): 2\nВведіть суму для депозиту: 500\nУспішно! Ваш новий баланс: 1500.0 грн\n\n--- M-Bank ATM ---\n1. Перевірити баланс\n2. Покласти кошти (Депозит)\n3. Зняти кошти\n4. Вихід\nВведіть номер опції (1-4): 3\nВведіть суму для зняття: 2000\n\nПомилка: Недостатньо коштів. На вашому рахунку лише 1500.0 грн\n\n--- M-Bank ATM ---\n1. Перевірити баланс\n2. Покласти кошти (Депозит)\n3. Зняти кошти\n4. Вихід\nВведіть номер опції (1-4): 3\nВведіть суму для зняття: 700\nЗаберіть ваші кошти. Залишок на рахунку: 800.0 грн\n\n--- M-Bank ATM ---\n1. Перевірити баланс\n2. Покласти кошти (Депозит)\n3. Зняти кошти\n4. Вихід\nВведіть номер опції (1-4): 5\nНевірний вибір. Будь ласка, введіть число від 1 до 4.\n\n--- M-Bank ATM ---\n1. Перевірити баланс\n2. Покласти кошти (Депозит)\n3. Зняти кошти\n4. Вихід\nВведіть номер опції (1-4): 4\nДякуємо за використання M-Bank! До побачення.\n\n\n🔍 Поради щодо виконання.\n\nВикористовуйте цикл while, щоб програма продовжувала працювати, доки користувач не обере вийти.\nВикористовуйте умовні оператори if, elif та else для обробки вибору користувача.\nВикористовуйте змінну для збереження балансу користувача і оновлюйте її відповідно до операцій депозиту та зняття коштів.\nНе забудьте обробити випадки, коли користувач намагається зняти більше грошей, ніж є на рахунку.\nДодайте повідомлення про помилки для недійсних вводів.",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Логічні розгалудження",
+      "Практична №4 (Тиждень 3)"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/strings-practice.html",
     "href": "courses/be-course/modules/strings-practice.html",
     "title": "Практична №5.1: Робота з рядками",
     "section": "",
-    "text": "Що таке рядки\nРядок як структура даних\nLive coding 1\nОперації з рядками\nLive coding 2\nВаше завдання та QA"
+    "text": "Що таке рядки\nРядок як структура даних\nLive coding 1\nОперації з рядками\nLive coding 2\nВаше завдання та QA",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Рядки",
+      "Практична №5.1: Робота з рядками"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/strings-practice.html#план-на-сьогодні",
     "href": "courses/be-course/modules/strings-practice.html#план-на-сьогодні",
     "title": "Практична №5.1: Робота з рядками",
     "section": "",
-    "text": "Що таке рядки\nРядок як структура даних\nLive coding 1\nОперації з рядками\nLive coding 2\nВаше завдання та QA"
+    "text": "Що таке рядки\nРядок як структура даних\nLive coding 1\nОперації з рядками\nLive coding 2\nВаше завдання та QA",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Рядки",
+      "Практична №5.1: Робота з рядками"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/strings-practice.html#що-таке-рядки-і-як-вони-працюють",
     "href": "courses/be-course/modules/strings-practice.html#що-таке-рядки-і-як-вони-працюють",
     "title": "Практична №5.1: Робота з рядками",
     "section": "❓ Що таке рядки і як вони працюють?",
-    "text": "❓ Що таке рядки і як вони працюють?\n\nРядок\nЦе послідовність символів, які використовуються для зберігання та представлення текстової інформації в програмуванні. Рядки можуть містити літери, цифри, пробіли, спеціальні символи та інші знаки.\n\n\nСинтаксис\n\nОдинарні: 'Привіт, світе!'\nПодвійні: \"Це теж рядок\"\nПотрійні: \"\"\"Для багаторядкового тексту\"\"\""
+    "text": "❓ Що таке рядки і як вони працюють?\n\nРядок\nЦе послідовність символів, які використовуються для зберігання та представлення текстової інформації в програмуванні. Рядки можуть містити літери, цифри, пробіли, спеціальні символи та інші знаки.\n\n\nСинтаксис\n\nОдинарні: 'Привіт, світе!'\nПодвійні: \"Це теж рядок\"\nПотрійні: \"\"\"Для багаторядкового тексту\"\"\"",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Рядки",
+      "Практична №5.1: Робота з рядками"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/strings-practice.html#рядок-як-структура-даних",
     "href": "courses/be-course/modules/strings-practice.html#рядок-як-структура-даних",
     "title": "Практична №5.1: Робота з рядками",
     "section": "🫙 Рядок як структура даних",
-    "text": "🫙 Рядок як структура даних\nЗ попередньо визначення випливає те, що рядок є послідовністю символів. Це означає, що кожен символ у рядку має свою позицію (індекс), починаючи з нуля.\n\ntext = \"Hello, World!\"\n\nprint(f\"{text[0]} {text[1]} {text[2]} {text[3]} {text[4]}\")  \n\nH e l l o\n\n\n\nЦе означає що ми можемо робити наступне:\n\nОтримати доступ до будь якого символу за індексом\nІтеруватися по кожному символу в рядку\n\n\nprint(\"--- По символах: ---\")\nfor char in \"Hello\":\n    print(f\"Символ: {char}\")\n\n--- По символах: ---\nСимвол: H\nСимвол: e\nСимвол: l\nСимвол: l\nСимвол: o\n\n\n\n\n🛑 Attention, Immutability!\nРядки в Python є незмінними (immutable), що означає, що після створення рядка його вміст не може бути змінений. Будь-які операції, які здаються зміною рядка, насправді створюють новий рядок.\n\nmy_string = \"Hello\"\nmy_string[0] = \"J\"   # -&gt; ЦЕ ВИКЛИЧЕ ПОМИЛКУ!\n\nЩоб змінити рядок, потрібно створювати новий"
+    "text": "🫙 Рядок як структура даних\nЗ попередньо визначення випливає те, що рядок є послідовністю символів. Це означає, що кожен символ у рядку має свою позицію (індекс), починаючи з нуля.\n\ntext = \"Hello, World!\"\n\nprint(f\"{text[0]} {text[1]} {text[2]} {text[3]} {text[4]}\")  \n\nH e l l o\n\n\n\nЦе означає що ми можемо робити наступне:\n\nОтримати доступ до будь якого символу за індексом\nІтеруватися по кожному символу в рядку\n\n\nprint(\"--- По символах: ---\")\nfor char in \"Hello\":\n    print(f\"Символ: {char}\")\n\n--- По символах: ---\nСимвол: H\nСимвол: e\nСимвол: l\nСимвол: l\nСимвол: o\n\n\n\n\n🛑 Attention, Immutability!\nРядки в Python є незмінними (immutable), що означає, що після створення рядка його вміст не може бути змінений. Будь-які операції, які здаються зміною рядка, насправді створюють новий рядок.\n\nmy_string = \"Hello\"\nmy_string[0] = \"J\"   # -&gt; ЦЕ ВИКЛИЧЕ ПОМИЛКУ!\n\nЩоб змінити рядок, потрібно створювати новий",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Рядки",
+      "Практична №5.1: Робота з рядками"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/strings-practice.html#live-coding-1-валідація-єдрпоу",
     "href": "courses/be-course/modules/strings-practice.html#live-coding-1-валідація-єдрпоу",
     "title": "Практична №5.1: Робота з рядками",
     "section": "💻 Live coding 1: валідація ЄДРПОУ",
-    "text": "💻 Live coding 1: валідація ЄДРПОУ\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nУявіть, що нам треба перевірити код ЄДРПОУ (податковий код компанії), який вводить користувач.\n\n\n\nБізнес-правила для цього коду:\n\nВін повинен містити рівно 8 цифр\nВін не повинен містити жодних букв чи інших символів"
+    "text": "💻 Live coding 1: валідація ЄДРПОУ\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nУявіть, що нам треба перевірити код ЄДРПОУ (податковий код компанії), який вводить користувач.\n\n\n\nБізнес-правила для цього коду:\n\nВін повинен містити рівно 8 цифр\nВін не повинен містити жодних букв чи інших символів",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Рядки",
+      "Практична №5.1: Робота з рядками"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/strings-practice.html#операції-над-рядками",
     "href": "courses/be-course/modules/strings-practice.html#операції-над-рядками",
     "title": "Практична №5.1: Робота з рядками",
     "section": "Операції над рядками",
-    "text": "Операції над рядками\n\n“Очисні” існтрументи\n\n.strip() - видаляє пробіли на початку і в кінці рядка\n\n\ndirty = \"   1,500.25  \"\nclean = dirty.strip()\nprint(clean)\n\n1,500.25\n\n\n\n.lower()/.upper() - перетворює всі символи рядка в нижній регістр\n\n\nmessy_input = \"uAh\"\nif messy_input.lower() == \"uah\":\n    print(\"Це гривня!\")\n\nЦе гривня!\n\n\n\n\n“Хірургічні” інстурменти\n\n.replace(old, new) - замінює всі входження old на new\n\n\nprice = \"1,500.25 грн\"\n# Можна робити \"ланцюжок\" (chaining)\nclean_price = price.replace(\",\", \".\").replace(\" грн\", \"\")\n# clean_price -&gt; \"1.500.25\"\n\n\n.split(separator) - розбиває рядок на список підрядків за вказаним роздільником\n\n\nreport_line = \"Дохід: 1,200.50\"\nparts = report_line.split(\":\")\nprint(parts)\n\n['Дохід', ' 1,200.50']\n\n\n\n\nПеревірка вмісту рядка\n\nОператор in - перевіряє, чи існує підрядок всередині рядка. Повертає True або False\n\n\nreport = \"Дохід: 500 грн\"\nif \"грн\" in report.lower():\n    print(\"Це гривня!\")\n\nЦе гривня!\n\n\n\n.startswith(substring)/.endswith(substrig) - перевіряє, чи починається рядок з вказаного підрядка\n\n\niban = \"UA1234567890\"\nemail = \"student@kse.ua\"\n\n# Перевірка банківського рахунку\nif iban.startswith(\"UA\"):\n    print(\"Це український IBAN.\")\n\n# Перевірка корпоративної пошти\nif email.endswith(\"@kse.ua\"):\n    print(\"Це корпоративна пошта KSE.\")\n\nЦе український IBAN.\nЦе корпоративна пошта KSE.\n\n\n\n.find(substring) - шукає підрядок у рядку і повертає індекс першого входження або -1, якщо не знайдено\n\n\nreport = \"ID: 456 | User: Alice\"\n\n# Знаходимо, де починається \"User: \"\nuser_start_index = report.find(\"User: \")\nprint(f\"Початок 'User: ': {user_start_index}\") # -&gt; 10\n\nПочаток 'User: ': 10"
+    "text": "Операції над рядками\n\n“Очисні” існтрументи\n\n.strip() - видаляє пробіли на початку і в кінці рядка\n\n\ndirty = \"   1,500.25  \"\nclean = dirty.strip()\nprint(clean)\n\n1,500.25\n\n\n\n.lower()/.upper() - перетворює всі символи рядка в нижній регістр\n\n\nmessy_input = \"uAh\"\nif messy_input.lower() == \"uah\":\n    print(\"Це гривня!\")\n\nЦе гривня!\n\n\n\n\n“Хірургічні” інстурменти\n\n.replace(old, new) - замінює всі входження old на new\n\n\nprice = \"1,500.25 грн\"\n# Можна робити \"ланцюжок\" (chaining)\nclean_price = price.replace(\",\", \".\").replace(\" грн\", \"\")\n# clean_price -&gt; \"1.500.25\"\n\n\n.split(separator) - розбиває рядок на список підрядків за вказаним роздільником\n\n\nreport_line = \"Дохід: 1,200.50\"\nparts = report_line.split(\":\")\nprint(parts)\n\n['Дохід', ' 1,200.50']\n\n\n\n\nПеревірка вмісту рядка\n\nОператор in - перевіряє, чи існує підрядок всередині рядка. Повертає True або False\n\n\nreport = \"Дохід: 500 грн\"\nif \"грн\" in report.lower():\n    print(\"Це гривня!\")\n\nЦе гривня!\n\n\n\n.startswith(substring)/.endswith(substrig) - перевіряє, чи починається рядок з вказаного підрядка\n\n\niban = \"UA1234567890\"\nemail = \"student@kse.ua\"\n\n# Перевірка банківського рахунку\nif iban.startswith(\"UA\"):\n    print(\"Це український IBAN.\")\n\n# Перевірка корпоративної пошти\nif email.endswith(\"@kse.ua\"):\n    print(\"Це корпоративна пошта KSE.\")\n\nЦе український IBAN.\nЦе корпоративна пошта KSE.\n\n\n\n.find(substring) - шукає підрядок у рядку і повертає індекс першого входження або -1, якщо не знайдено\n\n\nreport = \"ID: 456 | User: Alice\"\n\n# Знаходимо, де починається \"User: \"\nuser_start_index = report.find(\"User: \")\nprint(f\"Початок 'User: ': {user_start_index}\") # -&gt; 10\n\nПочаток 'User: ': 10",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Рядки",
+      "Практична №5.1: Робота з рядками"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/strings-practice.html#live-coding-2-extracting-data",
     "href": "courses/be-course/modules/strings-practice.html#live-coding-2-extracting-data",
     "title": "Практична №5.1: Робота з рядками",
     "section": "💻 Live coding 2: Extracting data",
-    "text": "💻 Live coding 2: Extracting data\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nУ нас є рядок raw_record = \"INFO: User 'alice' | TRANSACTION_ID: 831 | AMOUNT: 1,500.25$ \". Нам потрібно витягнути звідти тільки деякі дані\n\n\nНам не потрібен ID транзакції, нам потрібна тільки сума (1,500.25$), і нам треба перетворити її на float (1500.25), щоб ми могли з нею рахувати."
+    "text": "💻 Live coding 2: Extracting data\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nУ нас є рядок raw_record = \"INFO: User 'alice' | TRANSACTION_ID: 831 | AMOUNT: 1,500.25$ \". Нам потрібно витягнути звідти тільки деякі дані\n\n\nНам не потрібен ID транзакції, нам потрібна тільки сума (1,500.25$), і нам треба перетворити її на float (1500.25), щоб ми могли з нею рахувати.",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Рядки",
+      "Практична №5.1: Робота з рядками"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/strings-practice.html#ваше-завдання-та-qa",
     "href": "courses/be-course/modules/strings-practice.html#ваше-завдання-та-qa",
     "title": "Практична №5.1: Робота з рядками",
     "section": "🎯 Ваше завдання та QA",
-    "text": "🎯 Ваше завдання та QA\n\n\n\n\n\n\nПриміткаЗавдання\n\n\n\nНаписати програму, яка просить користувача ввести один рядок у форматі “Ім’я, email@domain.com” і витягує з нього чисте доменне ім’я (наприклад, kse.com.ua) та ім’я користувача\n\n\n\n⚒️ Воркфлоу:\n\nПрограма просить користувача ввести рядок: user_input = input(\"Введіть дані (формат 'Ім'я, email@domain.com'): \")\nПриклад вводу: Іван Петренко, ivan.petrenko@kse.com.ua (зверніть увагу на можливі пробіли).\nВикористовуючи ланцюжок методів, які ми вивчили (в основному .split() та .strip()), програма має вивести домен.\nОкрім цього, нехай програма також виведе ім’я користувача\nОчікуваний результат роботи програми:\n\nEnter data: Ivan Petrenko, ivan.petrenko@kse.com.ua\n# Ваш вивід\nName: Ivan Petrenko, Domain: kse.com.ua\n\n\n\n💡 Поради до виконання\n\nСкористайтеся методом .split(), аби відрізати потрібну частинку рядка. Зверніть увагу на сам ввід, ви можете використати як роздільник символ “,” ( ну або щось інше _ )\nНе забудьте прибрати зайві пробіли та символи (якщо буде така необхідність)\nПрипустимо, що користувач уводить тільки правильні дані"
+    "text": "🎯 Ваше завдання та QA\n\n\n\n\n\n\nПриміткаЗавдання\n\n\n\nНаписати програму, яка просить користувача ввести один рядок у форматі “Ім’я, email@domain.com” і витягує з нього чисте доменне ім’я (наприклад, kse.com.ua) та ім’я користувача\n\n\n\n⚒️ Воркфлоу:\n\nПрограма просить користувача ввести рядок: user_input = input(\"Введіть дані (формат 'Ім'я, email@domain.com'): \")\nПриклад вводу: Іван Петренко, ivan.petrenko@kse.com.ua (зверніть увагу на можливі пробіли).\nВикористовуючи ланцюжок методів, які ми вивчили (в основному .split() та .strip()), програма має вивести домен.\nОкрім цього, нехай програма також виведе ім’я користувача\nОчікуваний результат роботи програми:\n\nEnter data: Ivan Petrenko, ivan.petrenko@kse.com.ua\n# Ваш вивід\nName: Ivan Petrenko, Domain: kse.com.ua\n\n\n\n💡 Поради до виконання\n\nСкористайтеся методом .split(), аби відрізати потрібну частинку рядка. Зверніть увагу на сам ввід, ви можете використати як роздільник символ “,” ( ну або щось інше _ )\nНе забудьте прибрати зайві пробіли та символи (якщо буде така необхідність)\nПрипустимо, що користувач уводить тільки правильні дані",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Рядки",
+      "Практична №5.1: Робота з рядками"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/libraries-json-practice.html",
     "href": "courses/be-course/modules/libraries-json-practice.html",
     "title": "Робота з JSON. Робота з бібліотеками matplotlib, pandas та numpy",
     "section": "",
-    "text": "Робота з файлами .json в Python\nLive coding 1: Читання файлу\nБібліотеки: pandas, matplotlib, numpy\nLive coding 2"
+    "text": "Робота з файлами .json в Python\nLive coding 1: Читання файлу\nБібліотеки: pandas, matplotlib, numpy\nLive coding 2",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Бібліотеки, JSON",
+      "Робота з JSON. Робота з бібліотеками matplotlib, pandas та numpy"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/libraries-json-practice.html#план",
     "href": "courses/be-course/modules/libraries-json-practice.html#план",
     "title": "Робота з JSON. Робота з бібліотеками matplotlib, pandas та numpy",
     "section": "",
-    "text": "Робота з файлами .json в Python\nLive coding 1: Читання файлу\nБібліотеки: pandas, matplotlib, numpy\nLive coding 2"
+    "text": "Робота з файлами .json в Python\nLive coding 1: Читання файлу\nБібліотеки: pandas, matplotlib, numpy\nLive coding 2",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Бібліотеки, JSON",
+      "Робота з JSON. Робота з бібліотеками matplotlib, pandas та numpy"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/libraries-json-practice.html#робота-з-.json",
     "href": "courses/be-course/modules/libraries-json-practice.html#робота-з-.json",
     "title": "Робота з JSON. Робота з бібліотеками matplotlib, pandas та numpy",
     "section": "🔍 Робота з .json",
-    "text": "🔍 Робота з .json\n\nЩо таке JSON?\nJSON (від Java Script Object Notation) – легкий,текстоорієнтований формат обміну даних, який використовується здебільшого для передачі даних між серверами та веб застосунками, а також використовується для легкого опрацювання великої кількості даних.\nJSON, по суті, являє собою колекцію пар ключ: значення, і може зберігати всі відомі вам типи даних.\n\n\nЧитання .json файлів\nМова програмування Python має вбудований модуль для роботи з такими файлами:\n\n\n\ndata.json\n\n{\n  \"Name\": \"Vasya\",\n  \"Age\": 28,\n  \"Address\": {\n    \"work\": \"Kyiv, Mykoly Shapaka 3 street\",\n    \"home\": null\n  }\n}\n\n\n\nimport json\n\nwith open('data.json', 'r') as file:\n  file = json.load(file)\n  print(data['Name'], data['Age'], data['Address']['work'])\n\n\n\nЗапис у .json файл\nЗапис до файлу виконується схожим чином. Нам потрібно мати словник, так використати метод json.dump\n\nimport json\n\ndict_data = {\n  \"Name\": \"Vasya\",\n  \"Age\": 28,\n  \"Address\": {\n    \"work\": \"Kyiv, вулиця Миколи Шпака 3\",\n    \"home\": null\n  }\n}\n\nwith open('data.json', 'w') as file:\n  json.dump(dict_data, file, indent=4)"
+    "text": "🔍 Робота з .json\n\nЩо таке JSON?\nJSON (від Java Script Object Notation) – легкий,текстоорієнтований формат обміну даних, який використовується здебільшого для передачі даних між серверами та веб застосунками, а також використовується для легкого опрацювання великої кількості даних.\nJSON, по суті, являє собою колекцію пар ключ: значення, і може зберігати всі відомі вам типи даних.\n\n\nЧитання .json файлів\nМова програмування Python має вбудований модуль для роботи з такими файлами:\n\n\n\ndata.json\n\n{\n  \"Name\": \"Vasya\",\n  \"Age\": 28,\n  \"Address\": {\n    \"work\": \"Kyiv, Mykoly Shapaka 3 street\",\n    \"home\": null\n  }\n}\n\n\n\nimport json\n\nwith open('data.json', 'r') as file:\n  file = json.load(file)\n  print(data['Name'], data['Age'], data['Address']['work'])\n\n\n\nЗапис у .json файл\nЗапис до файлу виконується схожим чином. Нам потрібно мати словник, так використати метод json.dump\n\nimport json\n\ndict_data = {\n  \"Name\": \"Vasya\",\n  \"Age\": 28,\n  \"Address\": {\n    \"work\": \"Kyiv, вулиця Миколи Шпака 3\",\n    \"home\": null\n  }\n}\n\nwith open('data.json', 'w') as file:\n  json.dump(dict_data, file, indent=4)",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Бібліотеки, JSON",
+      "Робота з JSON. Робота з бібліотеками matplotlib, pandas та numpy"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/libraries-json-practice.html#live-coding",
     "href": "courses/be-course/modules/libraries-json-practice.html#live-coding",
     "title": "Робота з JSON. Робота з бібліотеками matplotlib, pandas та numpy",
     "section": "👨🏻‍💻 Live coding:",
-    "text": "👨🏻‍💻 Live coding:\n\n\n\n\n\n\nПримітка\n\n\n\nУ нас є .json файл з даними про покупця в магазині техніки. Нам потрібно відкрити його та провести певний аналіз, а саме знайти середню ціну одного замовлення (item), певного користувача\n\n\n\n\n\ndata.json\n\n{\n  \"orderId\": \"PO-12345\",\n  \"customer\": {\n    \"name\": \"Jane Smith\",\n    \"email\": \"jane@example.com\",\n    \"address\": {\n      \"street\": \"123 Main St\",\n      \"city\": \"Anytown\",\n      \"zip\": \"12345\"\n    }\n  },\n  \"items\": [\n    { \"sku\": \"ABC-001\", \"name\": \"Laptop\", \"price\": 1100.99 },\n    { \"sku\": \"XYZ-002\", \"name\": \"Phone\", \"price\": 780.50 },\n    { \"sku\": \"QWE-005\", \"name\": \"Tablet\", \"price\": 900.00 }\n  ],\n  \"totalAmount\": 49.49,\n  \"shipped\": true,\n  \"notes\": null\n}\n\n\n\n\n\n\n\n\nПримітка\n\n\n\nМаючи той самий data.json файл, додайте до items ще один типовий елемент. Порахуйте середню вартість одного item. Запишіть отримані дані у новий файл new_data.json"
+    "text": "👨🏻‍💻 Live coding:\n\n\n\n\n\n\nПримітка\n\n\n\nУ нас є .json файл з даними про покупця в магазині техніки. Нам потрібно відкрити його та провести певний аналіз, а саме знайти середню ціну одного замовлення (item), певного користувача\n\n\n\n\n\ndata.json\n\n{\n  \"orderId\": \"PO-12345\",\n  \"customer\": {\n    \"name\": \"Jane Smith\",\n    \"email\": \"jane@example.com\",\n    \"address\": {\n      \"street\": \"123 Main St\",\n      \"city\": \"Anytown\",\n      \"zip\": \"12345\"\n    }\n  },\n  \"items\": [\n    { \"sku\": \"ABC-001\", \"name\": \"Laptop\", \"price\": 1100.99 },\n    { \"sku\": \"XYZ-002\", \"name\": \"Phone\", \"price\": 780.50 },\n    { \"sku\": \"QWE-005\", \"name\": \"Tablet\", \"price\": 900.00 }\n  ],\n  \"totalAmount\": 49.49,\n  \"shipped\": true,\n  \"notes\": null\n}\n\n\n\n\n\n\n\n\nПримітка\n\n\n\nМаючи той самий data.json файл, додайте до items ще один типовий елемент. Порахуйте середню вартість одного item. Запишіть отримані дані у новий файл new_data.json",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Бібліотеки, JSON",
+      "Робота з JSON. Робота з бібліотеками matplotlib, pandas та numpy"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/libraries-json-practice.html#бібліотеки-pandas-matplotlib-та-numpy",
     "href": "courses/be-course/modules/libraries-json-practice.html#бібліотеки-pandas-matplotlib-та-numpy",
     "title": "Робота з JSON. Робота з бібліотеками matplotlib, pandas та numpy",
     "section": "📚 Бібліотеки: pandas, matplotlib та numpy",
-    "text": "📚 Бібліотеки: pandas, matplotlib та numpy"
+    "text": "📚 Бібліотеки: pandas, matplotlib та numpy",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Бібліотеки, JSON",
+      "Робота з JSON. Робота з бібліотеками matplotlib, pandas та numpy"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/functions-practice.html",
     "href": "courses/be-course/modules/functions-practice.html",
     "title": "Functions basics",
     "section": "",
-    "text": "Функції в Python\nLive coding 1: Конвертер валют\nLive coding 2: Функції з логікою"
+    "text": "Функції в Python\nLive coding 1: Конвертер валют\nLive coding 2: Функції з логікою",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Функції",
+      "Functions basics"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/functions-practice.html#план",
     "href": "courses/be-course/modules/functions-practice.html#план",
     "title": "Functions basics",
     "section": "",
-    "text": "Функції в Python\nLive coding 1: Конвертер валют\nLive coding 2: Функції з логікою"
+    "text": "Функції в Python\nLive coding 1: Конвертер валют\nLive coding 2: Функції з логікою",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Функції",
+      "Functions basics"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/functions-practice.html#функції-в-python",
     "href": "courses/be-course/modules/functions-practice.html#функції-в-python",
     "title": "Functions basics",
     "section": "🔍 Функції в Python",
-    "text": "🔍 Функції в Python\nФункції в Python — це блоки коду, які виконують певне завдання і можуть бути повторно використані в програмі. Вони допомагають організувати код, зробити його більш читабельним і зменшити дублювання.\n\nВиди функцій в Python\n\nВбудовані функції: Це функції, які вже визначені в Python і готові до використання, наприклад, print(), len(), type().\nКористувацькі функції: Це функції, які ви визначаєте самостійно для виконання конкретних завдань у вашій програмі.\n\n\n\n\n\n❌ Без функцій\n\nsalary_ivan = 15000\ntax_ivan = salary_ivan * 0.195\nnet_ivan = salary_ivan - tax_ivan\nprint(f\"Ivan: {net_ivan}\")\n\nsalary_maria = 22000\ntax_maria = salary_maria * 0.195\nnet_maria = salary_maria - tax_maria\nprint(f\"Maria: {net_maria}\")\n\nsalary_petro = 18000\ntax_petro = salary_petro * 0.195\nnet_petro = salary_petro - tax_petro\nprint(f\"Petro: {net_petro}\")\n\nIvan: 12075.0\nMaria: 17710.0\nPetro: 14490.0\n\n\n\n\n\n✅ З функціями\n\ndef get_net_salary(salary):\n    tax = salary * 0.195 \n    return salary - tax\n\n# Використання\nprint(f\"Ivan: {get_net_salary(15000)}\")\nprint(f\"Maria: {get_net_salary(22000)}\")\nprint(f\"Petro: {get_net_salary(18000)}\")\n\nIvan: 12075.0\nMaria: 17710.0\nPetro: 14490.0\n\n\n\n\n\n\nВизначення функції\nФункція визначається за допомогою ключового слова def, за яким слідує ім’я функції та круглі дужки з параметрами (якщо є). Тіло функції відступає від лівого краю.\n\ndef function_name(parameters):\n    # Тіло функції\n    ...\n    # return expression (не обов'язково)\n\n\n\nПараметри та аргументи\n\ndef greet():\n    print(\"Hello, World!\")\n    \ngreet()  # Виклик функції\n\nHello, World!\n\n\n\ndef greet(name):\n    print(f\"Hello, {name}!\")\n\ngreet(\"Vadym\")  # Виклик функції з аргументом\n\nHello, Vadym!\n\n\n\n\n↩︎️ Return\nreturn використовується для повернення значення з функції. Якщо функція не має return, вона повертає None за замовчуванням.\n\ndef add(a, b):\n    return a + b\n  \nresult = add(5, 3)\nprint(result)  # Виведе: 8\n\n8"
+    "text": "🔍 Функції в Python\nФункції в Python — це блоки коду, які виконують певне завдання і можуть бути повторно використані в програмі. Вони допомагають організувати код, зробити його більш читабельним і зменшити дублювання.\n\nВиди функцій в Python\n\nВбудовані функції: Це функції, які вже визначені в Python і готові до використання, наприклад, print(), len(), type().\nКористувацькі функції: Це функції, які ви визначаєте самостійно для виконання конкретних завдань у вашій програмі.\n\n\n\n\n\n❌ Без функцій\n\nsalary_ivan = 15000\ntax_ivan = salary_ivan * 0.195\nnet_ivan = salary_ivan - tax_ivan\nprint(f\"Ivan: {net_ivan}\")\n\nsalary_maria = 22000\ntax_maria = salary_maria * 0.195\nnet_maria = salary_maria - tax_maria\nprint(f\"Maria: {net_maria}\")\n\nsalary_petro = 18000\ntax_petro = salary_petro * 0.195\nnet_petro = salary_petro - tax_petro\nprint(f\"Petro: {net_petro}\")\n\nIvan: 12075.0\nMaria: 17710.0\nPetro: 14490.0\n\n\n\n\n\n✅ З функціями\n\ndef get_net_salary(salary):\n    tax = salary * 0.195 \n    return salary - tax\n\n# Використання\nprint(f\"Ivan: {get_net_salary(15000)}\")\nprint(f\"Maria: {get_net_salary(22000)}\")\nprint(f\"Petro: {get_net_salary(18000)}\")\n\nIvan: 12075.0\nMaria: 17710.0\nPetro: 14490.0\n\n\n\n\n\n\nВизначення функції\nФункція визначається за допомогою ключового слова def, за яким слідує ім’я функції та круглі дужки з параметрами (якщо є). Тіло функції відступає від лівого краю.\n\ndef function_name(parameters):\n    # Тіло функції\n    ...\n    # return expression (не обов'язково)\n\n\n\nПараметри та аргументи\n\ndef greet():\n    print(\"Hello, World!\")\n    \ngreet()  # Виклик функції\n\nHello, World!\n\n\n\ndef greet(name):\n    print(f\"Hello, {name}!\")\n\ngreet(\"Vadym\")  # Виклик функції з аргументом\n\nHello, Vadym!\n\n\n\n\n↩︎️ Return\nreturn використовується для повернення значення з функції. Якщо функція не має return, вона повертає None за замовчуванням.\n\ndef add(a, b):\n    return a + b\n  \nresult = add(5, 3)\nprint(result)  # Виведе: 8\n\n8",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Функції",
+      "Functions basics"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/functions-practice.html#live-coding-1-конвертер-валют",
     "href": "courses/be-course/modules/functions-practice.html#live-coding-1-конвертер-валют",
     "title": "Functions basics",
     "section": "👨🏻‍💻 Live coding 1: Конвертер валют",
-    "text": "👨🏻‍💻 Live coding 1: Конвертер валют\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nНаписати функцію, яка приймає суму в доларах та конвертує її в гривні за курсом 41.5 грн за долар.\n\n\n\n📝 Ваше завдання\n\n\n\n\n\n\nВажливоТЗ\n\n\n\nНапишіть функцію, яка приймає ціну товару та відсоток знижки, а повертає фінальні ціну товару"
+    "text": "👨🏻‍💻 Live coding 1: Конвертер валют\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nНаписати функцію, яка приймає суму в доларах та конвертує її в гривні за курсом 41.5 грн за долар.\n\n\n\n📝 Ваше завдання\n\n\n\n\n\n\nВажливоТЗ\n\n\n\nНапишіть функцію, яка приймає ціну товару та відсоток знижки, а повертає фінальні ціну товару",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Функції",
+      "Functions basics"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/functions-practice.html#передача-аргументів-у-функцію",
     "href": "courses/be-course/modules/functions-practice.html#передача-аргументів-у-функцію",
     "title": "Functions basics",
     "section": "↪️ Передача аргументів у функцію",
-    "text": "↪️ Передача аргументів у функцію\n\nАргументи за замовчуванням\nМи можемо задати значення аргументу “по дефолту”. Якщо користувач його не передасть, Python візьме наше значення.\n\ndef greet(name, msg=\"Good morning!\"):\n    print(f\"{msg}, {name}\")\n\ngreet(\"Vadym\")             # Використає дефолтне повідомлення\ngreet(\"Vadym\", \"Hi\")       # Перезапише своїм\n\nGood morning!, Vadym\nHi, Vadym\n\n\n\n\nПозиційні аргументи\nПозиційні аргументи передаються у функцію відповідно до порядку параметрів.\n\ndef nameAge(name, age):\n    print(\"Hi, I am\", name)\n    print(\"My age is \", age)\n\nprint(\"Case-1:\")\nnameAge(\"Vadym\", 18)\n\nprint(\"\\nCase-2:\")\nnameAge(18, \"Vadym\")\n\nCase-1:\nHi, I am Vadym\nMy age is  18\n\nCase-2:\nHi, I am 18\nMy age is  Vadym\n\n\n\n\nІменовані аргументи\nІменовані аргументи дозволяють передавати значення параметрів за їхніми іменами, незалежно від порядку.\n\ndef student(fname, lname):\n    print(fname, lname)\n\nstudent(fname='Vadym', lname='Practice')\nstudent(lname='Practice', fname='Vadym')\n\nVadym Practice\nVadym Practice"
+    "text": "↪️ Передача аргументів у функцію\n\nАргументи за замовчуванням\nМи можемо задати значення аргументу “по дефолту”. Якщо користувач його не передасть, Python візьме наше значення.\n\ndef greet(name, msg=\"Good morning!\"):\n    print(f\"{msg}, {name}\")\n\ngreet(\"Vadym\")             # Використає дефолтне повідомлення\ngreet(\"Vadym\", \"Hi\")       # Перезапише своїм\n\nGood morning!, Vadym\nHi, Vadym\n\n\n\n\nПозиційні аргументи\nПозиційні аргументи передаються у функцію відповідно до порядку параметрів.\n\ndef nameAge(name, age):\n    print(\"Hi, I am\", name)\n    print(\"My age is \", age)\n\nprint(\"Case-1:\")\nnameAge(\"Vadym\", 18)\n\nprint(\"\\nCase-2:\")\nnameAge(18, \"Vadym\")\n\nCase-1:\nHi, I am Vadym\nMy age is  18\n\nCase-2:\nHi, I am 18\nMy age is  Vadym\n\n\n\n\nІменовані аргументи\nІменовані аргументи дозволяють передавати значення параметрів за їхніми іменами, незалежно від порядку.\n\ndef student(fname, lname):\n    print(fname, lname)\n\nstudent(fname='Vadym', lname='Practice')\nstudent(lname='Practice', fname='Vadym')\n\nVadym Practice\nVadym Practice",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Функції",
+      "Functions basics"
+    ]
   },
   {
     "objectID": "courses/be-course/modules/functions-practice.html#live-coding-2",
     "href": "courses/be-course/modules/functions-practice.html#live-coding-2",
     "title": "Functions basics",
     "section": "👨🏻‍💻 Live coding 2",
-    "text": "👨🏻‍💻 Live coding 2\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nНаписати функцію яка вирішить, чи може студент отримати фінансування, в залежності від його оцінок (функція має приймати список) - Студент може отримати фінансування якщо його середній бал &gt; 80 - Якщо в студента є хоча би одна оцінка менше за 60 - фінансування отримати не можна\n\n\n\n📝 Ваше завдання\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nНапишіть функцію, яка конвертує оцінки студента в буквенний еквівалент. Функція має приймати список з оцінками від 0 до 100, і повернути список з оцінками від F до A. Правила наступні:\n\n90 - 100 = А\n80 - 90 = B\n70 - 80 = C\n60 - 70 = E\n0 - 60 = F\n\nЯкщо оцінка менша за 0 або більша за 100 функція виводить Error та повертає пустий список."
+    "text": "👨🏻‍💻 Live coding 2\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nНаписати функцію яка вирішить, чи може студент отримати фінансування, в залежності від його оцінок (функція має приймати список) - Студент може отримати фінансування якщо його середній бал &gt; 80 - Якщо в студента є хоча би одна оцінка менше за 60 - фінансування отримати не можна\n\n\n\n📝 Ваше завдання\n\n\n\n\n\n\nПриміткаЗадача\n\n\n\nНапишіть функцію, яка конвертує оцінки студента в буквенний еквівалент. Функція має приймати список з оцінками від 0 до 100, і повернути список з оцінками від F до A. Правила наступні:\n\n90 - 100 = А\n80 - 90 = B\n70 - 80 = C\n60 - 70 = E\n0 - 60 = F\n\nЯкщо оцінка менша за 0 або більша за 100 функція виводить Error та повертає пустий список.",
+    "crumbs": [
+      "Бізнес Економіка",
+      "Функції",
+      "Functions basics"
+    ]
   }
 ]

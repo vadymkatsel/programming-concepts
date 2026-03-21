@@ -458,8 +458,11 @@ window.Quarto = {
       </div>
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
- <span class="menu-text">courses\math-course\modules\dictionaries-lc-practice.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../../../courses/math-course/modules/dictionaries-lc-practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practice Session 10</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -588,7 +591,7 @@ window.Quarto = {
 <li><p>Синтаксис: <code>lambda arguments: expression</code></p></li>
 <li><p>Головне застосування: Передача лямбди як правила в інші функції, такі як <code>sort(), map(), filter()</code>.</p></li>
 </ul>
-<div id="d4c0cb1a" class="cell" data-execution_count="1">
+<div id="7e9fc03a" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Приклад: звичайне сортування вишикує слова за алфавітом.</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Але ми можемо передати лямбду як ключ (key), щоб відсортувати їх за довжиною:</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -604,7 +607,7 @@ window.Quarto = {
 <section id="функції-як-інструмент-для-організації-коду" class="level2">
 <h2 class="anchored" data-anchor-id="функції-як-інструмент-для-організації-коду">🛠️ Функції, як інструмент для організації коду</h2>
 <p>Функції в Python - це потужний інструмент для організації та повторного використання коду. Вони дозволяють нам розбивати складні задачі на менші, більш керовані частини, що робить наш код чистішим і легшим для розуміння.</p>
-<div id="39730630" class="cell" data-execution_count="2">
+<div id="43a53f99" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> function_name(parameters):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Тіло функції</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    ...</span>
@@ -651,7 +654,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="рекурсивні-функції-1">🔃 Рекурсивні функції</h2>
 <p>Рекурсія - це техніка програмування, при якій функція викликає сама себе для розв’язання задачі. Вона складається з двох основних компонентів: базового випадку, який зупиняє рекурсію, та рекурсивного кроку, який розбиває задачу на менші підзадачі.</p>
 <p>Вона часто використовується для розв’язання задач, які мають природну рекурсивну структуру, таких як обчислення факторіала, фібоначчі, обходу дерев та алгоритмів типу “розділяй та володарюй”.</p>
-<div id="6a2cda5b" class="cell" data-execution_count="3">
+<div id="c27fb6c5" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibonacci_recursive(n):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">1</span>:  <span class="co"># Базовий випадок: F(0) = 0, F(1) = 1</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> n</span>
