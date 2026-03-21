@@ -244,6 +244,7 @@ body {
   font-family: var(--font-main);
   display: flex;
   justify-content: space-between;
+  text-decoration-line: none;
 
   flex: 1;
 
@@ -268,11 +269,13 @@ body {
 .course-title {
     font-size: var(--fs-lg);
     max-width: 70%;
+    text-decoration: none;
 }
 
 .course-desc {
     font-size: var(--fs-base);
     color: var(--text-muted);
+    text-decoration: none;
 }
 
 .math-bg, .econ-bg {

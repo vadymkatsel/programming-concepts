@@ -1,0 +1,84 @@
+---
+title: "Практична №3 (Тиждень 3)"
+affiliation: "Основи програмування"
+date: "10-27-2025"
+date-format: "YYYY-MM-DD"
+toc: true
+lang: ua
+format: 
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+execute:
+  eval: false
+---
+
+# 📌 Завдання: "Калькулятор Чайових / Розділення Рахунку"
+
+Сьогодні ваше завдання буде полягати в тому, щоб написати програму, яка розраховує, скільки має заплатити кожна людина в ресторані, враховуючи чайові на основі якості обслуговування. Це завдання повністю фокусується на використанні `if`/`elif`/`else` для прийняття рішень. 
+
+### 📝 Робота Програми
+
+Ваша програма має працювати **точно** за таким сценарієм:
+
+1.  **Отримання даних:**
+    * Програма питає користувача про `total_bill` (загальний рахунок). Це значення має бути `float`.
+    * Програма питає користувача про `num_people` (кількість людей, на яких ділиться рахунок). Це значення має бути `int`.
+    * Програма питає користувача про `service_level` (якість обслуговування). Це `str`.
+
+2.  **Перевірка вхідних даних (Safety Check):**
+    * Перш ніж робити будь-які розрахунки, програма має перевірити, чи `num_people > 0`.
+    * **Якщо `num_people <= 0`:** Програма повинна вивести повідомлення про помилку (наприклад, `"Помилка: Кількість людей має бути 1 або більше."`) і **завершити роботу** (тобто, решта кроків не виконується).
+    * **Якщо `num_people > 0`:** Програма переходить до кроку 3. (Вся наступна логіка має бути "вкладена" всередину цієї `if` перевірки).
+
+3.  **Визначення відсотка чайових (Основна логіка):**
+    * Програма використовує "драбинку" `if`/`elif`/`else` для аналізу змінної `service_level`.
+    * **Якщо `service_level == 'bad'`:** відсоток чайових (`tip_percent`) становить `0.10` (10%).
+    * **Якщо `service_level == 'ok'`:** `tip_percent` становить `0.15` (15%).
+    * **Якщо `service_level == 'good'`:** `tip_percent` становить `0.20` (20%).
+    * **`else` (в усіх інших випадках):** Якщо користувач ввів щось інше (напр., "amazing", "жахливо", "123"), програма має встановити `tip_percent` за замовчуванням, який дорівнює `0.15` (15%), і (необов'язково, але бажано) вивести повідомлення `"Невідомий рівень сервісу. Використовуємо стандартні 15%."`.
+
+4.  **Розрахунки (виконуються, тільки якщо `num_people > 0`):**
+    * `tip_amount = total_bill * tip_percent`
+    * `final_bill = total_bill + tip_amount`
+    * `bill_per_person = final_bill / num_people`
+
+5.  **Виведення результату:**
+    * Програма має вивести фінальний, гарно відформатований результат. Використовуйте f-strings та форматування `:.2f` або `round()`, щоб показати суми з двома знаками після коми (як копійки).
+    
+### 📝 Приклади виводу:
+``` markdown
+--- Bill divider ---
+Enter the total bill: 1500
+Enter the number of people: 4
+Enter the service level (good/ok/bad): good
+
+--- Your bill ---
+The total amount: 1800.00
+Including tip (20%): 300.00 UAH
+Each person should pay: 450.00 UAH
+```
+
+``` markdown
+--- Bill divider ---
+Enter the total bill: 800
+Enter the number of people: 3
+Enter the service level (good/ok/bad): fantastic
+
+--- Your bill ---
+Uknown service level. Setting tip percent to default (15%).
+The total amount: 920.00
+Including  tip (15%): 120.00 UAH
+Each person should pay: 306.67 UAH
+```
+
+```markdown
+--- Your bill ---
+Enter the total bill: 500
+Enter the number of people: 0
+Enter the service level (good/ok/bad): good
+
+Error: Number of people must be greater than zero.
+```
+

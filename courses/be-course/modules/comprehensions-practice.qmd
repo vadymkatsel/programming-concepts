@@ -1,0 +1,227 @@
+---
+title: "Lists & Dict Comprehension. Basic modules"
+affiliation: "Programming Concepts"
+author: Vadym Katsel
+date: today
+date-format: "YYYY-MM-DD"
+toc: true
+lang: ua
+format: 
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+---
+
+## 📌 План
+- List Comprehension
+- Live coding 1: Список транзакцій
+- Dict Comprehension
+- Live coding 2: Інфляція та прайс листи
+- Basic modules in Python
+- Live coding 3: Щасливий чек
+
+## 🔍 List Comprehension
+**List Comprehension** - це зручний спосіб створення списків у Python за допомогою короткого синтаксису. 
+
+::: callout-note
+Уявіть, що ви хочете створити список цін у гривнях, маючи список цін в доларах
+:::
+
+::::: columns
+::: {.column style="border-right: 2px solid #ccc; padding-right: 1em; width: 40%;"}
+
+## ❌ Без List Comprehension
+
+```{python}
+prices_usd = [10, 20, 50, 100]
+prices_uah = []
+for price in prices_usd:
+    prices_uah.append(price * 41.5)
+print(prices_uah)
+```
+:::
+::: {.column style="width: 60%; padding-left: 1em;"}
+## ✅ З List Comprehension
+```{python}
+prices_usd = [10, 20, 50, 100]
+prices_uah = [price * 41.5 for price in prices_usd]
+print(prices_uah)
+```
+:::
+:::::
+
+### ✏️ Синтаксис
+
+`[expression for item in iterable if condition]`
+
+### ❓ Conditionals
+Умови в list comprehension дозволяють нам обирати об'єкти за певними правилами.
+
+Припустіть, що нам потрібно відібрати тільки ті значення зі списку, які є парними
+```{python}
+a = [2, 3, 5, 8, 10, 11]
+res = [i for i in a if i % 2 == 0]
+print(res)
+```
+
+## 👨🏻‍💻 Live Coding 1: Список транзакцій
+::: callout-note
+## Задача
+У нас є список транзакцій у доларах. Нам потрібно:
+
+- Перевести їх у гривні (курс 41.5).
+- Відфільтрувати транзакції менше 10$. 
+:::
+
+### 📝 Ваше завдання:
+::: callout-important
+## Задача
+У вас є "сирий" список транзакцій (деякі помилкові/від'ємні): `raw_data = [100, -50, 20, 0, 500, -10]`
+
+Створіть список рядків receipts (чеків), використовуючи List Comprehension. Вимоги до одного рядка коду:
+
+- Беремо тільки додатні транзакції (> 0).
+
+- Додаємо до суми 5% податку.
+
+- Результат має бути рядком (f-string): "Сума: 105.0 грн".
+:::
+
+Очікуваний результат: `['Сума: 105.0 грн', 'Сума: 21.0 грн', 'Сума: 525.0 грн']`
+
+## 🔍 Dict Comprehension
+Як і List Comprehension, Dict Comprehension дозволяє створювати словники у зручний спосіб.
+Синтаксично, Dict Comprehension виглядає так:
+
+`{key: value for (key, value) in iterable if condition}`
+
+```{python}
+keys = ['a','b','c','d','e']
+values = [1,2,3,4,5]  
+
+# but this line shows dict comprehension here  
+myDict = { k:v for (k,v) in zip(keys, values)}  
+
+print (myDict)
+```
+
+## 👨🏻‍💻 Live Coding 2: Інфляція та прайс листи
+::: callout-note
+## Задача
+У нас є словник поточних цін на складі (в доларах). Нам потрібно:
+
+- Перевести ціни в гривні (курс 41.5).
+- Врахувати інфляцію (+10% до ціни).
+:::
+
+```products_usd = {
+    'Apple': 1.5,
+    'Banana': 0.8,
+    'Avocado': 2.5,
+    'Mango': 3.0
+}
+rate = 41.5
+```
+
+### 📝 Ваше завдання:
+::: callout-important
+## Задача
+У вас є портфель акцій у доларах: `stocks_usd = {'AAPL': 150, 'GOOGL': 2800, 'TSLA': 700, 'AMZN': 3300} Курс: rate = 41.5`
+
+Створіть новий словник `high_value_uah`, в який потраплять:
+
+- Тільки ті акції, вартість яких у гривні перевищує 30 000 грн.
+- Значення мають бути вже в гривнях.
+:::
+
+*Підказка: Вам доведеться помножити на курс і в частині value, і в частині if.*
+
+## 🔍 Basic modules in Python
+
+Модуль - це файл, який містить визначення функцій, класів і змінних, які можна використовувати в інших програмах.
+
+Це означає що для багатьох програм, ми можемо перевикористати вже написаний код, аби не писати з нуля та зекономити час.
+
+Python має велику кількість вбудованих модулів, які можна імпортувати та використовувати у своїх програмах. Ось деякі з найпоширеніших:
+
+- `math`: Модуль для виконання математичних операцій.
+- `random`: Модуль для генерації випадкових чисел.
+- `datetime`: Модуль для роботи з датами та часом.
+
+## 📦 Імпорт та використання модулів
+```{python}
+#| filename: "Приклад використання модуля math"
+import math
+
+price = 19.1
+
+# Округлення вгору (ceiling - стеля)
+print(f"Ceil: {math.ceil(price)}")  # -> 20
+
+# Округлення вниз (floor - підлога)
+print(f"Floor: {math.floor(price)}")
+
+# Корінь квадратний
+print(f"Sqrt: {math.sqrt(144)}")    
+```
+
+- Для імпорту використовуємо ключове слово `import`
+- Після імпорту можна використовувати функції та змінні модуля, звертаючись до них через крапку (наприклад, `math.ceil()`).
+
+## ⬇️ Способи імпорту моудулів
+
+### Імпорт всього модуля
+
+```{python}
+import math
+
+# Ми повинні звертатися через крапку: модуль.функція
+print(math.sqrt(25))
+```
+
+### Імпорт конкретної функції або змінної з модуля
+
+```{python}
+from math import ceil
+
+# Тепер можна писати назву функції без "math."
+price = 19.1
+print(ceil(price)) # Округлення вгору -> 20
+```
+
+### Імпорт з псевдонімом (alias)
+
+```{python}
+import matplotlib.pyplot as plt
+
+# Дані: Місяці та Продажі (тис. $)
+months = ['Jan', 'Feb', 'Mar', 'Apr', 'May']
+sales = [10, 15, 13, 18, 25]
+
+# Ми використовуємо коротке "plt"
+plt.plot(months, sales)
+plt.title("Динаміка продажів")
+plt.xlabel("Місяць")
+plt.ylabel("Продажі ($)")
+plt.show()
+```
+
+## 👨🏻‍💻 Live Coding 3: Генератор чека
+
+::: callout-note
+## Задача
+Ми розробляємо систему лояльності. Клієнт робить покупку. Наша програма має:
+
+- Надати йому випадкову знижку (5%, 10% або 20%).
+- Розрахувати фінальну ціну і округлити її вгору.
+- Видати чек з точною датою та часом.
+:::
+
+
+
+
+
+
+
+

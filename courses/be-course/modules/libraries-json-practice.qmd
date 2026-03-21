@@ -1,0 +1,117 @@
+---
+title: "Робота з JSON. Робота з бібліотеками matplotlib, pandas та numpy"
+affiliation: "Programming Concepts"
+author: Vadym Katsel
+date: today
+date-format: "YYYY-MM-DD"
+toc: true
+lang: ua
+format: 
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+execute:
+  eval: false
+---
+
+##  📌 План
+- Робота з файлами `.json` в Python
+- Live coding 1: Читання файлу
+- Бібліотеки: pandas, matplotlib, numpy
+- Live coding 2
+
+## 🔍 Робота з `.json`
+
+### Що таке JSON?
+
+JSON (від Java Script Object Notation) -- легкий,текстоорієнтований формат обміну даних, який використовується здебільшого для передачі даних між серверами та веб застосунками, а також використовується для легкого опрацювання великої кількості даних.
+
+
+JSON, по суті, являє собою колекцію пар `ключ: значення`, і може зберігати всі відомі вам типи даних.
+
+### Читання `.json` файлів
+
+Мова програмування Python має вбудований модуль для роботи з такими файлами:
+
+```{python}
+#| filename: "data.json"
+
+{
+  "Name": "Vasya",
+  "Age": 28,
+  "Address": {
+    "work": "Kyiv, Mykoly Shapaka 3 street",
+    "home": null
+  }
+}
+
+```
+
+```{python}
+import json
+
+with open('data.json', 'r') as file:
+  file = json.load(file)
+  print(data['Name'], data['Age'], data['Address']['work'])
+
+```
+
+### Запис у `.json` файл
+
+Запис до файлу виконується схожим чином. Нам потрібно мати словник, так використати метод `json.dump`
+
+```{python}
+import json
+
+dict_data = {
+  "Name": "Vasya",
+  "Age": 28,
+  "Address": {
+    "work": "Kyiv, вулиця Миколи Шпака 3",
+    "home": null
+  }
+}
+
+with open('data.json', 'w') as file:
+  json.dump(dict_data, file, indent=4)
+```
+
+## 👨🏻‍💻 Live coding:
+::: callout-note
+У нас є `.json` файл з даними про покупця в магазині техніки. Нам потрібно відкрити його та провести певний аналіз, а саме знайти **середню ціну одного замовлення** (item), певного користувача
+:::
+
+```{python}
+#| filename: "data.json"
+{
+  "orderId": "PO-12345",
+  "customer": {
+    "name": "Jane Smith",
+    "email": "jane@example.com",
+    "address": {
+      "street": "123 Main St",
+      "city": "Anytown",
+      "zip": "12345"
+    }
+  },
+  "items": [
+    { "sku": "ABC-001", "name": "Laptop", "price": 1100.99 },
+    { "sku": "XYZ-002", "name": "Phone", "price": 780.50 },
+    { "sku": "QWE-005", "name": "Tablet", "price": 900.00 }
+  ],
+  "totalAmount": 49.49,
+  "shipped": true,
+  "notes": null
+}
+```
+
+::: callout-note
+Маючи той самий `data.json` файл, додайте до items ще один типовий елемент. Порахуйте середню вартість одного item. Запишіть отримані дані у новий файл `new_data.json` 
+:::
+
+## 📚 Бібліотеки: pandas, matplotlib та numpy
+
+
+
+
