@@ -383,7 +383,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="коробки" class="level2">
 <h2 class="anchored" data-anchor-id="коробки">📦 Коробки</h2>
 <p>До сьогоднішнього дня всі наші дані ми зберігали у простих ‘коробках’ — змінних. <code>name = 'Іван'</code>, <code>price = 12.50</code>. Це чудово, але що, якщо у вас 100 студентів? Або 1000 цін на акції?</p>
-<div id="9b6eb1d4" class="cell" data-execution_count="1">
+<div id="09479d84" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>student1 <span class="op">=</span> <span class="st">"Alice"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>student2 <span class="op">=</span> <span class="st">"Bob"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>student3 <span class="op">=</span> <span class="st">"Peter"</span></span>
@@ -404,7 +404,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Dictionary</li>
 </ul>
 <p>Уявіть, що Список (List) — це як шафа з пронумерованими поличками.</p>
-<div id="365792cc" class="cell" data-execution_count="2">
+<div id="40096b11" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Peter"</span>]</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -413,12 +413,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><p>Індексація почнається з <strong>0</strong></p></li>
 <li><p>Впорядковані (все буде лежати в тому порядку, в якому ви додали)</p>
-<div id="e923e079" class="cell" data-execution_count="3">
+<div id="4d7d64c4" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Peter"</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#              0       1       2</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div></li>
 <li><p>Змінювані (можна додавати, видаляти, змінювати елементи)</p>
-<div id="871aa519" class="cell" data-execution_count="4">
+<div id="08985ac5" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>students[<span class="dv">1</span>] <span class="op">=</span> <span class="st">"Robert"</span>  </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># students = ["Alice", "Robert", "Peter"]</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>students.append(<span class="st">"Maria"</span>)</span>
@@ -427,7 +427,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># students = ["Alice", "Robert", "Peter"]</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div></li>
 <li><p>Підтримка різних типів</p>
-<div id="8194b678" class="cell" data-execution_count="5">
+<div id="789f348f" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mixed_list <span class="op">=</span> [<span class="dv">1</span>, <span class="st">"Hello"</span>, <span class="fl">3.14</span>, <span class="va">True</span>]</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div></li>
 </ul>
@@ -487,7 +487,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Ваше завдання буде об’єднувати в собі другий та третій Live Coding.</p>
 <p>Ваша задача полягає в тому, аби <strong>написати програму, яка просить в користувача увести 5 оцінок. Ви маєте зберегти ці 5 оцінок у списку, після чого вивести на екран середній бал та кількість найвищих оцінок (ви можете використати 10 як найвищу оцінку). </strong></p>
 <p>Приклад роботи програми:</p>
-<div id="7c760d6c" class="cell" data-execution_count="6">
+<div id="60a1bf18" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">---</span>Grades<span class="op">---</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>Please, enter grade <span class="dv">1</span>: <span class="dv">9</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>Please, enter grade <span class="dv">2</span>: <span class="dv">11</span></span>

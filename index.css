@@ -107,8 +107,8 @@ body {
     height: 48px;
     background-color: var(--text-primary);
 
-    -webkit-mask: url('../sources/arrow-icon.svg') no-repeat center / contain;
-    mask: url('../sources/arrow-icon.svg') no-repeat center / contain;
+    -webkit-mask: url('sources/arrow-icon.svg') no-repeat center / contain;
+    mask: url('sources/arrow-icon.svg') no-repeat center / contain;
 
     transition: background-color 0.3s ease, transform 0.2s ease, border-color 2s ease !important;
 }
