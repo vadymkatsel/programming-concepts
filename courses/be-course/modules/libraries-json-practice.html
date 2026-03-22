@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Vadym Katsel">
-<meta name="dcterms.date" content="2026-03-21">
+<meta name="dcterms.date" content="2026-03-22">
 
 <title>Робота з JSON. Робота з бібліотеками matplotlib, pandas та numpy – Programming Concepts Course</title>
 <style>
@@ -543,7 +543,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Дата публікації</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2026-03-21</p>
+      <p class="date">2026-03-22</p>
     </div>
   </div>
   
@@ -574,7 +574,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="читання-.json-файлів" class="level3">
 <h3 class="anchored" data-anchor-id="читання-.json-файлів">Читання <code>.json</code> файлів</h3>
 <p>Мова програмування Python має вбудований модуль для роботи з такими файлами:</p>
-<div id="309de94a" class="cell" data-execution_count="1">
+<div id="6a8bd770" class="cell" data-execution_count="1">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>data.json</strong></pre>
@@ -589,7 +589,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="03510a6a" class="cell" data-execution_count="2">
+<div id="7ec0bb0d" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'data.json'</span>, <span class="st">'r'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
@@ -600,7 +600,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="запис-у-.json-файл" class="level3">
 <h3 class="anchored" data-anchor-id="запис-у-.json-файл">Запис у <code>.json</code> файл</h3>
 <p>Запис до файлу виконується схожим чином. Нам потрібно мати словник, так використати метод <code>json.dump</code></p>
-<div id="26c6ea89" class="cell" data-execution_count="3">
+<div id="b8ca6a83" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>dict_data <span class="op">=</span> {</span>
@@ -632,7 +632,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>У нас є <code>.json</code> файл з даними про покупця в магазині техніки. Нам потрібно відкрити його та провести певний аналіз, а саме знайти <strong>середню ціну одного замовлення</strong> (item), певного користувача</p>
 </div>
 </div>
-<div id="ec983bb6" class="cell" data-execution_count="4">
+<div id="de08490f" class="cell" data-execution_count="4">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>data.json</strong></pre>
