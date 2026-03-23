@@ -75,7 +75,7 @@ a:hover {
    ============================================================ */
 code, kbd, pre, samp, .sourceCode {
   font-family: 'Lilex', monospace !important;
-  background-color: var(--code-bg);
+  background-color: var(--code-bg) !important;
 }
  
 div.sourceCode {
@@ -96,6 +96,17 @@ code:not(pre code) {
   border-radius: 4px;
   font-size: 0.9em;
   border: 1px solid var(--border-color);
+}
+
+.code-with-filename-file {
+  padding: 0 !important;
+  border-radius: 4px 4px 0 0 !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.code-with-filename-file > pre {
+  padding: 8px;
+  border-radius: 4px 4px 0 0 !important;
 }
  
 /* ============================================================

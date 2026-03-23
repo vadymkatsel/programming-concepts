@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Vadym Katsel">
-<meta name="dcterms.date" content="2026-03-23">
 
-<title>Lists &amp; Dict Comprehension. Basic modules – Programming Concepts Course</title>
+<title>Practice Session 12 – Programming Concepts Course</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -306,11 +304,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../courses/math-course/modules/index.html"> 
+    <a class="nav-link active" href="../../../courses/math-course/modules/index.html" aria-current="page"> 
 <span class="menu-text">Математика</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../../courses/be-course/modules/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../../courses/be-course/modules/index.html"> 
 <span class="menu-text">Бізнес Економіка</span></a>
   </li>  
 </ul>
@@ -325,7 +323,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключити бокову панель навігації" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../courses/be-course/modules/lists-practice.html">Списки та словники</a></li><li class="breadcrumb-item"><a href="../../../courses/be-course/modules/comprehensions-practice.html">Lists &amp; Dict Comprehension. Basic modules</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../courses/math-course/modules/file-basics-error-handling-practice.html">Базова робота з файлами. Обробка помилок</a></li><li class="breadcrumb-item"><a href="../../../courses/math-course/modules/file-basics-error-handling-practice.html">Practice Session 12</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключити бокову панель навігації" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Пошук" onclick="window.quartoOpenSearch();">
@@ -335,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -356,7 +354,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../courses/be-course/modules/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../courses/math-course/modules/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Вступний модуль</span></a>
   </div>
 </li>
@@ -373,8 +371,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../courses/be-course/modules/variables-data-types-operations-practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Практична №2</span></a>
+  <a href="../../../courses/math-course/modules/variables-data-types-operations-practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practice Session 2</span></a>
   </div>
 </li>
       </ul>
@@ -382,7 +380,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">Логічні розгалудження</span></a>
+ <span class="menu-text">Списки</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Переключити розділ">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -390,43 +388,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../courses/be-course/modules/conditionals-practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Практична №3 (Тиждень 3)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../courses/be-course/modules/ATM-simulator-task.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Практична №4 (Тиждень 3)</span></a>
+  <a href="../../../courses/math-course/modules/lists-practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practice Session 6</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Списки та словники</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Переключити розділ">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Функції</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Переключити розділ">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../courses/be-course/modules/lists-practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Практична №4.1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../courses/be-course/modules/dictionaries-tuples-sets-practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Практична №4.2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../courses/be-course/modules/comprehensions-practice.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lists &amp; Dict Comprehension. Basic modules</span></a>
+  <a href="../../../courses/math-course/modules/functions-practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practice Session 8</span></a>
   </div>
 </li>
       </ul>
@@ -434,7 +414,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
- <span class="menu-text">Рядки</span></a>
+ <span class="menu-text">Основи Git</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Переключити розділ">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -442,8 +422,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../courses/be-course/modules/strings-practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Практична №5.1: Робота з рядками</span></a>
+  <a href="../../../courses/math-course/modules/git-practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practice Session 9</span></a>
   </div>
 </li>
       </ul>
@@ -451,7 +431,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">Функції</span></a>
+ <span class="menu-text">Словники. List Comprehension</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Переключити розділ">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -459,42 +439,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../courses/be-course/modules/functions-practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Functions basics</span></a>
+  <a href="../../../courses/math-course/modules/dictionaries-lc-practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practice Session 10</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
- <span class="menu-text">Робота з файлами</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Переключити розділ">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Базова робота з файлами. Обробка помилок</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Переключити розділ">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../courses/be-course/modules/files-practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Базова робота з файлами</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
- <span class="menu-text">Бібліотеки, JSON</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Переключити розділ">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../courses/be-course/modules/libraries-json-practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Робота з JSON. Робота з бібліотеками matplotlib, pandas та numpy</span></a>
+  <a href="../../../courses/math-course/modules/file-basics-error-handling-practice.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Practice Session 12</span></a>
   </div>
 </li>
       </ul>
@@ -509,57 +472,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Зміст</h2>
    
   <ul>
-  <li><a href="#план" id="toc-план" class="nav-link active" data-scroll-target="#план">📌 План</a></li>
-  <li><a href="#list-comprehension" id="toc-list-comprehension" class="nav-link" data-scroll-target="#list-comprehension">🔍 List Comprehension</a></li>
-  <li><a href="#синтаксис" id="toc-синтаксис" class="nav-link" data-scroll-target="#синтаксис">✏️ Синтаксис</a></li>
-  <li><a href="#conditionals" id="toc-conditionals" class="nav-link" data-scroll-target="#conditionals">❓ Conditionals</a></li>
-  <li><a href="#live-coding-1-список-транзакцій" id="toc-live-coding-1-список-транзакцій" class="nav-link" data-scroll-target="#live-coding-1-список-транзакцій">👨🏻‍💻 Live Coding 1: Список транзакцій</a>
+  <li><a href="#базова-робота-з-файлами.-обробка-помилок" id="toc-базова-робота-з-файлами.-обробка-помилок" class="nav-link active" data-scroll-target="#базова-робота-з-файлами.-обробка-помилок">🗃️ Базова робота з файлами. Обробка помилок</a></li>
+  <li><a href="#план-заняття" id="toc-план-заняття" class="nav-link" data-scroll-target="#план-заняття">📌 План заняття:</a></li>
+  <li><a href="#читання-файлів-за-допомогою-python" id="toc-читання-файлів-за-допомогою-python" class="nav-link" data-scroll-target="#читання-файлів-за-допомогою-python">📖 Читання файлів за допомогою Python</a>
   <ul class="collapse">
-  <li><a href="#ваше-завдання" id="toc-ваше-завдання" class="nav-link" data-scroll-target="#ваше-завдання">📝 Ваше завдання:</a></li>
+  <li><a href="#live-coding-1-вглиб-файлової-системи" id="toc-live-coding-1-вглиб-файлової-системи" class="nav-link" data-scroll-target="#live-coding-1-вглиб-файлової-системи">👨‍💻 Live coding 1: Вглиб файлової системи</a></li>
   </ul></li>
-  <li><a href="#dict-comprehension" id="toc-dict-comprehension" class="nav-link" data-scroll-target="#dict-comprehension">🔍 Dict Comprehension</a></li>
-  <li><a href="#live-coding-2-інфляція-та-прайс-листи" id="toc-live-coding-2-інфляція-та-прайс-листи" class="nav-link" data-scroll-target="#live-coding-2-інфляція-та-прайс-листи">👨🏻‍💻 Live Coding 2: Інфляція та прайс листи</a>
+  <li><a href="#запис-у-файли" id="toc-запис-у-файли" class="nav-link" data-scroll-target="#запис-у-файли">✍🏻 Запис у файли</a>
   <ul class="collapse">
-  <li><a href="#ваше-завдання-1" id="toc-ваше-завдання-1" class="nav-link" data-scroll-target="#ваше-завдання-1">📝 Ваше завдання:</a></li>
+  <li><a href="#live-coding-2-залишити-свій-слід-у-файлі" id="toc-live-coding-2-залишити-свій-слід-у-файлі" class="nav-link" data-scroll-target="#live-coding-2-залишити-свій-слід-у-файлі">👨‍💻 Live Coding 2: Залишити свій слід у файлі</a></li>
   </ul></li>
-  <li><a href="#basic-modules-in-python" id="toc-basic-modules-in-python" class="nav-link" data-scroll-target="#basic-modules-in-python">🔍 Basic modules in Python</a></li>
-  <li><a href="#імпорт-та-використання-модулів" id="toc-імпорт-та-використання-модулів" class="nav-link" data-scroll-target="#імпорт-та-використання-модулів">📦 Імпорт та використання модулів</a></li>
-  <li><a href="#способи-імпорту-моудулів" id="toc-способи-імпорту-моудулів" class="nav-link" data-scroll-target="#способи-імпорту-моудулів">⬇️ Способи імпорту моудулів</a>
+  <li><a href="#обробка-помилок" id="toc-обробка-помилок" class="nav-link" data-scroll-target="#обробка-помилок">🤾🏻 Обробка помилок</a>
   <ul class="collapse">
-  <li><a href="#імпорт-всього-модуля" id="toc-імпорт-всього-модуля" class="nav-link" data-scroll-target="#імпорт-всього-модуля">Імпорт всього модуля</a></li>
-  <li><a href="#імпорт-конкретної-функції-або-змінної-з-модуля" id="toc-імпорт-конкретної-функції-або-змінної-з-модуля" class="nav-link" data-scroll-target="#імпорт-конкретної-функції-або-змінної-з-модуля">Імпорт конкретної функції або змінної з модуля</a></li>
-  <li><a href="#імпорт-з-псевдонімом-alias" id="toc-імпорт-з-псевдонімом-alias" class="nav-link" data-scroll-target="#імпорт-з-псевдонімом-alias">Імпорт з псевдонімом (alias)</a></li>
+  <li><a href="#live-coding-3-помилка-лови" id="toc-live-coding-3-помилка-лови" class="nav-link" data-scroll-target="#live-coding-3-помилка-лови">👨‍💻 Live Coding 3: Помилка? Лови!</a></li>
   </ul></li>
-  <li><a href="#live-coding-3-генератор-чека" id="toc-live-coding-3-генератор-чека" class="nav-link" data-scroll-target="#live-coding-3-генератор-чека">👨🏻‍💻 Live Coding 3: Генератор чека</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../courses/be-course/modules/lists-practice.html">Списки та словники</a></li><li class="breadcrumb-item"><a href="../../../courses/be-course/modules/comprehensions-practice.html">Lists &amp; Dict Comprehension. Basic modules</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../courses/math-course/modules/file-basics-error-handling-practice.html">Базова робота з файлами. Обробка помилок</a></li><li class="breadcrumb-item"><a href="../../../courses/math-course/modules/file-basics-error-handling-practice.html">Practice Session 12</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Lists &amp; Dict Comprehension. Basic modules</h1>
+<h1 class="title">Practice Session 12</h1>
 </div>
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-body">
 
-    <div>
-    <div class="quarto-title-meta-heading">Автор</div>
-    <div class="quarto-title-meta-contents">
-             <p>Vadym Katsel </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Дата публікації</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">2026-03-23</p>
-    </div>
-  </div>
   
     
   </div>
@@ -569,299 +512,183 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="план" class="level2">
-<h2 class="anchored" data-anchor-id="план">📌 План</h2>
+<section id="базова-робота-з-файлами.-обробка-помилок" class="level2">
+<h2 class="anchored" data-anchor-id="базова-робота-з-файлами.-обробка-помилок">🗃️ Базова робота з файлами. Обробка помилок</h2>
+<p>Сьогодні ми з вами наблизилися до того моменту, коли нам стало необхідно працювати з реальними файлами в наших комп’ютерах. Робота з файлами корисна тим, що вона дозволяє нам безпечно працювати з даними: читати, зберігати та аналізувати їх; та навіть більш за те - це дозволяє автоматизувати деякі процеси, про що ми сьогодні й поговоримо.</p>
+</section>
+<section id="план-заняття" class="level2">
+<h2 class="anchored" data-anchor-id="план-заняття">📌 План заняття:</h2>
 <ul>
-<li>List Comprehension</li>
-<li>Live coding 1: Список транзакцій</li>
-<li>Dict Comprehension</li>
-<li>Live coding 2: Інфляція та прайс листи</li>
-<li>Basic modules in Python</li>
-<li>Live coding 3: Щасливий чек</li>
+<li>📖 Читання файлів за допомогою Python
+<ul>
+<li>👨‍💻 Live Coding: Вглиб файлової системи</li>
+<li>🛠 Guided Practice: Аналіз логів сервера</li>
+</ul></li>
+<li>✍🏻 Запис у файли
+<ul>
+<li>👨‍💻 Live Coding: Залишити свій слід у файлі</li>
+<li>🛠 Guided Practice: Збереження даних</li>
+</ul></li>
+<li>🤾🏻 Обробка помилок
+<ul>
+<li>👨‍💻 Live Coding 3: Помилка? Лови!</li>
+<li>🛠 Guided Practice: Збереження даних</li>
+</ul></li>
 </ul>
 </section>
-<section id="list-comprehension" class="level2">
-<h2 class="anchored" data-anchor-id="list-comprehension">🔍 List Comprehension</h2>
-<p><strong>List Comprehension</strong> - це зручний спосіб створення списків у Python за допомогою короткого синтаксису.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="читання-файлів-за-допомогою-python" class="level2">
+<h2 class="anchored" data-anchor-id="читання-файлів-за-допомогою-python">📖 Читання файлів за допомогою Python</h2>
+<p>У Python для роботи з файлами використовується вбудована функція open().</p>
+<p>Головне правило: відкрив файл — закрий його. Якщо файл не закрити, він може заблокуватися системою або пошкодитися. Щоб не писати file.close() вручну і не забувати про це, ми використовуємо конструкцію with. Вона створює “безпечний контекст”: щойно код вийде з блоку with (закінчаться відступи), файл закриється автоматично.</p>
+<p>Базовий синтаксис:</p>
+<div id="842cec0b" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"filename.txt"</span>, <span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># тут ми працюємо з файлом</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="callout-title-container flex-fill">
-Примітка
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Уявіть, що ви хочете створити список цін у гривнях, маючи список цін в доларах</p>
-</div>
-</div>
-</section>
-<div class="columns">
-<div class="column" style="border-right: 2px solid #ccc; padding-right: 1em; width: 40%;">
-<section id="без-list-comprehension" class="level2">
-<h2 class="anchored" data-anchor-id="без-list-comprehension">❌ Без List Comprehension</h2>
-<div id="36976cb5" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>prices_usd <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">50</span>, <span class="dv">100</span>]</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>prices_uah <span class="op">=</span> []</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> price <span class="kw">in</span> prices_usd:</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    prices_uah.append(price <span class="op">*</span> <span class="fl">41.5</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(prices_uah)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[415.0, 830.0, 2075.0, 4150.0]</code></pre>
-</div>
-</div>
-</section>
-</div><div class="column" style="width: 60%; padding-left: 1em;">
-<section id="з-list-comprehension" class="level2">
-<h2 class="anchored" data-anchor-id="з-list-comprehension">✅ З List Comprehension</h2>
-<div id="7009e30e" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>prices_usd <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">50</span>, <span class="dv">100</span>]</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>prices_uah <span class="op">=</span> [price <span class="op">*</span> <span class="fl">41.5</span> <span class="cf">for</span> price <span class="kw">in</span> prices_usd]</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(prices_uah)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[415.0, 830.0, 2075.0, 4150.0]</code></pre>
-</div>
-</div>
-</section>
-</div>
-</div>
-<section id="синтаксис" class="level3">
-<h3 class="anchored" data-anchor-id="синтаксис">✏️ Синтаксис</h3>
-<p><code>[expression for item in iterable if condition]</code></p>
-</section>
-<section id="conditionals" class="level3">
-<h3 class="anchored" data-anchor-id="conditionals">❓ Conditionals</h3>
-<p>Умови в list comprehension дозволяють нам обирати об’єкти за певними правилами.</p>
-<p>Припустіть, що нам потрібно відібрати тільки ті значення зі списку, які є парними</p>
-<div id="9ec4bd9f" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">11</span>]</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> a <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[2, 8, 10]</code></pre>
-</div>
-</div>
-</section>
-<section id="live-coding-1-список-транзакцій" class="level2">
-<h2 class="anchored" data-anchor-id="live-coding-1-список-транзакцій">👨🏻‍💻 Live Coding 1: Список транзакцій</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Примітка</span>Задача
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>У нас є список транзакцій у доларах. Нам потрібно:</p>
+<p>Розбір параметрів:</p>
 <ul>
-<li>Перевести їх у гривні (курс 41.5).</li>
-<li>Відфільтрувати транзакції менше 10$.</li>
+<li><p><code>"filename.txt"</code> — шлях до файлу (назва).</p></li>
+<li><p><code>r</code> (read) — режим роботи. Кажемо Python: “відкрий тільки для читання, нічого не змінюй”.</p></li>
+<li><p><code>encoding="utf-8"</code> — кодування. Обов’язковий параметр, щоб кирилиця чи спецсимволи відображалися коректно.</p></li>
+<li><p><code>as file</code> — даємо змінній ім’я, через яке будемо звертатися до файлу всередині блоку.</p></li>
 </ul>
-</div>
-</div>
-<section id="ваше-завдання" class="level3">
-<h3 class="anchored" data-anchor-id="ваше-завдання">📝 Ваше завдання:</h3>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Важливо</span>Задача
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>У вас є “сирий” список транзакцій (деякі помилкові/від’ємні): <code>raw_data = [100, -50, 20, 0, 500, -10]</code></p>
-<p>Створіть список рядків receipts (чеків), використовуючи List Comprehension. Вимоги до одного рядка коду:</p>
+<p><strong>Як читати дані</strong>:</p>
 <ul>
-<li><p>Беремо тільки додатні транзакції (&gt; 0).</p></li>
-<li><p>Додаємо до суми 5% податку.</p></li>
-<li><p>Результат має бути рядком (f-string): “Сума: 105.0 грн”.</p></li>
+<li><p><code>file.read()</code> — зчитує весь файл одразу як один великий рядок тексту. Ок для маленьких файлів, але може “покласти” програму на великих логах.</p></li>
+<li><p><code>for line in file:</code> — найкращий спосіб. Читає файл по одному рядку за раз, не перевантажуючи оперативну пам’ять комп’ютера.</p></li>
 </ul>
-</div>
-</div>
-<p>Очікуваний результат: <code>['Сума: 105.0 грн', 'Сума: 21.0 грн', 'Сума: 525.0 грн']</code></p>
-</section>
-</section>
-<section id="dict-comprehension" class="level2">
-<h2 class="anchored" data-anchor-id="dict-comprehension">🔍 Dict Comprehension</h2>
-<p>Як і List Comprehension, Dict Comprehension дозволяє створювати словники у зручний спосіб. Синтаксично, Dict Comprehension виглядає так:</p>
-<p><code>{key: value for (key, value) in iterable if condition}</code></p>
-<div id="1340ab8f" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>keys <span class="op">=</span> [<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'c'</span>,<span class="st">'d'</span>,<span class="st">'e'</span>]</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]  </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># but this line shows dict comprehension here  </span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>myDict <span class="op">=</span> { k:v <span class="cf">for</span> (k,v) <span class="kw">in</span> <span class="bu">zip</span>(keys, values)}  </span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (myDict)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}</code></pre>
-</div>
-</div>
-</section>
-<section id="live-coding-2-інфляція-та-прайс-листи" class="level2">
-<h2 class="anchored" data-anchor-id="live-coding-2-інфляція-та-прайс-листи">👨🏻‍💻 Live Coding 2: Інфляція та прайс листи</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Примітка</span>Задача
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>У нас є словник поточних цін на складі (в доларах). Нам потрібно:</p>
-<ul>
-<li>Перевести ціни в гривні (курс 41.5).</li>
-<li>Врахувати інфляцію (+10% до ціни).</li>
-</ul>
-</div>
-</div>
-<p><code>products_usd = {     'Apple': 1.5,     'Banana': 0.8,     'Avocado': 2.5,     'Mango': 3.0 } rate = 41.5</code></p>
-<section id="ваше-завдання-1" class="level3">
-<h3 class="anchored" data-anchor-id="ваше-завдання-1">📝 Ваше завдання:</h3>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Важливо</span>Задача
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>У вас є портфель акцій у доларах: <code>stocks_usd = {'AAPL': 150, 'GOOGL': 2800, 'TSLA': 700, 'AMZN': 3300} Курс: rate = 41.5</code></p>
-<p>Створіть новий словник <code>high_value_uah</code>, в який потраплять:</p>
-<ul>
-<li>Тільки ті акції, вартість яких у гривні перевищує 30 000 грн.</li>
-<li>Значення мають бути вже в гривнях.</li>
-</ul>
-</div>
-</div>
-<p><em>Підказка: Вам доведеться помножити на курс і в частині value, і в частині if.</em></p>
-</section>
-</section>
-<section id="basic-modules-in-python" class="level2">
-<h2 class="anchored" data-anchor-id="basic-modules-in-python">🔍 Basic modules in Python</h2>
-<p>Модуль - це файл, який містить визначення функцій, класів і змінних, які можна використовувати в інших програмах.</p>
-<p>Це означає що для багатьох програм, ми можемо перевикористати вже написаний код, аби не писати з нуля та зекономити час.</p>
-<p>Python має велику кількість вбудованих модулів, які можна імпортувати та використовувати у своїх програмах. Ось деякі з найпоширеніших:</p>
-<ul>
-<li><code>math</code>: Модуль для виконання математичних операцій.</li>
-<li><code>random</code>: Модуль для генерації випадкових чисел.</li>
-<li><code>datetime</code>: Модуль для роботи з датами та часом.</li>
-</ul>
-</section>
-<section id="імпорт-та-використання-модулів" class="level2">
-<h2 class="anchored" data-anchor-id="імпорт-та-використання-модулів">📦 Імпорт та використання модулів</h2>
-<div id="64f548e0" class="cell" data-execution_count="5">
+<section id="live-coding-1-вглиб-файлової-системи" class="level3">
+<h3 class="anchored" data-anchor-id="live-coding-1-вглиб-файлової-системи">👨‍💻 Live coding 1: Вглиб файлової системи</h3>
+<p><strong>Контекст:</strong> Ми працювали зі своїм комп’ютером, аж от халепа - він почав дивно працювати та виснути. Ми не знаємо в чому проблема, проте знаємо, що він залишає дані про всі дії операційної системи у певному файлі. В цьому файлі міститься різна інформація: від інформації про різні процеси і до критичних помилок. Наша задача - відкрити цей файл та вивести рядки, які містять критичні помилки та показати їх користувачу</p>
+<p><strong>Вхідні дані:</strong> Файл <code>log.txt</code> з логами комп’ютера</p>
+<div id="94c1f2ba" class="cell" data-execution_count="2">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>Приклад використання модуля math</strong></pre>
+<pre><strong>log.txt</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>price <span class="op">=</span> <span class="fl">19.1</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Округлення вгору (ceiling - стеля)</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Ceil: </span><span class="sc">{</span>math<span class="sc">.</span>ceil(price)<span class="sc">}</span><span class="ss">"</span>)  <span class="co"># -&gt; 20</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Округлення вниз (floor - підлога)</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Floor: </span><span class="sc">{</span>math<span class="sc">.</span>floor(price)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Корінь квадратний</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sqrt: </span><span class="sc">{</span>math<span class="sc">.</span>sqrt(<span class="dv">144</span>)<span class="sc">}</span><span class="ss">"</span>)    </span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Ceil: 20
-Floor: 19
-Sqrt: 12.0</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>INFO: System boot sequence initiated</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>INFO: Loading kernel modules</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>WARNING: Deprecated configuration <span class="bu">format</span> <span class="kw">in</span> <span class="op">/</span>etc<span class="op">/</span>network</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>INFO: Network interface eth0 up</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>INFO: Starting SSH daemon</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>ERROR: Failed to bind to port <span class="dv">22</span> <span class="op">-</span> address already <span class="kw">in</span> use</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>...</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<ul>
-<li>Для імпорту використовуємо ключове слово <code>import</code></li>
-<li>Після імпорту можна використовувати функції та змінні модуля, звертаючись до них через крапку (наприклад, <code>math.ceil()</code>).</li>
-</ul>
-</section>
-<section id="способи-імпорту-моудулів" class="level2">
-<h2 class="anchored" data-anchor-id="способи-імпорту-моудулів">⬇️ Способи імпорту моудулів</h2>
-<section id="імпорт-всього-модуля" class="level3">
-<h3 class="anchored" data-anchor-id="імпорт-всього-модуля">Імпорт всього модуля</h3>
-<div id="52c95dc4" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Ми повинні звертатися через крапку: модуль.функція</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(math.sqrt(<span class="dv">25</span>))</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>5.0</code></pre>
+<p><strong>Очікуваний результат:</strong> Вивід всіх рядків з помилками та кількість цих помилок</p>
+<section id="guided-practice-аналіз-логів-сервера" class="level4">
+<h4 class="anchored" data-anchor-id="guided-practice-аналіз-логів-сервера">🛠 Guided Practice: Аналіз логів сервера</h4>
+<p><strong>Контекст:</strong> Уявіть, що ви розробляєте систему для власного серверу. Сервер працює стабільно, але система моніторингу зафіксувала аномальну активність. Якийсь горе-хакер сподівається знайти на вашому сервері підозрілі дані, на що сервер реагує помилкою 404 Not Found.</p>
+<p>Проте, сьогодні точно не його щасливий день, оскільки ви проаналізуєте лог HTTP-запитів і витягнете з нього всі рядки з <code>404 Not Found</code>. Це дозволить нам побачити, які саме чутливі файли шукав зловмисник, і оцінити масштаб сканування, щоб передати ці дані команді кібербезпеки для блокування хакерів.</p>
+<p><strong>Вхідні дані:</strong> Файл <code>server_logs.txt</code>, який містить всі логи серверу.</p>
+<div id="b2544feb" class="cell" data-execution_count="3">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>server-logs.txt</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">10</span>:<span class="dv">0</span><span class="er">5</span>:<span class="dv">21</span>] GET <span class="op">/</span>index.html <span class="op">-&gt;</span> <span class="dv">200</span> OK</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">10</span>:<span class="dv">0</span><span class="er">5</span>:<span class="dv">23</span>] GET <span class="op">/</span>style.css <span class="op">-&gt;</span> <span class="dv">200</span> OK</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">10</span>:<span class="dv">0</span><span class="er">5</span>:<span class="dv">30</span>] GET <span class="op">/</span>admin_dashboard.php <span class="op">-&gt;</span> <span class="dv">404</span> Not Found</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">10</span>:<span class="dv">0</span><span class="er">6</span>:<span class="dv">0</span><span class="er">1</span>] POST <span class="op">/</span>api<span class="op">/</span>login <span class="op">-&gt;</span> <span class="dv">200</span> OK</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-</section>
-<section id="імпорт-конкретної-функції-або-змінної-з-модуля" class="level3">
-<h3 class="anchored" data-anchor-id="імпорт-конкретної-функції-або-змінної-з-модуля">Імпорт конкретної функції або змінної з модуля</h3>
-<div id="ae1c9d7b" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> ceil</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Тепер можна писати назву функції без "math."</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>price <span class="op">=</span> <span class="fl">19.1</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ceil(price)) <span class="co"># Округлення вгору -&gt; 20</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>20</code></pre>
-</div>
-</div>
-</section>
-<section id="імпорт-з-псевдонімом-alias" class="level3">
-<h3 class="anchored" data-anchor-id="імпорт-з-псевдонімом-alias">Імпорт з псевдонімом (alias)</h3>
-<div id="ddde640a" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Дані: Місяці та Продажі (тис. $)</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>months <span class="op">=</span> [<span class="st">'Jan'</span>, <span class="st">'Feb'</span>, <span class="st">'Mar'</span>, <span class="st">'Apr'</span>, <span class="st">'May'</span>]</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>sales <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">13</span>, <span class="dv">18</span>, <span class="dv">25</span>]</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Ми використовуємо коротке "plt"</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>plt.plot(months, sales)</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Динаміка продажів"</span>)</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Місяць"</span>)</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Продажі ($)"</span>)</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="comprehensions-practice_files/figure-html/cell-9-output-1.png" width="585" height="450" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="live-coding-3-генератор-чека" class="level2">
-<h2 class="anchored" data-anchor-id="live-coding-3-генератор-чека">👨🏻‍💻 Live Coding 3: Генератор чека</h2>
-<div class="callout callout-style-default callout-note callout-titled">
+<p><strong>Очікуваний результат:</strong> 5 рядків, які містять помилку <code>404 Not Found</code></p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Примітка</span>Задача
+<span class="screen-reader-only">Порада</span>Підказка
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Ми розробляємо систему лояльності. Клієнт робить покупку. Наша програма має:</p>
+<p>Використаєте конструкцію <code>with open()</code> для безпечного читання з файлу, а потім проітеруйтеся по файлу та знайдіть всі потрібні рядки</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="запис-у-файли" class="level2">
+<h2 class="anchored" data-anchor-id="запис-у-файли">✍🏻 Запис у файли</h2>
+<p>Збереження даних працює за тим самим принципом with open(…), але змінюється режим роботи.</p>
+<p>Основні режими запису:</p>
+<p><code>w</code> (write) — Обережно! Цей режим створює новий файл, а якщо файл вже існує — повністю стирає його вміст перед записом. Використовуємо, коли треба створити звіт з нуля.</p>
+<p><code>a</code> (append) — Дописує нову інформацію в кінець існуючого файлу. Старі дані залишаються цілими. Ідеально для ведення логів або збереження історії дій.</p>
+<p>Синтаксис запису:</p>
+<div id="607a1069" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"report.txt"</span>, <span class="st">"w"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(<span class="st">"Мій перший записаний рядок!</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="live-coding-2-залишити-свій-слід-у-файлі" class="level3">
+<h3 class="anchored" data-anchor-id="live-coding-2-залишити-свій-слід-у-файлі">👨‍💻 Live Coding 2: Залишити свій слід у файлі</h3>
+<p><strong>Контекст:</strong> Тепер, коли ми вже вміємо читати з файлу ми можемо побачити потрібну нам інформацію в доволі легкий спосіб. А проте, як тільки ми закриємо консоль, карета перетвориться на гарбуз, і всі наші тяжко здобуті дані зникнуть. Для того, аби ми могли зберегти дані для подальшої обробки ми можемо записати їх в окремий файл <code>errors.txt</code></p>
+<p><strong>Вхідні дані:</strong> Рядки з помилками системи, здобуті раніше</p>
+<p><strong>Очікуваний результат:</strong> Новий файл який містить усі знайдені помилки <code>errors.txt</code></p>
+<section id="guided-practice-збереження-даних" class="level4">
+<h4 class="anchored" data-anchor-id="guided-practice-збереження-даних">Guided Practice: Збереження даних</h4>
+<p><strong>Контекст:</strong> Очевидно, що дані, знайдені в логах нашого серверу теж потребують запису. Сформуйте новий файл <code>suspicious_requests.txt</code>, який потім можна буде передати команді з кібербезпеки</p>
+<p><strong>Вхідні дані:</strong> Рядки з підозрілими запитами, здобуті раніше</p>
+<p><strong>Очікуваний результат:</strong> Новий файл який містить усі підозрілі запити <code>suspicious_requests.txt</code></p>
+</section>
+</section>
+</section>
+<section id="обробка-помилок" class="level2">
+<h2 class="anchored" data-anchor-id="обробка-помилок">🤾🏻 Обробка помилок</h2>
+<p>Програмісти роблять помилки, а користувачі роблять їх ще частіше. Якщо Python стикається з критичною проблемою, він викидає “виняток” (Exception) — програма аварійно завершує роботу і видає страшний червоний текст у консолі.</p>
+<p>Щоб програма була надійною, ми вчимо її “ловити” помилки за допомогою конструкції try-except.</p>
+<p>Як це працює:</p>
 <ul>
-<li>Надати йому випадкову знижку (5%, 10% або 20%).</li>
-<li>Розрахувати фінальну ціну і округлити її вгору.</li>
-<li>Видати чек з точною датою та часом.</li>
+<li><p>У блок <code>try</code>: ми кладемо код, який потенційно може зламатися.</p></li>
+<li><p>У блок <code>except</code>: ми пишемо, що треба зробити, якщо помилка таки сталася. Програма не падає, а просто виконує цей “запасний план”.</p></li>
+<li><p>Блок <code>finally</code>: (необов’язковий) — виконується ЗАВЖДИ в самому кінці, незалежно від того, була помилка чи ні.</p></li>
+</ul>
+<p>Приклад:</p>
+<div id="98882c12" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ризикована дія (користувач міг ввести неправильну назву)</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(<span class="st">"неіснуючий_файл.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> f:</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(f.read())</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">FileNotFoundError</span>: </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ловимо конкретну помилку відсутності файлу</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Упс! Файл не знайдено. Перевірте правильність назви."</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e: </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ловимо будь-яку іншу неочікувану помилку</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Сталося щось дивне: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Це дозволяє програмі ввічливо повідомити користувача про проблему і продовжити свою роботу (наприклад, попросити ввести назву ще раз).</p>
+<section id="live-coding-3-помилка-лови" class="level3">
+<h3 class="anchored" data-anchor-id="live-coding-3-помилка-лови">👨‍💻 Live Coding 3: Помилка? Лови!</h3>
+<p><strong>Контекст:</strong> Тепер, коли всі файли зібрано в одній директорії, ми хочемо зробити так, аби нашим колегам не довелося шукати їх по всій файловій системі та реалізувати виведення всього файлу за допомогою нашого скрипта. Для цього, нам потрібно реалізувати систему вводу/виводу, коли користувач вводить назву файлу, а наша програма виводить його вміст. При цьому, нам треба корректно обробити всі помилки, що можуть виникнути під час роботи з файлом</p>
+<p><strong>Вхідні дані:</strong> Назва файлу, введена користувачем</p>
+<p><strong>Очікуваний результат:</strong> Вміст файлу</p>
+<section id="guided-practice" class="level4">
+<h4 class="anchored" data-anchor-id="guided-practice">Guided Practice:</h4>
+<p><strong>Контекст:</strong> Ваша програма з попереднього завдання на стільки сподобалась колегам, що тепер вони просять додати ще один корисний інструмент - утиліту для створення резервних копій логів. Користувач має ввести назву існуючого файлу та назву для його копії.</p>
+<p>Оскільки люди часто помиляються у назвах, програма має бути захищена від падінь за допомогою try-except, а в кінці завжди звітувати про завершення операції через блок finally.</p>
+<p><strong>Вхідні дані:</strong> Назва файлу та копії, введені користувачем у форматі <code>log.txt log-copy.txt</code></p>
+<p><strong>Очікуваний результат:</strong> Створена копія файлу <code>log.txt</code> з назвою <code>log-copy.txt</code>, яка буде містити ідентичний контент</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Порада</span>Поради щодо виконання
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Розбийте ввід користувача на дві змінні за допомогою методу <code>split()</code>.</li>
+<li>Після цього, використайте <code>os.path.join</code> аби обмежитися директорією <code>files/</code>.</li>
+<li>Для обробки помилок, використайте принаймні <code>FileNotFoundError</code> та <code>except:</code> для загальних помилок.</li>
 </ul>
 </div>
 </div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

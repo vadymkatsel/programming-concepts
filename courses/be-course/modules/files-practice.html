@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Vadym Katsel">
-<meta name="dcterms.date" content="2026-03-22">
+<meta name="dcterms.date" content="2026-03-23">
 
 <title>Базова робота з файлами – Programming Concepts Course</title>
 <style>
@@ -118,6 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     gtag('config', 'G-YGN10Q3E6H');
 </script>
 <link rel="icon" type="image/svg+xml" href="https://vadymkatsel.github.io/programming-concepts/images/favicon.svg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
 <link rel="stylesheet" href="../../../style.css">
@@ -558,7 +559,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Дата публікації</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2026-03-22</p>
+      <p class="date">2026-03-23</p>
     </div>
   </div>
   
@@ -598,7 +599,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="відкриття-файлів" class="level3">
 <h3 class="anchored" data-anchor-id="відкриття-файлів">Відкриття файлів</h3>
 <p>Аби мати змогу працювати з певним файлом в Python, його потрібно спочатку відкрити за допомогою вбудованої функції <code>open()</code>. Ця функція приймає два основні аргументи: шлях до файлу та режим відкриття файлу.</p>
-<div id="1ed02e2a" class="cell" data-execution_count="1">
+<div id="11d09c96" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">'example.txt'</span>, <span class="st">'r'</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>            <span class="co">#шлях         #режим</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -606,7 +607,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="читання-файлів" class="level3">
 <h3 class="anchored" data-anchor-id="читання-файлів">Читання файлів</h3>
 <p>Після відкриття файлу можна прочитати його вміст за допомогою різних методів, таких як <code>read()</code>, <code>readline()</code>, або <code>readlines()</code>.</p>
-<div id="03c3b8b0" class="cell" data-execution_count="2">
+<div id="0e20d2ab" class="cell" data-execution_count="2">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Файл data.txt</strong></pre>
@@ -616,7 +617,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Рядок <span class="dv">3</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="16fdde08" class="cell" data-execution_count="3">
+<div id="5b303df4" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">'data.txt'</span>, <span class="st">'r'</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>all_content <span class="op">=</span> <span class="bu">file</span>.read() <span class="co">#Читає весь вміст файлу</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>content_list <span class="op">=</span> <span class="bu">file</span>.readlines() <span class="co">#Читає всі рядки у вигляді списку</span></span>
@@ -643,7 +644,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>У нас є текстовий файл <code>data.txt</code>, який містить кілька рядків тексту. Нам потрібно прочитати цей файл і вивести рядок з макксимальною довжиною.</p>
 </div>
 </div>
-<div id="4fa5cf0b" class="cell" data-execution_count="4">
+<div id="699a8be6" class="cell" data-execution_count="4">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>data.txt</strong></pre>
@@ -668,7 +669,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>💡 Для успішного виконання, маєте використати метод <code>startswith</code></p>
 </div>
 </div>
-<div id="8b49c968" class="cell" data-execution_count="5">
+<div id="7ceba6a4" class="cell" data-execution_count="5">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>log.txt</strong></pre>
@@ -686,7 +687,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="коснтрукція-with" class="level3">
 <h3 class="anchored" data-anchor-id="коснтрукція-with">Коснтрукція with</h3>
 <p>Конструкція <code>with</code> створена для спрощення роботи з файлами. Її перевага в тому, що вона автоматично відкриває та закриває файл для нас.</p>
-<div id="5bf3dc46" class="cell" data-execution_count="6">
+<div id="e6f89d9d" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"data.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  content <span class="op">=</span> <span class="bu">file</span>.read()</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(content)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
@@ -695,7 +696,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="запис-у-файли" class="level3">
 <h3 class="anchored" data-anchor-id="запис-у-файли">Запис у файли</h3>
 <p>У Python, запис у файл здійснюється за допомогою режиму “w”. Він свторює файл, якщо його не існує, або переписує вже існуючий. Також, як і у впиадку читання, маємо спеціальний метод <code>write</code> для запису у файл.</p>
-<div id="f190416b" class="cell" data-execution_count="7">
+<div id="dbc750de" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"newfile.txt"</span>, <span class="st">"w"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">file</span>.write(<span class="st">"This is a new file!</span><span class="ch">\n</span><span class="st">"</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">file</span>.write(<span class="st">"This is line 2</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
@@ -707,7 +708,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="що-таке-.csv" class="level3">
 <h3 class="anchored" data-anchor-id="що-таке-.csv">Що таке <code>.csv</code>?</h3>
 <p><code>.csv</code> це простий формат файлу, створений щоб зберігати дату у табличному вигляді як <strong>значення, розділені комами</strong>. Перший рядок, зазвичай слугує заголовком, який показує що означає кожна колонка</p>
-<div id="08c479a7" class="cell" data-execution_count="8">
+<div id="a5c237b2" class="cell" data-execution_count="8">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>file.csv</strong></pre>
@@ -722,7 +723,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="модуль-csv" class="level3">
 <h3 class="anchored" data-anchor-id="модуль-csv">Модуль csv</h3>
 <p>Аби працювати з <code>.csv</code> файлами, нам потрібно імпортувати відповідний модуль, який дає нам потрібний функціонал.</p>
-<div id="8e962640" class="cell" data-execution_count="9">
+<div id="5669d467" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> csv</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'file.csv'</span> <span class="st">'r'</span>) <span class="im">as</span> csvfile:</span>
@@ -739,7 +740,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>'w'</code> - створює новий файл або переписує існуючий</li>
 <li><code>'a'</code> - додає нові рядки в кінець існуючого файлу</li>
 </ul>
-<div id="79bdc25f" class="cell" data-execution_count="10">
+<div id="a26481ae" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> csv</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>filtered_data <span class="op">=</span> [</span>
@@ -777,7 +778,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Нам надано <code>.csv</code> файл з колонками, які відповідають за ім’я, роль, та заробітню плату людини. Нам потріно прочитати файл та відфільтрувати тільки тих людей, які заробляють більше 1800 доларів, та вивести їх на екран. Для виконання потрібно скористатися <code>csv.DictReader()</code></p>
 </div>
 </div>
-<div id="ec3985cb" class="cell" data-execution_count="11">
+<div id="2a159e4d" class="cell" data-execution_count="11">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>staff.csv</strong></pre>
