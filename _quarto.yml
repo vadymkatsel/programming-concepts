@@ -56,6 +56,10 @@ website:
         - section: "Словники. List Comprehension"
           contents:
             - courses/math-course/modules/dictionaries-lc-practice.qmd
+        
+        - section: "Базова робота з файлами. Обробка помилок"
+          contents:
+            - courses/math-course/modules/file-basics-error-handling-practice.qmd
       active-modes: [courses/math-course]
 
     - id: be-sidebar
@@ -111,6 +115,7 @@ format:
     include-in-header:
       - text: |
           <link rel="icon" type="image/svg+xml" href="https://vadymkatsel.github.io/programming-concepts/images/favicon.svg">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
       - file: analytics.html
     include-after-body:
       text: |
