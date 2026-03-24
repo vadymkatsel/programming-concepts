@@ -60,6 +60,11 @@ website:
         - section: "Базова робота з файлами. Обробка помилок"
           contents:
             - courses/math-course/modules/file-basics-error-handling-practice.qmd
+
+        - section: "Обробка даних з JSON та CSV"
+          contents:
+            - courses/math-course/modules/json-csv-basics.qmd
+            
       active-modes: [courses/math-course]
 
     - id: be-sidebar

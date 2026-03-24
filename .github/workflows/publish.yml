@@ -27,6 +27,7 @@ jobs:
         run: |
           pip install jupyter
           pip install pandas matplotlib numpy
+          pip install great-tables
           
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
