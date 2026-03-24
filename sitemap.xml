@@ -2,86 +2,90 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/be-course/modules/variables-data-types-operations-practice.html</loc>
-    <lastmod>2026-03-23T22:01:01.159Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.419Z</lastmod>
   </url>
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/be-course/modules/conditionals-practice.html</loc>
-    <lastmod>2026-03-23T22:01:01.159Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.419Z</lastmod>
   </url>
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/be-course/modules/lists-practice.html</loc>
-    <lastmod>2026-03-23T22:01:01.159Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.419Z</lastmod>
   </url>
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/be-course/modules/comprehensions-practice.html</loc>
-    <lastmod>2026-03-23T22:01:01.159Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.419Z</lastmod>
   </url>
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/be-course/modules/midterm-revision.html</loc>
-    <lastmod>2026-03-23T22:01:01.159Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.419Z</lastmod>
   </url>
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/be-course/modules/dictionaries-tuples-sets-practice.html</loc>
-    <lastmod>2026-03-23T22:01:01.159Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.419Z</lastmod>
   </url>
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/math-course/modules/variables-data-types-operations-practice.html</loc>
-    <lastmod>2026-03-23T22:01:01.162Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.423Z</lastmod>
   </url>
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/math-course/modules/dictionaries-lc-practice.html</loc>
-    <lastmod>2026-03-23T22:01:01.162Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.422Z</lastmod>
   </url>
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/math-course/modules/lists-practice.html</loc>
-    <lastmod>2026-03-23T22:01:01.162Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.423Z</lastmod>
   </url>
   <url>
-    <loc>https://vadymkatsel.github.io/programming-concepts/courses/math-course/modules/template.html</loc>
-    <lastmod>2026-03-23T22:01:01.162Z</lastmod>
-  </url>
-  <url>
-    <loc>https://vadymkatsel.github.io/programming-concepts/courses/math-course/modules/lists-practice-not-approved.html</loc>
-    <lastmod>2026-03-23T22:01:01.162Z</lastmod>
+    <loc>https://vadymkatsel.github.io/programming-concepts/courses/math-course/modules/json-csv-basics.html</loc>
+    <lastmod>2026-03-24T19:18:09.423Z</lastmod>
   </url>
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/math-course/modules/index.html</loc>
-    <lastmod>2026-03-23T22:01:01.162Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.423Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vadymkatsel.github.io/programming-concepts/courses/math-course/modules/lists-practice-not-approved.html</loc>
+    <lastmod>2026-03-24T19:18:09.423Z</lastmod>
+  </url>
+  <url>
+    <loc>https://vadymkatsel.github.io/programming-concepts/courses/math-course/modules/template.html</loc>
+    <lastmod>2026-03-24T19:18:09.423Z</lastmod>
   </url>
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/math-course/modules/file-basics-error-handling-practice.html</loc>
-    <lastmod>2026-03-23T22:01:01.162Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.423Z</lastmod>
   </url>
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/math-course/modules/git-practice.html</loc>
-    <lastmod>2026-03-23T22:01:01.162Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.423Z</lastmod>
   </url>
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/math-course/modules/functions-practice.html</loc>
-    <lastmod>2026-03-23T22:01:01.162Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.423Z</lastmod>
   </url>
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/be-course/modules/index.html</loc>
-    <lastmod>2026-03-23T22:01:01.159Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.419Z</lastmod>
   </url>
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/be-course/modules/files-practice.html</loc>
-    <lastmod>2026-03-23T22:01:01.159Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.419Z</lastmod>
   </url>
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/be-course/modules/ATM-simulator-task.html</loc>
-    <lastmod>2026-03-23T22:01:01.159Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.419Z</lastmod>
   </url>
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/be-course/modules/strings-practice.html</loc>
-    <lastmod>2026-03-23T22:01:01.159Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.419Z</lastmod>
   </url>
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/be-course/modules/libraries-json-practice.html</loc>
-    <lastmod>2026-03-23T22:01:01.159Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.419Z</lastmod>
   </url>
   <url>
     <loc>https://vadymkatsel.github.io/programming-concepts/courses/be-course/modules/functions-practice.html</loc>
-    <lastmod>2026-03-23T22:01:01.159Z</lastmod>
+    <lastmod>2026-03-24T19:18:09.419Z</lastmod>
   </url>
 </urlset>

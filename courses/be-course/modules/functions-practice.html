@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Vadym Katsel">
-<meta name="dcterms.date" content="2026-03-23">
+<meta name="dcterms.date" content="2026-03-24">
 
 <title>Functions basics – Programming Concepts Course</title>
 <style>
@@ -557,7 +557,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Дата публікації</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2026-03-23</p>
+      <p class="date">2026-03-24</p>
     </div>
   </div>
   
@@ -591,7 +591,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="column" style="border-right: 2px solid #ccc; padding-right: 1em; width: 50%;">
 <section id="без-функцій" class="level3">
 <h3 class="anchored" data-anchor-id="без-функцій">❌ Без функцій</h3>
-<div id="09546458" class="cell" data-execution_count="1">
+<div id="e9b51fdb" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>salary_ivan <span class="op">=</span> <span class="dv">15000</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tax_ivan <span class="op">=</span> salary_ivan <span class="op">*</span> <span class="fl">0.195</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>net_ivan <span class="op">=</span> salary_ivan <span class="op">-</span> tax_ivan</span>
@@ -616,7 +616,7 @@ Petro: 14490.0</code></pre>
 </div><div class="column" style="width: 50%; padding-left: 1em;">
 <section id="з-функціями" class="level3">
 <h3 class="anchored" data-anchor-id="з-функціями">✅ З функціями</h3>
-<div id="4662665c" class="cell" data-execution_count="2">
+<div id="e69722e1" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_net_salary(salary):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    tax <span class="op">=</span> salary <span class="op">*</span> <span class="fl">0.195</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> salary <span class="op">-</span> tax</span>
@@ -637,7 +637,7 @@ Petro: 14490.0</code></pre>
 <section id="визначення-функції" class="level3">
 <h3 class="anchored" data-anchor-id="визначення-функції">Визначення функції</h3>
 <p>Функція визначається за допомогою ключового слова <code>def</code>, за яким слідує ім’я функції та круглі дужки з параметрами (якщо є). Тіло функції відступає від лівого краю.</p>
-<div id="895637b2" class="cell" data-execution_count="3">
+<div id="9f70a530" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> function_name(parameters):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Тіло функції</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    ...</span>
@@ -646,7 +646,7 @@ Petro: 14490.0</code></pre>
 </section>
 <section id="параметри-та-аргументи" class="level3">
 <h3 class="anchored" data-anchor-id="параметри-та-аргументи">Параметри та аргументи</h3>
-<div id="4e3c3743" class="cell" data-execution_count="4">
+<div id="6facf41d" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet():</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hello, World!"</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -655,7 +655,7 @@ Petro: 14490.0</code></pre>
 <pre><code>Hello, World!</code></pre>
 </div>
 </div>
-<div id="0c32a6e0" class="cell" data-execution_count="5">
+<div id="3d6f3b50" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -668,7 +668,7 @@ Petro: 14490.0</code></pre>
 <section id="return" class="level3">
 <h3 class="anchored" data-anchor-id="return">↩︎️ Return</h3>
 <p><strong>return</strong> використовується для повернення значення з функції. Якщо функція не має return, вона повертає <code>None</code> за замовчуванням.</p>
-<div id="227ae1cc" class="cell" data-execution_count="6">
+<div id="51902739" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  </span>
@@ -717,7 +717,7 @@ Petro: 14490.0</code></pre>
 <section id="аргументи-за-замовчуванням" class="level3">
 <h3 class="anchored" data-anchor-id="аргументи-за-замовчуванням">Аргументи за замовчуванням</h3>
 <p>Ми можемо задати значення аргументу “по дефолту”. Якщо користувач його не передасть, Python візьме наше значення.</p>
-<div id="3e20c88c" class="cell" data-execution_count="7">
+<div id="c47f89ac" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name, msg<span class="op">=</span><span class="st">"Good morning!"</span>):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>msg<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -732,7 +732,7 @@ Hi, Vadym</code></pre>
 <section id="позиційні-аргументи" class="level3">
 <h3 class="anchored" data-anchor-id="позиційні-аргументи">Позиційні аргументи</h3>
 <p>Позиційні аргументи передаються у функцію відповідно до порядку параметрів.</p>
-<div id="81f03232" class="cell" data-execution_count="8">
+<div id="681e8bd7" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> nameAge(name, age):</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hi, I am"</span>, name)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"My age is "</span>, age)</span>
@@ -756,7 +756,7 @@ My age is  Vadym</code></pre>
 <section id="іменовані-аргументи" class="level3">
 <h3 class="anchored" data-anchor-id="іменовані-аргументи">Іменовані аргументи</h3>
 <p>Іменовані аргументи дозволяють передавати значення параметрів за їхніми іменами, незалежно від порядку.</p>
-<div id="e4101d24" class="cell" data-execution_count="9">
+<div id="0962dce7" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> student(fname, lname):</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(fname, lname)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>

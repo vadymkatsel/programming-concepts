@@ -117,6 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </script>
 <link rel="icon" type="image/svg+xml" href="https://vadymkatsel.github.io/programming-concepts/images/favicon.svg">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
 <link rel="stylesheet" href="../../../style.css">
@@ -462,6 +463,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Обробка даних з JSON та CSV</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Переключити розділ">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../courses/math-course/modules/json-csv-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practice Session 13</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -541,7 +559,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>У Python для роботи з файлами використовується вбудована функція open().</p>
 <p>Головне правило: відкрив файл — закрий його. Якщо файл не закрити, він може заблокуватися системою або пошкодитися. Щоб не писати file.close() вручну і не забувати про це, ми використовуємо конструкцію with. Вона створює “безпечний контекст”: щойно код вийде з блоку with (закінчаться відступи), файл закриється автоматично.</p>
 <p>Базовий синтаксис:</p>
-<div id="842cec0b" class="cell" data-execution_count="1">
+<div id="c17b46bc" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"filename.txt"</span>, <span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># тут ми працюємо з файлом</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -561,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="live-coding-1-вглиб-файлової-системи">👨‍💻 Live coding 1: Вглиб файлової системи</h3>
 <p><strong>Контекст:</strong> Ми працювали зі своїм комп’ютером, аж от халепа - він почав дивно працювати та виснути. Ми не знаємо в чому проблема, проте знаємо, що він залишає дані про всі дії операційної системи у певному файлі. В цьому файлі міститься різна інформація: від інформації про різні процеси і до критичних помилок. Наша задача - відкрити цей файл та вивести рядки, які містять критичні помилки та показати їх користувачу</p>
 <p><strong>Вхідні дані:</strong> Файл <code>log.txt</code> з логами комп’ютера</p>
-<div id="94c1f2ba" class="cell" data-execution_count="2">
+<div id="e81f895f" class="cell" data-execution_count="2">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>log.txt</strong></pre>
@@ -581,7 +599,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Контекст:</strong> Уявіть, що ви розробляєте систему для власного серверу. Сервер працює стабільно, але система моніторингу зафіксувала аномальну активність. Якийсь горе-хакер сподівається знайти на вашому сервері підозрілі дані, на що сервер реагує помилкою 404 Not Found.</p>
 <p>Проте, сьогодні точно не його щасливий день, оскільки ви проаналізуєте лог HTTP-запитів і витягнете з нього всі рядки з <code>404 Not Found</code>. Це дозволить нам побачити, які саме чутливі файли шукав зловмисник, і оцінити масштаб сканування, щоб передати ці дані команді кібербезпеки для блокування хакерів.</p>
 <p><strong>Вхідні дані:</strong> Файл <code>server_logs.txt</code>, який містить всі логи серверу.</p>
-<div id="b2544feb" class="cell" data-execution_count="3">
+<div id="d6ccbd37" class="cell" data-execution_count="3">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>server-logs.txt</strong></pre>
@@ -616,7 +634,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>w</code> (write) — Обережно! Цей режим створює новий файл, а якщо файл вже існує — повністю стирає його вміст перед записом. Використовуємо, коли треба створити звіт з нуля.</p>
 <p><code>a</code> (append) — Дописує нову інформацію в кінець існуючого файлу. Старі дані залишаються цілими. Ідеально для ведення логів або збереження історії дій.</p>
 <p>Синтаксис запису:</p>
-<div id="607a1069" class="cell" data-execution_count="4">
+<div id="1da136e2" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"report.txt"</span>, <span class="st">"w"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(<span class="st">"Мій перший записаний рядок!</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -626,7 +644,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Вхідні дані:</strong> Рядки з помилками системи, здобуті раніше</p>
 <p><strong>Очікуваний результат:</strong> Новий файл який містить усі знайдені помилки <code>errors.txt</code></p>
 <section id="guided-practice-збереження-даних" class="level4">
-<h4 class="anchored" data-anchor-id="guided-practice-збереження-даних">Guided Practice: Збереження даних</h4>
+<h4 class="anchored" data-anchor-id="guided-practice-збереження-даних">🛠 Guided Practice: Збереження даних</h4>
 <p><strong>Контекст:</strong> Очевидно, що дані, знайдені в логах нашого серверу теж потребують запису. Сформуйте новий файл <code>suspicious_requests.txt</code>, який потім можна буде передати команді з кібербезпеки</p>
 <p><strong>Вхідні дані:</strong> Рядки з підозрілими запитами, здобуті раніше</p>
 <p><strong>Очікуваний результат:</strong> Новий файл який містить усі підозрілі запити <code>suspicious_requests.txt</code></p>
@@ -644,7 +662,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Блок <code>finally</code>: (необов’язковий) — виконується ЗАВЖДИ в самому кінці, незалежно від того, була помилка чи ні.</p></li>
 </ul>
 <p>Приклад:</p>
-<div id="98882c12" class="cell" data-execution_count="5">
+<div id="1d013ede" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ризикована дія (користувач міг ввести неправильну назву)</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(<span class="st">"неіснуючий_файл.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> f:</span>
@@ -663,7 +681,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Вхідні дані:</strong> Назва файлу, введена користувачем</p>
 <p><strong>Очікуваний результат:</strong> Вміст файлу</p>
 <section id="guided-practice" class="level4">
-<h4 class="anchored" data-anchor-id="guided-practice">Guided Practice:</h4>
+<h4 class="anchored" data-anchor-id="guided-practice">🛠 Guided Practice:</h4>
 <p><strong>Контекст:</strong> Ваша програма з попереднього завдання на стільки сподобалась колегам, що тепер вони просять додати ще один корисний інструмент - утиліту для створення резервних копій логів. Користувач має ввести назву існуючого файлу та назву для його копії.</p>
 <p>Оскільки люди часто помиляються у назвах, програма має бути захищена від падінь за допомогою try-except, а в кінці завжди звітувати про завершення операції через блок finally.</p>
 <p><strong>Вхідні дані:</strong> Назва файлу та копії, введені користувачем у форматі <code>log.txt log-copy.txt</code></p>
