@@ -559,7 +559,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>У Python для роботи з файлами використовується вбудована функція open().</p>
 <p>Головне правило: відкрив файл — закрий його. Якщо файл не закрити, він може заблокуватися системою або пошкодитися. Щоб не писати file.close() вручну і не забувати про це, ми використовуємо конструкцію with. Вона створює “безпечний контекст”: щойно код вийде з блоку with (закінчаться відступи), файл закриється автоматично.</p>
 <p>Базовий синтаксис:</p>
-<div id="c17b46bc" class="cell" data-execution_count="1">
+<div id="c17e9b01" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"filename.txt"</span>, <span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># тут ми працюємо з файлом</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -579,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="live-coding-1-вглиб-файлової-системи">👨‍💻 Live coding 1: Вглиб файлової системи</h3>
 <p><strong>Контекст:</strong> Ми працювали зі своїм комп’ютером, аж от халепа - він почав дивно працювати та виснути. Ми не знаємо в чому проблема, проте знаємо, що він залишає дані про всі дії операційної системи у певному файлі. В цьому файлі міститься різна інформація: від інформації про різні процеси і до критичних помилок. Наша задача - відкрити цей файл та вивести рядки, які містять критичні помилки та показати їх користувачу</p>
 <p><strong>Вхідні дані:</strong> Файл <code>log.txt</code> з логами комп’ютера</p>
-<div id="e81f895f" class="cell" data-execution_count="2">
+<div id="fe4251ee" class="cell" data-execution_count="2">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>log.txt</strong></pre>
@@ -599,7 +599,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Контекст:</strong> Уявіть, що ви розробляєте систему для власного серверу. Сервер працює стабільно, але система моніторингу зафіксувала аномальну активність. Якийсь горе-хакер сподівається знайти на вашому сервері підозрілі дані, на що сервер реагує помилкою 404 Not Found.</p>
 <p>Проте, сьогодні точно не його щасливий день, оскільки ви проаналізуєте лог HTTP-запитів і витягнете з нього всі рядки з <code>404 Not Found</code>. Це дозволить нам побачити, які саме чутливі файли шукав зловмисник, і оцінити масштаб сканування, щоб передати ці дані команді кібербезпеки для блокування хакерів.</p>
 <p><strong>Вхідні дані:</strong> Файл <code>server_logs.txt</code>, який містить всі логи серверу.</p>
-<div id="d6ccbd37" class="cell" data-execution_count="3">
+<div id="3bc32b43" class="cell" data-execution_count="3">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>server-logs.txt</strong></pre>
@@ -634,7 +634,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>w</code> (write) — Обережно! Цей режим створює новий файл, а якщо файл вже існує — повністю стирає його вміст перед записом. Використовуємо, коли треба створити звіт з нуля.</p>
 <p><code>a</code> (append) — Дописує нову інформацію в кінець існуючого файлу. Старі дані залишаються цілими. Ідеально для ведення логів або збереження історії дій.</p>
 <p>Синтаксис запису:</p>
-<div id="1da136e2" class="cell" data-execution_count="4">
+<div id="ac77ec43" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"report.txt"</span>, <span class="st">"w"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(<span class="st">"Мій перший записаний рядок!</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -662,7 +662,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Блок <code>finally</code>: (необов’язковий) — виконується ЗАВЖДИ в самому кінці, незалежно від того, була помилка чи ні.</p></li>
 </ul>
 <p>Приклад:</p>
-<div id="1d013ede" class="cell" data-execution_count="5">
+<div id="45e8bda2" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ризикована дія (користувач міг ввести неправильну назву)</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(<span class="st">"неіснуючий_файл.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> f:</span>

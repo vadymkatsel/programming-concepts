@@ -695,6 +695,30 @@
     ]
   },
   {
+    "objectID": "courses/math-course/modules/json-csv-basics.html",
+    "href": "courses/math-course/modules/json-csv-basics.html",
+    "title": "Practice Session 13",
+    "section": "",
+    "text": "ПриміткаЗауважте!\n\n\n\nДля успішного виконання цієї практичної, вам знадобиться зробити Fork репозиторію, а потім клонувати його на свій пристрій. Для того, аби здати практичну, вам потрібно буде надіслати pull request",
+    "crumbs": [
+      "Математика",
+      "Обробка даних з JSON та CSV",
+      "Practice Session 13"
+    ]
+  },
+  {
+    "objectID": "courses/math-course/modules/json-csv-basics.html#основи-роботи-з-json-та-csv-файлами",
+    "href": "courses/math-course/modules/json-csv-basics.html#основи-роботи-з-json-та-csv-файлами",
+    "title": "Practice Session 13",
+    "section": "",
+    "text": "ПриміткаЗауважте!\n\n\n\nДля успішного виконання цієї практичної, вам знадобиться зробити Fork репозиторію, а потім клонувати його на свій пристрій. Для того, аби здати практичну, вам потрібно буде надіслати pull request",
+    "crumbs": [
+      "Математика",
+      "Обробка даних з JSON та CSV",
+      "Practice Session 13"
+    ]
+  },
+  {
     "objectID": "courses/math-course/modules/json-csv-basics.html#план-заняття",
     "href": "courses/math-course/modules/json-csv-basics.html#план-заняття",
     "title": "Practice Session 13",
