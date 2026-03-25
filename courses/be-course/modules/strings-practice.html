@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Vadym Katsel">
-<meta name="dcterms.date" content="2026-03-24">
+<meta name="dcterms.date" content="2026-03-25">
 
 <title>Практична №5.1: Робота з рядками – Programming Concepts Course</title>
 <style>
@@ -562,7 +562,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Дата публікації</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2026-03-24</p>
+      <p class="date">2026-03-25</p>
     </div>
   </div>
   
@@ -603,7 +603,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="рядок-як-структура-даних" class="level2">
 <h2 class="anchored" data-anchor-id="рядок-як-структура-даних">🫙 Рядок як структура даних</h2>
 <p>З попередньо визначення випливає те, що рядок є послідовністю символів. Це означає, що кожен символ у рядку має свою позицію (індекс), починаючи з нуля.</p>
-<div id="fb8f7479" class="cell" data-execution_count="1">
+<div id="7007a69b" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Hello, World!"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>text[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>text[<span class="dv">1</span>]<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>text[<span class="dv">2</span>]<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>text[<span class="dv">3</span>]<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>text[<span class="dv">4</span>]<span class="sc">}</span><span class="ss">"</span>)  </span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
@@ -617,7 +617,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Отримати доступ до будь якого символу за індексом</li>
 <li>Ітеруватися по кожному символу в рядку</li>
 </ul>
-<div id="f833a015" class="cell" data-execution_count="2">
+<div id="41fd8c4e" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"--- По символах: ---"</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> char <span class="kw">in</span> <span class="st">"Hello"</span>:</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Символ: </span><span class="sc">{</span>char<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
@@ -634,7 +634,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="attention-immutability" class="level3">
 <h3 class="anchored" data-anchor-id="attention-immutability">🛑 Attention, Immutability!</h3>
 <p><em>Рядки в Python є <strong>незмінними</strong> (immutable), що означає, що після створення рядка його вміст не може бути змінений. Будь-які операції, які здаються зміною рядка, насправді створюють новий рядок.</em></p>
-<div id="b4110621" class="cell" data-execution_count="3">
+<div id="2b33cb8b" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_string <span class="op">=</span> <span class="st">"Hello"</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>my_string[<span class="dv">0</span>] <span class="op">=</span> <span class="st">"J"</span>   <span class="co"># -&gt; ЦЕ ВИКЛИЧЕ ПОМИЛКУ!</span></span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -671,7 +671,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><code>.strip()</code> - видаляє пробіли на початку і в кінці рядка</li>
 </ul>
-<div id="2da239ab" class="cell" data-execution_count="4">
+<div id="48336c86" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dirty <span class="op">=</span> <span class="st">"   1,500.25  "</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>clean <span class="op">=</span> dirty.strip()</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(clean)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
@@ -682,7 +682,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><code>.lower()</code>/<code>.upper()</code> - перетворює всі символи рядка в нижній регістр</li>
 </ul>
-<div id="f57c06be" class="cell" data-execution_count="5">
+<div id="29cf835c" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>messy_input <span class="op">=</span> <span class="st">"uAh"</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> messy_input.lower() <span class="op">==</span> <span class="st">"uah"</span>:</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Це гривня!"</span>)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
@@ -696,7 +696,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><code>.replace(old, new)</code> - замінює всі входження <code>old</code> на <code>new</code></li>
 </ul>
-<div id="8dbb8486" class="cell" data-execution_count="6">
+<div id="d31a6cf7" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>price <span class="op">=</span> <span class="st">"1,500.25 грн"</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Можна робити "ланцюжок" (chaining)</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>clean_price <span class="op">=</span> price.replace(<span class="st">","</span>, <span class="st">"."</span>).replace(<span class="st">" грн"</span>, <span class="st">""</span>)</span>
@@ -705,7 +705,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><code>.split(separator)</code> - розбиває рядок на список підрядків за вказаним роздільником</li>
 </ul>
-<div id="467bfb1b" class="cell" data-execution_count="7">
+<div id="ccd8af63" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>report_line <span class="op">=</span> <span class="st">"Дохід: 1,200.50"</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>parts <span class="op">=</span> report_line.split(<span class="st">":"</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(parts)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
@@ -719,7 +719,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Оператор <code>in</code> - перевіряє, чи існує підрядок всередині рядка. Повертає True або False</li>
 </ul>
-<div id="8f877f21" class="cell" data-execution_count="8">
+<div id="7b94416d" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> <span class="st">"Дохід: 500 грн"</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"грн"</span> <span class="kw">in</span> report.lower():</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Це гривня!"</span>)</span></code></pre></div><button title="Скопіювати текст" class="code-copy-button"><i class="bi"></i></button></div>
@@ -730,7 +730,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><code>.startswith(substring)</code>/<code>.endswith(substrig)</code> - перевіряє, чи починається рядок з вказаного підрядка</li>
 </ul>
-<div id="3c25a88d" class="cell" data-execution_count="9">
+<div id="96baf7ce" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>iban <span class="op">=</span> <span class="st">"UA1234567890"</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>email <span class="op">=</span> <span class="st">"student@kse.ua"</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -749,7 +749,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><code>.find(substring)</code> - шукає підрядок у рядку і повертає індекс першого входження або -1, якщо не знайдено</li>
 </ul>
-<div id="912ce989" class="cell" data-execution_count="10">
+<div id="d5c0aee4" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> <span class="st">"ID: 456 | User: Alice"</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Знаходимо, де починається "User: "</span></span>

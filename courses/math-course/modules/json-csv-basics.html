@@ -530,6 +530,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="основи-роботи-з-json-та-csv-файлами" class="level2">
 <h2 class="anchored" data-anchor-id="основи-роботи-з-json-та-csv-файлами">Основи роботи з JSON та CSV файлами</h2>
+<p>В реальному світі інформація рідко зберігається суцільним текстом - зазвичай вона має чітку структуру. Сьогодні ми розберемо два найпопулярніші формати зберігання та обміну даних: <strong>CSV</strong> (який ви часто зустрінете при роботі з таблицями та датасетами) та <strong>JSON</strong> (головний стандарт для передачі даних у вебі та роботи з API). Вміння читати, парсити та зберігати дані у цих форматах - це необхідна база для створення повноцінних програм.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -574,7 +575,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>JSON ідеально підходить для збереження списків та словників. Метод load() автоматично перетворює текст на об’єкти Python, а dump() — навпаки.</p>
 <section id="читання" class="level5">
 <h5 class="anchored" data-anchor-id="читання">Читання:</h5>
-<div id="a063bee3" class="cell" data-execution_count="1">
+<div id="eec52b36" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"data.json"</span>, <span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> f:</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Отримуємо готовий список або словник</span></span>
@@ -583,7 +584,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="запис" class="level5">
 <h5 class="anchored" data-anchor-id="запис">Запис:</h5>
-<div id="096e780a" class="cell" data-execution_count="2">
+<div id="e603944f" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>my_data <span class="op">=</span> [{<span class="st">"name"</span>: <span class="st">"John"</span>, <span class="st">"age"</span>: <span class="dv">30</span>}]</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -597,7 +598,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="робота-з-csv">Робота з CSV</h4>
 <section id="читання-1" class="level5">
 <h5 class="anchored" data-anchor-id="читання-1">Читання:</h5>
-<div id="c9bb1828" class="cell" data-execution_count="3">
+<div id="16f75f33" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> csv</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"table.csv"</span>, <span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> f:</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    reader <span class="op">=</span> csv.reader(f)</span>
@@ -611,7 +612,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><strong>Спосіб 1:</strong> Звичайний Використовуємо, коли наші дані — це списки: [“Apple”, 15].</li>
 </ul>
-<div id="b2fb20f1" class="cell" data-execution_count="4">
+<div id="d57a4179" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> csv</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [[<span class="st">"Name"</span>, <span class="st">"Price"</span>], [<span class="st">"Apple"</span>, <span class="dv">15</span>], [<span class="st">"Banana"</span>, <span class="dv">20</span>]]</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -623,7 +624,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><strong>Спосіб 2:</strong> DictWriter Найкращий спосіб, якщо ми отримали дані у вигляді списку словників (наприклад, розпарсили JSON).</li>
 </ul>
-<div id="794df46a" class="cell" data-execution_count="5">
+<div id="7524d819" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> csv</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [{<span class="st">"name"</span>: <span class="st">"Apple"</span>, <span class="st">"price"</span>: <span class="dv">15</span>}, {<span class="st">"name"</span>: <span class="st">"Banana"</span>, <span class="st">"price"</span>: <span class="dv">20</span>}]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>columns <span class="op">=</span> [<span class="st">"name"</span>, <span class="st">"price"</span>] <span class="co"># Задаємо ключі</span></span>
@@ -653,10 +654,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="live-coding-1-клітинки-коми-та-значення">👨‍💻 Live coding 1: Клітинки, коми та значення</h3>
 <p><strong>Контекст:</strong> В контексті цього завдання нам з вами доведеться стати справжніми аналітиками та проаналізувати дані про товари, що збергіються на складі магазину “Very Cool Store”. У нас є датасет формату <code>.csv</code>, розміром в 1000 рядків, в якому зберігаються різні дані. Нас цікавить, зокрема ціна та кількість товарів (Price and Stock). Наша задача - порахувати загальну суму вартості товарів, які зберігаються на складі. Поле <code>"Availability"</code> таких товарів - <code>in_stock</code></p>
 <p><strong>Вхідні дані:</strong></p>
-<div id="5982b9b6" class="cell info-table" data-execution_count="6">
+<div id="9381a421" class="cell info-table" data-execution_count="6">
 <div class="cell-output cell-output-display" data-execution_count="1">
 <style type="text/css">
-#T_0b735 th {
+#T_5a31f th {
   background-color: rgba(128, 128, 128, 0.15);
   color: #333;
   font-weight: bold;
@@ -664,187 +665,187 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding: 10px;
   border-bottom: 2px solid rgba(128, 128, 128, 0.3);
 }
-#T_0b735 td {
+#T_5a31f td {
   padding: 10px;
   border-bottom: 1px solid rgba(128, 128, 128, 0.15);
   text-align: left;
 }
 </style>
 
-<div id="T_0b735" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
+<div id="T_5a31f" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_0b735-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_5a31f-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Таблиця&nbsp;1: Датасет products-1000.csv
 </figcaption>
-<div aria-describedby="T_0b735-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table id="T_0b735" class="caption-top table table-sm table-striped small">
+<div aria-describedby="T_5a31f-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="T_5a31f" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th id="T_0b735_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Index</th>
-<th id="T_0b735_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Name</th>
-<th id="T_0b735_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Description</th>
-<th id="T_0b735_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Brand</th>
-<th id="T_0b735_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Category</th>
-<th id="T_0b735_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Price</th>
-<th id="T_0b735_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Currency</th>
-<th id="T_0b735_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Stock</th>
-<th id="T_0b735_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">EAN</th>
-<th id="T_0b735_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">Color</th>
-<th id="T_0b735_level0_col10" class="col_heading level0 col10" data-quarto-table-cell-role="th">Size</th>
-<th id="T_0b735_level0_col11" class="col_heading level0 col11" data-quarto-table-cell-role="th">Availability</th>
-<th id="T_0b735_level0_col12" class="col_heading level0 col12" data-quarto-table-cell-role="th">Internal ID</th>
+<th id="T_5a31f_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Index</th>
+<th id="T_5a31f_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Name</th>
+<th id="T_5a31f_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Description</th>
+<th id="T_5a31f_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Brand</th>
+<th id="T_5a31f_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Category</th>
+<th id="T_5a31f_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Price</th>
+<th id="T_5a31f_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Currency</th>
+<th id="T_5a31f_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Stock</th>
+<th id="T_5a31f_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">EAN</th>
+<th id="T_5a31f_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">Color</th>
+<th id="T_5a31f_level0_col10" class="col_heading level0 col10" data-quarto-table-cell-role="th">Size</th>
+<th id="T_5a31f_level0_col11" class="col_heading level0 col11" data-quarto-table-cell-role="th">Availability</th>
+<th id="T_5a31f_level0_col12" class="col_heading level0 col12" data-quarto-table-cell-role="th">Internal ID</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_0b735_row0_col0" class="data row0 col0">1</td>
-<td id="T_0b735_row0_col1" class="data row0 col1">Thermostat Drone Heater</td>
-<td id="T_0b735_row0_col2" class="data row0 col2">Consumer approach woman us those star.</td>
-<td id="T_0b735_row0_col3" class="data row0 col3">Bradford-Yu</td>
-<td id="T_0b735_row0_col4" class="data row0 col4">Kitchen Appliances</td>
-<td id="T_0b735_row0_col5" class="data row0 col5">74</td>
-<td id="T_0b735_row0_col6" class="data row0 col6">USD</td>
-<td id="T_0b735_row0_col7" class="data row0 col7">139</td>
-<td id="T_0b735_row0_col8" class="data row0 col8">8619793560985</td>
-<td id="T_0b735_row0_col9" class="data row0 col9">Orchid</td>
-<td id="T_0b735_row0_col10" class="data row0 col10">Medium</td>
-<td id="T_0b735_row0_col11" class="data row0 col11">backorder</td>
-<td id="T_0b735_row0_col12" class="data row0 col12">38</td>
+<td id="T_5a31f_row0_col0" class="data row0 col0">1</td>
+<td id="T_5a31f_row0_col1" class="data row0 col1">Thermostat Drone Heater</td>
+<td id="T_5a31f_row0_col2" class="data row0 col2">Consumer approach woman us those star.</td>
+<td id="T_5a31f_row0_col3" class="data row0 col3">Bradford-Yu</td>
+<td id="T_5a31f_row0_col4" class="data row0 col4">Kitchen Appliances</td>
+<td id="T_5a31f_row0_col5" class="data row0 col5">74</td>
+<td id="T_5a31f_row0_col6" class="data row0 col6">USD</td>
+<td id="T_5a31f_row0_col7" class="data row0 col7">139</td>
+<td id="T_5a31f_row0_col8" class="data row0 col8">8619793560985</td>
+<td id="T_5a31f_row0_col9" class="data row0 col9">Orchid</td>
+<td id="T_5a31f_row0_col10" class="data row0 col10">Medium</td>
+<td id="T_5a31f_row0_col11" class="data row0 col11">backorder</td>
+<td id="T_5a31f_row0_col12" class="data row0 col12">38</td>
 </tr>
 <tr class="even">
-<td id="T_0b735_row1_col0" class="data row1 col0">2</td>
-<td id="T_0b735_row1_col1" class="data row1 col1">Ultra Speaker Iron Grill Advanced One</td>
-<td id="T_0b735_row1_col2" class="data row1 col2">Point suggest easy money operation could white.</td>
-<td id="T_0b735_row1_col3" class="data row1 col3">Douglas Group</td>
-<td id="T_0b735_row1_col4" class="data row1 col4">Fitness Equipment</td>
-<td id="T_0b735_row1_col5" class="data row1 col5">510</td>
-<td id="T_0b735_row1_col6" class="data row1 col6">USD</td>
-<td id="T_0b735_row1_col7" class="data row1 col7">351</td>
-<td id="T_0b735_row1_col8" class="data row1 col8">3057216124300</td>
-<td id="T_0b735_row1_col9" class="data row1 col9">MediumSeaGreen</td>
-<td id="T_0b735_row1_col10" class="data row1 col10">Small</td>
-<td id="T_0b735_row1_col11" class="data row1 col11">backorder</td>
-<td id="T_0b735_row1_col12" class="data row1 col12">27</td>
+<td id="T_5a31f_row1_col0" class="data row1 col0">2</td>
+<td id="T_5a31f_row1_col1" class="data row1 col1">Ultra Speaker Iron Grill Advanced One</td>
+<td id="T_5a31f_row1_col2" class="data row1 col2">Point suggest easy money operation could white.</td>
+<td id="T_5a31f_row1_col3" class="data row1 col3">Douglas Group</td>
+<td id="T_5a31f_row1_col4" class="data row1 col4">Fitness Equipment</td>
+<td id="T_5a31f_row1_col5" class="data row1 col5">510</td>
+<td id="T_5a31f_row1_col6" class="data row1 col6">USD</td>
+<td id="T_5a31f_row1_col7" class="data row1 col7">351</td>
+<td id="T_5a31f_row1_col8" class="data row1 col8">3057216124300</td>
+<td id="T_5a31f_row1_col9" class="data row1 col9">MediumSeaGreen</td>
+<td id="T_5a31f_row1_col10" class="data row1 col10">Small</td>
+<td id="T_5a31f_row1_col11" class="data row1 col11">backorder</td>
+<td id="T_5a31f_row1_col12" class="data row1 col12">27</td>
 </tr>
 <tr class="odd">
-<td id="T_0b735_row2_col0" class="data row2 col0">3</td>
-<td id="T_0b735_row2_col1" class="data row2 col1">Watch Headphones Kettle</td>
-<td id="T_0b735_row2_col2" class="data row2 col2">Reach husband education.</td>
-<td id="T_0b735_row2_col3" class="data row2 col3">Landry-Austin</td>
-<td id="T_0b735_row2_col4" class="data row2 col4">Beauty &amp; Personal Care</td>
-<td id="T_0b735_row2_col5" class="data row2 col5">254</td>
-<td id="T_0b735_row2_col6" class="data row2 col6">USD</td>
-<td id="T_0b735_row2_col7" class="data row2 col7">409</td>
-<td id="T_0b735_row2_col8" class="data row2 col8">9825254410556</td>
-<td id="T_0b735_row2_col9" class="data row2 col9">Lavender</td>
-<td id="T_0b735_row2_col10" class="data row2 col10">XXL</td>
-<td id="T_0b735_row2_col11" class="data row2 col11">pre_order</td>
-<td id="T_0b735_row2_col12" class="data row2 col12">2</td>
+<td id="T_5a31f_row2_col0" class="data row2 col0">3</td>
+<td id="T_5a31f_row2_col1" class="data row2 col1">Watch Headphones Kettle</td>
+<td id="T_5a31f_row2_col2" class="data row2 col2">Reach husband education.</td>
+<td id="T_5a31f_row2_col3" class="data row2 col3">Landry-Austin</td>
+<td id="T_5a31f_row2_col4" class="data row2 col4">Beauty &amp; Personal Care</td>
+<td id="T_5a31f_row2_col5" class="data row2 col5">254</td>
+<td id="T_5a31f_row2_col6" class="data row2 col6">USD</td>
+<td id="T_5a31f_row2_col7" class="data row2 col7">409</td>
+<td id="T_5a31f_row2_col8" class="data row2 col8">9825254410556</td>
+<td id="T_5a31f_row2_col9" class="data row2 col9">Lavender</td>
+<td id="T_5a31f_row2_col10" class="data row2 col10">XXL</td>
+<td id="T_5a31f_row2_col11" class="data row2 col11">pre_order</td>
+<td id="T_5a31f_row2_col12" class="data row2 col12">2</td>
 </tr>
 <tr class="even">
-<td id="T_0b735_row3_col0" class="data row3 col0">4</td>
-<td id="T_0b735_row3_col1" class="data row3 col1">Portable Toaster Clock Monitor Silent</td>
-<td id="T_0b735_row3_col2" class="data row3 col2">Always choose school poor table main.</td>
-<td id="T_0b735_row3_col3" class="data row3 col3">Odom, Norton and Foster</td>
-<td id="T_0b735_row3_col4" class="data row3 col4">Makeup</td>
-<td id="T_0b735_row3_col5" class="data row3 col5">69</td>
-<td id="T_0b735_row3_col6" class="data row3 col6">USD</td>
-<td id="T_0b735_row3_col7" class="data row3 col7">119</td>
-<td id="T_0b735_row3_col8" class="data row3 col8">9490814777808</td>
-<td id="T_0b735_row3_col9" class="data row3 col9">Pink</td>
-<td id="T_0b735_row3_col10" class="data row3 col10">XL</td>
-<td id="T_0b735_row3_col11" class="data row3 col11">in_stock</td>
-<td id="T_0b735_row3_col12" class="data row3 col12">94</td>
+<td id="T_5a31f_row3_col0" class="data row3 col0">4</td>
+<td id="T_5a31f_row3_col1" class="data row3 col1">Portable Toaster Clock Monitor Silent</td>
+<td id="T_5a31f_row3_col2" class="data row3 col2">Always choose school poor table main.</td>
+<td id="T_5a31f_row3_col3" class="data row3 col3">Odom, Norton and Foster</td>
+<td id="T_5a31f_row3_col4" class="data row3 col4">Makeup</td>
+<td id="T_5a31f_row3_col5" class="data row3 col5">69</td>
+<td id="T_5a31f_row3_col6" class="data row3 col6">USD</td>
+<td id="T_5a31f_row3_col7" class="data row3 col7">119</td>
+<td id="T_5a31f_row3_col8" class="data row3 col8">9490814777808</td>
+<td id="T_5a31f_row3_col9" class="data row3 col9">Pink</td>
+<td id="T_5a31f_row3_col10" class="data row3 col10">XL</td>
+<td id="T_5a31f_row3_col11" class="data row3 col11">in_stock</td>
+<td id="T_5a31f_row3_col12" class="data row3 col12">94</td>
 </tr>
 <tr class="odd">
-<td id="T_0b735_row4_col0" class="data row4 col0">5</td>
-<td id="T_0b735_row4_col1" class="data row4 col1">Pro Toaster Oven</td>
-<td id="T_0b735_row4_col2" class="data row4 col2">Worry put discuss easy back too career.</td>
-<td id="T_0b735_row4_col3" class="data row4 col3">Fowler, Mendoza and Mcdaniel</td>
-<td id="T_0b735_row4_col4" class="data row4 col4">Automotive</td>
-<td id="T_0b735_row4_col5" class="data row4 col5">525</td>
-<td id="T_0b735_row4_col6" class="data row4 col6">USD</td>
-<td id="T_0b735_row4_col7" class="data row4 col7">727</td>
-<td id="T_0b735_row4_col8" class="data row4 col8">4726650403799</td>
-<td id="T_0b735_row4_col9" class="data row4 col9">LightCoral</td>
-<td id="T_0b735_row4_col10" class="data row4 col10">XL</td>
-<td id="T_0b735_row4_col11" class="data row4 col11">in_stock</td>
-<td id="T_0b735_row4_col12" class="data row4 col12">95</td>
+<td id="T_5a31f_row4_col0" class="data row4 col0">5</td>
+<td id="T_5a31f_row4_col1" class="data row4 col1">Pro Toaster Oven</td>
+<td id="T_5a31f_row4_col2" class="data row4 col2">Worry put discuss easy back too career.</td>
+<td id="T_5a31f_row4_col3" class="data row4 col3">Fowler, Mendoza and Mcdaniel</td>
+<td id="T_5a31f_row4_col4" class="data row4 col4">Automotive</td>
+<td id="T_5a31f_row4_col5" class="data row4 col5">525</td>
+<td id="T_5a31f_row4_col6" class="data row4 col6">USD</td>
+<td id="T_5a31f_row4_col7" class="data row4 col7">727</td>
+<td id="T_5a31f_row4_col8" class="data row4 col8">4726650403799</td>
+<td id="T_5a31f_row4_col9" class="data row4 col9">LightCoral</td>
+<td id="T_5a31f_row4_col10" class="data row4 col10">XL</td>
+<td id="T_5a31f_row4_col11" class="data row4 col11">in_stock</td>
+<td id="T_5a31f_row4_col12" class="data row4 col12">95</td>
 </tr>
 <tr class="even">
-<td id="T_0b735_row5_col0" class="data row5 col0">6</td>
-<td id="T_0b735_row5_col1" class="data row5 col1">Mini Speakerphone Mixer</td>
-<td id="T_0b735_row5_col2" class="data row5 col2">Tell figure discussion chair red keep tough.</td>
-<td id="T_0b735_row5_col3" class="data row5 col3">Burton-Gould</td>
-<td id="T_0b735_row5_col4" class="data row5 col4">Team Sports</td>
-<td id="T_0b735_row5_col5" class="data row5 col5">413</td>
-<td id="T_0b735_row5_col6" class="data row5 col6">USD</td>
-<td id="T_0b735_row5_col7" class="data row5 col7">566</td>
-<td id="T_0b735_row5_col8" class="data row5 col8">9016454988741</td>
-<td id="T_0b735_row5_col9" class="data row5 col9">OliveDrab</td>
-<td id="T_0b735_row5_col10" class="data row5 col10">Medium</td>
-<td id="T_0b735_row5_col11" class="data row5 col11">out_of_stock</td>
-<td id="T_0b735_row5_col12" class="data row5 col12">44</td>
+<td id="T_5a31f_row5_col0" class="data row5 col0">6</td>
+<td id="T_5a31f_row5_col1" class="data row5 col1">Mini Speakerphone Mixer</td>
+<td id="T_5a31f_row5_col2" class="data row5 col2">Tell figure discussion chair red keep tough.</td>
+<td id="T_5a31f_row5_col3" class="data row5 col3">Burton-Gould</td>
+<td id="T_5a31f_row5_col4" class="data row5 col4">Team Sports</td>
+<td id="T_5a31f_row5_col5" class="data row5 col5">413</td>
+<td id="T_5a31f_row5_col6" class="data row5 col6">USD</td>
+<td id="T_5a31f_row5_col7" class="data row5 col7">566</td>
+<td id="T_5a31f_row5_col8" class="data row5 col8">9016454988741</td>
+<td id="T_5a31f_row5_col9" class="data row5 col9">OliveDrab</td>
+<td id="T_5a31f_row5_col10" class="data row5 col10">Medium</td>
+<td id="T_5a31f_row5_col11" class="data row5 col11">out_of_stock</td>
+<td id="T_5a31f_row5_col12" class="data row5 col12">44</td>
 </tr>
 <tr class="odd">
-<td id="T_0b735_row6_col0" class="data row6 col0">7</td>
-<td id="T_0b735_row6_col1" class="data row6 col1">Eco Cooler Printer Speaker Prime Prime</td>
-<td id="T_0b735_row6_col2" class="data row6 col2">Cover close myself camera red evening.</td>
-<td id="T_0b735_row6_col3" class="data row6 col3">Soto, Raymond and Doyle</td>
-<td id="T_0b735_row6_col4" class="data row6 col4">Health &amp; Wellness</td>
-<td id="T_0b735_row6_col5" class="data row6 col5">621</td>
-<td id="T_0b735_row6_col6" class="data row6 col6">USD</td>
-<td id="T_0b735_row6_col7" class="data row6 col7">245</td>
-<td id="T_0b735_row6_col8" class="data row6 col8">4116090222997</td>
-<td id="T_0b735_row6_col9" class="data row6 col9">Moccasin</td>
-<td id="T_0b735_row6_col10" class="data row6 col10">Extra Large</td>
-<td id="T_0b735_row6_col11" class="data row6 col11">limited_stock</td>
-<td id="T_0b735_row6_col12" class="data row6 col12">1</td>
+<td id="T_5a31f_row6_col0" class="data row6 col0">7</td>
+<td id="T_5a31f_row6_col1" class="data row6 col1">Eco Cooler Printer Speaker Prime Prime</td>
+<td id="T_5a31f_row6_col2" class="data row6 col2">Cover close myself camera red evening.</td>
+<td id="T_5a31f_row6_col3" class="data row6 col3">Soto, Raymond and Doyle</td>
+<td id="T_5a31f_row6_col4" class="data row6 col4">Health &amp; Wellness</td>
+<td id="T_5a31f_row6_col5" class="data row6 col5">621</td>
+<td id="T_5a31f_row6_col6" class="data row6 col6">USD</td>
+<td id="T_5a31f_row6_col7" class="data row6 col7">245</td>
+<td id="T_5a31f_row6_col8" class="data row6 col8">4116090222997</td>
+<td id="T_5a31f_row6_col9" class="data row6 col9">Moccasin</td>
+<td id="T_5a31f_row6_col10" class="data row6 col10">Extra Large</td>
+<td id="T_5a31f_row6_col11" class="data row6 col11">limited_stock</td>
+<td id="T_5a31f_row6_col12" class="data row6 col12">1</td>
 </tr>
 <tr class="even">
-<td id="T_0b735_row7_col0" class="data row7 col0">8</td>
-<td id="T_0b735_row7_col1" class="data row7 col1">Webcam Trimmer Projector</td>
-<td id="T_0b735_row7_col2" class="data row7 col2">Fear fight until market court worry security trouble.</td>
-<td id="T_0b735_row7_col3" class="data row7 col3">Padilla, Dunn and Pruitt</td>
-<td id="T_0b735_row7_col4" class="data row7 col4">Laptops &amp; Computers</td>
-<td id="T_0b735_row7_col5" class="data row7 col5">414</td>
-<td id="T_0b735_row7_col6" class="data row7 col6">USD</td>
-<td id="T_0b735_row7_col7" class="data row7 col7">559</td>
-<td id="T_0b735_row7_col8" class="data row7 col8">4970509402222</td>
-<td id="T_0b735_row7_col9" class="data row7 col9">HoneyDew</td>
-<td id="T_0b735_row7_col10" class="data row7 col10">XL</td>
-<td id="T_0b735_row7_col11" class="data row7 col11">limited_stock</td>
-<td id="T_0b735_row7_col12" class="data row7 col12">27</td>
+<td id="T_5a31f_row7_col0" class="data row7 col0">8</td>
+<td id="T_5a31f_row7_col1" class="data row7 col1">Webcam Trimmer Projector</td>
+<td id="T_5a31f_row7_col2" class="data row7 col2">Fear fight until market court worry security trouble.</td>
+<td id="T_5a31f_row7_col3" class="data row7 col3">Padilla, Dunn and Pruitt</td>
+<td id="T_5a31f_row7_col4" class="data row7 col4">Laptops &amp; Computers</td>
+<td id="T_5a31f_row7_col5" class="data row7 col5">414</td>
+<td id="T_5a31f_row7_col6" class="data row7 col6">USD</td>
+<td id="T_5a31f_row7_col7" class="data row7 col7">559</td>
+<td id="T_5a31f_row7_col8" class="data row7 col8">4970509402222</td>
+<td id="T_5a31f_row7_col9" class="data row7 col9">HoneyDew</td>
+<td id="T_5a31f_row7_col10" class="data row7 col10">XL</td>
+<td id="T_5a31f_row7_col11" class="data row7 col11">limited_stock</td>
+<td id="T_5a31f_row7_col12" class="data row7 col12">27</td>
 </tr>
 <tr class="odd">
-<td id="T_0b735_row8_col0" class="data row8 col0">9</td>
-<td id="T_0b735_row8_col1" class="data row8 col1">Silent Headphones Stove Wireless Air Clean</td>
-<td id="T_0b735_row8_col2" class="data row8 col2">Truth gun Democrat commercial.</td>
-<td id="T_0b735_row8_col3" class="data row8 col3">Hughes and Sons</td>
-<td id="T_0b735_row8_col4" class="data row8 col4">Home &amp; Kitchen</td>
-<td id="T_0b735_row8_col5" class="data row8 col5">858</td>
-<td id="T_0b735_row8_col6" class="data row8 col6">USD</td>
-<td id="T_0b735_row8_col7" class="data row8 col7">525</td>
-<td id="T_0b735_row8_col8" class="data row8 col8">4349285091157</td>
-<td id="T_0b735_row8_col9" class="data row8 col9">Chocolate</td>
-<td id="T_0b735_row8_col10" class="data row8 col10">5x7 in</td>
-<td id="T_0b735_row8_col11" class="data row8 col11">discontinued</td>
-<td id="T_0b735_row8_col12" class="data row8 col12">16</td>
+<td id="T_5a31f_row8_col0" class="data row8 col0">9</td>
+<td id="T_5a31f_row8_col1" class="data row8 col1">Silent Headphones Stove Wireless Air Clean</td>
+<td id="T_5a31f_row8_col2" class="data row8 col2">Truth gun Democrat commercial.</td>
+<td id="T_5a31f_row8_col3" class="data row8 col3">Hughes and Sons</td>
+<td id="T_5a31f_row8_col4" class="data row8 col4">Home &amp; Kitchen</td>
+<td id="T_5a31f_row8_col5" class="data row8 col5">858</td>
+<td id="T_5a31f_row8_col6" class="data row8 col6">USD</td>
+<td id="T_5a31f_row8_col7" class="data row8 col7">525</td>
+<td id="T_5a31f_row8_col8" class="data row8 col8">4349285091157</td>
+<td id="T_5a31f_row8_col9" class="data row8 col9">Chocolate</td>
+<td id="T_5a31f_row8_col10" class="data row8 col10">5x7 in</td>
+<td id="T_5a31f_row8_col11" class="data row8 col11">discontinued</td>
+<td id="T_5a31f_row8_col12" class="data row8 col12">16</td>
 </tr>
 <tr class="even">
-<td id="T_0b735_row9_col0" class="data row9 col0">10</td>
-<td id="T_0b735_row9_col1" class="data row9 col1">Wireless Charger Air Premium Ultra</td>
-<td id="T_0b735_row9_col2" class="data row9 col2">Public security home.</td>
-<td id="T_0b735_row9_col3" class="data row9 col3">Mcbride-Wyatt</td>
-<td id="T_0b735_row9_col4" class="data row9 col4">Health &amp; Wellness</td>
-<td id="T_0b735_row9_col5" class="data row9 col5">153</td>
-<td id="T_0b735_row9_col6" class="data row9 col6">USD</td>
-<td id="T_0b735_row9_col7" class="data row9 col7">550</td>
-<td id="T_0b735_row9_col8" class="data row9 col8">1301175488525</td>
-<td id="T_0b735_row9_col9" class="data row9 col9">MediumPurple</td>
-<td id="T_0b735_row9_col10" class="data row9 col10">S</td>
-<td id="T_0b735_row9_col11" class="data row9 col11">in_stock</td>
-<td id="T_0b735_row9_col12" class="data row9 col12">4</td>
+<td id="T_5a31f_row9_col0" class="data row9 col0">10</td>
+<td id="T_5a31f_row9_col1" class="data row9 col1">Wireless Charger Air Premium Ultra</td>
+<td id="T_5a31f_row9_col2" class="data row9 col2">Public security home.</td>
+<td id="T_5a31f_row9_col3" class="data row9 col3">Mcbride-Wyatt</td>
+<td id="T_5a31f_row9_col4" class="data row9 col4">Health &amp; Wellness</td>
+<td id="T_5a31f_row9_col5" class="data row9 col5">153</td>
+<td id="T_5a31f_row9_col6" class="data row9 col6">USD</td>
+<td id="T_5a31f_row9_col7" class="data row9 col7">550</td>
+<td id="T_5a31f_row9_col8" class="data row9 col8">1301175488525</td>
+<td id="T_5a31f_row9_col9" class="data row9 col9">MediumPurple</td>
+<td id="T_5a31f_row9_col10" class="data row9 col10">S</td>
+<td id="T_5a31f_row9_col11" class="data row9 col11">in_stock</td>
+<td id="T_5a31f_row9_col12" class="data row9 col12">4</td>
 </tr>
 </tbody>
 </table>
