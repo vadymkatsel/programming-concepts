@@ -64,6 +64,10 @@ website:
         - section: "Обробка даних з JSON та CSV"
           contents:
             - courses/math-course/modules/json-csv-basics.qmd
+
+        - section: "Вступ до ООП"
+          contents:
+            - courses/math-course/modules/intro-to-oop/intro-to-oop-practice.qmd
             
       active-modes: [courses/math-course]
 
