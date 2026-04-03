@@ -12,12 +12,26 @@ format:
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 ---
 
+<!------------------------>
+<!-- Structure template -->
+<!------------------------> 
+
 ## Topic
 
-## 📌 План заняття: 
+### 📌 План заняття: 
 -   
 
-### 👨‍💻 Live coding 1:
+### 📝 Cheat Sheet:
+
+#### Subtopic 1
+
+#### Subtopic 2
+
+#### Subtopic 3
+
+### [] Topic 1
+
+#### 👨‍💻 Live coding 1:
 
 **Контекст:** 
 
@@ -33,7 +47,9 @@ format:
 
 **Очікуваний результат:** 
 
-### Live Coding 2: 
+### [] Topic 2
+
+#### 👨‍💻 Live Coding 2: 
 
 **Контекст:** 
 
@@ -41,7 +57,7 @@ format:
 
 **Очікуваний результат:** 
 
-#### Guided Practice:
+#### 🛠 Guided Practice:
 
 **Контекст:** 
 
@@ -49,7 +65,9 @@ format:
 
 **Очікуваний результат:** 
 
-### Live Coding 3:
+### [] Topic 3
+
+#### 👨‍💻 Live Coding 3:
 
 **Контекст:** 
 
@@ -57,10 +75,34 @@ format:
 
 **Очікуваний результат:** 
 
-#### Guided Practice:
+#### 🛠 Guided Practice:
 
 **Контекст:** 
 
 **Вхідні дані:** 
 
 **Очікуваний результат:** 
+
+<!-------------->
+<!-- Callouts -->
+<!-------------->
+
+:::callout-tip
+# Підказка
+...
+:::
+
+:::callout-warning
+# Зауважте!
+...
+:::
+
+:::callout-note
+# Примітка
+...
+:::
+
+:::callout-important
+# Важливо!
+...
+:::

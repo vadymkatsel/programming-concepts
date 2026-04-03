@@ -68,6 +68,11 @@ website:
         - section: "Вступ до ООП"
           contents:
             - courses/math-course/modules/intro-to-oop/intro-to-oop-practice.qmd
+
+        - section: "Базова робота з бібліотеками"
+          contents:
+            - courses/math-course/modules/libraries/pandas-matplotlib-practice.qmd
+            - courses/math-course/modules/libraries/numpy-practice.qmd
             
       active-modes: [courses/math-course]
 
