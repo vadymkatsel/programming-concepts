@@ -282,7 +282,7 @@ body {
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.6), 
         rgba(0, 0, 0, 0.9)  
-    ), url('sources/math-card-img.jpg');
+    ), url('sources/math-card-img.avif');
     
     background-size: cover;
     background-position: center;
@@ -296,7 +296,7 @@ body {
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.6), 
         rgba(0, 0, 0, 0.9) 
-    ), url(sources/be-card-img.jpg);
+    ), url(sources/be-card-img.avif);
 }
 
 /* HOVERS */
