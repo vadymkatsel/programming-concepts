@@ -1,0 +1,15 @@
+---
+title: "👋🏻 Вітаємо на курсі!"
+toc: true
+lang: ua
+execute:
+  eval: false
+page-layout: full
+---
+
+<div style="text-align: center; padding: 100px 20px; opacity: 0.6;">
+
+## 🚧 Модуль у розробці
+### Повертайтеся незабаром!
+
+</div>
