@@ -98,11 +98,24 @@
         document.addEventListener('DOMContentLoaded', () => {
             const burgerBtn = document.querySelector('.burger-btn');
             const nav = document.querySelector('.desktop-nav');
+            const header = document.querySelector('.header');
 
             if (burgerBtn && nav) {
                 burgerBtn.addEventListener('click', () => {
                     nav.classList.toggle('active');
                     burgerBtn.classList.toggle('is-active');
+                });
+            }
+
+            if (header) {
+                let lastScrollY = window.scrollY;
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                        header.classList.add('header--hidden');
+                    } else {
+                        header.classList.remove('header--hidden');
+                    }
+                    lastScrollY = window.scrollY;
                 });
             }
         });

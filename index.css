@@ -145,6 +145,12 @@ body {
   position: sticky;
   top: var(--space-base);
   z-index: 100;
+
+  transition: top 0.3s ease;
+}
+
+.header--hidden {
+    top: -150px;
 }
 
 .desktop-nav {
