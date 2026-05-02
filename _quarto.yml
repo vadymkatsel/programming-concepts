@@ -36,9 +36,7 @@ website:
       search: true 
       collapse-level: 1
       contents:
-        - section: "Вступ та підготовка до курсу"
-          contents:
-            - courses/math-course/modules/index.qmd 
+        - courses/math-course/modules/index.qmd 
         
         - section: "Змінні, типи даних. Математичні операції в Python"
           contents:
@@ -83,9 +81,7 @@ website:
       search: true 
       collapse-level: 1
       contents:
-        - section: "Вступ та підготовка до курсу"
-          contents:
-            - courses/be-course/modules/index.qmd 
+        - courses/be-course/modules/index.qmd 
   
         - section: "Змінні, типи даних. Математичні операції в Python"
           contents: 
