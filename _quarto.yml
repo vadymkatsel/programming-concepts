@@ -22,10 +22,13 @@ website:
   navbar:
       logo: sources/logo.svg
       right:
+        - href: courses/ebd-course/modules/index.qmd
+          text: "Економіка & Великі дані"
         - href: courses/math-course/modules/index.qmd
           text: "Математика"
         - href: courses/be-course/modules/index.qmd
           text: "Бізнес Економіка"
+
   
   sidebar:
     - id: math-sidebar
@@ -116,6 +119,17 @@ website:
             - courses/be-course/modules/libraries-json-practice.qmd
 
       active-modes: [courses/be-course]
+
+    - id: ebd-sidebar
+      search: true 
+      collapse-level: 1
+      contents:
+        - courses/ebd-course/modules/index.qmd 
+        # - section: "Середовище програмування. Основи Python"
+        #   contents:
+        #     - 
+
+      active-modes: [courses/ebd-course]
 
 format:
   html:
