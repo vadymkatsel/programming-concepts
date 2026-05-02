@@ -39,40 +39,53 @@
 
     <main class="main-content">
         <section class="hero-card glass-effect">
-            <div class="hero-top">
-                <h1 class="hero-title">
-                Programming<br>
-                Concepts<br>
-                <span class="text-accent">Course</span>
-                </h1>
-            </div>
+            <h1 class="hero-title">
+            Programming<br>
+            Concepts<br>
+            <span class="text-accent">Course</span>
+            </h1>
             
-            <div class="hero-bottom">
-                <hr class="accent-divider">
-                <p class="hero-desc">
-                Інтерактивний курс, що відкриває
-                двері до світу програмування
-                </p>
-            </div>
+            <hr class="accent-divider">
+            <p class="hero-desc">
+            Інтерактивний курс, що відкриває<br>
+            двері до світу програмування
+            </p>
         </section>
 
-        <section class="courses-column">
+        <h2 class="mobile-section-title">Доступні курси</h2>
+        <section class="courses-row">
 
+            <a href="courses/ebd-course/modules/index.html" class="course-card ebd-bg glass-effect">
+                <div class="course-info">
+                    <h2 class="course-title">Економіка & Великі дані</h2>
+                    <p class="course-desc">Робота з великими даними та сучасне економічне моделювання</p>
+                </div>
+                <div class="card-controls">
+                    <span class="badge badge-planned">В розробці</span>
+                    <span class="arrow-link course-link" aria-label="Перейти до курсу Економіка & Великі дані"></span>
+                </div>
+            </a>
+            
             <a href="courses/math-course/modules/index.html" class="course-card math-bg glass-effect">
                 <div class="course-info">
                     <h2 class="course-title">Прикладна математика</h2>
                     <p class="course-desc">Математичні алгоритми, логіка та основи програмування</p>
                 </div>
-                <span class="arrow-link course-link" aria-label="Перейти до курсу Прикладна математика"></span>
+                <div class="card-controls">
+                    <span class="badge badge-active">Активний</span>
+                    <span class="arrow-link course-link" aria-label="Перейти до курсу Прикладна математика"></span>
+                </div>
             </a>
 
             <a href="courses/be-course/modules/index.html" class="course-card econ-bg glass-effect">
                 <div class="course-info">
-                    <h2 class="course-title">Бізнес економіка</h2>
-                    <p class="course-desc">Прикладний аналіз бізнес-даних та робота з ключовими показниками.</p>
+                    <h2 class="course-title">Бізнес Економіка</h2>
+                    <p class="course-desc">Прикладний аналіз бізнес-даних та робота з ключовими показниками</p>
                 </div>
-                
-                <span class="arrow-link course-link" aria-label="Перейти до курсу Бізнес Економіка"></span>
+                <div class="card-controls">
+                    <span class="badge badge-complete">Завершений</span>
+                    <span class="arrow-link course-link" aria-label="Перейти до курсу Бізнес Економіка"></span>
+                </div>
             </a>
         </section>
     </main>
@@ -85,11 +98,24 @@
         document.addEventListener('DOMContentLoaded', () => {
             const burgerBtn = document.querySelector('.burger-btn');
             const nav = document.querySelector('.desktop-nav');
+            const header = document.querySelector('.header');
 
             if (burgerBtn && nav) {
                 burgerBtn.addEventListener('click', () => {
                     nav.classList.toggle('active');
                     burgerBtn.classList.toggle('is-active');
+                });
+            }
+
+            if (header) {
+                let lastScrollY = window.scrollY;
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                        header.classList.add('header--hidden');
+                    } else {
+                        header.classList.remove('header--hidden');
+                    }
+                    lastScrollY = window.scrollY;
                 });
             }
         });

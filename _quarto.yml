@@ -22,10 +22,13 @@ website:
   navbar:
       logo: sources/logo.svg
       right:
+        - href: courses/ebd-course/modules/index.qmd
+          text: "Економіка & Великі дані"
         - href: courses/math-course/modules/index.qmd
           text: "Математика"
         - href: courses/be-course/modules/index.qmd
           text: "Бізнес Економіка"
+
   
   sidebar:
     - id: math-sidebar
@@ -33,9 +36,7 @@ website:
       search: true 
       collapse-level: 1
       contents:
-        - section: "Вступ та підготовка до курсу"
-          contents:
-            - courses/math-course/modules/index.qmd 
+        - courses/math-course/modules/index.qmd 
         
         - section: "Змінні, типи даних. Математичні операції в Python"
           contents:
@@ -80,9 +81,7 @@ website:
       search: true 
       collapse-level: 1
       contents:
-        - section: "Вступ та підготовка до курсу"
-          contents:
-            - courses/be-course/modules/index.qmd 
+        - courses/be-course/modules/index.qmd 
   
         - section: "Змінні, типи даних. Математичні операції в Python"
           contents: 
@@ -117,8 +116,27 @@ website:
 
       active-modes: [courses/be-course]
 
+    - id: ebd-sidebar
+      search: true 
+      collapse-level: 1
+      contents:
+        - courses/ebd-course/modules/index.qmd 
+        # - section: "Середовище програмування. Основи Python"
+        #   contents:
+        #     - 
+
+      active-modes: [courses/ebd-course]
+
 format:
+  typst:
+    toc: true
+    number-sections: false
   html:
+    format-links: false
+    other-links:
+      - text: "Завантажити PDF"
+        icon: file-pdf
+        href: index.pdf
     theme: 
       dark: darkly
       light: cosmo

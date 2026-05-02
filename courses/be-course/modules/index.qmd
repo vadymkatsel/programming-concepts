@@ -1,5 +1,5 @@
 ---
-title: "Вступний модуль"
+title: "👋🏻 Вітаємо на курсі!"
 author:
   - name: Vadym Katsel [Creator & Lead Developer]
   - name: Yevhenii Kozolup [Content Consultant]
@@ -14,7 +14,7 @@ page-layout: full
 
 <div style="text-align: center; padding: 100px 20px; opacity: 0.6;">
 
-## 🚧 Модуль у розробці
-### Повертайтеся незабаром!
+## 🚧 Модуль у розробці 🚧
+### Рекомендуємо переглянути інші модулі. Повертайтеся незабаром!
 
 </div>
