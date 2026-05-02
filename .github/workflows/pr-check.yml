@@ -1,0 +1,32 @@
+name: Check Quarto Build on PR
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          pip install jupyter
+          pip install pandas matplotlib numpy
+          pip install great-tables
+          
+      - name: Render Quarto Project
+        # This will render the entire site (including HTML and Typst PDFs) 
+        # to ensure there are no build errors, but it will NOT publish it.
+        run: quarto render

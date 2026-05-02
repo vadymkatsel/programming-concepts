@@ -331,6 +331,19 @@ main.content {
 }
 
 /* ============================================================
+   TOC LINKS
+   ============================================================ */
+
+#TOC > div > ul > li > a {
+  color: var(--fg-muted) !important;
+}
+
+#TOC > div > ul > li > a:hover {
+  color: var(--accent-color) !important;
+  text-decoration: none !important;
+}
+
+/* ============================================================
    FOOTER
    ============================================================ */
 .nav-footer {
@@ -501,3 +514,4 @@ footer.footer {
   }
 }
  
+

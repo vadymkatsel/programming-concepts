@@ -128,7 +128,15 @@ website:
       active-modes: [courses/ebd-course]
 
 format:
+  typst:
+    toc: true
+    number-sections: false
   html:
+    format-links: false
+    other-links:
+      - text: "Завантажити PDF"
+        icon: file-pdf
+        href: index.pdf
     theme: 
       dark: darkly
       light: cosmo
