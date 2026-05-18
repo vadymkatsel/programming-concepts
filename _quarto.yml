@@ -124,6 +124,7 @@ website:
         - section: "Середовище розробки. Основи Python"
           contents:
             - courses/ebd-course/modules/ide-variables-operations/ide-setup-ps.qmd
+            - courses/ebd-course/modules/ide-variables-operations/variables-math-ps.qmd
 
       active-modes: [courses/ebd-course]
 

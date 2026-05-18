@@ -182,6 +182,56 @@ code:not(pre code) {
 }
 
 /* ============================================================
+   PANEL TABSETS (Quarto Tabs)
+   ============================================================ */
+
+.panel-tabset {
+  margin: 2rem 0;
+}
+
+.panel-tabset .nav-tabs {
+  border-bottom: 1px solid var(--border-color) !important;
+  margin-bottom: 15px;
+  gap: 4px;
+}
+
+.panel-tabset .nav-tabs .nav-link {
+  color: var(--fg-muted) !important;
+  font-weight: 600;
+  border: none !important;
+  border-bottom: 2px solid transparent !important;
+  padding: 10px 20px !important;
+  margin-bottom: -1px !important;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.3s ease;
+  background: transparent !important;
+}
+
+.panel-tabset .nav-tabs .nav-link:hover {
+  color: var(--fg-text) !important;
+  background-color: var(--sections-bg) !important;
+  border-bottom: 2px solid var(--border-color) !important;
+}
+
+.panel-tabset .nav-tabs .nav-link.active {
+  color: var(--accent-color) !important;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 92%) !important;
+  border-bottom: 2px solid var(--accent-color) !important;
+}
+
+.panel-tabset .tab-content {
+  padding: 20px;
+  background: var(--sections-bg);
+  border: 1px solid var(--section-border);
+  border-radius: 12px;
+  
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+
+/* ============================================================
    NAVBAR
    ============================================================ */
 
