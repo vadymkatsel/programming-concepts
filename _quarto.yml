@@ -129,6 +129,7 @@ website:
         - section: "Логічні розгалудження та цикли"
           contents:
             - courses/ebd-course/modules/booleans-conditions-loops/booleans-conditions-ps.qmd
+            - courses/ebd-course/modules/booleans-conditions-loops/loops-ps.qmd
 
       active-modes: [courses/ebd-course]
 
