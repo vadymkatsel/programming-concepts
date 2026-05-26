@@ -30,13 +30,15 @@ For each sub-topic, use the following paired structure to enforce learning:
   - Done collaboratively by the instructor and students.
   - **Контекст**: Scenario or problem description.
   - **Вхідні дані**: Input data or starting code.
-  - **Очікуваний результат**: What the code should produce.
+  - **Очікуваний результат**: ONLY describe what the code should produce or output. DO NOT write the solution algorithm here (e.g., do not write "Use a for loop from 1 to 7").
+  - **Підказки (Optional)**: If the task is complex and requires a hint, use a `::: {.callout-tip}` block after the expected result.
   - **No Solutions**: NEVER include the actual solution code in the file. The instructor will write it live.
 - **`### 🛠 Guided Practice`**:
   - Independent or loosely guided work for students to solidify the concept just introduced in Live Coding.
   - **Контекст**: Slightly modified or expanded scenario of the previous Live Coding. The approach in solution is the same, the parameters or the story is what differs.
   - **Вхідні дані**: Data or starting point.
-  - **Очікуваний результат**: Expected outcome.
+  - **Очікуваний результат**: ONLY describe what the final outcome should be. DO NOT write the solution algorithm here.
+  - **Підказки (Optional)**: Use a `::: {.callout-tip}` block if a specific technical hint is needed.
   - **No Solutions**: NEVER include the actual solution code (e.g., inside a "Розв'язок" callout) in the practice file itself. The `.qmd` is for the students to solve during the session.
 
 ## 4. Progressive Difficulty

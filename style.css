@@ -105,9 +105,9 @@ pre {
 code:not(pre code) {
   background-color: var(--code-bg);
   color: var(--accent-color);
-  padding: 0.2em 0.4em;
+  padding: 0.1em 0.3em;
   border-radius: 4px;
-  font-size: 0.9em;
+  font-size: 0.85em;
   border: 1px solid var(--border-color);
 }
 
