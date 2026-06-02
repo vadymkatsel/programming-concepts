@@ -74,6 +74,51 @@ a:hover {
    TABLES
    ============================================================ */
 
+table {
+  width: 100%;
+  border-collapse: separate; 
+  border-spacing: 0;
+  margin: 2rem 0;
+  background: var(--sections-bg);
+  border: 1px solid var(--section-border);
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+table th {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--fg-text);
+  font-weight: 700;
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 2px solid var(--accent-color);
+  font-size: 0.9em;
+  letter-spacing: 0.3px;
+}
+
+table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--section-border);
+  color: var(--fg-text);
+  transition: all 0.2s ease;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+table tbody tr {
+  transition: all 0.3s ease;
+}
+
+table tbody tr:hover td {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
+  transform: scale(1.002);
+}
+
 .info-table table th {
     background-color: var(--code-bg) !important;
     color: var(--fg-text) !important;

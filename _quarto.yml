@@ -131,6 +131,10 @@ website:
             - courses/ebd-course/modules/booleans-conditions-loops/booleans-conditions-ps.qmd
             - courses/ebd-course/modules/booleans-conditions-loops/loops-ps.qmd
 
+        - section: "Списки"
+          contents:
+            - courses/ebd-course/modules/lists/lists-ps.qmd
+
       active-modes: [courses/ebd-course]
 
 format:
