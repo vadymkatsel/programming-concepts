@@ -25,7 +25,7 @@ Practical sessions should follow a structured, iterative pedagogical approach:
 
 For each sub-topic, use the following paired structure to enforce learning:
 
-- **Theory (Optional)**: A brief explanation if needed to introduce the specific problem.
+- **Theory (Optional)**: A brief, conceptual explanation if needed to introduce the specific problem. It should focus on "why" we need to do this in the real world. Do not overload this concise description with specific method names or technical syntax; keep it high-level.
 - **`### 👨‍💻 Live Coding N: [Name]`**:
   - Done collaboratively by the instructor and students.
   - **Контекст**: Scenario or problem description.
@@ -50,11 +50,12 @@ Start with simple, trivial examples (e.g., creating a base class, or writing a b
 - A dedicated section usually placed at the end of the module.
 - Contains broken code that students must analyze and fix.
 - **Format**: Must use Quarto tabsets to separate the task context from the buggy code. No solutions provided.
+
   ```quarto
   ::: {.panel-tabset}
   ### 📝 Завдання
   Context and what needs to be fixed.
-  
+
   ### 🐛 Код з помилкою
   ` ` `python
   # Code with bugs
