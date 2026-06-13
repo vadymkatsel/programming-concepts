@@ -29,3 +29,4 @@ _(Optionally include HTML headers for FontAwesome icons if needed, e.g., in the 
   - `::: {.callout-note}` - for general notes.
 - **Placeholders**: When the practice requires screenshots, repositories, or other custom content outside of standard markdown, insert clear placeholders. Use format like `![[Screenshot Placeholder: Description of what should be here]]()` for images, and `<!-- [Repository/Content Placeholder: Description] -->` for other custom notes.
 - **No Dividers**: Do not use Markdown horizontal dividers (`---`) between sections or blocks. The Quarto headers (`##`, `###`) already provide sufficient visual separation.
+- **Block Elements Spacing**: Always leave an empty line before and after block elements such as lists (`-`, `1.`), code blocks (````python````), and blockquotes (`>`). This is necessary for proper Markdown and HTML rendering in Quarto.

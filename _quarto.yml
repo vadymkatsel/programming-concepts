@@ -139,6 +139,10 @@ website:
           contents:
             - courses/ebd-course/modules/strings/strings-ps.qmd
 
+        - section: "Miscellaneous"
+          contents:
+            - courses/ebd-course/modules/miscellaneous/midterm-prep.qmd
+
       active-modes: [courses/ebd-course]
 
 format:
