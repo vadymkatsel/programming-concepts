@@ -2,8 +2,6 @@
 title: "Основи Git та GitHub"
 toc: true
 lang: ua
-execute:
-  eval: false
 page-layout: full
 format:
   html:
@@ -39,13 +37,11 @@ format:
 - **Pull Request (PR)**: Запит на GitHub, де ви просите додати ваш код до головного проєкту.
 
 ```{mermaid}
-#| fig-align: center
-#| eval: true 
-
+%%| fig-align: center
 flowchart LR
-    A["Ваш комп'ютер<br>(Локальний репозиторій)"] -->|Push| B("GitHub<br>Віддалений репозиторій")
+    A[Local Repository] -->|Push| B[Remote Repository]
     B -->|Pull| A
-    C["Чужий GitHub"] -->|Fork| B
+    C[Other GitHub] -->|Fork| B
 ```
 
 ### 🔎 Експерименти з GitHub та Git
@@ -80,9 +76,9 @@ flowchart LR
 %%| fig-align: center
 gitGraph
     commit id: "Initial Commit"
-    branch "feature/my-greeting"
-    checkout "feature/my-greeting"
-    commit id: "Моя робота"
+    branch feature-greeting
+    checkout feature-greeting
+    commit id: "Feature Added"
     checkout main
 ```
 
@@ -97,6 +93,7 @@ gitGraph
 У вашій новій гілці створіть файл `greeting.py` і напишіть всередині просту команду, яка виводить ваше ім'я:
 
 ```python
+#| eval: false
 print("Привіт, мене звати [Ваше Ім'я]")
 ```
 
@@ -118,6 +115,7 @@ print("Привіт, мене звати [Ваше Ім'я]")
 Спробуймо ще раз, щоб закріпити навичку! Залишаючись на цій же гілці, створіть ще один файл `math_magic.py` і додайте туди будь-яку просту математичну дію:
 
 ```python
+#| eval: false
 print("2 + 2 =", 2 + 2)
 ```
 
