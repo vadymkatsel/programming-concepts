@@ -78,11 +78,12 @@ gitGraph
     commit id: "Initial Commit"
     branch feature-greeting
     checkout feature-greeting
-    commit id: "Feature Added"
+    commit id: "Add greeting file"
+    commit id: "Add math logic"
     checkout main
 ```
 
-Створімо гілку з назвою `feature/my-greeting`.
+Створімо гілку з назвою `feature-greeting`.
 
 ![New Branch Creation](/courses/math-course/sources/new-branch.png)
 
@@ -133,7 +134,7 @@ print("2 + 2 =", 2 + 2)
 
 2. Ви відкриваєте PyCharm і робите **Pull** (синя стрілочка вниз ↙), щоб завантажити ці свіжі зміни з сервера на свій комп'ютер.
 
-3. Тепер вам треба злити `main` у свою гілку. Для цього у правому нижньому куті (де назва вашої гілки) натисніть на `main` $\rightarrow$ оберіть **Merge 'main' into 'feature/my-greeting'**.
+3. Тепер вам треба злити `main` у свою гілку. Для цього у правому нижньому куті (де назва вашої гілки) натисніть на `main` $\rightarrow$ оберіть **Merge 'main' into 'feature-greeting'**.
 
 4. З'являється червоне вікно **Resolve Conflicts** у PyCharm.
 
