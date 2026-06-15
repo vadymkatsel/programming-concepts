@@ -143,6 +143,10 @@ website:
           contents:
             - courses/ebd-course/modules/miscellaneous/midterm-prep.qmd
 
+        - section: "Основи роботи з Git"
+          contents:
+            - courses/ebd-course/modules/git/git-ps.qmd
+
       active-modes: [courses/ebd-course]
 
 format:
