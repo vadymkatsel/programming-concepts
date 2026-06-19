@@ -152,7 +152,6 @@ website:
           contents:
             - courses/ebd-course/modules/miscellaneous/midterm-prep.qmd
 
-
       active-modes: [courses/ebd-course]
 
 format:
