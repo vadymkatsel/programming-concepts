@@ -139,13 +139,19 @@ website:
           contents:
             - courses/ebd-course/modules/strings/strings-ps.qmd
 
-        - section: "Miscellaneous"
+        - section: "Функції"
           contents:
-            - courses/ebd-course/modules/miscellaneous/midterm-prep.qmd
+            - courses/ebd-course/modules/functions/functions-basics-ps.qmd
+            - courses/ebd-course/modules/functions/functions-scope-lambda-ps.qmd
 
         - section: "Основи роботи з Git"
           contents:
             - courses/ebd-course/modules/git/git-ps.qmd
+
+        - section: "Miscellaneous"
+          contents:
+            - courses/ebd-course/modules/miscellaneous/midterm-prep.qmd
+
 
       active-modes: [courses/ebd-course]
 
