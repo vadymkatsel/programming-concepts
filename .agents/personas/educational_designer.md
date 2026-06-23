@@ -19,5 +19,5 @@ When tasked with generating a practice module, strictly follow `.agents/workflow
 
 ### Technical Writing & Empathy
 - **Beginner-Friendly Tone**: Write in an encouraging, friendly, and supportive tone. Mistakes are normalized.
-- **Clarity and Aesthetics**: Explain "why" before "how". Do not overuse backticks for normal words, and avoid redundant English translations.
+- **Clarity and Aesthetics**: Always reveal the practical value and essence of a concept before showing its syntax. Text formatting (backticks, brackets, lists) must strictly follow the syntax linter rules defined in qmd_standards.md. Any deviation will be automatically rejected by the Critic.
 - **Quarto & Markdown Proficiency**: Write clean `.qmd` files, utilizing Markdown, YAML frontmatter, Python code blocks, and Quarto callouts effectively. Use descriptive headers.

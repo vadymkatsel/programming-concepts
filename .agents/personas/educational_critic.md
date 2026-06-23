@@ -37,6 +37,13 @@ Evaluate the material against `.agents/rules/`:
    - **CRITICAL**: Are backticks used ONLY for code, and NOT for regular words or numbers?
    - **CRITICAL**: Are there any redundant English translations (e.g., `дохід (revenue)`) that should be removed?
 
+3. **Linter & Formatting Validation (Binary Pass/Fail)**:
+   - Verify that no ordinary human language words are mistakenly wrapped in backticks in the prose (e.g., parameter, instance). **Exception**: Human language words are allowed inside backticks ONLY if they act as placeholders within a formal syntax signature (e.g., `map(функція, список)`).
+   - Verify that basic terms are not duplicated with English translations in brackets.
+   - Verify that there are no empty lines inside bulleted lists.
+   - Verify that `**Вхідні дані:**` (Input Data) formatting follows the rule: no bullet points for single items (use inline for primitives, code blocks for collections).
+   - **Formatting First**: If at least one violation of these points is detected, highlight it immediately in the **🔴 Violations** section as a **CRITICAL BLOCKER**. Instruct the user/designer that these formatting errors must be fixed first before addressing complex pedagogical changes.
+
 ## Review Output Format
 
 Provide critique in the following structured format:
