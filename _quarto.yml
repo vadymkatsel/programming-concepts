@@ -144,6 +144,11 @@ website:
             - courses/ebd-course/modules/functions/functions-basics-ps.qmd
             - courses/ebd-course/modules/functions/functions-scope-lambda-ps.qmd
 
+        - section: "Словники та List Comprehensions"
+          contents:
+            - courses/ebd-course/modules/dictionaries-ps.qmd
+            - courses/ebd-course/modules/list-comprehensions-ps.qmd
+
         - section: "Основи роботи з Git"
           contents:
             - courses/ebd-course/modules/git/git-ps.qmd
