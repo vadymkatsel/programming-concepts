@@ -7,11 +7,14 @@ execute:
 page-layout: full
 ---
 
-::: {.callout-important}
+::: {.callout-note}
 ## 🛠 Нагадування
 Ця практика виконується у тому ж репозиторії, що і практична dictionaries: `https://github.com/vkatsel/practice-dictionaries-lc`.
-Пишіть свій код у файлі `list_comprehensions_practice.py`.
-Після завершення зробіть **Pull Request** у вихідний репозиторій.
+
+1. Пишіть свій код у файлі `list_comprehensions_practice.py`.
+2. Після завершення зробіть **Pull Request** у вихідний репозиторій. 
+
+Формат заголовку PR: `practice-[group-X]-[your-name]`
 :::
 
 ## 📚 List Comprehensions: Ефективна обробка даних
@@ -23,7 +26,7 @@ page-layout: full
 -   🏃‍♂️ Warm Up
 -   🛠️ Базова трансформація даних
     -   👨‍💻 Live Coding 1: Калькулятор податків
--   🔄 Умови: Фільтрація та Тернарний оператор (If-Else)
+-   🔄 Умови: Фільтрація та Тернарний оператор
     -   👨‍💻 Live Coding 2: Нарахування штрафів
 -   🐛 Bug Hunter
 -   🏗️ Робота зі списками словників
