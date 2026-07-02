@@ -67,3 +67,8 @@ Start with simple, trivial examples and gradually build up to more complex inter
   ...
   :::
   ```
+
+## 6. Capstone (`## 🏆 Capstone: [Name]`)
+
+- A final, overarching problem that integrates all the concepts learned in the module.
+- **Constraint**: There should be only ONE Capstone per sub-module (topic). If a topic spans across multiple practice files (e.g., List Comprehensions followed by Dictionaries), the Capstone should be placed at the very end of the final practice file for that topic (e.g., at the end of Dictionaries) to serve as a "Grand Capstone" that unites both files.
