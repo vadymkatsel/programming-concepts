@@ -5,6 +5,7 @@ lang: ua
 execute:
   eval: false
 page-layout: full
+draft: true
 ---
 
 ## 📚 Вступ до списків:

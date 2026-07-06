@@ -153,6 +153,11 @@ website:
             - courses/ebd-course/modules/dictionaries-lc/list-comprehensions-ps.qmd
             - courses/ebd-course/modules/dictionaries-lc/dictionaries-ps.qmd
             
+        - section: "Обробка помилок та файли"
+          contents:
+            - courses/ebd-course/modules/errors-files/error-handling-ps.qmd
+            - courses/ebd-course/modules/errors-files/files-basics-ps.qmd
+            
 
 
         - section: "Miscellaneous"
