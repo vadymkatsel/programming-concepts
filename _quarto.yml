@@ -163,6 +163,7 @@ website:
         - section: "Miscellaneous"
           contents:
             - courses/ebd-course/modules/miscellaneous/midterm-prep.qmd
+            - courses/ebd-course/modules/miscellaneous/pre-final-recap.qmd
 
       active-modes: [courses/ebd-course]
 
