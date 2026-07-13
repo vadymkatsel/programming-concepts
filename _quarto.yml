@@ -158,7 +158,9 @@ website:
             - courses/ebd-course/modules/errors-files/error-handling-ps.qmd
             - courses/ebd-course/modules/errors-files/files-basics-ps.qmd
             
-
+        - section: "API та Бібліотеки"
+          contents:
+            - courses/ebd-course/modules/api-libraries/api-pandas-matplotlib-ps.qmd
 
         - section: "Miscellaneous"
           contents:

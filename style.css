@@ -154,6 +154,9 @@ code:not(pre code) {
   border-radius: 4px;
   font-size: 0.85em;
   border: 1px solid var(--border-color);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 .code-with-filename-file {
@@ -208,7 +211,8 @@ code:not(pre code) {
    ============================================================ */
 .figure-img {
   display: block;
-  width: 70%;
+  max-width: 100%;
+  width: auto;
   border-radius: 12px;
 }
  
