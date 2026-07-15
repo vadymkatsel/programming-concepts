@@ -76,18 +76,15 @@ df["category"] = np.where(df["age"] >= 30, "Старші", "Молодші")
 #| eval: false
 import matplotlib.pyplot as plt
 
-# 1. Створення "полотна" та графіка
-fig, ax = plt.subplots()
+# 1. Побудова графіка
+plt.plot(df["name"], df["age"], marker="o")
 
-# 2. Побудова графіка (Line plot)
-ax.plot(df["name"], df["age"], marker="o")
+# 2. Додавання підписів
+plt.title("Вік користувачів")
+plt.xlabel("Ім'я")
+plt.ylabel("Вік (роки)")
 
-# 3. Додавання підписів
-ax.set_title("Вік користувачів")
-ax.set_xlabel("Ім'я")
-ax.set_ylabel("Вік (роки)")
-
-# 4. Відображення на екрані
+# 3. Відображення на екрані
 plt.show()
 ```
 
@@ -116,11 +113,11 @@ print(fact_data["fact"])
 
 **Вхідні дані:**
 
-- Базове посилання: https://api.open-meteo.com/v1/forecast
-- Параметри запиту: 
-  - latitude: 49.8383 — широта Львова
-  - longitude: 24.0232 — довгота Львова
-  - current_weather: "true"
+- **Базове посилання:** `https://api.open-meteo.com/v1/forecast`
+- **Параметри запиту:** 
+  - `latitude`: `49.8383` — широта Львова
+  - `longitude`: `24.0232` — довгота Львова
+  - `current_weather`: `"true"`
 
 **Очікуваний результат:** Отримано відповідь від сервера, з якої виведено у консоль поточну температуру та швидкість вітру.
 
@@ -130,9 +127,9 @@ print(fact_data["fact"])
 
 **Вхідні дані:**
 
-- Базове посилання: https://api.open-meteo.com/v1/forecast
-- Координати Києва: latitude: 50.4501, longitude: 30.5234
-- Параметри: {"latitude": 50.4501, "longitude": 30.5234, "hourly": "temperature_2m,wind_speed_10m"} 
+- **Базове посилання:** `https://api.open-meteo.com/v1/forecast`
+- **Координати Києва:** широта `50.4501`, довгота `30.5234`
+- **Параметри запиту:** `{"latitude": 50.4501, "longitude": 30.5234, "hourly": "temperature_2m,wind_speed_10m"}`
 
 *Зверніть увагу, ми використовуємо ключ "hourly", щоб отримати масив даних, а не лише поточну погоду.*
 
@@ -236,7 +233,7 @@ print(f"Середня температура: {mean_temperature}")
 
 Голі цифри та консольні логи — це добре для розробників, але бізнесу потрібна наочність. Бібліотека `matplotlib` дозволяє будувати графіки будь-якої складності.
 
-Основа `matplotlib` — це концепція фігури та осей. Спочатку ви створюєте полотно за допомогою функції `plt.subplots()`, а потім малюєте на ньому об'єкти, звертаючись до `ax`.
+Для простої візуалізації ми будемо використовувати базовий підхід. Ми малюємо графік за допомогою функцій `plt.plot()` чи `plt.bar()`, потім додаємо підписи, і врешті виводимо його на екран через `plt.show()`.
 
 Існує три найпопулярніші типи графіків:
 
@@ -250,24 +247,27 @@ print(f"Середня температура: {mean_temperature}")
 #| eval: true
 import matplotlib.pyplot as plt
 
-# Створюємо одне вікно, але з трьома графіками поруч (1 рядок, 3 колонки)
-fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(12, 4))
-
 x_values = [1, 2, 3, 4]
 y_values = [10, 20, 15, 25]
 y_scatter = [12, 18, 14, 28]
 
+# Створюємо одне вікно для трьох графіків (1 рядок, 3 колонки)
+plt.figure(figsize=(12, 4))
+
 # 1. Лінійний (plot)
-ax1.plot(x_values, y_values, color="blue", marker="o")
-ax1.set_title("Лінійний графік")
+plt.subplot(1, 3, 1)
+plt.plot(x_values, y_values, color="blue", marker="o")
+plt.title("Лінійний графік")
 
 # 2. Стовпчиковий (bar)
-ax2.bar(x_values, y_values, color="orange")
-ax2.set_title("Стовпчикова діаграма")
+plt.subplot(1, 3, 2)
+plt.bar(x_values, y_values, color="orange")
+plt.title("Стовпчикова діаграма")
 
 # 3. Точковий (scatter)
-ax3.scatter(x_values, y_scatter, color="green", s=100)
-ax3.set_title("Точковий графік")
+plt.subplot(1, 3, 3)
+plt.scatter(x_values, y_scatter, color="green", s=100)
+plt.title("Точковий графік")
 
 plt.show()
 ```
@@ -291,7 +291,6 @@ plt.show()
 
 - Ваш DataFrame.
 - Виберіть перші 24 години за допомогою методу `.head()`.
-- Метод осі для стовпчикової діаграми: `.bar()`.
 
 **Очікуваний результат:** Відображено стовпчиковий графік швидкості вітру. По осі X — час, по осі Y — швидкість вітру в км/год. Обов'язково додайте власні підписи.
 
@@ -303,9 +302,9 @@ plt.show()
 
 **Вхідні дані:**
 
-- Координати Одеси: latitude 46.4825, longitude 30.7233
-- Параметри API: hourly=temperature_2m,wind_speed_10m
-- Використайте `plt.subplots(1, 2, figsize=(12, 5))` щоб створити відразу два графіки поруч в одному вікні.
+- **Координати Одеси:** широта `46.4825`, довгота `30.7233`
+- **Параметри API:** `{"hourly": "temperature_2m,wind_speed_10m"}`
+
 
 **Очікуваний результат:**
 
