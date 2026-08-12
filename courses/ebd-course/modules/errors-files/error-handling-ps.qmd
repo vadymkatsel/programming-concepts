@@ -36,7 +36,9 @@ page-layout: full
 
 ### 📝 Cheat Sheet
 
-```python
+```{pyodide}
+#| autorun: false
+#| edit: true
 try:
     result = 10 / 0   # Ризикований код, який може зламатися
 except ZeroDivisionError:

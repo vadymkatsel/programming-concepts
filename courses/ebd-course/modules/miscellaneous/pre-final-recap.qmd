@@ -31,7 +31,9 @@ page-layout: full
 
 ### 📝 Cheat Sheet
 
-```python
+```{pyodide}
+#| autorun: true
+#| edit: true
 # Оголошення змінних та типи даних
 user_name = "Alice"     # str
 age = 25                # int
@@ -51,6 +53,7 @@ power = 2 ** 3          # 8 (піднесення до степеня)
 str_age = str(age)
 int_balance = int(balance) # Відкидає дробову частину
 message = f"User {user_name} has {balance} USD."
+print(message)
 ```
 
 ### 👨‍💻 Task: Базові операції та Форматування
@@ -68,7 +71,9 @@ message = f"User {user_name} has {balance} USD."
 
 ### 📝 Cheat Sheet
 
-```python
+```{pyodide}
+#| autorun: true
+#| edit: true
 # Умови if / elif / else
 score = 85
 if score >= 90:
@@ -79,6 +84,7 @@ else:
     print("C")
 
 # Логічні оператори
+is_active = True
 if score > 80 and is_active:
     print("Bonus!")
     
@@ -120,23 +126,28 @@ stock_levels = [10, 0, 5, 20, 1, 0]
 
 ### 📝 Cheat Sheet
 
-```python
+```{pyodide}
+#| autorun: true
+#| edit: true
 # Списки (List)
 fruits = ["apple", "banana", "cherry"]
 fruits.append("orange")    # Додає в кінець
 fruits.insert(1, "kiwi")   # Вставляє на позицію 1
 fruits.remove("banana")    # Видаляє елемент за значенням
 last = fruits.pop()        # Видаляє і повертає останній елемент
+print("Списки:", fruits)
 
 # Рядки (String) - незмінні!
 text = "  Hello, Data!  "
 clean = text.strip()       # "Hello, Data!"
 parts = clean.split(",")   # ["Hello", " Data!"]
 joined = "-".join(["A", "B"]) # "A-B"
+print("Рядки:", joined)
 
 # Зрізи (Slices) для обох: [start:stop:step]
 subset = fruits[0:2]       # Перші два елементи
 reverse = text[::-1]       # Рядок задом наперед
+print("Зрізи:", reverse)
 ```
 
 ### 👨‍💻 Task: Очищення та трансформація даних
@@ -182,25 +193,35 @@ raw_log = "   Alice , Bob  ,  Charlie, error_bot_99   "
 
 ### 📝 Cheat Sheet
 
-```python
+```{pyodide}
+#| autorun: true
+#| edit: true
 # Базова функція
 def calculate_discount(price, discount=0.1):
     return price * (1 - discount)
+
+print("Discounted:", calculate_discount(100))
 
 # Args та Kwargs
 def summarize(*args, **kwargs):
     print("Позиційні аргументи:", args)   # Tuple
     print("Іменовані аргументи:", kwargs) # Dictionary
 
+summarize(1, 2, name="Alice")
+
 # Лямбда-функції
 add_tax = lambda x: x * 1.2
+print("Taxed:", add_tax(100))
 
 # Область видимості (Scope)
 tax_rate = 0.2 # Global
 
 def process():
     tax_rate = 0.1 # Local (shadows global)
-    print(tax_rate) # Виведе 0.1
+    print("Local tax:", tax_rate) # Виведе 0.1
+
+process()
+print("Global tax:", tax_rate)
 ```
 
 ### 👨‍💻 Task: Гнучкий чекаут
@@ -220,22 +241,27 @@ checkout(100, 200, 50, delivery=15, insurance=5)
 
 ### 📝 Cheat Sheet
 
-```python
+```{pyodide}
+#| autorun: true
+#| edit: true
 # Словники (Dictionary)
 user = {"name": "Alice", "role": "admin"}
 user["age"] = 30                 # Додавання/Оновлення
 role = user.get("role", "guest") # Безпечне отримання
-keys = user.keys()               # Отримання всіх ключів
-items = user.items()             # Отримання пар (ключ, значення)
+keys = list(user.keys())         # Отримання всіх ключів
+items = list(user.items())       # Отримання пар (ключ, значення)
+print("Словник:", user)
 
 # List Comprehensions
 prices = [10, 20, 30]
 # [expression for item in iterable if condition]
 taxed_prices = [p * 1.2 for p in prices if p > 15] 
+print("List Comprehension:", taxed_prices)
 
 # Dictionary Comprehensions
 users = ["Alice", "Bob"]
 user_dict = {name: len(name) for name in users}
+print("Dict Comprehension:", user_dict)
 ```
 
 ### 👨‍💻 Task: Фільтрація масиву об'єктів

@@ -67,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function() {
   sync();
 });
 
-// Add custom overlay for Quarto Live UI
 document.addEventListener("DOMContentLoaded", function() {
     const injectCustomOverlay = () => {
         document.querySelectorAll('.exercise-editor').forEach(editor => {
@@ -79,7 +78,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 const overlay = document.createElement("div");
                 overlay.className = "custom-quarto-overlay";
                 
-                // 1. Run Button
                 const runBtn = document.createElement("button");
                 runBtn.className = "btn custom-quarto-btn custom-run-btn";
                 runBtn.title = "Run Code";
@@ -92,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 };
                 
-                // 2. Reset Button
                 const resetBtn = document.createElement("button");
                 resetBtn.className = "btn custom-quarto-btn";
                 resetBtn.title = "Start Over";
@@ -109,7 +106,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 };
                 
-                // 3. Copy Button
                 const copyBtn = document.createElement("button");
                 copyBtn.className = "btn custom-quarto-btn";
                 copyBtn.title = "Copy Code";
@@ -166,5 +162,45 @@ document.addEventListener("DOMContentLoaded", function() {
     
     injectCustomOverlay();
     setInterval(injectCustomOverlay, 1000);
-    setInterval(syncLoadingState, 100); // Fast sync for the loading animation
+    setInterval(syncLoadingState, 100); 
+
+    const injectWarning = () => {
+        if (localStorage.getItem('hidePyodideWarning') === 'true') return;
+        
+        const firstExercise = document.querySelector('.exercise-editor');
+        if (firstExercise) {
+            const wrapper = firstExercise.closest('.exercise-cell') || firstExercise.parentElement;
+            
+            if (wrapper.previousElementSibling && wrapper.previousElementSibling.classList.contains('pyodide-warning-callout')) {
+                return;
+            }
+            
+            const warningHTML = `
+                <div class="callout callout-style-default callout-warning callout-titled pyodide-warning-callout" style="margin-bottom: 1.5rem;">
+                    <div class="callout-header d-flex align-content-center">
+                        <div class="callout-icon-container">
+                            <i class="callout-icon"></i>
+                        </div>
+                        <div class="callout-title-container flex-fill">Важливо: Збереження коду</div>
+                        <button class="btn-close-warning" style="background: none; border: none; color: inherit; cursor: pointer; padding: 0 5px;" title="Приховати назавжди"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <div class="callout-body-container callout-body">
+                        <p style="margin-bottom: 0;">Код та результати у цих інтерактивних клітинках <strong>не зберігаються</strong> після оновлення сторінки. Обов'язково копіюйте важливий код до себе локально, перш ніж оновлювати вкладку.</p>
+                    </div>
+                </div>
+            `;
+            
+            wrapper.insertAdjacentHTML('beforebegin', warningHTML);
+            
+            const closeBtn = wrapper.previousElementSibling.querySelector('.btn-close-warning');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    localStorage.setItem('hidePyodideWarning', 'true');
+                    document.querySelectorAll('.pyodide-warning-callout').forEach(el => el.remove());
+                });
+            }
+        }
+    };
+    
+    setInterval(injectWarning, 1000);
 });
