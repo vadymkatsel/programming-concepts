@@ -658,4 +658,135 @@ footer.footer {
   }
 }
  
+/* ============================================================
+   QUARTO LIVE / CODEMIRROR INTERACTIVE CELLS
+   ============================================================ */
 
+/* The outer card */
+.exercise-editor.card {
+    background-color: var(--code-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    position: relative !important;
+}
+
+/* Remove default card styles */
+.exercise-editor-body.card-body {
+    background-color: transparent !important;
+    padding: 0 !important;
+}
+
+/* The header becomes a floating container */
+.exercise-editor-header.card-header {
+    position: absolute !important;
+    top: 8px !important;
+    right: 8px !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    z-index: 100;
+}
+
+/* Hide the "Python Code" title */
+.exercise-editor-header > div:first-child {
+    display: none !important;
+}
+
+/* Flex layout for the buttons container */
+.exercise-editor-header > div:last-child {
+    display: flex !important;
+    gap: 8px !important;
+}
+
+/* Hide text labels inside the buttons */
+.btn-label-exercise-editor {
+    display: none !important;
+}
+
+/* Make all buttons inside the btn-group square */
+.btn-group-exercise-editor {
+    display: flex !important;
+    gap: 8px !important;
+}
+
+.btn-group-exercise-editor .btn {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: var(--sections-bg) !important;
+    color: var(--fg-text) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    cursor: pointer;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    flex: 0 0 32px !important; /* Ensure it doesn't grow/shrink */
+}
+
+/* Ensure border radius is not overridden by btn-group */
+.btn-group-exercise-editor > .btn:not(:last-child):not(.dropdown-toggle),
+.btn-group-exercise-editor > .btn:not(:first-child) {
+    border-radius: 8px !important;
+}
+
+.btn-group-exercise-editor .btn:hover {
+    color: var(--accent-color) !important;
+    background-color: color-mix(in srgb, var(--accent-color), transparent 90%) !important;
+    border-color: color-mix(in srgb, var(--accent-color), transparent 50%) !important;
+    transform: translateY(-1px);
+}
+
+.btn-group-exercise-editor .btn svg, 
+.btn-group-exercise-editor .btn i {
+    font-size: 14px !important;
+    width: 14px !important;
+    height: 14px !important;
+    margin: 0 !important;
+    fill: currentColor;
+}
+
+/* Ensure the editor itself is transparent so the card background shows */
+.exercise-editor .cm-editor {
+    background-color: transparent !important;
+}
+
+/* The line numbers sidebar */
+.exercise-editor .cm-gutters {
+    background-color: transparent !important;
+    border-right: 1px solid var(--border-color) !important;
+    color: var(--fg-muted) !important;
+    font-size: 0.8rem !important;
+    min-width: 30px !important;
+}
+
+.cm-gutters {
+  background-color: var(--bg-body-decoration);
+  color: var(--fg-muted) !important;
+}
+
+/* Fix paddings in the content */
+.exercise-editor .cm-content {
+    padding: 12px 16px !important;
+    font-size: 0.9rem !important;
+}
+
+/* Output console area */
+.quarto-live-output, div:has(> iframe.quarto-live-output) {
+    margin-top: 12px;
+    padding: 16px;
+    background-color: var(--sections-bg) !important;
+    border: 1px dashed var(--border-color) !important;
+    border-radius: 12px !important;
+    font-family: 'Lilex', monospace !important;
+    font-size: 0.85rem;
+}
+
+.cm-activeLineGutter, .cm-activeLine {
+  background-color: transparent !important;
+}

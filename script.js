@@ -66,3 +66,46 @@ document.addEventListener("DOMContentLoaded", function() {
   
   sync();
 });
+
+// Add copy button and transform Quarto Live UI
+document.addEventListener("DOMContentLoaded", function() {
+  const transformQuartoLiveUI = () => {
+    document.querySelectorAll('.exercise-editor').forEach(editor => {
+      const btnGroup = editor.querySelector('.btn-group-exercise-editor');
+      
+      if (btnGroup) {
+          // 1. Ensure existing buttons have a tooltip (title) based on their aria-label
+          Array.from(btnGroup.querySelectorAll('.btn')).forEach(b => {
+              if (!b.title && b.getAttribute('aria-label')) {
+                  b.title = b.getAttribute('aria-label');
+              }
+          });
+          
+          // 2. Inject copy button if it doesn't exist
+          if (!btnGroup.querySelector('.copy-btn')) {
+              const copyBtn = document.createElement("button");
+              copyBtn.className = "btn copy-btn"; // CSS will style .btn-group-exercise-editor .btn
+              copyBtn.title = "Copy Code";
+              copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>';
+              
+              copyBtn.onclick = () => {
+                 const content = editor.querySelector(".cm-content");
+                 if (content) {
+                     navigator.clipboard.writeText(content.innerText || content.textContent).then(() => {
+                         copyBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
+                         setTimeout(() => { copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>'; }, 2000);
+                     });
+                 }
+              };
+              
+              // Append to the button group
+              btnGroup.appendChild(copyBtn);
+          }
+      }
+    });
+  };
+
+  transformQuartoLiveUI();
+  const observer = new MutationObserver(() => transformQuartoLiveUI());
+  observer.observe(document.body, { childList: true, subtree: true });
+});
