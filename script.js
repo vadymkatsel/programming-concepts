@@ -164,43 +164,68 @@ document.addEventListener("DOMContentLoaded", function() {
     setInterval(injectCustomOverlay, 1000);
     setInterval(syncLoadingState, 100); 
 
-    const injectWarning = () => {
-        if (localStorage.getItem('hidePyodideWarning') === 'true') return;
+    // Interactive Popup Warning for Pyodide
+    const showPyodidePopup = () => {
+        if (document.getElementById('pyodide-custom-popup')) return;
+        if (sessionStorage.getItem('pyodidePopupShown') === 'true') return;
         
-        const firstExercise = document.querySelector('.exercise-editor');
-        if (firstExercise) {
-            const wrapper = firstExercise.closest('.exercise-cell') || firstExercise.parentElement;
-            
-            if (wrapper.previousElementSibling && wrapper.previousElementSibling.classList.contains('pyodide-warning-callout')) {
-                return;
-            }
-            
-            const warningHTML = `
-                <div class="callout callout-style-default callout-warning callout-titled pyodide-warning-callout" style="margin-bottom: 1.5rem;">
-                    <div class="callout-header d-flex align-content-center">
-                        <div class="callout-icon-container">
-                            <i class="callout-icon"></i>
-                        </div>
-                        <div class="callout-title-container flex-fill">Важливо: Збереження коду</div>
-                        <button class="btn-close-warning" style="background: none; border: none; color: inherit; cursor: pointer; padding: 0 5px;" title="Приховати назавжди"><i class="fa-solid fa-xmark"></i></button>
-                    </div>
-                    <div class="callout-body-container callout-body">
-                        <p style="margin-bottom: 0;">Код та результати у цих інтерактивних клітинках <strong>не зберігаються</strong> після оновлення сторінки. Обов'язково копіюйте важливий код до себе локально, перш ніж оновлювати вкладку.</p>
-                    </div>
+        sessionStorage.setItem('pyodidePopupShown', 'true');
+        
+        const popupHTML = `
+        <div id="pyodide-custom-popup-overlay" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
+            <div id="pyodide-custom-popup" class="glass-effect" style="background: var(--body-bg, #ffffff); border-radius: 16px; padding: 2rem; max-width: 450px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.2); transform: translateY(20px); transition: transform 0.3s ease; border: 1px solid var(--border-color, #dee2e6);">
+                <div style="font-size: 3.5rem; margin-bottom: 1rem; color: var(--status-planned, #f39c12); line-height: 1;">⚠️</div>
+                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--text-color); font-weight: 700;">Код не зберігається!</h3>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted); line-height: 1.5;">Результати та код у цій клітинці будуть втрачені після оновлення сторінки. Будь ласка, копіюйте важливі рішення до себе в IDE.</p>
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    <button id="pyodide-popup-ok" class="btn" style="background: var(--status-active, #0d6efd); color: white; padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; flex: 1; min-width: 140px;">Зрозуміло</button>
+                    <button id="pyodide-popup-hide" class="btn" style="background: transparent; color: var(--text-muted); padding: 10px 20px; border-radius: 8px; border: 1px solid var(--border-color, #dee2e6); cursor: pointer; font-weight: 600; flex: 1; min-width: 140px;">Не показувати більше</button>
                 </div>
-            `;
-            
-            wrapper.insertAdjacentHTML('beforebegin', warningHTML);
-            
-            const closeBtn = wrapper.previousElementSibling.querySelector('.btn-close-warning');
-            if (closeBtn) {
-                closeBtn.addEventListener('click', function() {
-                    localStorage.setItem('hidePyodideWarning', 'true');
-                    document.querySelectorAll('.pyodide-warning-callout').forEach(el => el.remove());
-                });
+            </div>
+        </div>
+        `;
+        
+        document.body.insertAdjacentHTML('beforeend', popupHTML);
+        
+        const overlay = document.getElementById('pyodide-custom-popup-overlay');
+        const popup = document.getElementById('pyodide-custom-popup');
+        
+        setTimeout(() => {
+            overlay.style.opacity = '1';
+            popup.style.transform = 'translateY(0)';
+        }, 10);
+        
+        const closePopup = () => {
+            overlay.style.opacity = '0';
+            popup.style.transform = 'translateY(20px)';
+            setTimeout(() => overlay.remove(), 300);
+        };
+        
+        document.getElementById('pyodide-popup-ok').addEventListener('click', closePopup);
+        document.getElementById('pyodide-popup-hide').addEventListener('click', () => {
+            localStorage.setItem('hidePyodidePopup', 'true');
+            closePopup();
+        });
+    };
+
+    const attachPopupListeners = () => {
+        if (localStorage.getItem('hidePyodidePopup') === 'true') return;
+        
+        document.querySelectorAll('.exercise-editor').forEach(editor => {
+            if (!editor.hasAttribute('data-popup-listener')) {
+                editor.setAttribute('data-popup-listener', 'true');
+                
+                const trigger = () => {
+                    if (localStorage.getItem('hidePyodidePopup') !== 'true') {
+                        showPyodidePopup();
+                    }
+                };
+                
+                editor.addEventListener('click', trigger, { once: true });
+                editor.addEventListener('focusin', trigger, { once: true });
             }
-        }
+        });
     };
     
-    setInterval(injectWarning, 1000);
+    setInterval(attachPopupListeners, 1000);
 });
