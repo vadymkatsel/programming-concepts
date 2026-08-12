@@ -167,20 +167,25 @@ document.addEventListener("DOMContentLoaded", function() {
     // Interactive Popup Warning for Pyodide
     const showPyodidePopup = () => {
         if (document.getElementById('pyodide-custom-popup')) return;
-        if (sessionStorage.getItem('pyodidePopupShown') === 'true') return;
         
-        sessionStorage.setItem('pyodidePopupShown', 'true');
+        // Add animation keyframes if not present
+        if (!document.getElementById('pyodide-popup-styles')) {
+            const style = document.createElement('style');
+            style.id = 'pyodide-popup-styles';
+            style.textContent = `
+                @keyframes pyodideFadeIn { from { opacity: 0; } to { opacity: 1; } }
+                @keyframes pyodidePopIn { from { transform: scale(0.9) translateY(20px); opacity: 0; } to { transform: scale(1) translateY(0); opacity: 1; } }
+            `;
+            document.head.appendChild(style);
+        }
         
         const popupHTML = `
-        <div id="pyodide-custom-popup-overlay" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
-            <div id="pyodide-custom-popup" class="glass-effect" style="background: var(--body-bg, #ffffff); border-radius: 16px; padding: 2rem; max-width: 450px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.2); transform: translateY(20px); transition: transform 0.3s ease; border: 1px solid var(--border-color, #dee2e6);">
-                <div style="font-size: 3.5rem; margin-bottom: 1rem; color: var(--status-planned, #f39c12); line-height: 1;">⚠️</div>
-                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--text-color); font-weight: 700;">Код не зберігається!</h3>
-                <p style="margin-bottom: 1.5rem; color: var(--text-muted); line-height: 1.5;">Результати та код у цій клітинці будуть втрачені після оновлення сторінки. Будь ласка, копіюйте важливі рішення до себе в IDE.</p>
-                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                    <button id="pyodide-popup-ok" class="btn" style="background: var(--status-active, #0d6efd); color: white; padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; flex: 1; min-width: 140px;">Зрозуміло</button>
-                    <button id="pyodide-popup-hide" class="btn" style="background: transparent; color: var(--text-muted); padding: 10px 20px; border-radius: 8px; border: 1px solid var(--border-color, #dee2e6); cursor: pointer; font-weight: 600; flex: 1; min-width: 140px;">Не показувати більше</button>
-                </div>
+        <div id="pyodide-custom-popup-overlay" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 9999; display: flex; align-items: center; justify-content: center; animation: pyodideFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;">
+            <div id="pyodide-custom-popup" style="background: var(--sections-bg); border-radius: 20px; padding: 2.5rem; max-width: 420px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.3); border: 1px solid var(--section-border); animation: pyodidePopIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;">
+                <div style="font-size: 4rem; margin-bottom: 1rem; line-height: 1; filter: drop-shadow(0 4px 10px rgba(249,115,22,0.3));">⚠️</div>
+                <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--fg-text); font-weight: 700; font-size: 1.5rem;">Код не зберігається!</h3>
+                <p style="margin-bottom: 2rem; color: var(--fg-muted); line-height: 1.6; font-size: 1rem;">Результати та код у цій клітинці будуть втрачені після оновлення сторінки. Будь ласка, копіюйте важливі рішення до себе в локальне середовище.</p>
+                <button id="pyodide-popup-ok" class="btn" style="background: var(--accent-color); color: #fff; padding: 12px 30px; border-radius: 12px; border: none; cursor: pointer; font-weight: 600; width: 100%; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(249,115,22,0.2); transition: transform 0.2s, box-shadow 0.2s;">Зрозуміло</button>
             </div>
         </div>
         `;
@@ -188,23 +193,17 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.insertAdjacentHTML('beforeend', popupHTML);
         
         const overlay = document.getElementById('pyodide-custom-popup-overlay');
-        const popup = document.getElementById('pyodide-custom-popup');
+        const btn = document.getElementById('pyodide-popup-ok');
         
-        setTimeout(() => {
-            overlay.style.opacity = '1';
-            popup.style.transform = 'translateY(0)';
-        }, 10);
+        btn.onmouseenter = () => { btn.style.transform = 'translateY(-2px)'; btn.style.boxShadow = '0 6px 16px rgba(249,115,22,0.3)'; };
+        btn.onmouseleave = () => { btn.style.transform = 'translateY(0)'; btn.style.boxShadow = '0 4px 12px rgba(249,115,22,0.2)'; };
         
-        const closePopup = () => {
-            overlay.style.opacity = '0';
-            popup.style.transform = 'translateY(20px)';
-            setTimeout(() => overlay.remove(), 300);
-        };
-        
-        document.getElementById('pyodide-popup-ok').addEventListener('click', closePopup);
-        document.getElementById('pyodide-popup-hide').addEventListener('click', () => {
+        btn.addEventListener('click', () => {
             localStorage.setItem('hidePyodidePopup', 'true');
-            closePopup();
+            overlay.style.animation = 'none';
+            overlay.style.opacity = '0';
+            overlay.style.transition = 'opacity 0.3s ease';
+            setTimeout(() => overlay.remove(), 300);
         });
     };
 
