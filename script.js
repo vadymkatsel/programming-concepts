@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                 // 1. Run Button
                 const runBtn = document.createElement("button");
-                runBtn.className = "btn custom-quarto-btn";
+                runBtn.className = "btn custom-quarto-btn custom-run-btn";
                 runBtn.title = "Run Code";
                 runBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
                 runBtn.onclick = () => {
@@ -145,6 +145,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
     observer.observe(document.body, { childList: true, subtree: true });
     
+    const syncLoadingState = () => {
+        document.querySelectorAll('.exercise-editor').forEach(editor => {
+            const wrapper = editor.parentElement;
+            if (!wrapper) return;
+            
+            const customRunBtn = wrapper.querySelector('.custom-run-btn');
+            const nativeIndicator = editor.querySelector('.exercise-editor-eval-indicator');
+            
+            if (customRunBtn && nativeIndicator) {
+                const isRunning = !nativeIndicator.classList.contains('d-none');
+                if (isRunning) {
+                    customRunBtn.classList.add('is-running');
+                } else {
+                    customRunBtn.classList.remove('is-running');
+                }
+            }
+        });
+    };
+    
     injectCustomOverlay();
     setInterval(injectCustomOverlay, 1000);
+    setInterval(syncLoadingState, 100); // Fast sync for the loading animation
 });

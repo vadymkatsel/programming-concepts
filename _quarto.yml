@@ -189,7 +189,7 @@ format:
       - file: analytics.html
     include-after-body:
       text: |
-        <script src="/script.js"></script>
+        <script src="/script.js?v=3"></script>
   live-html:
     format-links: true
     theme: 
@@ -206,6 +206,6 @@ format:
       - file: analytics.html
     include-after-body:
       text: |
-        <script src="/script.js"></script>
+        <script src="/script.js?v=3"></script>
 
 

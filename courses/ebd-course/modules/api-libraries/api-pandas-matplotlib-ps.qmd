@@ -4,8 +4,6 @@ toc: true
 lang: ua
 page-layout: full
 engine: jupyter
-execute:
-  freeze: false
 format: live-html
 live:
   pyodide:

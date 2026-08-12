@@ -19,9 +19,12 @@ _(Optionally include HTML headers for FontAwesome icons if needed, e.g., in the 
 
 ## Formatting Rules
 
--   **Headers**: Use appropriate header levels. `##` for main sections, `###` for sub-sections. Do NOT include code syntax (e.g. `map`, `*args`) in header titles. Make them natural and descriptive (e.g., "Анонімні функції та масова обробка").
--   **Icons/Emojis**: Always start main sections and sub-sections with an emoji rather than a number to make them visually distinct and engaging (e.g., `## 📚 Вступ`, `## 🧹 Очищення даних`, `### 👨‍💻 Live coding`). Do not use numbering like `1.`, `2.` for main headers.
-- **Code Blocks**: Use standard python code blocks. If a block needs to be evaluated during rendering, use `#| eval: true` inside the block.
+- **Headers**: Use appropriate header levels. `##` for main sections, `###` for sub-sections. Do NOT include code syntax (e.g. `map`, `*args`) in header titles. Make them natural and descriptive (e.g., "Анонімні функції та масова обробка").
+- **Icons/Emojis**: Always start main sections and sub-sections with an emoji rather than a number to make them visually distinct and engaging (e.g., `## 📚 Вступ`, `## 🧹 Очищення даних`, `### 👨‍💻 Live coding`). Do not use numbering like `1.`, `2.` for main headers.
+- **Code Blocks & Interactivity**:
+  - **Interactive Demos**: Use `{pyodide}` blocks **ONLY** for sections where demonstration and immediate experimentation is beneficial. These blocks MUST include `#| autorun: true` (so the output is pre-rendered) and `#| edit: true`.
+  - **Static Code**: For all other sections (including "Bug Hunter", "Guided Practice", and theoretical syntax examples), use standard static ` ```python ` blocks. Practice tasks should be executed by students in their own local IDEs.
+  - **Evaluation**: If a standard python block needs to be evaluated during rendering to show static output, use `#| eval: true` inside the block.
 - **Callouts**: Use Quarto callouts to highlight specific types of information and warnings:
   - `::: {.callout-tip}` - for hints, tips, or congratulations.
   - `::: {.callout-warning}` - for constraints, restrictions, or common pitfalls.

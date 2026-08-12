@@ -16,15 +16,23 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Install Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+          cache: 'pip'
 
       - name: Install Dependencies
-        run: |
-          pip install jupyter
-          pip install pandas matplotlib numpy
-          pip install great-tables
+        run: pip install -r requirements.txt
+          
+      - name: Cache Quarto Freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: freeze-${{ github.ref }}-${{ hashFiles('**/*.qmd') }}
+          restore-keys: |
+            freeze-${{ github.ref }}-
+            freeze-main-
+            freeze-
           
       - name: Render Quarto Project
         # This will render the entire site (including HTML and Typst PDFs) 
