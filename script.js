@@ -67,52 +67,84 @@ document.addEventListener("DOMContentLoaded", function() {
   sync();
 });
 
-// Add copy button and transform Quarto Live UI
+// Add custom overlay for Quarto Live UI
 document.addEventListener("DOMContentLoaded", function() {
-  const transformQuartoLiveUI = () => {
-    document.querySelectorAll('.exercise-editor').forEach(editor => {
-      const btnGroup = editor.querySelector('.btn-group-exercise-editor');
-      
-      if (btnGroup) {
-          // 1. Ensure existing buttons have a tooltip (title) based on their aria-label
-          Array.from(btnGroup.querySelectorAll('.btn')).forEach(b => {
-              if (!b.title && b.getAttribute('aria-label')) {
-                  b.title = b.getAttribute('aria-label');
-              }
-          });
-          
-          // 2. Inject copy button if it doesn't exist
-          const header = editor.querySelector('.exercise-editor-header');
-          if (header && !header.querySelector('.copy-btn')) {
-              const copyBtn = document.createElement("a");
-              copyBtn.className = "btn copy-btn custom-quarto-btn"; 
-              copyBtn.role = "button";
-              copyBtn.tabIndex = "0";
-              copyBtn.title = "Copy Code";
-              copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>';
-              
-              copyBtn.onclick = () => {
-                 const content = editor.querySelector(".cm-content");
-                 if (content) {
-                     navigator.clipboard.writeText(content.innerText || content.textContent).then(() => {
-                         copyBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
-                         setTimeout(() => { copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>'; }, 2000);
-                     });
-                 }
-              };
-              
-              // Append directly to the header, bypassing Quarto's flex containers
-              header.insertBefore(copyBtn, header.lastElementChild);
-              console.log("Quarto Live UI: Injected Copy Button into header");
-          }
-      }
-    });
-  };
+    const injectCustomOverlay = () => {
+        document.querySelectorAll('.exercise-editor').forEach(editor => {
+            const wrapper = editor.parentElement;
+            
+            if (wrapper && !wrapper.querySelector('.custom-quarto-overlay')) {
+                wrapper.style.position = 'relative'; 
+                
+                const overlay = document.createElement("div");
+                overlay.className = "custom-quarto-overlay";
+                
+                // 1. Run Button
+                const runBtn = document.createElement("button");
+                runBtn.className = "btn custom-quarto-btn";
+                runBtn.title = "Run Code";
+                runBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+                runBtn.onclick = () => {
+                    const currentEditor = wrapper.querySelector('.exercise-editor');
+                    if (currentEditor) {
+                        const nativeRun = currentEditor.querySelector('.exercise-editor-btn-run-code');
+                        if (nativeRun) nativeRun.click();
+                    }
+                };
+                
+                // 2. Reset Button
+                const resetBtn = document.createElement("button");
+                resetBtn.className = "btn custom-quarto-btn";
+                resetBtn.title = "Start Over";
+                resetBtn.innerHTML = '<i class="fa-solid fa-rotate-left"></i>';
+                resetBtn.onclick = () => {
+                    const currentEditor = wrapper.querySelector('.exercise-editor');
+                    if (currentEditor) {
+                        const btnGroup = currentEditor.querySelector('.btn-group-exercise-editor');
+                        if (btnGroup) {
+                            const btns = Array.from(btnGroup.querySelectorAll('.btn'));
+                            const nativeReset = btns.find(b => !b.classList.contains('exercise-editor-btn-run-code'));
+                            if (nativeReset) nativeReset.click();
+                        }
+                    }
+                };
+                
+                // 3. Copy Button
+                const copyBtn = document.createElement("button");
+                copyBtn.className = "btn custom-quarto-btn";
+                copyBtn.title = "Copy Code";
+                copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>';
+                copyBtn.onclick = () => {
+                    const currentEditor = wrapper.querySelector('.exercise-editor');
+                    if (currentEditor) {
+                        const content = currentEditor.querySelector(".cm-content");
+                        if (content) {
+                            navigator.clipboard.writeText(content.innerText || content.textContent).then(() => {
+                                copyBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
+                                setTimeout(() => { copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>'; }, 2000);
+                            });
+                        }
+                    }
+                };
+                
+                overlay.appendChild(runBtn);
+                overlay.appendChild(resetBtn);
+                overlay.appendChild(copyBtn);
+                
+                wrapper.appendChild(overlay);
+            }
+        });
+    };
 
-  transformQuartoLiveUI();
-  const observer = new MutationObserver(() => transformQuartoLiveUI());
-  observer.observe(document.body, { childList: true, subtree: true });
-  
-  // Bulletproof fallback: check every second in case React/Pyodide wipes our injected DOM
-  setInterval(transformQuartoLiveUI, 1000);
+    const observer = new MutationObserver((mutations) => {
+        const hasNewNodes = mutations.some(m => m.addedNodes.length > 0);
+        if (hasNewNodes) {
+            injectCustomOverlay();
+        }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+    
+    injectCustomOverlay();
+    setInterval(injectCustomOverlay, 1000);
 });

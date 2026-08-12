@@ -679,25 +679,19 @@ footer.footer {
     padding: 0 !important;
 }
 
-/* The header becomes a floating container */
+/* Hide Quarto Live Native Header Completely */
 .exercise-editor-header.card-header {
-    position: absolute !important;
-    top: 8px !important;
-    right: 8px !important;
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    z-index: 100;
-    display: flex !important;
-    gap: 8px !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-    width: auto !important;
+    display: none !important;
 }
 
-/* Hide the "Python Code" title container */
-.exercise-editor-header > div:first-child {
-    display: none !important;
+/* Our Custom Overlay */
+.custom-quarto-overlay {
+    position: absolute;
+    top: 24px;   /* Accounts for card margin/border */
+    right: 8px;
+    z-index: 1000;
+    display: flex;
+    gap: 8px;
 }
 
 /* Flex layout for the buttons container */
@@ -712,12 +706,7 @@ footer.footer {
 }
 
 /* Make all buttons inside the btn-group square */
-.btn-group-exercise-editor {
-    display: flex !important;
-    gap: 8px !important;
-}
-
-.btn-group-exercise-editor .btn, .custom-quarto-btn {
+.custom-quarto-btn {
     width: 32px !important;
     height: 32px !important;
     padding: 0 !important;
@@ -731,25 +720,17 @@ footer.footer {
     cursor: pointer;
     transition: all 0.2s ease !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    flex: 0 0 32px !important; /* Ensure it doesn't grow/shrink */
+    flex: 0 0 32px !important;
     text-decoration: none !important;
 }
 
-/* Ensure border radius is not overridden by btn-group */
-.btn-group-exercise-editor > .btn:not(:last-child):not(.dropdown-toggle),
-.btn-group-exercise-editor > .btn:not(:first-child) {
-    border-radius: 8px !important;
-}
-
-.btn-group-exercise-editor .btn:hover, .custom-quarto-btn:hover {
+.custom-quarto-btn:hover {
     color: var(--accent-color) !important;
     background-color: color-mix(in srgb, var(--accent-color), transparent 90%) !important;
     border-color: color-mix(in srgb, var(--accent-color), transparent 50%) !important;
     transform: translateY(-1px);
 }
 
-.btn-group-exercise-editor .btn svg, 
-.btn-group-exercise-editor .btn i,
 .custom-quarto-btn svg,
 .custom-quarto-btn i {
     font-size: 14px !important;
