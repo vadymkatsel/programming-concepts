@@ -28,11 +28,11 @@ jobs:
         uses: actions/cache@v4
         with:
           path: _freeze
-          key: freeze-${{ github.ref }}-${{ hashFiles('**/*.qmd') }}
+          key: freeze-v2-${{ github.ref }}-${{ hashFiles('**/*.qmd') }}
           restore-keys: |
-            freeze-${{ github.ref }}-
-            freeze-main-
-            freeze-
+            freeze-v2-${{ github.ref }}-
+            freeze-v2-main-
+            freeze-v2-
           
       - name: Render Quarto Project
         # This will render the entire site (including HTML and Typst PDFs) 
