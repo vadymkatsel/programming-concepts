@@ -170,9 +170,6 @@ website:
       active-modes: [courses/ebd-course]
 
 format:
-  typst:
-    toc: true
-    number-sections: false
   html:
     format-links: true
     theme: 
