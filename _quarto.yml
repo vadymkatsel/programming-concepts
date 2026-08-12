@@ -170,10 +170,7 @@ website:
       active-modes: [courses/ebd-course]
 
 format:
-  typst:
-    toc: true
-    number-sections: false
-  html:
+  live-html:
     format-links: true
     theme: 
       dark: darkly
@@ -189,6 +186,7 @@ format:
       - file: analytics.html
     include-after-body:
       text: |
-        <script src="/script.js"></script>
-
-
+        <script src="/script.js?v=3"></script>
+  typst:
+    toc: true
+    number-sections: false
