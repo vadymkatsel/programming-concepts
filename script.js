@@ -82,9 +82,12 @@ document.addEventListener("DOMContentLoaded", function() {
           });
           
           // 2. Inject copy button if it doesn't exist
-          if (!btnGroup.querySelector('.copy-btn')) {
-              const copyBtn = document.createElement("button");
-              copyBtn.className = "btn copy-btn"; // CSS will style .btn-group-exercise-editor .btn
+          const header = editor.querySelector('.exercise-editor-header');
+          if (header && !header.querySelector('.copy-btn')) {
+              const copyBtn = document.createElement("a");
+              copyBtn.className = "btn copy-btn custom-quarto-btn"; 
+              copyBtn.role = "button";
+              copyBtn.tabIndex = "0";
               copyBtn.title = "Copy Code";
               copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>';
               
@@ -98,8 +101,9 @@ document.addEventListener("DOMContentLoaded", function() {
                  }
               };
               
-              // Append to the button group
-              btnGroup.appendChild(copyBtn);
+              // Append directly to the header, bypassing Quarto's flex containers
+              header.insertBefore(copyBtn, header.lastElementChild);
+              console.log("Quarto Live UI: Injected Copy Button into header");
           }
       }
     });
@@ -108,4 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
   transformQuartoLiveUI();
   const observer = new MutationObserver(() => transformQuartoLiveUI());
   observer.observe(document.body, { childList: true, subtree: true });
+  
+  // Bulletproof fallback: check every second in case React/Pyodide wipes our injected DOM
+  setInterval(transformQuartoLiveUI, 1000);
 });
