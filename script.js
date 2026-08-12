@@ -181,11 +181,11 @@ document.addEventListener("DOMContentLoaded", function() {
         
         const popupHTML = `
         <div id="pyodide-custom-popup-overlay" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 9999; display: flex; align-items: center; justify-content: center; animation: pyodideFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;">
-            <div id="pyodide-custom-popup" style="background: var(--sections-bg); border-radius: 20px; padding: 2.5rem; max-width: 420px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.3); border: 1px solid var(--section-border); animation: pyodidePopIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;">
+            <div id="pyodide-custom-popup" style="background: var(--bg-body); border-radius: 20px; padding: 2.5rem; max-width: 420px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.3); border: 1px solid var(--section-border); animation: pyodidePopIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;">
                 <div style="font-size: 4rem; margin-bottom: 1rem; line-height: 1; filter: drop-shadow(0 4px 10px rgba(249,115,22,0.3));">⚠️</div>
                 <h3 style="margin-top: 0; margin-bottom: 1rem; color: var(--fg-text); font-weight: 700; font-size: 1.5rem;">Код не зберігається!</h3>
                 <p style="margin-bottom: 2rem; color: var(--fg-muted); line-height: 1.6; font-size: 1rem;">Результати та код у цій клітинці будуть втрачені після оновлення сторінки. Будь ласка, копіюйте важливі рішення до себе в локальне середовище.</p>
-                <button id="pyodide-popup-ok" class="btn" style="background: var(--accent-color); color: #fff; padding: 12px 30px; border-radius: 12px; border: none; cursor: pointer; font-weight: 600; width: 100%; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(249,115,22,0.2); transition: transform 0.2s, box-shadow 0.2s;">Зрозуміло</button>
+                <button id="pyodide-popup-ok" class="btn" style="background: var(--accent-color); color: #fff; padding: 12px 30px; border-radius: 12px; border: none; cursor: pointer; font-weight: 600; width: 100%; justify-content: center; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(249,115,22,0.2); transition: transform 0.2s, box-shadow 0.2s;">Зрозуміло</button>
             </div>
         </div>
         `;

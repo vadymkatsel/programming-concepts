@@ -793,4 +793,35 @@ footer.footer {
   background-color: transparent !important;
 }
 
+/* Fix CodeMirror selection color */
+.exercise-editor .cm-selectionBackground,
+.exercise-editor .cm-content ::selection {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 70%) !important;
+}
+.exercise-editor .cm-selectionMatch {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 85%) !important;
+}
 
+.exercise-editor .cm-tooltip {
+    background-color: var(--bg-body) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    color: var(--fg-text) !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+.exercise-editor .cm-tooltip-autocomplete > ul {
+    font-family: 'Lilex', monospace !important;
+    padding: 4px !important;
+}
+
+.exercise-editor .cm-tooltip-autocomplete > ul > li {
+    padding: 4px 8px !important;
+    border-radius: 4px !important;
+    margin-bottom: 2px !important;
+}
+
+.exercise-editor .cm-tooltip-autocomplete > ul > li[aria-selected] {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 85%) !important;
+    color: var(--accent-color) !important;
+}
