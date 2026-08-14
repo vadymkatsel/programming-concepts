@@ -64,9 +64,10 @@
         .container {
             width: 100%;
             height: 100%;
+            min-height: 0;
             display: grid;
             grid-template-columns: 280px 1fr;
-            grid-template-rows: auto 1fr auto;
+            grid-template-rows: auto minmax(0, 1fr) auto;
             gap: var(--gap-size);
             background: rgba(10, 10, 10, 0.5);
             padding: var(--gap-size);
@@ -215,7 +216,7 @@
             grid-column: 2 / 3;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto 1fr;
+            grid-template-rows: auto minmax(0, 1fr);
             gap: var(--gap-size);
             min-height: 0; 
         }
@@ -374,6 +375,7 @@
             display: flex;
             flex-direction: column;
             padding-right: 0.5rem; /* Space for custom scrollbar */
+            min-height: 0;
         }
 
         /* Custom Scrollbar for Update Log */
@@ -410,16 +412,6 @@
             display: none;
             align-items: center;
         }
-        
-        .update-log-card.collapsed .log-toggle-icon {
-            transform: rotate(-90deg);
-        }
-        
-        .update-log-card.collapsed .log-header {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom-color: transparent;
-        }
 
         .log-title {
             font-size: 1.1rem;
@@ -445,17 +437,6 @@
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
-            transition: max-height 0.4s ease, opacity 0.3s ease;
-            max-height: 1500px;
-            opacity: 1;
-            overflow: hidden;
-        }
-        
-        .update-log-card.collapsed .timeline {
-            max-height: 0;
-            opacity: 0;
-            pointer-events: none;
-            margin: 0;
         }
 
         .timeline::before {
@@ -631,6 +612,26 @@
             .log-toggle-icon {
                 display: flex;
             }
+            .update-log-card.collapsed .log-toggle-icon {
+                transform: rotate(-90deg);
+            }
+            .update-log-card.collapsed .log-header {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                border-bottom-color: transparent;
+            }
+            .update-log-card.collapsed .timeline {
+                max-height: 0;
+                opacity: 0;
+                pointer-events: none;
+                margin: 0;
+            }
+            .timeline {
+                transition: max-height 0.4s ease, opacity 0.3s ease;
+                max-height: 1500px;
+                opacity: 1;
+                overflow: hidden;
+            }
         }
         @media (max-width: 768px) {
             .main-grid { 
@@ -653,12 +654,12 @@
 <div class="container">
     <div class="system-bar">
         <div class="sys-badges-group">
-            <span class="sys-badge"><span class="badge-label">SYS:</span> <span style="color: #4ade80; text-shadow: 0 0 10px rgba(74,222,128,0.5);">ONLINE</span></span>
-            <span class="sys-badge"><span class="badge-label">V:</span> <span style="color: #fcd34d; text-shadow: 0 0 10px rgba(252,211,77,0.5);">3.0.0</span></span>
+            <span class="sys-badge"><span class="badge-label">SYS:</span> <span style="color: #4ade80; text-shadow: 0 0 6px rgba(74,222,128,0.35);">ONLINE</span></span>
+            <span class="sys-badge"><span class="badge-label">V:</span> <span style="color: #fcd34d; text-shadow: 0 0 6px rgba(252,211,77,0.35);">3.0.0</span></span>
         </div>
         <div class="sys-badges-group">
-            <span class="sys-badge"><span class="badge-label">ENV:</span> <span style="color: #60a5fa; text-shadow: 0 0 10px rgba(96,165,250,0.5);">Python 3.12</span></span>
-            <span class="sys-badge"><span class="badge-label">ENC:</span> <span style="color: #a78bfa; text-shadow: 0 0 10px rgba(167,139,250,0.5);">UTF-8</span></span>
+            <span class="sys-badge"><span class="badge-label">ENV:</span> <span style="color: #60a5fa; text-shadow: 0 0 6px rgba(96,165,250,0.35);">Python 3.12</span></span>
+            <span class="sys-badge"><span class="badge-label">ENC:</span> <span style="color: #a78bfa; text-shadow: 0 0 6px rgba(167,139,250,0.35);">UTF-8</span></span>
         </div>
     </div>
 
