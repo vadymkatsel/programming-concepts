@@ -100,7 +100,28 @@
             letter-spacing: 0.05em;
         }
 
-        .system-bar .status { color: #4ade80; text-shadow: 0 0 10px rgba(74, 222, 128, 0.4); }
+        .sys-badges-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .sys-badge {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            font-weight: 600;
+        }
+        
+        .sys-badge .badge-label {
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: normal;
+        }
 
         /* Left Sidebar - File System Tree */
         .sidebar {
@@ -374,9 +395,30 @@
         .log-header {
             display: flex;
             align-items: center;
-            border-bottom: 1px solid var(--border-glass);
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
             padding-bottom: 1rem;
-            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            user-select: none;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .log-toggle-icon {
+            transition: transform 0.3s ease;
+            color: var(--text-muted);
+            display: none;
+            align-items: center;
+        }
+        
+        .update-log-card.collapsed .log-toggle-icon {
+            transform: rotate(-90deg);
+        }
+        
+        .update-log-card.collapsed .log-header {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom-color: transparent;
         }
 
         .log-title {
@@ -403,6 +445,17 @@
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
+            transition: max-height 0.4s ease, opacity 0.3s ease;
+            max-height: 1500px;
+            opacity: 1;
+            overflow: hidden;
+        }
+        
+        .update-log-card.collapsed .timeline {
+            max-height: 0;
+            opacity: 0;
+            pointer-events: none;
+            margin: 0;
         }
 
         .timeline::before {
@@ -526,20 +579,72 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
+        /* Responsive Design */
         @media (max-width: 1024px) {
-            .main-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr;
+                grid-template-rows: auto auto 1fr auto;
                 height: auto;
                 min-height: 100vh;
                 overflow-y: auto;
             }
-            body { overflow-y: auto; }
-            .sidebar { grid-row: 2 / 3; grid-column: 1 / -1; }
-            .main-grid { grid-row: 3 / 4; grid-column: 1 / -1; grid-template-columns: 1fr; }
-            .terminal { grid-row: 4 / 5; }
+            body { 
+                overflow-y: auto;
+                align-items: flex-start;
+            }
+            .sidebar { 
+                grid-row: 2 / 3; 
+                grid-column: 1 / -1; 
+            }
+            .brand-header {
+                justify-content: center;
+                margin-bottom: 1rem;
+            }
+            .fs-tree {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                border-left: none;
+                padding-left: 0;
+                margin-left: 0;
+                gap: 1.5rem;
+            }
+            .fs-item::before {
+                display: none;
+            }
+            .fs-item:hover, .fs-item.active {
+                transform: translateY(-2px);
+            }
+            .main-grid { 
+                grid-row: 3 / 4; 
+                grid-column: 1 / -1; 
+                grid-template-columns: repeat(2, 1fr); 
+            }
+            .terminal { 
+                grid-row: 4 / 5; 
+                grid-column: 1 / -1; 
+            }
+            .log-header {
+                pointer-events: auto;
+                cursor: pointer;
+            }
+            .log-toggle-icon {
+                display: flex;
+            }
+        }
+        @media (max-width: 768px) {
+            .main-grid { 
+                grid-template-columns: 1fr; 
+            }
+            .system-bar {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+            .sys-badges-group {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -547,8 +652,14 @@
 
 <div class="container">
     <div class="system-bar">
-        <span>[SYS: <span class="status">ONLINE</span>] [v. 3.0.0]</span>
-        <span style="text-align: right;">[ENV: Python 3.12] [ENCODING: UTF-8]</span>
+        <div class="sys-badges-group">
+            <span class="sys-badge"><span class="badge-label">SYS:</span> <span style="color: #4ade80; text-shadow: 0 0 10px rgba(74,222,128,0.5);">ONLINE</span></span>
+            <span class="sys-badge"><span class="badge-label">V:</span> <span style="color: #fcd34d; text-shadow: 0 0 10px rgba(252,211,77,0.5);">3.0.0</span></span>
+        </div>
+        <div class="sys-badges-group">
+            <span class="sys-badge"><span class="badge-label">ENV:</span> <span style="color: #60a5fa; text-shadow: 0 0 10px rgba(96,165,250,0.5);">Python 3.12</span></span>
+            <span class="sys-badge"><span class="badge-label">ENC:</span> <span style="color: #a78bfa; text-shadow: 0 0 10px rgba(167,139,250,0.5);">UTF-8</span></span>
+        </div>
     </div>
 
     <!-- Left Sidebar - File System Tree -->
@@ -585,7 +696,7 @@
         <a href="courses/be-course/modules/index.html" class="panel course-card card-be">
             <span class="course-path">~/courses/be-course/</span>
             <h3 class="card-title">Бізнес Економіка</h3>
-            <p class="card-desc">Вступ до програмування для економістів. Основи Python, базовий аналіз даних та автоматизація процесів.</p>
+            <p class="card-desc">Прикладний аналіз бізнес-даних та робота з ключовими показниками</p>
             <div class="course-specs">
                 <span class="badge badge-dev">В розробці</span>
             </div>
@@ -601,7 +712,7 @@
         <a href="courses/ebd-course/modules/index.html" class="panel course-card card-ebd">
             <span class="course-path">~/courses/ebd-course/</span>
             <h3 class="card-title">Економіка та Великі дані</h3>
-            <p class="card-desc">Просунутий аналіз даних, робота з масивами інформації та основи машинного навчання.</p>
+            <p class="card-desc">Робота з великими даними та сучасне економічне моделювання</p>
             <div class="course-specs">
                 <span class="badge badge-done">Завершений</span>
             </div>
@@ -617,7 +728,7 @@
         <a href="courses/math-course/modules/index.html" class="panel course-card card-math">
             <span class="course-path">~/courses/math-course/</span>
             <h3 class="card-title">Математика</h3>
-            <p class="card-desc">Використання програмування для вирішення складних математичних моделей та симуляцій.</p>
+            <p class="card-desc">Математичні алгоритми, логіка та основи програмування</p>
             <div class="course-specs">
                 <span class="badge badge-done">Завершений</span>
             </div>
@@ -630,10 +741,15 @@
         </a>
 
         <!-- Update Log (VCS Timeline) -->
-        <div class="panel update-log-card">
-            <div class="log-header">
+        <div class="panel update-log-card" id="update-log-card">
+            <div class="log-header" onclick="if(window.innerWidth <= 1024) document.getElementById('update-log-card').classList.toggle('collapsed')">
                 <div class="log-title">
                     Update log <span class="log-path">~/programming-concepts/git log</span>
+                </div>
+                <div class="log-toggle-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
                 </div>
             </div>
             
@@ -731,10 +847,18 @@
                 timeline.insertAdjacentHTML('beforeend', itemHtml);
             });
         } catch (error) {
-            timeline.innerHTML = '<div style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.85rem; padding: 1rem;">[ERROR] Failed to fetch commit log.</div>';
+            timeline.innerHTML = `<div style="padding: 1rem; color: #f87171;">Failed to load commits: ${error.message}</div>`;
         }
     }
     fetchGitHubCommits();
+
+    // --- 2. Initialize UI States ---
+    if (window.innerWidth <= 1024) {
+        const updateLogCard = document.getElementById('update-log-card');
+        if (updateLogCard) updateLogCard.classList.add('collapsed');
+    }
+
+    // --- 3. Terminal Facts Fetching API & Typing Effect ---
     const factElement = document.getElementById('typing-fact');
     const statusElement = document.getElementById('fetch-status');
 
