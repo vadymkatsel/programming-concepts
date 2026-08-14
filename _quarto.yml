@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: docs
   resources:
-    - "index-test.html"
+    - "index.html"
     - "index.css"
     - "style.css"
     - "script.js"
