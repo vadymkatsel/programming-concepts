@@ -4,7 +4,6 @@ toc: true
 lang: ua
 page-layout: full
 engine: jupyter
-format: live-html
 live:
   pyodide:
     packages:

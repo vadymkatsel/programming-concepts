@@ -5,13 +5,9 @@ date: "10-27-2025"
 date-format: "YYYY-MM-DD"
 toc: true
 lang: ua
-format: 
-  html:
-    theme:
-      light: cosmo
-      dark: darkly
 execute:
   eval: false
+page-layout: full
 ---
 
 # 📌 Завдання: "Симулятор банкомату".

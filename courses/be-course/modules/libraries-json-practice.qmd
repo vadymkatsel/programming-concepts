@@ -6,13 +6,9 @@ date: today
 date-format: "YYYY-MM-DD"
 toc: true
 lang: ua
-format: 
-  html:
-    theme:
-      light: cosmo
-      dark: darkly
 execute:
   eval: false
+page-layout: full
 ---
 
 ##  📌 План
