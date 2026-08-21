@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Lilex:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
+            color-scheme: dark;
             --bg-deep: #050510;
             --bg-panel: rgba(16, 20, 35, 0.6);
             --border-glass: rgba(255, 255, 255, 0.08);
@@ -25,6 +26,12 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        html {
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--bg-deep);
         }
 
         body {
@@ -118,11 +125,14 @@
             gap: 6px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.2);
             font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
         
         .sys-badge .badge-label {
             color: rgba(255, 255, 255, 0.4);
             font-weight: normal;
+            white-space: nowrap;
         }
 
         /* Left Sidebar - File System Tree */
@@ -172,12 +182,14 @@
         }
 
         .fs-item {
-            cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 0.8rem;
-            transition: all 0.2s;
+            gap: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
             position: relative;
+            user-select: none;
+            white-space: nowrap;
         }
 
         .fs-item::before {
@@ -379,20 +391,24 @@
             min-height: 0;
         }
 
-        /* Custom Scrollbar for Update Log */
-        .update-log-card::-webkit-scrollbar {
+        /* Global Custom Scrollbars for the entire Landing Page */
+        ::-webkit-scrollbar {
             width: 6px;
+            height: 6px;
         }
-        .update-log-card::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 4px;
+        ::-webkit-scrollbar-track {
+            background: transparent;
         }
-        .update-log-card::-webkit-scrollbar-thumb {
+        ::-webkit-scrollbar-thumb {
             background: rgba(255, 255, 255, 0.15);
             border-radius: 4px;
         }
-        .update-log-card::-webkit-scrollbar-thumb:hover {
+        ::-webkit-scrollbar-thumb:hover {
             background: rgba(255, 255, 255, 0.3);
+        }
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
         }
 
         .log-header {
@@ -561,35 +577,74 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
+        .authors-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+            gap: 1.2rem;
+            flex-grow: 1;
+            min-height: 0;
+            align-items: stretch;
+            width: 100%;
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
+            html {
+                overflow-y: auto !important;
+            }
             .container {
                 grid-template-columns: 1fr;
                 grid-template-rows: auto auto 1fr auto;
                 height: auto;
                 min-height: 100vh;
-                overflow-y: auto;
+                overflow-y: visible;
+                padding: 16px;
+                gap: 16px;
             }
             body { 
                 overflow-y: auto;
                 align-items: flex-start;
+                height: auto;
+                min-height: 100vh;
             }
             .sidebar { 
                 grid-row: 2 / 3; 
                 grid-column: 1 / -1; 
+                padding: 1rem 1.5rem;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 1.25rem;
             }
             .brand-header {
-                justify-content: center;
-                margin-bottom: 1rem;
+                justify-content: flex-start;
+                margin-bottom: 0;
+                gap: 0.8rem;
+            }
+            .brand-logo svg {
+                width: 48px;
+                height: 30px;
+            }
+            .brand-title {
+                font-size: 1.15rem;
+                font-weight: 800;
+                line-height: 1.15;
             }
             .fs-tree {
                 flex-direction: row;
                 flex-wrap: wrap;
-                justify-content: center;
+                align-items: center;
+                justify-content: flex-end;
                 border-left: none;
                 padding-left: 0;
                 margin-left: 0;
                 gap: 1.5rem;
+                font-size: 0.95rem;
+            }
+            .fs-icon {
+                font-size: 1.1rem;
             }
             .fs-item::before {
                 display: none;
@@ -638,14 +693,50 @@
             .main-grid { 
                 grid-template-columns: 1fr; 
             }
+            .authors-layout {
+                grid-template-columns: 1fr !important;
+                gap: 1rem;
+            }
             .system-bar {
-                flex-direction: column;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
                 align-items: center;
-                gap: 12px;
+                padding: 0.6rem 1rem;
+                font-size: 0.8rem;
             }
             .sys-badges-group {
-                flex-wrap: wrap;
-                justify-content: center;
+                gap: 8px;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+            }
+            .sys-badge {
+                padding: 3px 8px;
+                font-size: 0.75rem;
+            }
+            .sidebar {
+                padding: 1rem 1.25rem;
+            }
+        }
+        @media (max-width: 580px) {
+            .sidebar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.8rem;
+            }
+            .fs-tree {
+                justify-content: flex-start;
+                gap: 1.2rem;
+            }
+        }
+        @media (max-width: 500px) {
+            .sys-badges-group:nth-child(2) {
+                display: none;
+            }
+            .sys-badges-group {
+                width: 100%;
+                justify-content: space-between;
             }
         }
     </style>
@@ -765,47 +856,47 @@
 
     <!-- Authors Section -->
     <main class="main-grid" id="authors-section" style="display: none; grid-template-rows: 1fr;">
-        <div class="panel" style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 1.5rem; height: 100%; overflow-y: auto;">
-            <div style="border-bottom: 1px solid var(--border-glass); padding-bottom: 1rem;">
-                <h2 class="card-title">~/programming-concepts/authors.md</h2>
-                <p class="card-desc">Команда творців та контриб'юторів курсу.</p>
+        <div class="panel" style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 1.2rem; height: 100%; overflow: hidden; padding: 1.3rem;">
+            <div style="border-bottom: 1px solid var(--border-glass); padding-bottom: 0.8rem;">
+                <h2 class="card-title" style="font-size: 1.2rem; margin-bottom: 0.3rem;">~/programming-concepts/authors.md</h2>
+                <p class="card-desc" style="font-size: 0.85rem;">Команда творців та контриб'юторів курсу.</p>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; flex-grow: 1;">
+            <div class="authors-layout">
                 
                 <!-- Left Column: Main Architect -->
-                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); padding: 2rem; border-radius: 16px; display: flex; flex-direction: column; gap: 1.5rem; height: 100%;">
-                    <div style="display: flex; align-items: center; gap: 1.5rem;">
-                        <img src="https://github.com/vkatsel.png" width="80" height="80" style="border-radius: 50%; border: 3px solid rgba(255,255,255,0.1);" alt="Vadym Katsel" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'#333\'/><text x=\'50\' y=\'65\' font-size=\'40\' fill=\'white\' text-anchor=\'middle\'>V</text></svg>'">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 1.25rem 1.4rem; border-radius: 14px; display: flex; flex-direction: column; gap: 1rem; height: 100%;">
+                    <div style="display: flex; align-items: center; gap: 1.2rem;">
+                        <img src="https://github.com/vkatsel.png" width="64" height="64" style="border-radius: 50%; border: 2px solid rgba(255,255,255,0.15);" alt="Vadym Katsel" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'#333\'/><text x=\'50\' y=\'65\' font-size=\'40\' fill=\'white\' text-anchor=\'middle\'>V</text></svg>'">
                         <div>
-                            <div style="font-weight: 700; color: white; font-size: 1.4rem;">Vadym Katsel</div>
-                            <div style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent-orange); margin-top: 0.2rem;">@vkatsel</div>
-                            <div style="font-size: 0.95rem; color: var(--text-muted); margin-top: 0.4rem;">Головний архітектор та розробник</div>
+                            <div style="font-weight: 700; color: white; font-size: 1.2rem;">Vadym Katsel</div>
+                            <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-orange); margin-top: 0.15rem;">@vkatsel</div>
+                            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Головний архітектор та розробник</div>
                         </div>
                     </div>
-                    <div style="flex-grow: 1; background: rgba(0,0,0,0.3); border-left: 3px solid var(--accent-orange); padding: 1.5rem; border-radius: 0 8px 8px 0; font-style: italic; color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;">
-                        "хай поки буде плейсхолдер якийсь"
+                    <div style="flex-grow: 1; background: rgba(0,0,0,0.3); border-left: 3px solid var(--accent-orange); padding: 1.2rem 1.4rem; border-radius: 0 10px 10px 0; font-style: italic; color: #cbd5e1; font-size: clamp(0.95rem, 1.15vw, 1.15rem); line-height: 1.65; display: flex; align-items: center;">
+                        "Архітектура та інтерактивна платформа курсу: створюємо сучасний навчальний простір, де концепції Computer Science оживають у коді та реальних проєктах."
                     </div>
                 </div>
 
                 <!-- Right Column: Other Contributors -->
-                <div style="display: flex; flex-direction: column; gap: 1rem; max-height: 280px; overflow-y: auto; padding-right: 0.5rem;" class="contributors-scroll">
+                <div style="display: flex; flex-direction: column; gap: 0.8rem; max-height: 220px; overflow-y: auto; padding-right: 0.3rem;" class="contributors-scroll">
                     
                     <!-- Contributor 1 -->
-                    <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05); padding: 1rem 1.5rem; border-radius: 12px; display: flex; align-items: center; gap: 1.2rem; transition: transform 0.2s ease; flex-shrink: 0;">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='#222'/><text x='50' y='65' font-size='40' fill='white' text-anchor='middle'>Є</text></svg>" width="50" height="50" style="border-radius: 50%; border: 1px solid rgba(255,255,255,0.1);" alt="Євгеній Козолуп">
+                    <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05); padding: 0.85rem 1.2rem; border-radius: 12px; display: flex; align-items: center; gap: 1rem; transition: transform 0.2s ease; flex-shrink: 0;">
+                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='#222'/><text x='50' y='65' font-size='40' fill='white' text-anchor='middle'>Є</text></svg>" width="44" height="44" style="border-radius: 50%; border: 1px solid rgba(255,255,255,0.1);" alt="Євгеній Козолуп">
                         <div>
-                            <div style="font-weight: 600; color: white; font-size: 1.05rem;">Євгеній Козолуп</div>
-                            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">Content Advisor (Лектор)</div>
+                            <div style="font-weight: 600; color: white; font-size: 0.95rem;">Євгеній Козолуп</div>
+                            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem;">Content Advisor (Лектор)</div>
                         </div>
                     </div>
 
                     <!-- Contributor 2 -->
-                    <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05); padding: 1rem 1.5rem; border-radius: 12px; display: flex; align-items: center; gap: 1.2rem; transition: transform 0.2s ease; flex-shrink: 0;">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='#222'/><text x='50' y='65' font-size='40' fill='white' text-anchor='middle'>А</text></svg>" width="50" height="50" style="border-radius: 50%; border: 1px solid rgba(255,255,255,0.1);" alt="Адріана Григоришина">
+                    <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05); padding: 0.85rem 1.2rem; border-radius: 12px; display: flex; align-items: center; gap: 1rem; transition: transform 0.2s ease; flex-shrink: 0;">
+                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='#222'/><text x='50' y='65' font-size='40' fill='white' text-anchor='middle'>А</text></svg>" width="44" height="44" style="border-radius: 50%; border: 1px solid rgba(255,255,255,0.1);" alt="Адріана Григоришина">
                         <div>
-                            <div style="font-weight: 600; color: white; font-size: 1.05rem;">Адріана Григоришина</div>
-                            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">Contributor (Практика)</div>
+                            <div style="font-weight: 600; color: white; font-size: 0.95rem;">Адріана Григоришина</div>
+                            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem;">Contributor (Практика)</div>
                         </div>
                     </div>
                     
