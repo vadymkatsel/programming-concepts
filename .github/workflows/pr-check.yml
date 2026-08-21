@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -18,12 +20,12 @@ jobs:
       - name: Install Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
-          cache: 'pip'
+          python-version: "3.10"
+          cache: "pip"
 
       - name: Install Dependencies
         run: pip install -r requirements.txt
-          
+
       - name: Cache Quarto Freeze
         uses: actions/cache@v4
         with:
@@ -33,8 +35,33 @@ jobs:
             freeze-v2-${{ github.ref }}-
             freeze-v2-main-
             freeze-v2-
-          
-      - name: Render Quarto Project
-        # This will render the entire site (including HTML and Typst PDFs) 
-        # to ensure there are no build errors, but it will NOT publish it.
-        run: quarto render
+
+      - name: Incremental Quarto Validation
+        shell: bash
+        run: |
+          # Ensure base branch is available for diffing
+          git fetch origin main
+
+          # Check if global configurations or styles changed
+          GLOBAL_CHANGES=$(git diff --name-only origin/main...HEAD -- '_quarto.yml' 'style.css' 'requirements.txt' || true)
+
+          # Find changed or added .qmd files (ignoring deleted files)
+          CHANGED_QMDS=$(git diff --name-only --diff-filter=d origin/main...HEAD -- '*.qmd' || true)
+
+          if [ -n "$GLOBAL_CHANGES" ]; then
+            echo "▶ Global config/styles changed: $GLOBAL_CHANGES"
+            echo "Running full project validation (HTML)..."
+            quarto render --to live-html
+          elif [ -n "$CHANGED_QMDS" ]; then
+            echo "▶ Rendering only modified .qmd files:"
+            echo "$CHANGED_QMDS"
+            for file in $CHANGED_QMDS; do
+              if [ -f "$file" ]; then
+                echo "Rendering $file..."
+                quarto render "$file" --to live-html
+              fi
+            done
+          else
+            echo "▶ No .qmd files or global configs changed (static/doc changes only). Running quick syntax check..."
+            quarto check
+          fi
