@@ -3,7 +3,7 @@
 .RData
 .Ruserdata
 *.quarto_ipynb
-__pyache__/
+__pycache__/
 venv/
 .env
 _book/
@@ -14,5 +14,5 @@ _site/
 *_files/
 docs/
 site_libs/
-agents.md
 _freeze/
+
