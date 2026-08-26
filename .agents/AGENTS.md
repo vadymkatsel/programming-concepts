@@ -6,7 +6,16 @@ All git commits must follow the conventional commits standard.
 Specifically, use the format:
 `<type>(<scope>): <message>`
 
-Example: `refactor(ebd-course): merge Live Coding 4 into Capstone`
+### Allowed Commit Types:
+- **`feat`**: Значні нові функції чи суттєвий новий контент (новий модуль, практична робота, новий розділ сайту, нова інтерактивна фіча). НЕ використовувати для дрібних правок чи заміни картинок.
+- **`fix`**: Виправлення помилок, збоїв білду, багів рендерингу Quarto, битих посилань або одруківок.
+- **`style`**: Зміни у візуальному дизайні, темах, CSS-стилях, відступах чи UI-компонентах.
+- **`refactor`**: Структурні зміни коду чи контенту без додавання нової функціональності (наприклад, заміна формату діаграм, оптимізація медіа, реорганізація файлів).
+- **`docs`**: Оновлення README, інструкцій для агентів або текстової документації проєкту.
+- **`chore`**: Технічні задачі (налаштування CI/CD, оновлення конфігів Quarto/Git, бейджі версій, кеш `_freeze/`).
+- **`ci`**: Специфічні зміни в GitHub Actions пайплайнах (`.github/workflows/`).
+
+Example: `fix(ebd-course): replace mermaid blocks with native SVG diagrams`
 
 ## Committing
 

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 220" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-local" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="grad-remote" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <marker id="arrow-push" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrow-pull" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#34d399"/>
+    </marker>
+    <marker id="arrow-fork" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#fb923c"/>
+    </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="680" height="220" rx="16" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- Local Repository Card -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="55" width="180" height="110" rx="12" fill="url(#grad-local)" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="70" cy="85" r="14" fill="#0284c7" fill-opacity="0.2"/>
+    <path d="M64 85 L76 85 M70 79 L76 85 L70 91" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="95" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#f1f5f9">Local Repo</text>
+    <text x="60" y="130" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="12" fill="#94a3b8">Ваш комп'ютер</text>
+    <text x="60" y="148" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="11" fill="#64748b">(IDE / PyCharm)</text>
+  </g>
+
+  <!-- Push Arrow (Top) -->
+  <path d="M 225 85 L 435 85" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="6 3" marker-end="url(#arrow-push)"/>
+  <rect x="295" y="65" width="70" height="22" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+  <text x="330" y="80" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#38bdf8" text-anchor="middle">Push ↗</text>
+
+  <!-- Pull Arrow (Bottom) -->
+  <path d="M 435 135 L 225 135" fill="none" stroke="#34d399" stroke-width="2.5" stroke-dasharray="6 3" marker-end="url(#arrow-pull)"/>
+  <rect x="295" y="125" width="70" height="22" rx="6" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+  <text x="330" y="140" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#34d399" text-anchor="middle">↙ Pull</text>
+
+  <!-- Remote Repository Card (Your Fork) -->
+  <g filter="url(#shadow)">
+    <rect x="440" y="55" width="200" height="110" rx="12" fill="url(#grad-remote)" stroke="#ff6500" stroke-width="2"/>
+    <circle cx="470" cy="85" r="14" fill="#ff6500" fill-opacity="0.2"/>
+    <path d="M465 79 L475 85 L465 91 Z" fill="#ff6500"/>
+    <text x="495" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#f1f5f9">Remote Repo</text>
+    <text x="460" y="130" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="12" fill="#94a3b8">Ваш GitHub Fork</text>
+    <text x="460" y="148" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="11" fill="#64748b">(Сервер GitHub)</text>
+  </g>
+</svg>

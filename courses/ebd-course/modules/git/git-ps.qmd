@@ -31,13 +31,7 @@ page-layout: full
 - **Branch**: Ізольована копія коду всередині репозиторію. Дозволяє безпечно працювати над новою фічею.
 - **Pull Request (PR)**: Запит на GitHub, де ви просите додати ваш код до головного проєкту.
 
-```{mermaid}
-%%| fig-align: center
-flowchart LR
-    A[Local Repository] -->|Push| B[Remote Repository]
-    B -->|Pull| A
-    C[Other GitHub] -->|Fork| B
-```
+![Git Workflow: Push, Pull & Fork](/courses/ebd-course/sources/git-flow.svg){fig-align="center"}
 
 ### 🔎 Експерименти з GitHub та Git
 
@@ -67,16 +61,7 @@ flowchart LR
 
 Правилом хорошого тону є створення окремої гілки для нових функцій. Ніхто не пише код напряму в гілку `main`!
 
-```{mermaid}
-%%| fig-align: center
-gitGraph
-    commit id: "Initial Commit"
-    branch feature-greeting
-    checkout feature-greeting
-    commit id: "Add greeting file"
-    commit id: "Add math logic"
-    checkout main
-```
+![Git Branching Workflow](/courses/ebd-course/sources/git-branching.svg){fig-align="center"}
 
 Створімо гілку з назвою `feature-greeting`.
 
