@@ -1214,12 +1214,32 @@
         if (!timeline) return;
         
         try {
-            const response = await fetch('https://api.github.com/repos/vadymkatsel/programming-concepts/commits?per_page=5');
+            const response = await fetch('https://api.github.com/repos/vadymkatsel/programming-concepts/commits?per_page=30');
             const commits = await response.json();
+            
+            if (!Array.isArray(commits)) {
+                throw new Error(commits.message || 'Invalid response');
+            }
+
+            const allowedPrefixes = ['feat', 'style', 'docs'];
+            let displayCommits = commits.filter(commitData => {
+                const rawMessage = (commitData.commit.message || '').trim().toLowerCase();
+                return allowedPrefixes.some(prefix => 
+                    rawMessage.startsWith(prefix + ':') || 
+                    rawMessage.startsWith(prefix + '(') || 
+                    rawMessage.startsWith(prefix + ' ')
+                );
+            });
+
+            if (displayCommits.length === 0) {
+                displayCommits = commits.filter(c => !c.commit.message.toLowerCase().startsWith('merge')).slice(0, 5);
+            } else {
+                displayCommits = displayCommits.slice(0, 5);
+            }
             
             timeline.innerHTML = ''; 
             
-            commits.forEach(commitData => {
+            displayCommits.forEach(commitData => {
                 const author = commitData.author ? commitData.author.login : commitData.commit.author.name;
                 const message = commitData.commit.message.split('\n')[0];
                 const hash = commitData.sha.substring(0, 7);
