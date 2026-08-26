@@ -577,46 +577,294 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
+        /* Authors Section Styling */
         .authors-layout {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+            grid-template-columns: 1.12fr 1fr;
             gap: 1.2rem;
             flex-grow: 1;
             min-height: 0;
+            height: 100%;
             align-items: stretch;
-            width: 100%;
+        }
+
+        .author-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 1.15rem 1.3rem;
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+        }
+
+        .author-card:hover {
+            border-color: rgba(255, 255, 255, 0.16);
+            background: rgba(255, 255, 255, 0.035);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        }
+
+        .author-card-lead {
+            border-color: rgba(255, 101, 0, 0.25);
+            background: linear-gradient(175deg, rgba(255, 101, 0, 0.03) 0%, rgba(255, 255, 255, 0.015) 100%);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1.25rem 1.4rem;
+        }
+
+        .author-card-lead:hover {
+            border-color: rgba(255, 101, 0, 0.45);
+            box-shadow: 0 8px 24px rgba(255, 101, 0, 0.08);
+        }
+
+        .author-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.1rem;
+        }
+
+        .author-avatar-wrapper {
+            position: relative;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .author-avatar {
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            object-fit: cover;
+            display: block;
+        }
+
+        .author-card-lead .author-avatar {
+            border-color: var(--accent-orange);
+            box-shadow: 0 0 14px var(--accent-glow);
+        }
+
+        .author-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.3rem;
+            min-width: 0;
+        }
+
+        .author-name-row {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .author-name {
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 1.18rem;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        .author-handle {
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            color: var(--accent-orange);
+        }
+
+        .author-role-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-mono);
+            font-size: 0.74rem;
+            font-weight: 600;
+            padding: 3px 9px;
+            border-radius: 4px;
+            width: fit-content;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+            margin-top: 0.05rem;
+        }
+
+        .role-creator {
+            background: rgba(255, 101, 0, 0.15);
+            color: #ff914d;
+            border: 1px solid rgba(255, 101, 0, 0.35);
+        }
+
+        .role-advisor {
+            background: rgba(96, 165, 250, 0.12);
+            color: #93c5fd;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+        }
+
+        .role-contributor {
+            background: rgba(52, 211, 153, 0.12);
+            color: #6ee7b7;
+            border: 1px solid rgba(52, 211, 153, 0.3);
+        }
+
+        .author-subtext {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            line-height: 1.45;
+            margin-top: 0.15rem;
+        }
+
+        .author-contrib-section {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 0.8rem;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-left: 3px solid var(--accent-orange);
+            border-radius: 0 10px 10px 0;
+            padding: 1.1rem 1.35rem;
+        }
+
+        .contrib-section-title {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: rgba(255, 255, 255, 0.45);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contrib-items-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        .contrib-item {
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            line-height: 1.55;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .contrib-bullet {
+            color: var(--accent-orange);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            flex-shrink: 0;
+        }
+
+        .contrib-item strong {
+            color: #f1f5f9;
+            font-weight: 600;
+        }
+
+        .contrib-tags-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-top: 0.3rem;
+        }
+
+        .contrib-tag {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .tag-orange { color: #fdba74; border-color: rgba(253, 186, 116, 0.25); background: rgba(253, 186, 116, 0.05); }
+        .tag-blue { color: #93c5fd; border-color: rgba(147, 197, 253, 0.25); background: rgba(147, 197, 253, 0.05); }
+        .tag-amber { color: #fde047; border-color: rgba(253, 224, 71, 0.25); background: rgba(253, 224, 71, 0.05); }
+
+        .author-card-contrib {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.15rem;
+            padding: 1.15rem 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .author-card-contrib .author-avatar {
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .contributors-scroll {
+            display: flex;
+            flex-direction: column;
+            gap: 0.95rem;
+            height: 100%;
+            min-height: 0;
+            overflow-y: auto;
+            padding: 4px 6px 4px 4px;
+            margin: -4px -6px -4px -4px;
+        }
+
+        .contributors-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .contributors-scroll::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 4px;
+        }
+        .contributors-scroll::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 4px;
+        }
+        .contributors-scroll::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 101, 0, 0.4);
         }
 
         /* Responsive Design */
         @media (max-width: 1024px) {
             html {
                 overflow-y: auto !important;
-            }
-            .container {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto auto 1fr auto;
                 height: auto;
-                min-height: 100vh;
-                overflow-y: visible;
-                padding: 16px;
-                gap: 16px;
+                width: 100%;
             }
             body { 
-                overflow-y: auto;
-                align-items: flex-start;
-                height: auto;
+                display: block !important;
+                width: 100% !important;
+                height: auto !important;
                 min-height: 100vh;
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .container {
+                display: flex !important;
+                flex-direction: column !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+                min-height: 100vh;
+                overflow-y: visible !important;
+                overflow-x: hidden !important;
+                padding: 14px !important;
+                gap: 14px !important;
+                box-sizing: border-box !important;
             }
             .sidebar { 
-                grid-row: 2 / 3; 
-                grid-column: 1 / -1; 
-                padding: 1rem 1.5rem;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                flex-wrap: wrap;
-                gap: 1.25rem;
+                width: 100% !important;
+                padding: 1rem 1.25rem !important;
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                flex-wrap: wrap !important;
+                gap: 1rem !important;
+                box-sizing: border-box !important;
             }
             .brand-header {
                 justify-content: flex-start;
@@ -624,42 +872,80 @@
                 gap: 0.8rem;
             }
             .brand-logo svg {
-                width: 48px;
-                height: 30px;
+                width: 44px;
+                height: 28px;
             }
             .brand-title {
-                font-size: 1.15rem;
+                font-size: 1.1rem;
                 font-weight: 800;
                 line-height: 1.15;
             }
             .fs-tree {
-                flex-direction: row;
-                flex-wrap: wrap;
-                align-items: center;
-                justify-content: flex-end;
-                border-left: none;
-                padding-left: 0;
-                margin-left: 0;
-                gap: 1.5rem;
-                font-size: 0.95rem;
-            }
-            .fs-icon {
-                font-size: 1.1rem;
+                flex-direction: row !important;
+                flex-wrap: wrap !important;
+                align-items: center !important;
+                justify-content: flex-end !important;
+                border-left: none !important;
+                padding-left: 0 !important;
+                margin-left: 0 !important;
+                gap: 1.2rem !important;
+                font-size: 0.9rem !important;
             }
             .fs-item::before {
-                display: none;
+                display: none !important;
             }
             .fs-item:hover, .fs-item.active {
                 transform: translateY(-2px);
             }
             .main-grid { 
-                grid-row: 3 / 4; 
-                grid-column: 1 / -1; 
-                grid-template-columns: repeat(2, 1fr); 
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 14px;
+                width: 100%;
+            }
+            #authors-section {
+                width: 100% !important;
+                height: auto !important;
+                min-height: auto !important;
+            }
+            #authors-section > .panel {
+                width: 100% !important;
+                height: auto !important;
+                min-height: auto !important;
+                overflow: visible !important;
+                padding: 1.25rem 1.35rem !important;
+                box-sizing: border-box !important;
+            }
+            .authors-layout {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                width: 100% !important;
+                height: auto !important;
+                min-height: auto !important;
+                gap: 1.2rem !important;
+            }
+            .author-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .author-card-lead {
+                height: auto !important;
+            }
+            .contributors-scroll {
+                height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                width: 100% !important;
+            }
+            .author-role-badge {
+                white-space: normal !important;
+                word-break: break-word !important;
             }
             .terminal { 
-                grid-row: 4 / 5; 
-                grid-column: 1 / -1; 
+                width: 100% !important;
+                box-sizing: border-box !important;
             }
             .log-header {
                 pointer-events: auto;
@@ -690,13 +976,6 @@
             }
         }
         @media (max-width: 768px) {
-            .main-grid { 
-                grid-template-columns: 1fr; 
-            }
-            .authors-layout {
-                grid-template-columns: 1fr !important;
-                gap: 1rem;
-            }
             .system-bar {
                 display: flex;
                 flex-direction: row;
@@ -715,19 +994,42 @@
                 padding: 3px 8px;
                 font-size: 0.75rem;
             }
-            .sidebar {
-                padding: 1rem 1.25rem;
-            }
         }
-        @media (max-width: 580px) {
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px !important;
+                gap: 10px !important;
+            }
             .sidebar {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.8rem;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 0.8rem !important;
+                padding: 0.9rem 1rem !important;
             }
             .fs-tree {
-                justify-content: flex-start;
-                gap: 1.2rem;
+                width: 100% !important;
+                justify-content: flex-start !important;
+                gap: 1rem !important;
+                font-size: 0.88rem !important;
+            }
+            .main-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .author-card-contrib {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 0.75rem !important;
+            }
+            .author-name-row {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 0.2rem !important;
+            }
+            .author-contrib-section {
+                padding: 0.85rem 0.95rem !important;
+            }
+            .contrib-item {
+                font-size: 0.86rem !important;
             }
         }
         @media (max-width: 500px) {
@@ -772,13 +1074,13 @@
         
         <div class="fs-tree">
             <div class="fs-item active" data-target="courses-section">
-                <span class="fs-icon">📁</span> courses/
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> courses/
             </div>
             <div class="fs-item" data-target="authors-section">
-                <span class="fs-icon">📝</span> authors.md
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> authors.md
             </div>
             <a href="https://github.com/vadymkatsel/programming-concepts" target="_blank" class="fs-item" style="text-decoration: none; color: inherit;">
-                <span class="fs-icon">🔗</span> github_repo
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> github_repo
             </a>
         </div>
     </aside>
@@ -856,45 +1158,86 @@
 
     <!-- Authors Section -->
     <main class="main-grid" id="authors-section" style="display: none; grid-template-rows: 1fr;">
-        <div class="panel" style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 1.2rem; height: 100%; overflow: hidden; padding: 1.3rem;">
-            <div style="border-bottom: 1px solid var(--border-glass); padding-bottom: 0.8rem;">
-                <h2 class="card-title" style="font-size: 1.2rem; margin-bottom: 0.3rem;">~/programming-concepts/authors.md</h2>
-                <p class="card-desc" style="font-size: 0.85rem;">Команда творців та контриб'юторів курсу.</p>
+        <div class="panel" style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 1.1rem; height: 100%; min-height: 0; overflow: hidden; padding: 1.25rem 1.4rem;">
+            <div style="border-bottom: 1px solid var(--border-glass); padding-bottom: 0.7rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                <div>
+                    <h2 class="card-title" style="font-size: 1.15rem; margin-bottom: 0.2rem;">~/programming-concepts/authors.md</h2>
+                    <p class="card-desc" style="font-size: 0.82rem;">Команда розробників, авторів контенту та контриб'юторів курсу.</p>
+                </div>
+                <div class="sys-badge" style="font-size: 0.75rem;">
+                    <span class="badge-label">TEAM:</span> <span style="color: var(--accent-orange);">3 Members</span>
+                </div>
             </div>
             
             <div class="authors-layout">
                 
-                <!-- Left Column: Main Architect -->
-                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 1.25rem 1.4rem; border-radius: 14px; display: flex; flex-direction: column; gap: 1rem; height: 100%;">
-                    <div style="display: flex; align-items: center; gap: 1.2rem;">
-                        <img src="https://github.com/vkatsel.png" width="64" height="64" style="border-radius: 50%; border: 2px solid rgba(255,255,255,0.15);" alt="Vadym Katsel" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'#333\'/><text x=\'50\' y=\'65\' font-size=\'40\' fill=\'white\' text-anchor=\'middle\'>V</text></svg>'">
-                        <div>
-                            <div style="font-weight: 700; color: white; font-size: 1.2rem;">Vadym Katsel</div>
-                            <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-orange); margin-top: 0.15rem;">@vkatsel</div>
-                            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Головний архітектор та розробник</div>
+                <!-- Left Column: Creator & Lead Architect -->
+                <div class="author-card author-card-lead">
+                    <div class="author-header">
+                        <div class="author-avatar-wrapper">
+                            <img src="https://github.com/vkatsel.png" width="58" height="58" class="author-avatar" alt="Vadym Katsel" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'#333\'/><text x=\'50\' y=\'65\' font-size=\'40\' fill=\'white\' text-anchor=\'middle\'>V</text></svg>'">
+                        </div>
+                        <div class="author-meta">
+                            <div class="author-name-row">
+                                <span class="author-name">Vadym Katsel</span>
+                                <span class="author-handle">@vkatsel</span>
+                            </div>
+                            <span class="author-role-badge role-creator">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                Project Creator & Lead Architect
+                            </span>
                         </div>
                     </div>
-                    <div style="flex-grow: 1; background: rgba(0,0,0,0.3); border-left: 3px solid var(--accent-orange); padding: 1.2rem 1.4rem; border-radius: 0 10px 10px 0; font-style: italic; color: #cbd5e1; font-size: clamp(0.95rem, 1.15vw, 1.15rem); line-height: 1.65; display: flex; align-items: center;">
-                        "Архітектура та інтерактивна платформа курсу: створюємо сучасний навчальний простір, де концепції Computer Science оживають у коді та реальних проєктах."
+
+                    <div class="author-contrib-section">
+                        <div class="contrib-section-title">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            Внесок у проєкт 
+                        </div>
+                        <div class="contrib-items-list">
+                            <div class="contrib-item">
+                                <span class="contrib-bullet">▸</span>
+                                <div><strong>Платформа & Інфраструктура:</strong> повна архітектура веб-порталу, дизайн-система, налаштування Quarto-пайплайнів та автоматизація.</div>
+                            </div>
+                            <div class="contrib-item">
+                                <span class="contrib-bullet">▸</span>
+                                <div><strong>Практичні заняття:</strong> створення навчальної програми практики, інтерактивних завдань та семінарів для курсів (BE, EBD, Math).</div>
+                            </div>
+                        </div>
+                        <div class="contrib-tags-row">
+                            <span class="contrib-tag tag-orange">Lead Developer</span>
+                            <span class="contrib-tag tag-amber">Teaching Assistant</span>
+                            <span class="contrib-tag tag-blue">UI/UX Engine</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Right Column: Other Contributors -->
-                <div style="display: flex; flex-direction: column; gap: 1rem; max-height: 280px; overflow-y: auto; padding-right: 0.4rem;" class="contributors-scroll">
+                <!-- Right Column: Other Contributors (Scrollable) -->
+                <div class="contributors-scroll">
                     
-                    <div style="background: rgba(255,255,255,0.015); border: 1px solid rgba(255,255,255,0.08); padding: 1.1rem 1.4rem; border-radius: 14px; display: flex; align-items: center; gap: 1.2rem; transition: transform 0.2s ease; flex-shrink: 0;">
-                        <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%20100%20100%27%3E%3Ccircle%20cx=%2750%27%20cy=%2750%27%20r=%2750%27%20fill=%27%231e2230%27/%3E%3Ctext%20x=%2750%27%20y=%2765%27%20font-size=%2742%27%20font-weight=%27bold%27%20fill=%27%2360a5fa%27%20text-anchor=%27middle%27%3E%D0%84%3C/text%3E%3C/svg%3E" width="52" height="52" style="border-radius: 50%; border: 2px solid rgba(255,255,255,0.15);" alt="Є">
-                        <div>
-                            <div style="font-weight: 700; color: white; font-size: 1.1rem;">Євгеній Козолуп</div>
-                            <div style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.2rem;">Content Advisor (Лектор)</div>
+                    <!-- Eugene Kozolup -->
+                    <div class="author-card author-card-contrib">
+                        <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%20100%20100%27%3E%3Ccircle%20cx=%2750%27%20cy=%2750%27%20r=%2750%27%20fill=%27%231e2230%27/%3E%3Ctext%20x=%2750%27%20y=%2765%27%20font-size=%2742%27%20font-weight=%27bold%27%20fill=%27%2360a5fa%27%20text-anchor=%27middle%27%3E%D0%84%3C/text%3E%3C/svg%3E" width="48" height="48" class="author-avatar" alt="Є">
+                        <div class="author-meta">
+                            <div class="author-name">Євгеній Козолуп</div>
+                            <span class="author-role-badge role-advisor">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                                Content Advisor & Course Lecturer
+                            </span>
+                            <div class="author-subtext">Лекційний супровід та академічне консультування навчальної програми</div>
                         </div>
                     </div>
 
-                    <div style="background: rgba(255,255,255,0.015); border: 1px solid rgba(255,255,255,0.08); padding: 1.1rem 1.4rem; border-radius: 14px; display: flex; align-items: center; gap: 1.2rem; transition: transform 0.2s ease; flex-shrink: 0;">
-                        <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%20100%20100%27%3E%3Ccircle%20cx=%2750%27%20cy=%2750%27%20r=%2750%27%20fill=%27%231e2230%27/%3E%3Ctext%20x=%2750%27%20y=%2765%27%20font-size=%2742%27%20font-weight=%27bold%27%20fill=%27%2334d399%27%20text-anchor=%27middle%27%3E%D0%90%3C/text%3E%3C/svg%3E" width="52" height="52" style="border-radius: 50%; border: 2px solid rgba(255,255,255,0.15);" alt="А">
-                        <div>
-                            <div style="font-weight: 700; color: white; font-size: 1.1rem;">Адріана Григоришина</div>
-                            <div style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.2rem;">Contributor (Практика)</div>
+                    <!-- Adriana Hryhoryshyna -->
+                    <div class="author-card author-card-contrib">
+                        <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%20100%20100%27%3E%3Ccircle%20cx=%2750%27%20cy=%2750%27%20r=%2750%27%20fill=%27%231e2230%27/%3E%3Ctext%20x=%2750%27%20y=%2765%27%20font-size=%2742%27%20font-weight=%27bold%27%20fill=%27%2334d399%27%20text-anchor=%27middle%27%3E%D0%90%3C/text%3E%3C/svg%3E" width="48" height="48" class="author-avatar" alt="А">
+                        <div class="author-meta">
+                            <div class="author-name">Адріана Григоришина</div>
+                            <span class="author-role-badge role-contributor">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                                Practice Contributor
+                            </span>
+                            <div class="author-subtext">Підготовка навчальних матеріалів до практичного заняття курсу</div>
                         </div>
                     </div>
                     
@@ -916,16 +1259,12 @@
     // --- 0. SPA Navigation (File Tree) ---
     document.querySelectorAll('.fs-item[data-target]').forEach(item => {
         item.addEventListener('click', () => {
-            // Remove active class from all
             document.querySelectorAll('.fs-item').forEach(el => el.classList.remove('active'));
-            // Add active to clicked item
             item.classList.add('active');
             
-            // Hide all sections
             document.getElementById('courses-section').style.display = 'none';
             document.getElementById('authors-section').style.display = 'none';
             
-            // Show target section
             const targetId = item.getAttribute('data-target');
             document.getElementById(targetId).style.display = 'grid';
         });
