@@ -1,6 +1,7 @@
 on:
   push:
-    branches: main
+    branches:
+      - main
   workflow_dispatch:
 
 name: Quarto Publish
@@ -11,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: "quarto-publish"
   cancel-in-progress: true
 
 jobs:
