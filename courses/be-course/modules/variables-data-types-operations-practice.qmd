@@ -4,11 +4,7 @@ affiliation: "Основи програмування"
 date: "10-21-2025"
 toc: true
 lang: ua
-format: 
-  html:
-    theme:
-      light: cosmo
-      dark: darkly
+page-layout: full
 ---
 
 # 📌 Завдання 1
