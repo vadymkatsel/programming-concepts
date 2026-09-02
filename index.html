@@ -607,8 +607,8 @@
         }
 
         .author-card-lead {
-            border-color: rgba(255, 101, 0, 0.25);
-            background: linear-gradient(175deg, rgba(255, 101, 0, 0.03) 0%, rgba(255, 255, 255, 0.015) 100%);
+            border-color: rgba(255, 101, 0, 0.15);
+            background: linear-gradient(175deg, rgba(255, 101, 0, 0.015) 0%, rgba(255, 255, 255, 0.01) 100%);
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -617,8 +617,8 @@
         }
 
         .author-card-lead:hover {
-            border-color: rgba(255, 101, 0, 0.45);
-            box-shadow: 0 8px 24px rgba(255, 101, 0, 0.08);
+            border-color: rgba(255, 101, 0, 0.25);
+            box-shadow: 0 6px 20px rgba(255, 101, 0, 0.05);
         }
 
         .author-header {
@@ -641,8 +641,8 @@
         }
 
         .author-card-lead .author-avatar {
-            border-color: var(--accent-orange);
-            box-shadow: 0 0 14px var(--accent-glow);
+            border-color: rgba(255, 101, 0, 0.4);
+            box-shadow: 0 0 10px rgba(255, 101, 0, 0.15);
         }
 
         .author-meta {
@@ -719,29 +719,20 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            gap: 0.6rem;
-            background: rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-left: 3px solid var(--accent-orange);
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-left: 2px solid rgba(255, 101, 0, 0.3);
             border-radius: 0 10px 10px 0;
-            padding: 0.85rem 1.15rem;
-        }
-
-        .contrib-section-title {
-            font-family: var(--font-mono);
-            font-size: 0.73rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: rgba(255, 255, 255, 0.45);
-            display: flex;
-            align-items: center;
-            gap: 6px;
+            padding: 1rem 1.25rem;
         }
 
         .contrib-items-list {
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            gap: 0.45rem;
+            justify-content: center;
+            gap: 0.65rem;
         }
 
         .contrib-item {
@@ -1141,24 +1132,24 @@
                     </div>
 
                     <div class="author-contrib-section">
-                        <div class="contrib-section-title">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                            Внесок у проєкт 
-                        </div>
                         <div class="contrib-items-list">
                             <div class="contrib-item">
                                 <span class="contrib-bullet">▸</span>
-                                <div><strong>Платформа & Інфраструктура:</strong> повна архітектура веб-порталу, дизайн-система, налаштування Quarto-пайплайнів та автоматизація.</div>
+                                <div><strong>Платформа & Інфраструктура:</strong> архітектура порталу, налаштування Quarto-пайплайнів, дизайн-системи та CI/CD автоматизація.</div>
                             </div>
                             <div class="contrib-item">
                                 <span class="contrib-bullet">▸</span>
-                                <div><strong>Практичні заняття:</strong> створення навчальної програми практики, інтерактивних завдань та семінарів для курсів (BE, EBD, Math).</div>
+                                <div><strong>Практичні заняття:</strong> розробка семінарських матеріалів, інтерактивних завдань і практичних зошитів (BE, EBD, Math).</div>
+                            </div>
+                            <div class="contrib-item">
+                                <span class="contrib-bullet">▸</span>
+                                <div><strong>Супровід & Контроль:</strong> асистентська підтримка, технічна валідація коду та актуалізація навчального контенту.</div>
                             </div>
                         </div>
                         <div class="contrib-tags-row">
-                            <span class="contrib-tag tag-orange">Lead Developer</span>
+                            <span class="contrib-tag tag-orange">Platform Architecture</span>
                             <span class="contrib-tag tag-amber">Teaching Assistant</span>
-                            <span class="contrib-tag tag-blue">UI/UX Engine</span>
+                            <span class="contrib-tag tag-blue">Quarto & Automation</span>
                         </div>
                     </div>
                 </div>
