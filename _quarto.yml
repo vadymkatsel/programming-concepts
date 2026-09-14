@@ -80,37 +80,47 @@ website:
       collapse-level: 1
       contents:
         - courses/be-course/modules/index.qmd 
-  
-        - section: "Змінні, типи даних. Математичні операції в Python"
-          contents: 
-            - courses/be-course/modules/variables-data-types-operations-practice.qmd
-            
-        - section: "Логічні розгалудження"
-          contents: 
-            - courses/be-course/modules/conditionals-practice.qmd
-            - courses/be-course/modules/ATM-simulator-task.qmd
 
-        - section: "Списки та словники"
-          contents: 
-            - courses/be-course/modules/lists-practice.qmd
-            - courses/be-course/modules/dictionaries-tuples-sets-practice.qmd
-            - courses/be-course/modules/comprehensions-practice.qmd
-
-        - section: "Рядки"
+        - section: "Середовище розробки. Основи Python"
           contents:
-            - courses/be-course/modules/strings-practice.qmd
+            - courses/be-course/modules/ide-variables-operations/ide-setup-ps.qmd
+  
+        - section: "Legacy"
+          contents:
+            - section: "Змінні, типи даних. Математичні операції в Python"
+              contents: 
+                - courses/be-course/modules/legacy/variables-data-types-operations-practice.qmd
+                
+            - section: "Логічні розгалудження"
+              contents: 
+                - courses/be-course/modules/legacy/conditionals-practice.qmd
+                - courses/be-course/modules/legacy/ATM-simulator-task.qmd
 
-        - section: "Функції"
-          contents: 
-            - courses/be-course/modules/functions-practice.qmd
+            - section: "Списки та словники"
+              contents: 
+                - courses/be-course/modules/legacy/lists-practice.qmd
+                - courses/be-course/modules/legacy/dictionaries-tuples-sets-practice.qmd
+                - courses/be-course/modules/legacy/comprehensions-practice.qmd
 
-        - section: "Робота з файлами"
-          contents: 
-            - courses/be-course/modules/files-practice.qmd
+            - section: "Рядки"
+              contents:
+                - courses/be-course/modules/legacy/strings-practice.qmd
 
-        - section: "Бібліотеки, JSON"
-          contents: 
-            - courses/be-course/modules/libraries-json-practice.qmd
+            - section: "Функції"
+              contents: 
+                - courses/be-course/modules/legacy/functions-practice.qmd
+
+            - section: "Робота з файлами"
+              contents: 
+                - courses/be-course/modules/legacy/files-practice.qmd
+
+            - section: "Бібліотеки, JSON"
+              contents: 
+                - courses/be-course/modules/legacy/libraries-json-practice.qmd
+
+            - section: "Підсумкове повторення"
+              contents:
+                - courses/be-course/modules/legacy/midterm-revision.qmd
 
       active-modes: [courses/be-course]
 

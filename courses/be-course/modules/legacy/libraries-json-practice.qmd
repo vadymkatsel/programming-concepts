@@ -1,0 +1,217 @@
+---
+title: "Бібліотеки та робота з JSON"
+toc: true
+lang: ua
+execute:
+  eval: false
+page-layout: full
+---
+
+## 📌 План заняття
+- 🔍 Робота з форматом JSON у Python
+- 👨‍💻 Live Coding 1: Читання та обробка JSON
+- 🛠 Guided Practice 1: Оновлення JSON-даних
+- 📚 Бібліотеки для аналізу даних: NumPy, Pandas, Matplotlib
+- 👨‍💻 Live Coding 2: Базовий аналіз даних за допомогою Pandas
+- 🛠 Guided Practice 2: Побудова графіків за допомогою Matplotlib
+
+## 🔍 Робота з форматом JSON
+
+### 🌐 Що таке JSON?
+
+**JSON** (JavaScript Object Notation) — це легкий, текстовий формат обміну даними, який широко використовується для передачі структурованої інформації між серверами, вебзастосунками та сторонніми API.
+
+У Python структура JSON напряму відображається на базові типи даних:
+- **Об'єкт JSON** (`{...}`) відповідає словнику (`dict`).
+- **Масив JSON** (`[...]`) відповідає списку (`list`).
+- Рядки, числа, булеві значення (`true`/`false`) та `null` відповідають `str`, `int`/`float`, `bool` (`True`/`False`) та `None`.
+
+### 📖 Читання JSON-файлів
+
+Модуль `json` є частиною стандартної бібліотеки Python. Для зчитування даних із файлу використовується функція `json.load()`:
+
+```{python}
+#| filename: "data.json"
+#| eval: false
+
+{
+  "Name": "Vasya",
+  "Age": 28,
+  "Address": {
+    "work": "Kyiv, Mykoly Shpaka 3 street",
+    "home": null
+  }
+}
+```
+
+```{python}
+#| eval: false
+
+import json
+
+with open("data.json", "r", encoding="utf-8") as file:
+    data = json.load(file)
+    print(data["Name"], data["Age"], data["Address"]["work"])
+```
+
+### ✍️ Запис у JSON-файл
+
+Для збереження структури Python у JSON-файл використовується функція `json.dump()`. Параметр `indent=4` додає форматування з відступами для кращої читабельності, а `ensure_ascii=False` коректно зберігає кириличні символи:
+
+```{python}
+#| eval: false
+
+import json
+
+dict_data = {
+    "Name": "Vasya",
+    "Age": 28,
+    "Address": {
+        "work": "Київ, вулиця Миколи Шпака, 3",
+        "home": None
+    }
+}
+
+with open("data.json", "w", encoding="utf-8") as file:
+    json.dump(dict_data, file, indent=4, ensure_ascii=False)
+```
+
+## 👨‍💻 Live Coding 1: Робота із замовленням у JSON
+
+::: {.callout-note}
+### 🎯 Завдання
+Маємо файл `order.json` із даними про замовлення в магазині техніки. Необхідно відкрити файл, отримати список товарів (`items`) і розрахувати середню ціну замовлення (середню вартість товарів у списку).
+:::
+
+```{python}
+#| filename: "order.json"
+#| eval: false
+
+{
+  "orderId": "PO-12345",
+  "customer": {
+    "name": "Jane Smith",
+    "email": "jane@example.com",
+    "address": {
+      "street": "123 Main St",
+      "city": "Anytown",
+      "zip": "12345"
+    }
+  },
+  "items": [
+    { "sku": "ABC-001", "name": "Laptop", "price": 1100.99 },
+    { "sku": "XYZ-002", "name": "Phone", "price": 780.50 },
+    { "sku": "QWE-005", "name": "Tablet", "price": 900.00 }
+  ],
+  "totalAmount": 2781.49,
+  "shipped": true,
+  "notes": null
+}
+```
+
+### 🛠 Guided Practice 1: Додавання товару та оновлення JSON
+
+::: {.callout-important}
+### 📋 Ваше завдання
+Маючи файл `order.json`:
+1. Завантажте дані за допомогою `json.load()`.
+2. Додайте новий товар до списку `items` (наприклад, `{"sku": "MOU-010", "name": "Wireless Mouse", "price": 45.00}`).
+3. Перерахуйте загальну суму (`totalAmount`) та середню вартість одного товару.
+4. Збережіть оновлену структуру у новий файл `updated_order.json`, використовуючи `json.dump()` з відступами `indent=4`.
+:::
+
+```{python}
+# TODO: Прочитайте order.json, додайте новий товар і запишіть в updated_order.json
+# ваш код тут
+```
+
+## 📚 Бібліотеки для аналізу даних: NumPy, Pandas, Matplotlib
+
+Для складного аналізу даних та візуалізації стандартних модулів Python недостатньо, тому використовують сторонні бібліотеки екосистеми Data Science.
+
+### 🔢 NumPy: векторні обчислення
+
+**NumPy** (`numpy`) надає підтримку багатовимірних масивів (`np.array`) та швидких математичних операцій:
+
+```{python}
+#| eval: false
+
+import numpy as np
+
+prices = np.array([1100.99, 780.50, 900.00, 45.00])
+
+print("Середнє:", np.mean(prices))
+print("Максимум:", np.max(prices))
+print("Мінімум:", np.min(prices))
+```
+
+### 🐼 Pandas: табличні дані та DataFrame
+
+**Pandas** (`pandas`) — ключовий інструмент для роботи зі структурованими даними у вигляді таблиць (`pd.DataFrame`):
+
+```{python}
+#| eval: false
+
+import pandas as pd
+
+data = {
+    "Product": ["Laptop", "Phone", "Tablet", "Mouse"],
+    "Price": [1100.99, 780.50, 900.00, 45.00],
+    "Quantity": [2, 5, 3, 10]
+}
+
+df = pd.DataFrame(data)
+df["Total"] = df["Price"] * df["Quantity"]
+print(df)
+```
+
+### 📊 Matplotlib: візуалізація даних
+
+**Matplotlib** (`matplotlib.pyplot`) дозволяє будувати графіки, діаграми та візуалізувати аналітичні висновки:
+
+```{python}
+#| eval: false
+
+import matplotlib.pyplot as plt
+
+categories = ["Laptop", "Phone", "Tablet", "Mouse"]
+sales = [2201.98, 3902.50, 2700.00, 450.00]
+
+plt.bar(categories, sales, color="skyblue")
+plt.title("Продажі за категоріями")
+plt.xlabel("Товар")
+plt.ylabel("Сума продажів ($)")
+plt.show()
+```
+
+## 👨‍💻 Live Coding 2: Базовий аналіз даних за допомогою Pandas
+
+::: {.callout-note}
+### 🎯 Завдання
+Створити DataFrame із показниками продажів компанії за 4 квартали для двох продуктів, обчислити сумарний виторг за кожен квартал та знайти середній показник виторгу.
+:::
+
+### 🛠 Guided Practice 2: Побудова графіків за допомогою Matplotlib
+
+::: {.callout-important}
+### 📋 Ваше завдання
+Маючи словник із місячними доходами компанії:
+```python
+monthly_revenue = {
+    "Січ": 12000,
+    "Лют": 15000,
+    "Бер": 14000,
+    "Кві": 18000,
+    "Тра": 21000,
+    "Чер": 25000
+}
+```
+1. Створіть лінійний графік динаміки доходів за допомогою `plt.plot()`.
+2. Додайте заголовок графіка (`plt.title()`), підписи осей (`plt.xlabel()`, `plt.ylabel()`) та сітку (`plt.grid(True)`).
+3. Відобразіть графік за допомогою `plt.show()`.
+:::
+
+```{python}
+# TODO: Побудуйте лінійний графік динаміки місячних доходів
+# ваш код тут
+```
