@@ -18,17 +18,17 @@
 }
  
 body.quarto-dark {
-  --bg-body:        #060710;
-  --bg-body-decoration: rgba(255, 255, 255, 0.025);
-  --fg-text:        #e2e8f0;
+  --bg-body:        #08090d;
+  --bg-body-decoration: rgba(255, 255, 255, 0.015);
+  --fg-text:        #f1f5f9;
   --fg-muted:       #94a3b8;
   --accent-color:   #FF6500;
   --border-color:   rgba(255, 255, 255, 0.08);
-  --code-bg:        rgba(10, 13, 24, 0.6);
-  --sections-bg:    rgba(14, 18, 32, 0.65);
+  --code-bg:        rgba(12, 14, 23, 0.65);
+  --sections-bg:    rgba(13, 16, 25, 0.72);
   --section-border: rgba(255, 255, 255, 0.08);
-  --bg-glow-1:      rgba(255, 101, 0, 0.1);
-  --bg-glow-2:      rgba(56, 189, 248, 0.08);
+  --bg-glow-1:      rgba(255, 101, 0, 0.035);
+  --bg-glow-2:      rgba(56, 189, 248, 0.035);
 }
  
 /* ============================================================

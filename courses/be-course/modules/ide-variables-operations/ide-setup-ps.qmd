@@ -2,8 +2,7 @@
 title: "IDE та Python. Перші кроки"
 toc: true
 lang: ua
-execute:
-  eval: false
+engine: jupyter
 page-layout: full
 ---
 
@@ -86,7 +85,9 @@ python --version
 
 Погляньте на короткий приклад:
 
-```python
+```{pyodide}
+#| edit: true
+#| autorun: false
 # 1. Зберігаємо значення у змінні
 item_name = "Кава"
 price = 65

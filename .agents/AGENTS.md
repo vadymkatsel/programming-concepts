@@ -21,6 +21,9 @@ Example: `fix(ebd-course): replace mermaid blocks with native SVG diagrams`
 
 You must NEVER execute `git commit` or push code without explicit permission from the user. Always ask for permission or wait for the user to instruct you to commit.
 
+## Versioning
+When creating commits for new features, bug fixes, or significant refactoring, always bump the semantic version tag in the landing page (`index.html` at the `sys-badge` element, e.g. `<span class="sys-badge"><span class="badge-label">V:</span> ...>2.0.x</span></span>`).
+
 ## Available Custom Agents (`.agents/agents/`)
 
 - **`educational-designer`** (`.agents/agents/educational-designer.md`): Main pedagogical content generator for Python beginners.
