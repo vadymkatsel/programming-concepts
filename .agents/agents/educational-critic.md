@@ -34,6 +34,7 @@ Every `.qmd` file must be audited against the guidelines in `.agents/rules/`:
    - Single primitive: inline on the same line without bullets.
    - Single collection: standalone python code block on next line without bullets.
    - Multiple distinct variables: compact bulleted list.
+   - **No Assignment Statements**: Strictly prohibit ready-made code assignment statements (e.g., `price = 1200` or `revenue = 8500`). Specify pure domain quantities or values (e.g., `базова вартість: 1200 грн`), forcing students to declare variable names and write input/assignment expressions independently.
 5. **Zero Solution Tolerance**:
    - Verify that NO working solution code is exposed in practice tasks.
 6. **Expected Output (`**Очікуваний результат:**`)**:
