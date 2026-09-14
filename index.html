@@ -1074,15 +1074,13 @@
 
         @media (max-width: 768px) {
             .system-bar {
-                padding: 0.6rem 1rem;
-                font-size: 0.78rem;
+                padding: 0.8rem 1rem;
             }
             .sys-badges-group {
                 gap: 8px;
             }
-            .sys-badge {
-                padding: 3px 8px;
-                font-size: 0.74rem;
+            #site-search {
+                width: 160px !important;
             }
         }
 
@@ -1090,6 +1088,30 @@
             .container {
                 padding: 10px;
                 gap: 10px;
+            }
+            .system-bar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+                padding: 0.8rem;
+            }
+            .sys-badges-group {
+                width: 100%;
+                justify-content: space-between;
+            }
+            .search-group {
+                gap: 10px !important;
+            }
+            .search-container {
+                flex-grow: 1;
+            }
+            #site-search {
+                width: 100% !important;
+            }
+            #search-results {
+                width: 100% !important;
+                right: auto;
+                left: 0;
             }
             .sidebar {
                 flex-direction: column;
@@ -1123,15 +1145,13 @@
                 font-size: 0.86rem;
             }
         }
-
-        @media (max-width: 500px) {
-            .sys-badges-group:nth-child(2) {
-                display: none;
-            }
-            .sys-badges-group {
-                width: 100%;
-                justify-content: space-between;
-            }
+        
+        #course-switcher:hover {
+            background: rgba(255,255,255,0.08) !important;
+            border-color: rgba(255,255,255,0.2) !important;
+        }
+        #site-search:hover {
+            border-color: rgba(167,139,250,0.3) !important;
         }
     </style>
 </head>
@@ -1139,13 +1159,31 @@
 
 <div class="container">
     <div class="system-bar">
-        <div class="sys-badges-group">
-            <span class="sys-badge"><span class="badge-label">SYS:</span> <span style="color: #4ade80; text-shadow: 0 0 6px rgba(74,222,128,0.35);">ONLINE</span></span>
-            <span class="sys-badge"><span class="badge-label">V:</span> <span style="color: #fcd34d; text-shadow: 0 0 6px rgba(252,211,77,0.35);">2.0.3</span></span>
+        <div class="sys-badges-group progress-group" style="display: flex; gap: 14px; align-items: center;">
+            <div style="position: relative; display: inline-flex; align-items: center; height: 34px;">
+                <select id="course-switcher" class="sys-badge" style="height: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); outline: none; cursor: pointer; color: var(--text-main); font-weight: 600; padding: 0 26px 0 12px; border-radius: 8px; appearance: none; -webkit-appearance: none; font-family: var(--font-mono); font-size: 0.78rem; transition: background 0.2s, border-color 0.2s; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+                    <option value="be-course" style="background: #0f121d; color: #eab308; font-weight: 600;">BE (Бізнес Економіка)</option>
+                    <option value="ebd-course" style="background: #0f121d; color: #10b981; font-weight: 600;">EBD (Економіка & Дані)</option>
+                    <option value="math-course" style="background: #0f121d; color: #6366f1; font-weight: 600;">MATH (Математика)</option>
+                </select>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; right: 10px; pointer-events: none; color: var(--text-muted);"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="circular-progress" id="progress-circle-btn" style="position: relative; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));" title="Course Progress">
+                <svg viewBox="0 0 36 36" class="circular-chart" style="width: 100%; height: 100%; transform: rotate(-90deg);">
+                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="2.5" />
+                    <path class="circle" id="progress-path" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--accent-orange)" stroke-width="2.5" stroke-linecap="round" style="transition: stroke-dasharray 1.2s cubic-bezier(0.4, 0, 0.2, 1); filter: drop-shadow(0 0 3px var(--accent-glow));" />
+                </svg>
+                <span id="progress-text" style="position: absolute; font-size: 0.6rem; font-family: var(--font-mono); color: var(--text-main); font-weight: 700;">0%</span>
+            </div>
         </div>
-        <div class="sys-badges-group">
-            <span class="sys-badge"><span class="badge-label">ENV:</span> <span style="color: #60a5fa; text-shadow: 0 0 6px rgba(96,165,250,0.35);">Python 3.12</span></span>
-            <span class="sys-badge"><span class="badge-label">ENC:</span> <span style="color: #a78bfa; text-shadow: 0 0 6px rgba(167,139,250,0.35);">UTF-8</span></span>
+        
+        <div class="sys-badges-group search-group" style="position: relative; display: flex; gap: 16px; align-items: center;">
+            <div class="search-container" style="position: relative; display: flex; align-items: center; height: 34px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 12px; pointer-events: none; color: #a78bfa; filter: drop-shadow(0 0 4px rgba(167,139,250,0.4));"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="site-search" placeholder="Шукати в курсах..." autocomplete="off" style="height: 100%; background: rgba(167,139,250,0.03); border: 1px solid rgba(167,139,250,0.15); border-radius: 8px; padding: 0 14px 0 36px; color: var(--text-main); font-family: var(--font-sans); font-size: 0.84rem; width: 200px; outline: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);">
+                <div id="search-results" class="search-results" style="display: none; position: absolute; top: calc(100% + 10px); right: 0; width: 340px; background: rgba(13,16,25,0.96); border: 1px solid rgba(167,139,250,0.2); border-radius: 10px; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 15px 40px rgba(0,0,0,0.6); z-index: 100; max-height: 380px; overflow-y: auto; flex-direction: column;"></div>
+            </div>
+            <span class="sys-badge" style="height: 34px; display: inline-flex; align-items: center; justify-content: center; padding: 0 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);"><span class="badge-label">V:</span> <span style="color: #fcd34d; text-shadow: 0 0 8px rgba(252,211,77,0.4); font-weight: 700;">2.0.4</span></span>
         </div>
     </div>
     <aside class="panel sidebar">
@@ -1571,6 +1609,123 @@
         requestAnimationFrame(animateBinaryGrid);
     }
     animateBinaryGrid();
+    
+    // --- 4. Search & Progress Logic ---
+    let siteSearchData = [];
+    const searchInput = document.getElementById('site-search');
+    const searchResults = document.getElementById('search-results');
+    const courseSwitcher = document.getElementById('course-switcher');
+    const progressPath = document.getElementById('progress-path');
+    const progressText = document.getElementById('progress-text');
+    
+    // Fetch search.json
+    async function initSearchAndProgress() {
+        try {
+            let res = await fetch('search.json');
+            if (!res.ok) {
+                res = await fetch('docs/search.json');
+            }
+            if (!res.ok) throw new Error("Search index not found");
+            siteSearchData = await res.json();
+            updateProgress();
+        } catch (err) {
+            console.error("Failed to load search.json for progress tracking.", err);
+        }
+    }
+    
+    // Search functionality
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        searchResults.innerHTML = '';
+        if (query.length < 2) {
+            searchResults.style.display = 'none';
+            return;
+        }
+        
+        const results = siteSearchData.filter(item => {
+            return (item.title && item.title.toLowerCase().includes(query)) || 
+                   (item.text && item.text.toLowerCase().includes(query));
+        }).slice(0, 8); // Top 8 results
+        
+        if (results.length === 0) {
+            searchResults.innerHTML = '<div style="padding: 10px 15px; color: var(--text-muted); font-size: 0.85rem;">Нічого не знайдено</div>';
+        } else {
+            results.forEach(item => {
+                const a = document.createElement('a');
+                a.href = item.href;
+                a.style.cssText = 'padding: 10px 15px; display: flex; flex-direction: column; gap: 4px; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.2s;';
+                a.innerHTML = `
+                    <div style="color: var(--text-main); font-weight: 600; font-size: 0.85rem;">${item.title || 'Розділ'}</div>
+                    <div style="color: var(--text-muted); font-size: 0.75rem; font-family: var(--font-mono);">${item.crumbs ? item.crumbs.join(' / ') : ''}</div>
+                `;
+                a.addEventListener('mouseenter', () => a.style.background = 'rgba(255,255,255,0.05)');
+                a.addEventListener('mouseleave', () => a.style.background = 'transparent');
+                searchResults.appendChild(a);
+            });
+        }
+        searchResults.style.display = 'flex';
+    });
+    
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.search-container')) {
+            searchResults.style.display = 'none';
+        }
+    });
+    
+    searchInput.addEventListener('focus', () => {
+        if (searchInput.value.length >= 2) searchResults.style.display = 'flex';
+        searchInput.style.borderColor = 'rgba(167,139,250,0.4)';
+        searchInput.style.background = 'rgba(167,139,250,0.08)';
+        searchInput.style.boxShadow = '0 0 0 3px rgba(167, 139, 250, 0.15), inset 0 2px 5px rgba(0,0,0,0.2)';
+    });
+    searchInput.addEventListener('blur', () => {
+        searchInput.style.borderColor = 'rgba(167,139,250,0.15)';
+        searchInput.style.background = 'rgba(167,139,250,0.03)';
+        searchInput.style.boxShadow = 'inset 0 2px 5px rgba(0,0,0,0.2)';
+    });
+
+    // Progress functionality
+    function updateProgress() {
+        const courseId = courseSwitcher.value; // be-course, ebd-course, math-course
+        
+        // 1. Calculate total modules dynamically from search.json
+        // We find all unique HTML pages belonging to this course
+        const courseItems = siteSearchData.filter(item => item.href && item.href.includes(`courses/${courseId}/`));
+        const uniquePages = new Set();
+        courseItems.forEach(item => {
+            const basePath = item.href.split('#')[0];
+            uniquePages.add(basePath);
+        });
+        
+        const totalPages = uniquePages.size || 1; // avoid div by 0
+        
+        // 2. Read completed pages from localStorage
+        const storedProgress = JSON.parse(localStorage.getItem('site_course_progress') || '{}');
+        let completed = 0;
+        
+        for (const path in storedProgress) {
+            if (path.includes(`courses/${courseId}/`) && storedProgress[path] === true) {
+                completed++;
+            }
+        }
+        
+        // Cap completion at total pages just in case
+        if (completed > totalPages) completed = totalPages;
+        
+        const percentage = Math.round((completed / totalPages) * 100);
+        
+        // 3. Update UI
+        progressPath.setAttribute('stroke-dasharray', `${percentage}, 100`);
+        progressText.textContent = `${percentage}%`;
+        
+        // Color coding based on course
+        if (courseId === 'be-course') progressPath.setAttribute('stroke', '#eab308');
+        else if (courseId === 'ebd-course') progressPath.setAttribute('stroke', '#10b981');
+        else if (courseId === 'math-course') progressPath.setAttribute('stroke', '#6366f1');
+    }
+    
+    courseSwitcher.addEventListener('change', updateProgress);
+    initSearchAndProgress();
 </script>
 </body>
 </html>

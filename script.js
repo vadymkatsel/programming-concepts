@@ -228,3 +228,21 @@ document.addEventListener("DOMContentLoaded", function() {
     
     setInterval(attachPopupListeners, 1000);
 });
+
+// --- Course Progress Tracking ---
+document.addEventListener('DOMContentLoaded', function() {
+    // Only track if on a course page
+    if (window.location.pathname.includes('/courses/')) {
+        // 5-minute timer (300,000 ms)
+        setTimeout(() => {
+            const cleanPath = window.location.pathname.split('#')[0].replace(/\/$/, '/index.html');
+            let progress = JSON.parse(localStorage.getItem('site_course_progress') || '{}');
+            if (!progress[cleanPath]) {
+                progress[cleanPath] = true;
+                localStorage.setItem('site_course_progress', JSON.stringify(progress));
+                console.log('[Progress] Page marked as completed.');
+            }
+        }, 300000);
+    }
+});
+
