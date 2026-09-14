@@ -23,3 +23,6 @@ You are the **Web Architect** and UI/UX specialist responsible for technical and
 2. **UI/UX & Layout Integrity**:
    - Ensure all Quarto markdown elements render properly inside `main.content` and do not break the dynamic sizing scripts in `script.js`.
    - Maintain compatibility across both light (`cosmo`) and dark (`darkly`) themes.
+3. **Update Log Content Policy**:
+   - The landing page (`index.html`) update log must **only** display student-facing course updates (e.g., `feat(ebd-course): ...`, `fix(math-course): ...`).
+   - Meta-commits, agent configurations, UI styling (`landing`), and technical chores must be strictly filtered out to maintain a professional, distraction-free log for students.

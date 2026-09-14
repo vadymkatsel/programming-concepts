@@ -1349,25 +1349,21 @@
                 throw new Error(commits.message || 'Invalid response');
             }
 
-            const allowedPrefixes = ['feat', 'style', 'docs'];
             let displayCommits = commits.filter(commitData => {
                 const rawMessage = (commitData.commit.message || '').trim().toLowerCase();
-                // Використовуємо регулярний вираз з межами слова (\b), щоб не відфільтрувати "main" або "detail"
-                if (/\bagent\b|\bai\b|агент/.test(rawMessage)) {
+                if (/\bagent\b|\bai\b|агент/.test(rawMessage) || rawMessage.includes('landing') || rawMessage.includes('chore')) {
                     return false;
                 }
 
-                return allowedPrefixes.some(prefix => 
-                    rawMessage.startsWith(prefix + ':') || 
-                    rawMessage.startsWith(prefix + '(') || 
-                    rawMessage.startsWith(prefix + ' ')
-                );
+                const courseCommitRegex = /^(feat|fix|docs)\((ebd-course|be-course|math-course)\):/;
+                return courseCommitRegex.test(rawMessage);
             });
 
+            displayCommits = displayCommits.slice(0, 5);
+
             if (displayCommits.length === 0) {
-                displayCommits = commits.filter(c => !c.commit.message.toLowerCase().startsWith('merge')).slice(0, 5);
-            } else {
-                displayCommits = displayCommits.slice(0, 5);
+                timeline.innerHTML = '<div style="padding: 1rem; color: var(--text-muted);">Останнім часом оновлень курсів не було.</div>';
+                return;
             }
             
             timeline.innerHTML = ''; 
