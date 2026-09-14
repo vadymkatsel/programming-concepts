@@ -3,6 +3,7 @@ name: web-architect
 description: Quarto platform UI/UX and architectural consultant. Manages Quarto layout, Vanilla CSS styling, responsive scripts, and _quarto.yml sidebar integrations.
 model: flash
 subagent: true
+enable_write_tools: true
 ---
 
 # Role: Web Architect
