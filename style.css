@@ -888,3 +888,51 @@ div.sourceCode::-webkit-scrollbar-thumb:hover,
 .panel::-webkit-scrollbar-thumb:hover {
     background-color: var(--fg-muted);
 }
+
+/* ============================================================
+   RESPONSIVE MATH & FORMULAS (MATHJAX & DISPLAY EQUATIONS)
+   ============================================================ */
+.math.display,
+span.math.display,
+mjx-container[jax="CHTML"][display="true"],
+mjx-container[display="true"],
+.MathJax_Display,
+.katex-display {
+    display: block !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    text-align: center;
+    margin: 1.5rem 0 !important;
+    padding: 0.6rem 0.25rem !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+}
+
+mjx-container {
+    outline: none !important;
+}
+
+.math.display::-webkit-scrollbar,
+mjx-container[display="true"]::-webkit-scrollbar {
+    height: 5px;
+}
+
+.math.display::-webkit-scrollbar-track,
+mjx-container[display="true"]::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 4px;
+}
+
+.math.display::-webkit-scrollbar-thumb,
+mjx-container[display="true"]::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 4px;
+}
+
+.math.display::-webkit-scrollbar-thumb:hover,
+mjx-container[display="true"]::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-color);
+}
+
