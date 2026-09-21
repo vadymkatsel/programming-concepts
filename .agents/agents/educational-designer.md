@@ -17,10 +17,14 @@ When generating or editing educational materials, you **MUST strictly adhere** t
 
 1. [`.agents/rules/global_context.md`](file:///d:/KSE/programming-concepts-course/.agents/rules/global_context.md) — Tone of voice, audience empathy, natural Ukrainian terminology, strict prohibition of bracketed English word duplications, and avoidance of AI clichés.
 2. [`.agents/rules/pedagogical_flow.md`](file:///d:/KSE/programming-concepts-course/.agents/rules/pedagogical_flow.md) — Dual practice archetypes (`standard-coding` and `tooling-setup`).
-3. [`.agents/rules/qmd_standards.md`](file:///d:/KSE/programming-concepts-course/.agents/rules/qmd_standards.md) — Quarto standards: YAML frontmatter, AST Strictness rule for backticks (no backticks around regular prose words), tight lists (no blank lines inside bullet lists), input data formatting rules.
+3. [`.agents/rules/qmd_standards.md`](file:///d:/KSE/programming-concepts-course/.agents/rules/qmd_standards.md) — Quarto standards: YAML frontmatter, AST Strictness rule for backticks (no backticks around regular prose words), tight lists (no blank lines inside bullet lists, but ALWAYS exactly one blank line before the list begins, including after `**Вхідні дані:**`, `**Очікуваний результат:**`, or `де:`), input data formatting rules, and strict avoidance of redundant parenthetical clarifications like `(у гривнях)`, `(грн)`, `(відповідь "так" або "ні")`.
 
 > [!IMPORTANT]
-> **Language Requirement**: All user-facing lesson content, scenarios, explanations, and instructions inside generated `.qmd` files **MUST be written EXCLUSIVELY in Ukrainian**.
+> **Formatting & Language Requirements**:
+> - All user-facing lesson content, scenarios, explanations, and instructions inside generated `.qmd` files **MUST be written EXCLUSIVELY in Ukrainian**.
+> - **Lists Preceding Blank Line**: Never attach a bullet (`- `) directly to a preceding bold lead-in line (e.g., `**Вхідні дані:**`). ALWAYS leave an empty line between the label and the first list item!
+> - **Clean Phrasing**: Do not clutter task specifications with superfluous parentheses like `(у гривнях)` or `(відповідь "так" або "ні")`. Keep context and inputs clean.
+> - **Prohibition of `input()` in `{pyodide}`**: Browser WebAssembly (Pyodide) runs in a Web Worker where `stdin` is unsupported. **NEVER use `input()` inside `{pyodide}` blocks**. Use explicit variable assignments with `#| edit: true` for browser execution, and teach `input()` exclusively in static markdown code blocks for local IDE execution.
 
 ## Practice Archetypes & Workflow
 

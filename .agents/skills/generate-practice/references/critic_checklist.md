@@ -13,17 +13,22 @@ This checklist is used by the **educational-critic** subagent to evaluate genera
   - Backticks are used EXCLUSIVELY for valid Python identifiers, functions, keywords, methods, variables, terminal commands (`python --version`), or syntactic signatures (e.g., `len()`, `dict()`, `map(функція, список)`).
 - [ ] **No English Duplicate Translations**:
   - NO redundant English translations in brackets for basic programming terms (e.g., `список (list)`, `словник (dictionary)`).
-- [ ] **List Formatting (Tight Lists)**:
-  - NO blank lines between list items (`- ` or `1. `). Blank lines only exist before and after the whole list block.
+- [ ] **List Formatting (Tight Lists & Preceding Spacing)**:
+  - EXACTLY ONE blank line exists before the list begins (including immediately after bold lead-ins like `**Вхідні дані:**`, `**Очікуваний результат:**`, `де:`).
+  - NO blank lines between list items (`- ` or `1. `).
 - [ ] **Input Data Formatting (When applicable)**:
-  - Single simple primitive: inline on the same line without bullet points (`**Вхідні дані:** \`RATE = 0.20\``).
+  - Single simple primitive: inline on the same line without bullet points (`**Вхідні дані:** вартість замовлення 450 грн`).
   - Single collection or code snippet: standard python code block on next line without bullet points.
-  - Multiple distinct variables: tight bulleted list.
+  - Multiple distinct variables: tight bulleted list with an empty line before the first item.
+  - NO redundant parenthetical clarifications like `(у гривнях)`, `(грн)`, `(відповідь "так" або "ні")`.
 - [ ] **Zero Solution Exposure (Zero Solution Tolerance)**:
   - NO complete solutions or answers exposed to students.
 - [ ] **Expected Output (`**Очікуваний результат:**`)**:
   - Only describes final output format and values.
   - Contains ZERO algorithmic implementation hints or code logic guidance.
+- [ ] **Pyodide Interactivity & Input Prohibition**:
+  - If `{pyodide}` blocks are present, frontmatter uses `engine: jupyter` (no global `execute: eval: false`).
+  - **Zero `input()` inside `{pyodide}`**: Verified that `input()` is NEVER called inside `{pyodide}` cells. Input code belongs strictly in static ` ```python ` blocks for local terminal execution. In `{pyodide}`, variables are declared explicitly with `#| edit: true`.
 
 ---
 

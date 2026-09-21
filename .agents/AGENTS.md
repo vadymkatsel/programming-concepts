@@ -26,6 +26,7 @@ When creating commits for new features, bug fixes, or significant refactoring, a
 
 ## Available Custom Agents (`.agents/agents/`)
 
+- **`curriculum-orchestrator`** (`.agents/agents/curriculum-orchestrator.md`): Curriculum architect and batch orchestrator for multi-practice generation, DAG dependency planning, and cross-module coherence.
 - **`educational-designer`** (`.agents/agents/educational-designer.md`): Main pedagogical content generator for Python beginners.
 - **`educational-critic`** (`.agents/agents/educational-critic.md`): Strict reviewer for pedagogical flow, AST backticks, and Quarto standards.
 - **`web-architect`** (`.agents/agents/web-architect.md`): UI/UX, CSS styling, and `_quarto.yml` structure specialist.
@@ -34,7 +35,7 @@ When creating commits for new features, bug fixes, or significant refactoring, a
 
 1. **Strict Agent Registry**:
    - **DO NOT invent, generate, or configure new agents** (e.g., `orchestrator_1`, `sentinel_1`, `survey_*`, ad-hoc team managers).
-   - Use ONLY the existing agents defined in `.agents/agents/` (`educational-designer`, `educational-critic`, `web-architect`) unless the user explicitly asks to create a new agent.
+   - Use ONLY the existing agents defined in `.agents/agents/` (`curriculum-orchestrator`, `educational-designer`, `educational-critic`, `web-architect`) unless the user explicitly asks to create a new agent.
    - Always load role instructions directly from their files in `.agents/agents/`.
 
 2. **No Meta-Bureaucracy & No Temporary Agent Files**:
@@ -45,5 +46,6 @@ When creating commits for new features, bug fixes, or significant refactoring, a
 ## Available Skills & Slash Commands (`.agents/skills/`)
 
 - **`/generate-practice`** (`.agents/skills/generate-practice/SKILL.md`): End-to-end workflow to generate, critique (up to 3 iterations), and register new practice `.qmd` files across courses (`courses/ebd-course`, `courses/be-course`, `courses/math-course`).
+- **`/batch-generate-practice`** (`.agents/skills/batch-generate-practice/SKILL.md`): Multi-practice curriculum orchestrator. Builds dependency DAGs, executes parallel/sequential subagent waves with on-demand prior-knowledge verification, maintains cross-module pedagogical coherence, and performs atomic `_quarto.yml` registration.
 
 

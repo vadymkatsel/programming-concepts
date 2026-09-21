@@ -80,10 +80,12 @@ website:
       collapse-level: 1
       contents:
         - courses/be-course/modules/index.qmd 
+        - courses/be-course/modules/ide-setup-ps.qmd
 
-        - section: "Середовище розробки. Основи Python"
+        - section: "Основи Python: змінні, операції та розгалуження"
           contents:
-            - courses/be-course/modules/ide-variables-operations/ide-setup-ps.qmd
+            - courses/be-course/modules/ide-variables-operations/variables-math-ps.qmd
+            - courses/be-course/modules/ide-variables-operations/booleans-conditions-ps.qmd
   
         - section: "Legacy"
           contents:

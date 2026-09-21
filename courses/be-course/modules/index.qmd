@@ -49,4 +49,4 @@ page-layout: full
 
 Переходьте до першого практичного заняття та налаштовуйтеся на продуктивну практику!
 
-[Почати: Налаштування середовища](ide-variables-operations/ide-setup-ps.qmd){.btn .btn-primary}
+[Почати: Налаштування середовища](ide-setup-ps.qmd){.btn .btn-primary}

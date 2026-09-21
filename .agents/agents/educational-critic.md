@@ -28,17 +28,22 @@ Every `.qmd` file must be audited against the guidelines in `.agents/rules/`:
    - Backticks are permitted **EXCLUSIVELY** for valid Python/CLI syntactic tokens (e.g., `len()`, `dict`, `.keys()`, `git status`) or descriptive placeholders inside formal syntax signatures (e.g., `map(функція, список)`).
 2. **No English Translations / Duplications**:
    - Verify that basic terms are NOT followed by redundant bracketed English equivalents (e.g., `словник (dictionary)` is prohibited).
-3. **Tight Lists**:
-   - Verify that there are **NO empty lines between list items** (`- ` or `1. `). Blank lines must only appear before the list starts and after the list ends.
-4. **Input Data (`**Вхідні дані:**`)**:
+3. **Tight Lists & Preceding Spacing**:
+   - Verify that there is **EXACTLY ONE empty line before the list begins** (including immediately after bold labels like `**Вхідні дані:**`, `**Очікуваний результат:**`, or `де:`). Lists directly attached to text lines without an intervening empty line are strict blockers.
+   - Verify that there are **NO empty lines between individual list items** (`- ` or `1. `).
+4. **Input Data (`**Вхідні дані:**`) & Clean Phrasing**:
    - Single primitive: inline on the same line without bullets.
    - Single collection: standalone python code block on next line without bullets.
-   - Multiple distinct variables: compact bulleted list.
+   - Multiple distinct variables: compact bulleted list with an empty line before the first bullet.
    - **No Assignment Statements**: Strictly prohibit ready-made code assignment statements (e.g., `price = 1200` or `revenue = 8500`). Specify pure domain quantities or values (e.g., `базова вартість: 1200 грн`), forcing students to declare variable names and write input/assignment expressions independently.
+   - **No Redundant Parentheses**: Strictly prohibit unnecessary parenthetical clarifications (e.g., `(у гривнях)`, `(грн)`, `(відповідь "так" або "ні")`, `(наприклад, 10 або 15)`). Units and formats should be natural or omitted when clear from context.
 5. **Zero Solution Tolerance**:
    - Verify that NO working solution code is exposed in practice tasks.
 6. **Expected Output (`**Очікуваний результат:**`)**:
-   - Must only describe output format and expected values. NO algorithmic code hints.
+   - Must only describe output format and expected values. NO algorithmic code hints. If followed by a list, exactly one empty line must precede the list.
+7. **Pyodide Interactivity & Input Ban**:
+   - If `{pyodide}` blocks are present, frontmatter MUST contain `engine: jupyter` without global `execute: eval: false`.
+   - **Zero `input()` in Pyodide**: Verify that **`input()` is NEVER called inside `{pyodide}` blocks**. Any code involving `input()` must reside in static ` ```python ` blocks for local execution in a real IDE/terminal.
 
 > [!IMPORTANT]
 > Any violation of Tier 1 is a **CRITICAL BLOCKER**. It must be flagged immediately in the **🔴 Violations & Anti-patterns** section.
