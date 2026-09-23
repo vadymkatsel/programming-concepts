@@ -33,16 +33,22 @@ document.addEventListener("DOMContentLoaded", function() {
   const sidebar = document.querySelector("#quarto-sidebar");
   const mainContent = document.querySelector('main.content');
 
-  const sync = () => {
-    if (window.innerWidth <= 990) {
+  let lastNavBottom = null;
+  let isMobile = window.innerWidth <= 990;
+  let scrollTicking = false;
+
+  const syncDimensions = () => {
+    isMobile = window.innerWidth <= 990;
+    if (isMobile) {
       if (mainContent) {
         const rect = mainContent.getBoundingClientRect();
         document.documentElement.style.setProperty('--pill-width', rect.width + "px");
         document.documentElement.style.setProperty('--pill-left', rect.left + "px");
       }
       if (secondaryNav) {
-        const secRect = secondaryNav.getBoundingClientRect();
-        document.documentElement.style.setProperty('--nav-bottom', secRect.bottom + 'px');
+        const secBottom = Math.round(secondaryNav.getBoundingClientRect().bottom);
+        lastNavBottom = secBottom;
+        document.documentElement.style.setProperty('--nav-bottom', secBottom + 'px');
       }
     } else {
       if (sidebar) {
@@ -57,113 +63,33 @@ document.addEventListener("DOMContentLoaded", function() {
       if (sidebar && sidebar.classList.contains('show')) {
         sidebar.classList.remove('show');
       }
+      lastNavBottom = null;
     }
   };
 
-  window.addEventListener('resize', sync);
-  window.addEventListener('scroll', sync);
-  document.querySelector('.navbar-toggler')?.addEventListener('click', () => setTimeout(sync, 10));
+  const onScroll = () => {
+    if (!isMobile || !secondaryNav) return;
+    if (!scrollTicking) {
+      window.requestAnimationFrame(() => {
+        const secBottom = Math.round(secondaryNav.getBoundingClientRect().bottom);
+        if (lastNavBottom !== secBottom) {
+          lastNavBottom = secBottom;
+          document.documentElement.style.setProperty('--nav-bottom', secBottom + 'px');
+        }
+        scrollTicking = false;
+      });
+      scrollTicking = true;
+    }
+  };
+
+  window.addEventListener('resize', syncDimensions);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  document.querySelector('.navbar-toggler')?.addEventListener('click', () => setTimeout(syncDimensions, 10));
   
-  sync();
+  syncDimensions();
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    const injectCustomOverlay = () => {
-        document.querySelectorAll('.exercise-editor').forEach(editor => {
-            const wrapper = editor.parentElement;
-            
-            if (wrapper && !wrapper.querySelector('.custom-quarto-overlay')) {
-                wrapper.style.position = 'relative'; 
-                
-                const overlay = document.createElement("div");
-                overlay.className = "custom-quarto-overlay";
-                
-                const runBtn = document.createElement("button");
-                runBtn.className = "btn custom-quarto-btn custom-run-btn";
-                runBtn.title = "Run Code";
-                runBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
-                runBtn.onclick = () => {
-                    const currentEditor = wrapper.querySelector('.exercise-editor');
-                    if (currentEditor) {
-                        const nativeRun = currentEditor.querySelector('.exercise-editor-btn-run-code');
-                        if (nativeRun) nativeRun.click();
-                    }
-                };
-                
-                const resetBtn = document.createElement("button");
-                resetBtn.className = "btn custom-quarto-btn";
-                resetBtn.title = "Start Over";
-                resetBtn.innerHTML = '<i class="fa-solid fa-rotate-left"></i>';
-                resetBtn.onclick = () => {
-                    const currentEditor = wrapper.querySelector('.exercise-editor');
-                    if (currentEditor) {
-                        const btnGroup = currentEditor.querySelector('.btn-group-exercise-editor');
-                        if (btnGroup) {
-                            const btns = Array.from(btnGroup.querySelectorAll('.btn'));
-                            const nativeReset = btns.find(b => !b.classList.contains('exercise-editor-btn-run-code'));
-                            if (nativeReset) nativeReset.click();
-                        }
-                    }
-                };
-                
-                const copyBtn = document.createElement("button");
-                copyBtn.className = "btn custom-quarto-btn";
-                copyBtn.title = "Copy Code";
-                copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>';
-                copyBtn.onclick = () => {
-                    const currentEditor = wrapper.querySelector('.exercise-editor');
-                    if (currentEditor) {
-                        const content = currentEditor.querySelector(".cm-content");
-                        if (content) {
-                            navigator.clipboard.writeText(content.innerText || content.textContent).then(() => {
-                                copyBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
-                                setTimeout(() => { copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>'; }, 2000);
-                            });
-                        }
-                    }
-                };
-                
-                overlay.appendChild(runBtn);
-                overlay.appendChild(resetBtn);
-                overlay.appendChild(copyBtn);
-                
-                wrapper.appendChild(overlay);
-            }
-        });
-    };
-
-    const observer = new MutationObserver((mutations) => {
-        const hasNewNodes = mutations.some(m => m.addedNodes.length > 0);
-        if (hasNewNodes) {
-            injectCustomOverlay();
-        }
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
-    
-    const syncLoadingState = () => {
-        document.querySelectorAll('.exercise-editor').forEach(editor => {
-            const wrapper = editor.parentElement;
-            if (!wrapper) return;
-            
-            const customRunBtn = wrapper.querySelector('.custom-run-btn');
-            const nativeIndicator = editor.querySelector('.exercise-editor-eval-indicator');
-            
-            if (customRunBtn && nativeIndicator) {
-                const isRunning = !nativeIndicator.classList.contains('d-none');
-                if (isRunning) {
-                    customRunBtn.classList.add('is-running');
-                } else {
-                    customRunBtn.classList.remove('is-running');
-                }
-            }
-        });
-    };
-    
-    injectCustomOverlay();
-    setInterval(injectCustomOverlay, 1000);
-    setInterval(syncLoadingState, 100); 
-
     // Interactive Popup Warning for Pyodide
     const showPyodidePopup = () => {
         if (document.getElementById('pyodide-custom-popup')) return;
@@ -207,26 +133,125 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     };
 
-    const attachPopupListeners = () => {
+    const attachPopupToEditor = (editor) => {
         if (localStorage.getItem('hidePyodidePopup') === 'true') return;
-        
+        if (!editor.hasAttribute('data-popup-listener')) {
+            editor.setAttribute('data-popup-listener', 'true');
+            const trigger = () => {
+                if (localStorage.getItem('hidePyodidePopup') !== 'true') {
+                    showPyodidePopup();
+                }
+            };
+            editor.addEventListener('click', trigger, { once: true });
+            editor.addEventListener('focusin', trigger, { once: true });
+        }
+    };
+
+    const bindLoadingIndicator = (editor, customRunBtn) => {
+        const nativeIndicator = editor.querySelector('.exercise-editor-eval-indicator');
+        if (nativeIndicator && !nativeIndicator.dataset.indicatorObserved) {
+            nativeIndicator.dataset.indicatorObserved = 'true';
+            const updateState = () => {
+                const isRunning = !nativeIndicator.classList.contains('d-none');
+                customRunBtn.classList.toggle('is-running', isRunning);
+            };
+            updateState();
+            const indicatorObserver = new MutationObserver(updateState);
+            indicatorObserver.observe(nativeIndicator, { attributes: true, attributeFilter: ['class'] });
+        }
+    };
+
+    const injectCustomOverlay = () => {
         document.querySelectorAll('.exercise-editor').forEach(editor => {
-            if (!editor.hasAttribute('data-popup-listener')) {
-                editor.setAttribute('data-popup-listener', 'true');
+            attachPopupToEditor(editor);
+
+            const wrapper = editor.parentElement;
+            if (!wrapper) return;
+
+            let overlay = wrapper.querySelector('.custom-quarto-overlay');
+            let runBtn = overlay ? overlay.querySelector('.custom-run-btn') : null;
+
+            if (!overlay) {
+                wrapper.style.position = 'relative'; 
                 
-                const trigger = () => {
-                    if (localStorage.getItem('hidePyodidePopup') !== 'true') {
-                        showPyodidePopup();
+                overlay = document.createElement("div");
+                overlay.className = "custom-quarto-overlay";
+                
+                runBtn = document.createElement("button");
+                runBtn.className = "btn custom-quarto-btn custom-run-btn";
+                runBtn.title = "Run Code";
+                runBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+                runBtn.onclick = () => {
+                    const currentEditor = wrapper.querySelector('.exercise-editor');
+                    if (currentEditor) {
+                        const nativeRun = currentEditor.querySelector('.exercise-editor-btn-run-code');
+                        if (nativeRun) nativeRun.click();
+                        bindLoadingIndicator(currentEditor, runBtn);
                     }
                 };
                 
-                editor.addEventListener('click', trigger, { once: true });
-                editor.addEventListener('focusin', trigger, { once: true });
+                const resetBtn = document.createElement("button");
+                resetBtn.className = "btn custom-quarto-btn";
+                resetBtn.title = "Start Over";
+                resetBtn.innerHTML = '<i class="fa-solid fa-rotate-left"></i>';
+                resetBtn.onclick = () => {
+                    const currentEditor = wrapper.querySelector('.exercise-editor');
+                    if (currentEditor) {
+                        const btnGroup = currentEditor.querySelector('.btn-group-exercise-editor');
+                        if (btnGroup) {
+                            const btns = Array.from(btnGroup.querySelectorAll('.btn'));
+                            const nativeReset = btns.find(b => !b.classList.contains('exercise-editor-btn-run-code'));
+                            if (nativeReset) nativeReset.click();
+                        }
+                    }
+                };
+                
+                const copyBtn = document.createElement("button");
+                copyBtn.className = "btn custom-quarto-btn";
+                copyBtn.title = "Copy Code";
+                copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>';
+                copyBtn.onclick = () => {
+                    const currentEditor = wrapper.querySelector('.exercise-editor');
+                    if (currentEditor) {
+                        const content = currentEditor.querySelector(".cm-content");
+                        if (content) {
+                            navigator.clipboard.writeText(content.innerText || content.textContent).then(() => {
+                                copyBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
+                                setTimeout(() => { copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>'; }, 2000);
+                            });
+                        }
+                    }
+                };
+                
+                overlay.appendChild(runBtn);
+                overlay.appendChild(resetBtn);
+                overlay.appendChild(copyBtn);
+                wrapper.appendChild(overlay);
+            }
+
+            if (runBtn) {
+                bindLoadingIndicator(editor, runBtn);
             }
         });
     };
+
+    const observer = new MutationObserver((mutations) => {
+        let hasNewNodes = false;
+        for (let i = 0; i < mutations.length; i++) {
+            if (mutations[i].addedNodes.length > 0) {
+                hasNewNodes = true;
+                break;
+            }
+        }
+        if (hasNewNodes) {
+            injectCustomOverlay();
+        }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
     
-    setInterval(attachPopupListeners, 1000);
+    injectCustomOverlay();
+    setTimeout(injectCustomOverlay, 600);
 });
 
 // --- Course Progress Tracking ---
