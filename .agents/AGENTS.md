@@ -50,4 +50,13 @@ You must NEVER execute `git commit` or push code without explicit permission fro
 - **`/generate-practice`** (`.agents/skills/generate-practice/SKILL.md`): End-to-end workflow to generate, critique (up to 3 iterations), and register new practice `.qmd` files across courses (`courses/ebd-course`, `courses/be-course`, `courses/math-course`).
 - **`/batch-generate-practice`** (`.agents/skills/batch-generate-practice/SKILL.md`): Multi-practice curriculum orchestrator. Builds dependency DAGs, executes parallel/sequential subagent waves with on-demand prior-knowledge verification, maintains cross-module pedagogical coherence, and performs atomic `_quarto.yml` registration.
 
+## Quarto Rendering & Safe Development Policy
+
+- **Не запускати `quarto render` на кожен дрібний крок**: Заборонено запускати компіляцію чи білд проєкту після тривіальних правок у CSS (`style.css`), дрібних текстових правок або окремих відступів. Такі точкові зміни не ламають збірку Quarto і лише марнують час очікування.
+- **Коли запуск `quarto render` обов'язковий**:
+  - Зміни в конфігурації Quarto (`_quarto.yml`).
+  - Додавання або глибокий рефакторинг нових модулів чи практичних занять (`.qmd`) з виконуваним кодом (`{python}`, `{pyodide}`, `ojs`).
+  - Масові структурні зміни багатьох модулів одночасно.
+  - Фінальна верифікація перед релізом або на пряму вимогу користувача.
+
 

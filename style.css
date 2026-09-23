@@ -134,8 +134,229 @@ table tbody tr:hover td {
 }
 
 /* ============================================================
-   CALLOUTS (TODO)
+   CALLOUTS
    ============================================================ */
+.callout {
+  margin: 1.5rem 0 !important;
+  border-radius: 12px !important;
+  border-width: 1px 1px 1px 4px !important;
+  border-style: solid !important;
+  border-color: var(--border-color) !important;
+  background-color: var(--sections-bg) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.callout .callout-header {
+  padding: 6px 12px !important;
+  border-bottom: 1px solid var(--section-border) !important;
+  font-weight: 600;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 0.85rem;
+  line-height: 1.2 !important;
+}
+
+.callout .callout-icon-container {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 1rem !important;
+  line-height: 1 !important;
+}
+
+.callout .callout-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 1rem !important;
+  height: 1rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.callout .callout-icon::before {
+  display: block !important;
+  margin: 0 !important;
+}
+
+.callout .callout-title-container {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-weight: 600;
+  color: var(--fg-text) !important;
+  font-size: 0.85rem;
+  line-height: 1.2 !important;
+}
+
+.callout .callout-body {
+  padding: 10px 14px !important;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--fg-text);
+}
+
+.callout .callout-body > :first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.callout .callout-body > :last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.callout .callout-body p {
+  margin-bottom: 0.5rem;
+}
+
+.callout .callout-body p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Callout inner code chunk spacing & indents */
+.callout .code-copy-outer-scaffold {
+  margin: 0.5rem 0 !important;
+}
+
+.callout div.sourceCode {
+  margin: 0.4rem 0 !important;
+  border-radius: 6px !important;
+  background-color: var(--code-bg) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: none !important;
+}
+
+.callout .code-copy-outer-scaffold div.sourceCode {
+  margin: 0 !important;
+}
+
+.callout pre.sourceCode,
+.callout div.sourceCode > pre,
+.callout pre {
+  padding: 0.4em 0.7em !important;
+  margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+body.quarto-dark .callout .callout-icon::before {
+  filter: brightness(1.2) contrast(1.1);
+}
+
+body.quarto-dark div.callout-note .callout-icon::before {
+  filter: brightness(1.7) saturate(1.4);
+}
+
+/* Semantics - Light Theme */
+div.callout-tip {
+  border-color: rgba(16, 185, 129, 0.25) !important;
+  border-left-color: #10b981 !important;
+}
+div.callout-tip > .callout-header {
+  background-color: rgba(16, 185, 129, 0.08) !important;
+}
+
+div.callout-note {
+  border-color: rgba(59, 130, 246, 0.25) !important;
+  border-left-color: #3b82f6 !important;
+}
+div.callout-note > .callout-header {
+  background-color: rgba(59, 130, 246, 0.08) !important;
+}
+
+div.callout-warning {
+  border-color: rgba(245, 158, 11, 0.25) !important;
+  border-left-color: #f59e0b !important;
+}
+div.callout-warning > .callout-header {
+  background-color: rgba(245, 158, 11, 0.08) !important;
+}
+
+div.callout-caution {
+  border-color: rgba(249, 115, 22, 0.25) !important;
+  border-left-color: #f97316 !important;
+}
+div.callout-caution > .callout-header {
+  background-color: rgba(249, 115, 22, 0.08) !important;
+}
+
+div.callout-important {
+  border-color: rgba(239, 68, 68, 0.25) !important;
+  border-left-color: #ef4444 !important;
+}
+div.callout-important > .callout-header {
+  background-color: rgba(239, 68, 68, 0.08) !important;
+}
+
+/* Semantics - Dark Theme (body.quarto-dark) */
+body.quarto-dark div.callout {
+  background-color: rgba(13, 16, 25, 0.72) !important;
+}
+
+body.quarto-dark div.callout-tip {
+  border-color: rgba(16, 185, 129, 0.2) !important;
+  border-left-color: #10b981 !important;
+}
+body.quarto-dark div.callout-tip > .callout-header {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+}
+body.quarto-dark div.callout-tip .callout-title-container {
+  color: #34d399 !important;
+}
+
+body.quarto-dark div.callout-note {
+  border-color: rgba(56, 189, 248, 0.2) !important;
+  border-left-color: #38bdf8 !important;
+}
+body.quarto-dark div.callout-note > .callout-header {
+  background-color: rgba(56, 189, 248, 0.12) !important;
+}
+body.quarto-dark div.callout-note .callout-title-container {
+  color: #7dd3fc !important;
+}
+
+body.quarto-dark div.callout-warning {
+  border-color: rgba(251, 191, 36, 0.2) !important;
+  border-left-color: #fbbf24 !important;
+}
+body.quarto-dark div.callout-warning > .callout-header {
+  background-color: rgba(251, 191, 36, 0.12) !important;
+}
+body.quarto-dark div.callout-warning .callout-title-container {
+  color: #fcd34d !important;
+}
+
+body.quarto-dark div.callout-caution {
+  border-color: rgba(251, 146, 60, 0.2) !important;
+  border-left-color: #fb923c !important;
+}
+body.quarto-dark div.callout-caution > .callout-header {
+  background-color: rgba(251, 146, 60, 0.12) !important;
+}
+body.quarto-dark div.callout-caution .callout-title-container {
+  color: #fdba74 !important;
+}
+
+body.quarto-dark div.callout-important {
+  border-color: rgba(248, 113, 113, 0.2) !important;
+  border-left-color: #f87171 !important;
+}
+body.quarto-dark div.callout-important > .callout-header {
+  background-color: rgba(248, 113, 113, 0.12) !important;
+}
+body.quarto-dark div.callout-important .callout-title-container {
+  color: #fca5a5 !important;
+}
+
  
 /* ============================================================
    CODE
@@ -234,10 +455,6 @@ code:not(pre code) {
   border-radius: 12px;
 }
  
-.callout {
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-}
  
 h2, h3 {
   border-bottom: 2px solid var(--section-border);
