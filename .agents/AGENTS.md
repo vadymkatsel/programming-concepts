@@ -52,11 +52,12 @@ You must NEVER execute `git commit` or push code without explicit permission fro
 
 ## Quarto Rendering & Safe Development Policy
 
-- **Не запускати `quarto render` на кожен дрібний крок**: Заборонено запускати компіляцію чи білд проєкту після тривіальних правок у CSS (`style.css`), дрібних текстових правок або окремих відступів. Такі точкові зміни не ламають збірку Quarto і лише марнують час очікування.
-- **Коли запуск `quarto render` обов'язковий**:
-  - Зміни в конфігурації Quarto (`_quarto.yml`).
-  - Додавання або глибокий рефакторинг нових модулів чи практичних занять (`.qmd`) з виконуваним кодом (`{python}`, `{pyodide}`, `ojs`).
-  - Масові структурні зміни багатьох модулів одночасно.
-  - Фінальна верифікація перед релізом або на пряму вимогу користувача.
+- **Do not run `quarto render` for trivial edits**: Running full compilation or project builds after minor CSS updates (`style.css`), small wording adjustments, or isolated spacing changes is strictly forbidden. Such localized edits do not break Quarto builds and needlessly waste execution time.
+- **When running `quarto render` is mandatory**:
+  - Modifications to Quarto configuration (`_quarto.yml`).
+  - Adding or extensively refactoring modules or practical sessions (`.qmd`) containing executable code blocks (`{python}`, `{pyodide}`, `ojs`).
+  - Large-scale structural changes across multiple modules simultaneously.
+  - Final pre-release verification or upon explicit user request.
+
 
 
