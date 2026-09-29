@@ -86,6 +86,11 @@ website:
           contents:
             - courses/be-course/modules/ide-variables-operations/variables-math-ps.qmd
             - courses/be-course/modules/ide-variables-operations/booleans-conditions-ps.qmd
+
+        - section: "Цикли: while та for"
+          contents:
+            - courses/be-course/modules/loops/while-loops-ps.qmd
+            - courses/be-course/modules/loops/for-loops-ps.qmd
   
         - section: "Legacy"
           contents:

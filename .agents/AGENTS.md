@@ -33,17 +33,20 @@ You must NEVER execute `git commit` or push code without explicit permission fro
 - **`educational-critic`** (`.agents/agents/educational-critic.md`): Strict reviewer for pedagogical flow, AST backticks, and Quarto standards.
 - **`web-architect`** (`.agents/agents/web-architect.md`): UI/UX, CSS styling, and `_quarto.yml` structure specialist.
 
-## Strict Agent Usage & No-Bureaucracy Policy
+## Strict Agent Usage & Subagent Delegation Policy
 
 1. **Strict Agent Registry**:
    - **DO NOT invent, generate, or configure new agents** (e.g., `orchestrator_1`, `sentinel_1`, `survey_*`, ad-hoc team managers).
    - Use ONLY the existing agents defined in `.agents/agents/` (`curriculum-orchestrator`, `educational-designer`, `educational-critic`, `web-architect`) unless the user explicitly asks to create a new agent.
    - Always load role instructions directly from their files in `.agents/agents/`.
 
-2. **No Meta-Bureaucracy & No Temporary Agent Files**:
+2. **Mandatory Subagent Invocation in Skills**:
+   - When executing workflows from skills (e.g. `/generate-practice`, `/batch-generate-practice`), the orchestrator **MUST explicitly invoke subagents** (e.g. `educational-critic`) using the `invoke_subagent` tool.
+   - **Simulating subagents internally within the main turn is strictly forbidden**. The critic must be spawned as an independent subagent to conduct an objective, unbiased review.
+
+3. **No Meta-Bureaucracy & No Temporary Agent Files**:
    - Strictly forbidden to create temporary briefing files, surveys (`teamwork_preview_explorer_survey_*`), or scratch orchestrator folders inside `.agents/` or the workspace.
-   - No multi-agent deliberation loops or endless meta-planning.
-   - Direct execution only: read target files -> apply code/content changes -> verify.
+   - No multi-agent deliberation loops or endless meta-planning. The subagent receives the task, inspects the files directly, and returns actionable feedback.
 
 ## Available Skills & Slash Commands (`.agents/skills/`)
 

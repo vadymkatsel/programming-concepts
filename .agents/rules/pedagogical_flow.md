@@ -37,16 +37,19 @@ For each sub-topic, use the following paired structure to enforce learning. **IM
 - **Theory (Optional)**: A brief, conceptual explanation if needed to introduce the specific problem. It should focus on "why" we need to do this in the real world.
 - **`### 👨‍💻 Live Coding N: [Name]`**:
   - Done collaboratively by the instructor and students. IF you need to describe an action, use collaborative phrasing ("Ми", "Разом"). However, do NOT forcefully inject "Разом ми" into every description.
-  - **Контекст**: Scenario or problem description. The context MUST be a pure real-world story. First and foremost, describe the situation and the business goal. Do NOT forcefully inject instructions like "Разом ми зробимо X". Do NOT explain technical motivation or meta-programming concepts here. Just set the scene. If the task requires a specific mathematical or business formula, provide the exact formula here. Do NOT provide algorithmic hints here.
-  - **Вхідні дані**: Input data or starting code.
-  - **Очікуваний результат**: ONLY describe what the code should produce or output. DO NOT write the solution algorithm here.
+  - **Контекст**: Scenario or problem description. Must be concise, dynamic, and have **high information density (maximum 2–3 sentences)**:
+    - 1 sentence sets the real-world operational scene (who and where).
+    - 1–2 sentences state the concrete situation, business thresholds, and the core analytical goal.
+    - Avoid verbose narrative padding, filler sentences, or overly long paragraphs that cause student attention to drift. Keep the story crisp, vivid, and quick to parse. If the task requires a specific mathematical or business formula, provide the exact formula here. Do NOT provide algorithmic hints here.
+  - **Вхідні дані**: Input data or starting parameters.
+  - **Очікуваний результат**: ONLY describe what the code should produce or output (1–2 concise sentences). DO NOT write the solution algorithm here.
   - **Підказки (Optional)**: If the task is complex and requires a hint, use a `::: {.callout-tip}` block.
   - **No Solutions**: NEVER include the actual solution code in the file. The instructor will write it live.
 - **`### 🛠 Guided Practice`**:
   - Independent or loosely guided work for students. Use imperative phrasing ("Напишіть", "Створіть").
-  - **Контекст**: Slightly modified or expanded scenario of the previous Live Coding. It MUST be a pure real-world story. Provide mathematical formulas if needed.
+  - **Контекст**: Slightly modified or expanded scenario of the previous Live Coding. Adhere to the same **concise 2–3 sentence limit with high information density**.
   - **Вхідні дані**: Data or starting point.
-  - **Очікуваний результат**: ONLY describe what the final outcome should be.
+  - **Очікуваний результат**: ONLY describe what the final outcome should be (1–2 concise sentences).
   - **Підказки (Optional)**: Use a `::: {.callout-tip}` block if a specific technical hint is needed.
   - **No Solutions**: NEVER include the actual solution code.
 
