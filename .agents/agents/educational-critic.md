@@ -44,6 +44,10 @@ Every `.qmd` file must be audited against the guidelines in `.agents/rules/`:
 7. **Pyodide Interactivity & Input Ban**:
    - If `{pyodide}` blocks are present, frontmatter MUST contain `engine: jupyter` without global `execute: eval: false`.
    - **Zero `input()` in Pyodide**: Verify that **`input()` is NEVER called inside `{pyodide}` blocks**. Any code involving `input()` must reside in static ` ```python ` blocks for local execution in a real IDE/terminal.
+8. **Педагогічна виправданість колаутів**:
+   - Перевірити, що всі колаути `::: {.callout-tip}` мають заголовок **«Підказка»** (або `title="Підказка: [Тема]"` замість дефолтного «Порада») і є **педагогічно виправданими** (допомагають розібратися зі складним нюансом, специфічною математикою, нетривіальною формулою чи системною пасткою).
+   - Слідкувати за балансом: наявність колаутів не означає їх додавання до кожної вправи (типові задачі мають виконуватися самостійно без підказок).
+   - Блокувати підказки, які напряму підводять до готового розв'язку або диктують конкретні рядки коду/параметри функцій замість самостійної роботи студента.
 
 > [!IMPORTANT]
 > Any violation of Tier 1 is a **CRITICAL BLOCKER**. It must be flagged immediately in the **🔴 Violations & Anti-patterns** section.

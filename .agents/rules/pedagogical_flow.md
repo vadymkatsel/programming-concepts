@@ -43,14 +43,17 @@ For each sub-topic, use the following paired structure to enforce learning. **IM
     - Avoid verbose narrative padding, filler sentences, or overly long paragraphs that cause student attention to drift. Keep the story crisp, vivid, and quick to parse. If the task requires a specific mathematical or business formula, provide the exact formula here. Do NOT provide algorithmic hints here.
   - **Вхідні дані**: Input data or starting parameters.
   - **Очікуваний результат**: ONLY describe what the code should produce or output (1–2 concise sentences). DO NOT write the solution algorithm here.
-  - **Підказки (Optional)**: If the task is complex and requires a hint, use a `::: {.callout-tip}` block.
+  - **Підказки (За потреби, педагогічно виправдані)**: Колаути `::: {.callout-tip title="Підказка: ..."}` є доречним і корисним методичним елементом, проте їх наявність має бути **виключно педагогічно виправданою** (наприклад, нетривіальний математичний прийом, неочевидна формула, попередження про підступну поведінку середовища чи роз'яснення складного бізнес-правила).
+  - **Межа використання (дозвіл ≠ обов'язок)**: Те, що колаути дозволені, **не означає, що їх слід додавати до кожного завдання чи блоку**. Якщо задача типова та є прямим застосуванням розібраного матеріалу — жодних підказок додавати не потрібно. Більшість вправ мають виконуватися студентами самостійно без нав'язливого супроводу.
+  - **Заборона підказок, що розкривають розв'язок**: Заборонено використовувати підказки, які прямо підводять до готового розв'язку або диктують синтаксичні параметри (наприклад, не писати в підказках готові вирази на зразок `range(1, 9)`, `i += 1`, чи готові фрагменти умов). Студенти мають самостійно будувати алгоритм.
+  - **Назва колаута**: Для колаутів типу tip завжди використовуйте назву «Підказка» (наприклад, `title="Підказка"` або `title="Підказка: [Тема]"`), уникаючи дефолтної назви «Порада».
   - **No Solutions**: NEVER include the actual solution code in the file. The instructor will write it live.
 - **`### 🛠 Guided Practice`**:
   - Independent or loosely guided work for students. Use imperative phrasing ("Напишіть", "Створіть").
   - **Контекст**: Slightly modified or expanded scenario of the previous Live Coding. Adhere to the same **concise 2–3 sentence limit with high information density**.
   - **Вхідні дані**: Data or starting point.
   - **Очікуваний результат**: ONLY describe what the final outcome should be (1–2 concise sentences).
-  - **Підказки (Optional)**: Use a `::: {.callout-tip}` block if a specific technical hint is needed.
+  - **Підказки (За потреби, педагогічно виправдані)**: Застосовується те саме правило педагогічної виправданості. Не підказувати прямий код; підказка має спрямовувати думку або нагадувати логічний принцип.
   - **No Solutions**: NEVER include the actual solution code.
 
 ## 4. Progressive Difficulty

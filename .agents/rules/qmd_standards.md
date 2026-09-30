@@ -26,11 +26,14 @@ _(Optionally include HTML headers for FontAwesome icons if needed, e.g., in the 
   - **Prohibition of `input()` in Pyodide**: Pyodide executes in a browser Web Worker where synchronous standard input (`stdin`) is unsupported. **NEVER use `input()` inside `{pyodide}` blocks** (it causes `RuntimeError` / `EOFError`). Any code demonstrating or requiring `input()` must be formatted in standard static ` ```python ` blocks for local execution in an IDE / terminal. In `{pyodide}` blocks, always declare explicit variables (e.g., simulating received string or numeric data) with `#| edit: true` so students can modify values directly in the code editor.
   - **Static Code**: For all other sections (including "Bug Hunter", "Guided Practice", theoretical syntax examples, and data inputs), use standard static ` ```python ` blocks. Practice tasks should be executed by students in their own local IDEs.
   - **Evaluation**: If a standard python block needs to be evaluated during rendering to show static output, use `#| eval: true` inside the block.
-- **Callouts**: Use Quarto callouts to highlight specific types of information and warnings:
-  - `::: {.callout-tip}` - for hints, tips, or congratulations.
-  - `::: {.callout-warning}` - for constraints, restrictions, or common pitfalls.
-  - `::: {.callout-important}` - for critical information (e.g., strict instructions).
-  - `::: {.callout-note}` - for general notes.
+- **Колаути та культура підказок (Педагогічна виправданість)**: Колаути Quarto є дієвим інструментом структурування уваги та акцентування, проте їх застосування має бути **педагогічно виправданим**:
+  - **Межа використання (дозвіл ≠ обов'язок)**: Те, що колаути дозволені, **не означає, що їх слід додавати до кожного завдання чи блоку**. Якщо задача типова та закріплює щойно вивчене — підказка взагалі не потрібна. Більшість задач повинні розв'язуватися студентами самостійно.
+  - `::: {.callout-tip title="Підказка: ..."}` — використовується для методичних підказок. За замовчуванням такий блок повинен мати заголовок **«Підказка»** (наприклад, `title="Підказка"` або `title="Підказка: [Тема]"`), а не дефолтну «Порада».
+    - **Педагогічна виправданість**: Колаут має нести реальну навчальну цінність (пояснення нетривіального прийому, специфічної арифметики на зразок `% 10` та `//= 10`, економічного/математичного змісту або попередження про підступні підводні камені).
+    - **Заборона спойлерів коду**: Підказка ніколи не повинна прямо підводити до готового розв'язку чи розкривати конкретні рядки коду/параметри функцій (наприклад, не давати готові виклики `range(1, 9)`, лічильники `i += 1` чи готові складені булеві вирази). Вона має спрямовувати хід думок або нагадувати логічний принцип, а не писати код за студента.
+  - `::: {.callout-warning title="Увага: ..."}` — для критичних обмежень, зациклень, застережень про ризики в середовищі розробки.
+  - `::: {.callout-important title="Важливо: ..."}` — для ключових вимог чи обов'язкових інструкцій.
+  - `::: {.callout-note title="Примітка: ..."}` — для довідкових зауважень або концептуального контексту.
 - **Placeholders**: When the practice requires screenshots, repositories, or other custom content outside of standard markdown, insert clear placeholders. Use format like `![[Screenshot Placeholder: Description of what should be here]]()` for images.
 - **No Dividers**: Do not use Markdown horizontal dividers (`---`) between sections or blocks. The Quarto headers (`##`, `###`) already provide sufficient visual separation.
 - **Block Elements Spacing**: Always leave an empty line before and after block elements such as lists (`-`, `1.`), code blocks, and blockquotes (`>`). Crucially, an empty line MUST always precede the first list item, including after bold lead-ins (e.g., after `**Вхідні дані:**`, `**Очікуваний результат:**`, or `де:`).
