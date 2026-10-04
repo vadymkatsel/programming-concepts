@@ -48,6 +48,10 @@ Every `.qmd` file must be audited against the guidelines in `.agents/rules/`:
    - Перевірити, що всі колаути `::: {.callout-tip}` мають заголовок **«Підказка»** (або `title="Підказка: [Тема]"` замість дефолтного «Порада») і є **педагогічно виправданими** (допомагають розібратися зі складним нюансом, специфічною математикою, нетривіальною формулою чи системною пасткою).
    - Слідкувати за балансом: наявність колаутів не означає їх додавання до кожної вправи (типові задачі мають виконуватися самостійно без підказок).
    - Блокувати підказки, які напряму підводять до готового розв'язку або диктують конкретні рядки коду/параметри функцій замість самостійної роботи студента.
+9. **No Syntax Spoon-feeding (Заборона синтаксичного розжовування)**:
+   - Блокувати нав'язливі вказівки синтаксису в умовах та очікуваних результатах завдань (наприклад, `за допомогою методу .append() та циклу for`, `використовуючи функцію len()`, `через оператор in`). Завдання має описувати бізнес-мету та очікуваний вивід, залишаючи вибір конкретних синтаксичних інструментів студентові.
+10. **Чистота синтаксичних сигнатур у Cheat Sheet**:
+   - Сигнатури та шаблони у Cheat Sheet повинні використовувати стандартні конвенційні ідентифікатори Python (`lst`, `item`, `index`, `step`, `x`), категорично заборонено суржиковий псевдокод у кодових лапках (на кшталт `значення in список`, `список[початок:кінець]`).
 
 > [!IMPORTANT]
 > Any violation of Tier 1 is a **CRITICAL BLOCKER**. It must be flagged immediately in the **🔴 Violations & Anti-patterns** section.
@@ -57,9 +61,10 @@ Every `.qmd` file must be audited against the guidelines in `.agents/rules/`:
 #### A. Standard Coding (`standard-coding`)
 
 1. **Warm Up**: Must rely ONLY on previously learned concepts. **ZERO** new syntax.
-2. **Live Coding & Guided Practice Pairs**: Collaborative tone for Live, imperative for Guided. Students write code from scratch.
-3. **Bug Hunter**: Located in the middle in `::: {.panel-tabset}` without solutions.
-4. **Capstone**: Integrates module topics.
+2. **Section Intros (Mandatory Conceptual Bridges)**: Кожен заголовок теми `##` ОБОВ'ЯЗКОВО повинен починатися з короткого інтро-абзацу (1–2 речення), який пояснює практичну необхідність концепції ("навіщо це потрібно") перед переходом до `### 👨‍💻 Live Coding`. Прямий перехід від `##` до `###` без інтро заборонено.
+3. **Live Coding & Guided Practice Pairs**: Collaborative tone for Live, imperative for Guided. Students write code from scratch.
+4. **Bug Hunter**: Located in the middle in `::: {.panel-tabset}` without solutions.
+5. **Capstone Single-Module Placement**: Якщо тема складається з кількох практичних занять (наприклад, 2 частини), Капстон розміщується **виключно у фінальній практиці модуля**. У початкових/базових практиках Капстон категорично заборонений.
 
 #### B. Tooling & Setup (`tooling-setup`) (e.g. IDE setup, Git & GitHub, Terminal)
 

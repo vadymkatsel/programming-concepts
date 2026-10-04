@@ -30,8 +30,8 @@ When generating or editing educational materials, you **MUST strictly adhere** t
 
 ### Archetype 1: Standard Coding Practice (`standard-coding`)
 
-- Used for programming concepts: Functions, Loops, Dictionaries, OOP, Data Handling.
-- Flow: `Introduction` ➔ `Plan` ➔ `Cheat Sheet` ➔ `Warm Up` (no new syntax) ➔ `Live Coding + Guided Practice pairs` ➔ `Bug Hunter` (in the middle, wrapped in tabsets `::: {.panel-tabset}`) ➔ `Capstone`.
+- Flow: `Introduction` ➔ `Plan` ➔ `Cheat Sheet` (standard Python identifiers: `lst`, `item`, `index`; no Cyrillic pseudocode) ➔ `Warm Up` (no new syntax) ➔ `[Section Conceptual Intro ➔ Live Coding + Guided Practice pairs]` (mandatory 1-2 sentence intro under every `##` header explaining why) ➔ `Bug Hunter` (in the middle, wrapped in tabsets `::: {.panel-tabset}`) ➔ `Capstone` (**ONLY** in the final practice file of a multi-practice module; strictly forbidden in earlier foundational practices).
+- **No Syntax Spoon-feeding**: Never dictate code implementation in task descriptions or expected outputs (e.g. forbidding `за допомогою методу .append() та циклу for`). Describe the business problem and expected outputs cleanly.
 - Zero Solution Tolerance in practice sections.
 
 ### Archetype 2: Tooling & Setup Practice (`tooling-setup`)

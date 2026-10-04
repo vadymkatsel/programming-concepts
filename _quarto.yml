@@ -91,6 +91,11 @@ website:
           contents:
             - courses/be-course/modules/loops/while-loops-ps.qmd
             - courses/be-course/modules/loops/for-loops-ps.qmd
+
+        - section: "Списки"
+          contents:
+            - courses/be-course/modules/lists/lists-basics-ps.qmd
+            - courses/be-course/modules/lists/lists-operations-ps.qmd
   
         - section: "Legacy"
           contents:

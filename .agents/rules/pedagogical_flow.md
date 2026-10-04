@@ -34,7 +34,8 @@ Practical sessions for programming concepts should follow a structured, iterativ
 
 For each sub-topic, use the following paired structure to enforce learning. **IMPORTANT**: Students must WRITE code from scratch in these sections, do not just provide broken code for them to refactor.
 
-- **Theory (Optional)**: A brief, conceptual explanation if needed to introduce the specific problem. It should focus on "why" we need to do this in the real world.
+- **Theory / Section Intro (Mandatory)**: Every main topic header (`##`) MUST begin with a concise, engaging conceptual intro paragraph (1–2 sentences) explaining the operational or business necessity ("why we need this") before diving into `### 👨‍💻 Live Coding`. Never jump directly from a `##` header to a `### 👨‍💻 Live Coding` sub-header without an introductory paragraph.
+- **No Syntax Spoon-feeding (Заборона синтаксичного розжовування)**: Strictly forbid hand-holding syntax instructions in task descriptions, contexts, and expected outputs (e.g., forbidding `за допомогою методу .append() та циклу for`, `використовуючи функцію len()`, `через оператор in`). Formulate tasks purely in terms of business goals, input data, and expected outputs. Let students independently select and apply the learned programming primitives.
 - **`### 👨‍💻 Live Coding N: [Name]`**:
   - Done collaboratively by the instructor and students. IF you need to describe an action, use collaborative phrasing ("Ми", "Разом"). However, do NOT forcefully inject "Разом ми" into every description.
   - **Контекст**: Scenario or problem description. Must be concise, dynamic, and have **high information density (maximum 2–3 sentences)**:
