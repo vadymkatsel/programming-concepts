@@ -96,6 +96,10 @@ website:
           contents:
             - courses/be-course/modules/lists/lists-basics-ps.qmd
             - courses/be-course/modules/lists/lists-operations-ps.qmd
+
+        - section: "Рядки"
+          contents:
+            - courses/be-course/modules/strings/strings-ps.qmd
   
         - section: "Legacy"
           contents:

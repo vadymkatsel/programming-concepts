@@ -35,31 +35,41 @@ Practical sessions for programming concepts should follow a structured, iterativ
 For each sub-topic, use the following paired structure to enforce learning. **IMPORTANT**: Students must WRITE code from scratch in these sections, do not just provide broken code for them to refactor.
 
 - **Theory / Section Intro (Mandatory)**: Every main topic header (`##`) MUST begin with a concise, engaging conceptual intro paragraph (1–2 sentences) explaining the operational or business necessity ("why we need this") before diving into `### 👨‍💻 Live Coding`. Never jump directly from a `##` header to a `### 👨‍💻 Live Coding` sub-header without an introductory paragraph.
-- **No Syntax Spoon-feeding (Заборона синтаксичного розжовування)**: Strictly forbid hand-holding syntax instructions in task descriptions, contexts, and expected outputs (e.g., forbidding `за допомогою методу .append() та циклу for`, `використовуючи функцію len()`, `через оператор in`). Formulate tasks purely in terms of business goals, input data, and expected outputs. Let students independently select and apply the learned programming primitives.
+- **No Syntax Spoon-feeding**: Strictly forbid hand-holding syntax instructions in task descriptions, contexts, and expected outputs (e.g., forbidding `за допомогою методу .append() та циклу for`, `використовуючи функцію len()`, `через оператор in`). Formulate tasks purely in terms of business goals, input data, and expected outputs. Let students independently select and apply the learned programming primitives.
 - **`### 👨‍💻 Live Coding N: [Name]`**:
   - Done collaboratively by the instructor and students. IF you need to describe an action, use collaborative phrasing ("Ми", "Разом"). However, do NOT forcefully inject "Разом ми" into every description.
-  - **Контекст**: Scenario or problem description. Must be concise, dynamic, and have **high information density (maximum 2–3 sentences)**:
+  - **Context (`Контекст`)**: Scenario or problem description. Must be concise, dynamic, and have **high information density (maximum 2–3 sentences)**:
     - 1 sentence sets the real-world operational scene (who and where).
     - 1–2 sentences state the concrete situation, business thresholds, and the core analytical goal.
     - Avoid verbose narrative padding, filler sentences, or overly long paragraphs that cause student attention to drift. Keep the story crisp, vivid, and quick to parse. If the task requires a specific mathematical or business formula, provide the exact formula here. Do NOT provide algorithmic hints here.
-  - **Вхідні дані**: Input data or starting parameters.
-  - **Очікуваний результат**: ONLY describe what the code should produce or output (1–2 concise sentences). DO NOT write the solution algorithm here.
-  - **Підказки (За потреби, педагогічно виправдані)**: Колаути `::: {.callout-tip title="Підказка: ..."}` є доречним і корисним методичним елементом, проте їх наявність має бути **виключно педагогічно виправданою** (наприклад, нетривіальний математичний прийом, неочевидна формула, попередження про підступну поведінку середовища чи роз'яснення складного бізнес-правила).
-  - **Межа використання (дозвіл ≠ обов'язок)**: Те, що колаути дозволені, **не означає, що їх слід додавати до кожного завдання чи блоку**. Якщо задача типова та є прямим застосуванням розібраного матеріалу — жодних підказок додавати не потрібно. Більшість вправ мають виконуватися студентами самостійно без нав'язливого супроводу.
-  - **Заборона підказок, що розкривають розв'язок**: Заборонено використовувати підказки, які прямо підводять до готового розв'язку або диктують синтаксичні параметри (наприклад, не писати в підказках готові вирази на зразок `range(1, 9)`, `i += 1`, чи готові фрагменти умов). Студенти мають самостійно будувати алгоритм.
-  - **Назва колаута**: Для колаутів типу tip завжди використовуйте назву «Підказка» (наприклад, `title="Підказка"` або `title="Підказка: [Тема]"`), уникаючи дефолтної назви «Порада».
+  - **Input Data (`Вхідні дані:`)**: Input data or starting parameters.
+  - **Expected Output (`Очікуваний результат:`)**: ONLY describe what the code should produce or output (1–2 concise sentences). DO NOT write the solution algorithm here.
+  - **Hints (Pedagogically Justified When Necessary)**: Callouts `::: {.callout-tip title="Підказка: ..."}` are an appropriate and valuable pedagogical element, but their presence must be **strictly pedagogically justified** (e.g., a non-trivial mathematical trick, an unobvious formula, a warning about insidious environment behavior, or clarification of a complex business rule).
+  - **Usage Boundary (Permission ≠ Obligation)**: The fact that callouts are permitted **does not mean they should be added to every task or block**. If a task is standard and directly applies the covered material, no hints should be added. Most exercises must be solved independently by students without overbearing guidance.
+  - **Prohibition of Solution-Spoiling Hints**: It is strictly forbidden to use hints that directly give away the solution or dictate syntactic parameters (e.g., do not write ready expressions in hints such as `range(1, 9)`, `i += 1`, or ready fragments of conditional expressions). Students must build the algorithm independently.
+  - **Callout Title**: For callouts of type tip, always use the Ukrainian title «Підказка» (e.g., `title="Підказка"` or `title="Підказка: [Topic]"`), avoiding the default Quarto label «Порада» ("Tip").
   - **No Solutions**: NEVER include the actual solution code in the file. The instructor will write it live.
 - **`### 🛠 Guided Practice`**:
   - Independent or loosely guided work for students. Use imperative phrasing ("Напишіть", "Створіть").
-  - **Контекст**: Slightly modified or expanded scenario of the previous Live Coding. Adhere to the same **concise 2–3 sentence limit with high information density**.
-  - **Вхідні дані**: Data or starting point.
-  - **Очікуваний результат**: ONLY describe what the final outcome should be (1–2 concise sentences).
-  - **Підказки (За потреби, педагогічно виправдані)**: Застосовується те саме правило педагогічної виправданості. Не підказувати прямий код; підказка має спрямовувати думку або нагадувати логічний принцип.
+  - **Context (`Контекст`)**: Slightly modified or expanded scenario of the previous Live Coding. Adhere to the same **concise 2–3 sentence limit with high information density**.
+  - **Input Data (`Вхідні дані:`)**: Data or starting point.
+  - **Expected Output (`Очікуваний результат:`)**: ONLY describe what the final outcome should be (1–2 concise sentences).
+  - **Hints (Pedagogically Justified When Necessary)**: The same pedagogical justification rule applies. Do not provide direct code; hints must guide thought or remind students of a logical principle.
   - **No Solutions**: NEVER include the actual solution code.
 
-## 4. Progressive Difficulty
+## 4. Progressive Complexity vs. Difficulty
 
-Start with simple, trivial examples and gradually build up to more complex interactions by the end of the module. Don't over-engineer examples.
+- **Complexity Instead of 1–2-Line Toy Problems**: Avoid primitive tasks that can be solved in 1–2 lines of code (such as calling a single isolated method `.upper()` or `.append()`). While such micro-examples are appropriate as illustrations in the Cheat Sheet, learning tasks in Live Coding, Guided Practice, and Capstone must model real **multi-step data processing pipelines**. Students should see how the newly learned concept works in combination with previously acquired knowledge (loops, conditionals, lists, formatting).
+- **Complexity ≠ Algorithmic/Mathematical Difficulty**:
+  - **NOT Difficulty**: It is strictly forbidden to overload tasks with competitive-programming math puzzles, tricky edge cases, convoluted combinatorics, or abstractions unknown to beginners (e.g., regular expressions before they are taught). The logic of each step must be crystal clear and intuitive.
+  - **YES Complexity**: Natural composition of several straightforward steps into a single end-to-end business pipeline: 1) iteration over raw records -> 2) cleaning noise and whitespace -> 3) structural format validation -> 4) slicing or splitting into fields -> 5) business filtering or calculation -> 6) assembling a standardized report or aggregate. This naturally produces 6–12 lines of readable code without any intellectual dead ends.
+- **Progressive Complexity Pipeline**:
+  - Complexity within a session must increase gradually from cycle to cycle:
+    1. **Warm Up**: 1–2 basic operations reviewing previous topics (e.g., a loop with an accumulator and formatted output).
+    2. **Cycle 1 (First Topic)**: Baseline pipeline (e.g., iteration + slicing/indexing + filtering into a new list).
+    3. **Cycle 2 (Second Topic)**: Deepened pipeline (e.g., cleaning + replacement + multi-condition validation checks).
+    4. **Cycle 3 (Third Topic)**: Multi-dimensional pipeline (e.g., parsing a monolithic string with multiple delimiters, type conversions, filtering, and conditional alert generation).
+    5. **Capstone**: Full-scale end-to-end audit covering every stage of the pipeline and calculating aggregate business metrics.
 
 ## 5. Bug Hunter (`## 🐛 Bug Hunter`)
 
@@ -88,4 +98,3 @@ Used for environment setup, developer tooling, and workflow tutorials (Benchmark
 - **Hands-On Milestones**: Walk students through an interactive workflow with mini-milestones (e.g., Fork -> Clone -> Branch -> Greeting script -> Commit -> Push -> Pull Request).
 - **Screenshots & Placeholders**: Insert image references or placeholders (e.g., `![Clone Menu](/courses/.../sources/clone-repo.png)` or `![[Screenshot Placeholder: Description]]()`).
 - **Exemptions**: Tooling practices are **EXEMPT** from mandatory `Bug Hunter` in tabsets and `Live Coding / Guided Practice` pairs.
-
