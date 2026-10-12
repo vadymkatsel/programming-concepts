@@ -45,6 +45,9 @@ This checklist is used by the **educational-critic** subagent to evaluate genera
   - Students write code from scratch.
 - [ ] **Bug Hunter**:
   - Placed in the middle of the lesson wrapped in tabsets `::: {.panel-tabset}` without revealed answers.
+- [ ] **Progressive Complexity (Наростаюча комплексність)**:
+  - Tasks form multi-step data processing pipelines (iterating -> cleaning -> validating -> slicing/parsing -> filtering/calculating -> reporting) rather than 1–2 line isolated toy problems.
+  - Complexity steadily increases across learning cycles up to the comprehensive Capstone, without introducing convoluted mathematical or algorithmic puzzles.
 - [ ] **Capstone**: Single capstone at the end of the topic.
 
 ### B. For `tooling-setup` (IDE Setup, Git, CLI, Environments)
