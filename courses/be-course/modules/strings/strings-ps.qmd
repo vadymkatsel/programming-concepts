@@ -39,7 +39,6 @@ page-layout: full
 - [Eolymp 8981: Індекси пробілів](https://eolymp.com/problems/8981)
 - [Eolymp 8983: Кількість цифр](https://eolymp.com/problems/8983)
 
-
 ## 📝 Cheat Sheet
 
 ### 1. Індексація та довжина
