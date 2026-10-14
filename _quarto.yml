@@ -100,6 +100,11 @@ website:
         - section: "Рядки"
           contents:
             - courses/be-course/modules/strings/strings-ps.qmd
+
+        - section: "Підготовка до мідтерму"
+          contents:
+            - courses/be-course/modules/miscellaneous/midterm-prep.qmd
+            - courses/be-course/modules/miscellaneous/ultimate-cheat-sheet.qmd
   
         - section: "Legacy"
           contents:
