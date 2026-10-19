@@ -22,6 +22,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -35,18 +37,19 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
           
-      - name: Cache Quarto Freeze
+      - name: Cache Rendered PDFs
         uses: actions/cache@v4
         with:
-          path: _freeze
-          key: freeze-v2-${{ github.ref }}-${{ hashFiles('**/*.qmd') }}
+          path: .pdf-cache
+          key: pdf-cache-v1-${{ hashFiles('courses/**/*.qmd', '_quarto.yml') }}
           restore-keys: |
-            freeze-v2-${{ github.ref }}-
-            freeze-v2-main-
-            freeze-v2-
+            pdf-cache-v1-
 
-      - name: Render Quarto Project
-        run: quarto render
+      - name: Render Quarto HTML
+        run: quarto render --to live-html
+
+      - name: Incremental PDF Build & Link Verification
+        run: python scripts/build_pdfs.py
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3

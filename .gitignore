@@ -14,4 +14,4 @@ _site/
 *_files/
 docs/
 site_libs/
-
+.pdf-cache/

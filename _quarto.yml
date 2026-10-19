@@ -3,7 +3,7 @@ project:
   output-dir: docs
   resources:
     - "index.html"
-    - "script.js"
+    - "scripts/script.js"
     - "sources/"
     - "courses/**/sources/"
 
@@ -200,7 +200,10 @@ website:
 
 format:
   live-html:
-    format-links: true
+    format-links:
+      - format: typst
+        text: "Завантажити PDF"
+        icon: file-pdf
     theme: 
       dark: darkly
       light: cosmo
@@ -215,7 +218,7 @@ format:
       - file: analytics.html
     include-after-body:
       text: |
-        <script src="/script.js?v=3"></script>
+        <script src="/scripts/script.js?v=3"></script>
   typst:
     toc: true
     number-sections: false

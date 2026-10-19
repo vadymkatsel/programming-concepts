@@ -26,16 +26,6 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
-      - name: Cache Quarto Freeze
-        uses: actions/cache@v4
-        with:
-          path: _freeze
-          key: freeze-v2-${{ github.ref }}-${{ hashFiles('**/*.qmd') }}
-          restore-keys: |
-            freeze-v2-${{ github.ref }}-
-            freeze-v2-main-
-            freeze-v2-
-
       - name: Incremental Quarto Validation
         shell: bash
         run: |
@@ -55,12 +45,15 @@ jobs:
           elif [ -n "$CHANGED_QMDS" ]; then
             echo "▶ Rendering only modified .qmd files:"
             echo "$CHANGED_QMDS"
+            EXISTING_QMDS=()
             for file in $CHANGED_QMDS; do
               if [ -f "$file" ]; then
-                echo "Rendering $file..."
-                quarto render "$file" --to live-html
+                EXISTING_QMDS+=("$file")
               fi
             done
+            if [ ${#EXISTING_QMDS[@]} -gt 0 ]; then
+              quarto render "${EXISTING_QMDS[@]}"
+            fi
           else
             echo "▶ No .qmd files or global configs changed (static/doc changes only). Running quick syntax check..."
             quarto check
