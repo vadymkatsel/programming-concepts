@@ -5,6 +5,7 @@
 *.quarto_ipynb
 __pycache__/
 venv/
+.venv/
 .env
 _book/
 .idea/
