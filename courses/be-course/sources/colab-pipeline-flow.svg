@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 180" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#ff6500"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#34d399"/>
+    </marker>
+
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="880" height="180" rx="16" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- Cell 1 -->
+  <g filter="url(#shadow)">
+    <rect x="25" y="35" width="170" height="110" rx="12" fill="url(#grad-card)" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="42" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#38bdf8">Клітинка [1]</text>
+    <text x="42" y="98" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="12" fill="#f1f5f9">Сирий дамп</text>
+    <text x="42" y="122" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="11" fill="#64748b">raw_night_dump</text>
+  </g>
+
+  <path d="M 200 90 L 245 90" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrow-blue)"/>
+
+  <!-- Cell 2 -->
+  <g filter="url(#shadow)">
+    <rect x="250" y="35" width="175" height="110" rx="12" fill="url(#grad-card)" stroke="#818cf8" stroke-width="1.5"/>
+    <text x="268" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#818cf8">Клітинка [2]</text>
+    <text x="268" y="98" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="12" fill="#f1f5f9">Очищення</text>
+    <text x="268" y="122" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="11" fill="#64748b">clean_orders</text>
+  </g>
+
+  <path d="M 430 90 L 475 90" fill="none" stroke="#ff6500" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrow-orange)"/>
+
+  <!-- Cell 3 -->
+  <g filter="url(#shadow)">
+    <rect x="480" y="35" width="170" height="110" rx="12" fill="url(#grad-card)" stroke="#ff6500" stroke-width="1.5"/>
+    <text x="498" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#ff6500">Клітинка [3]</text>
+    <text x="498" y="98" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="12" fill="#f1f5f9">Антифрод-фільтр</text>
+    <text x="498" y="122" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="11" fill="#64748b">blocked / verified</text>
+  </g>
+
+  <path d="M 655 90 L 700 90" fill="none" stroke="#34d399" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrow-green)"/>
+
+  <!-- Cell 4 -->
+  <g filter="url(#shadow)">
+    <rect x="705" y="35" width="150" height="110" rx="12" fill="url(#grad-card)" stroke="#34d399" stroke-width="1.5"/>
+    <text x="722" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#34d399">Клітинка [4]</text>
+    <text x="722" y="98" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="12" fill="#f1f5f9">Дашборд звіту</text>
+    <text x="722" y="122" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="11" fill="#64748b">агрегація і топ-3</text>
+  </g>
+</svg>

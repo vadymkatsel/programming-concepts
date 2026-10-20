@@ -101,6 +101,10 @@ website:
           contents:
             - courses/be-course/modules/strings/strings-ps.qmd
 
+        - section: "Інструменти спільної розробки"
+          contents:
+            - courses/be-course/modules/colab/google-colab-ps.qmd
+
         - section: "Miscellaneous"
           contents:
             - courses/be-course/modules/miscellaneous/midterm-prep.qmd
