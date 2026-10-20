@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 180" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#ff6500"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#34d399"/>
+    </marker>
+
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="880" height="180" rx="16" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- Card 1: Notebook Cells -->
+  <g filter="url(#shadow)">
+    <rect x="25" y="35" width="170" height="110" rx="12" fill="url(#grad-card)" stroke="#38bdf8" stroke-width="1.5"/>
+    <circle cx="52" cy="65" r="13" fill="#0284c7" fill-opacity="0.2"/>
+    <path d="M 48 60 L 43 65 L 48 70 M 56 60 L 61 65 L 56 70" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="73" y="70" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#f1f5f9">Клітинки</text>
+    <text x="42" y="105" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="12" fill="#94a3b8">Code + Markdown</text>
+    <text x="42" y="125" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="11" fill="#64748b">файл .ipynb</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M 200 90 L 245 90" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrow-blue)"/>
+  <rect x="203" y="65" width="38" height="20" rx="5" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+  <text x="222" y="79" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#38bdf8" text-anchor="middle">Run</text>
+
+  <!-- Card 2: Shared Kernel -->
+  <g filter="url(#shadow)">
+    <rect x="250" y="35" width="175" height="110" rx="12" fill="url(#grad-card)" stroke="#ff6500" stroke-width="1.5"/>
+    <circle cx="278" cy="65" r="13" fill="#ea580c" fill-opacity="0.2"/>
+    <rect x="271" y="58" width="14" height="14" rx="2" fill="none" stroke="#ff6500" stroke-width="1.6"/>
+    <text x="299" y="70" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#f1f5f9">Ядро Python</text>
+    <text x="268" y="105" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="12" fill="#94a3b8">Спільна пам'ять</text>
+    <text x="268" y="125" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="11" fill="#64748b">зберігає змінні</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M 430 90 L 475 90" fill="none" stroke="#ff6500" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrow-orange)"/>
+  <rect x="433" y="65" width="38" height="20" rx="5" fill="#0f172a" stroke="#ff6500" stroke-width="1"/>
+  <text x="452" y="79" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#ff6500" text-anchor="middle">Sync</text>
+
+  <!-- Card 3: Google Drive -->
+  <g filter="url(#shadow)">
+    <rect x="480" y="35" width="170" height="110" rx="12" fill="url(#grad-card)" stroke="#818cf8" stroke-width="1.5"/>
+    <circle cx="508" cy="65" r="13" fill="#4f46e5" fill-opacity="0.2"/>
+    <path d="M 503 68 L 513 68 M 508 60 L 508 68" fill="none" stroke="#818cf8" stroke-width="2" stroke-linecap="round"/>
+    <text x="528" y="70" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#f1f5f9">Google Drive</text>
+    <text x="498" y="105" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="12" fill="#94a3b8">Colab Notebooks</text>
+    <text x="498" y="125" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="11" fill="#64748b">автозбереження</text>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <path d="M 655 90 L 700 90" fill="none" stroke="#34d399" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrow-green)"/>
+  <rect x="658" y="65" width="38" height="20" rx="5" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+  <text x="677" y="79" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#34d399" text-anchor="middle">Share</text>
+
+  <!-- Card 4: Collaboration -->
+  <g filter="url(#shadow)">
+    <rect x="705" y="35" width="150" height="110" rx="12" fill="url(#grad-card)" stroke="#34d399" stroke-width="1.5"/>
+    <circle cx="732" cy="65" r="13" fill="#059669" fill-opacity="0.2"/>
+    <path d="M 727 65 L 737 65 M 732 60 L 732 70" fill="none" stroke="#34d399" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="752" y="70" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#f1f5f9">Команда</text>
+    <text x="722" y="105" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="12" fill="#94a3b8">Коментарі і код</text>
+    <text x="722" y="125" font-family="'Lilex', 'JetBrains Mono', monospace" font-size="11" fill="#64748b">спільний доступ</text>
+  </g>
+</svg>
