@@ -101,6 +101,10 @@ website:
           contents:
             - courses/be-course/modules/strings/strings-ps.qmd
 
+        - section: "Функції"
+          contents:
+            - courses/be-course/modules/functions/functions-ps.qmd
+
         - section: "Інструменти спільної розробки"
           contents:
             - courses/be-course/modules/colab/google-colab-ps.qmd
