@@ -44,7 +44,7 @@ This checklist is used by the **educational-critic** subagent to evaluate genera
   - `### 🛠 Guided Practice` — imperative phrasing ("Напишіть", "Створіть").
   - Students write code from scratch.
 - [ ] **Bug Hunter**:
-  - Placed in the middle of the lesson wrapped in tabsets `::: {.panel-tabset}` without revealed answers.
+  - Placed in the middle of the lesson wrapped in tabsets `::: {.panel-tabset}` without revealed answers. Tab titles must be neutral (`### Баг 1`, `### Баг 2`) and strictly avoid spoiling the cause or solution of the bug.
 - [ ] **Progressive Complexity (Наростаюча комплексність)**:
   - Tasks form multi-step data processing pipelines (iterating -> cleaning -> validating -> slicing/parsing -> filtering/calculating -> reporting) rather than 1–2 line isolated toy problems.
   - Complexity steadily increases across learning cycles up to the comprehensive Capstone, without introducing convoluted mathematical or algorithmic puzzles.

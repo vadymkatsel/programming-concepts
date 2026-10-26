@@ -63,7 +63,7 @@ Every `.qmd` file must be audited against the guidelines in `.agents/rules/`:
 1. **Warm Up**: Must rely ONLY on previously learned concepts. **ZERO** new syntax.
 2. **Section Intros (Mandatory Conceptual Bridges)**: Кожен заголовок теми `##` ОБОВ'ЯЗКОВО повинен починатися з короткого інтро-абзацу (1–2 речення), який пояснює практичну необхідність концепції ("навіщо це потрібно") перед переходом до `### 👨‍💻 Live Coding`. Прямий перехід від `##` до `###` без інтро заборонено.
 3. **Live Coding & Guided Practice Pairs**: Collaborative tone for Live, imperative for Guided. Students write code from scratch.
-4. **Bug Hunter**: Located in the middle in `::: {.panel-tabset}` without solutions.
+4. **Bug Hunter**: Located in the middle in `::: {.panel-tabset}` without solutions. Tab titles must be neutral (e.g. `### Баг 1`, `### Баг 2`) and strictly avoid spoiling the cause or solution of the bug.
 5. **Capstone Single-Module Placement**: Якщо тема складається з кількох практичних занять (наприклад, 2 частини), Капстон розміщується **виключно у фінальній практиці модуля**. У початкових/базових практиках Капстон категорично заборонений.
 
 #### B. Tooling & Setup (`tooling-setup`) (e.g. IDE setup, Git & GitHub, Terminal)
