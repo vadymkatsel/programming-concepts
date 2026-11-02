@@ -25,7 +25,8 @@ Every `.qmd` file must be audited against the guidelines in `.agents/rules/`:
 
 1. **AST Strictness Rule (Backticks)**:
    - Verify that **NO ordinary human language words** are wrapped in backticks in regular prose (e.g., `параметр`, `запит`, `результат`, `алгоритм` are strictly prohibited).
-   - Backticks are permitted **EXCLUSIVELY** for valid Python/CLI syntactic tokens (e.g., `len()`, `dict`, `.keys()`, `git status`) or descriptive placeholders inside formal syntax signatures (e.g., `map(функція, список)`).
+   - Verify that task descriptions (`Контекст`, `Вхідні дані`, `Очікуваний результат`) are **NOT cluttered with backticks** around numbers (`1000`, `41.5`), string literals/names (`"DataCore"`, `"Enterprise"`), inline lists/dicts (`[1, 2, 3]`, `{"a": 1}`), or dictated function signatures/parameter names (`def foo(bar=10)`).
+   - Backticks are permitted **EXCLUSIVELY** for valid Python/CLI syntactic tokens (e.g., `len()`, `dict`, `.keys()`, `True`, `None`, `KeyError`) or descriptive placeholders inside formal syntax signatures in Cheat Sheets.
 2. **No English Translations / Duplications**:
    - Verify that basic terms are NOT followed by redundant bracketed English equivalents (e.g., `словник (dictionary)` is prohibited).
 3. **Tight Lists & Preceding Spacing**:
@@ -52,6 +53,8 @@ Every `.qmd` file must be audited against the guidelines in `.agents/rules/`:
    - Блокувати нав'язливі вказівки синтаксису в умовах та очікуваних результатах завдань (наприклад, `за допомогою методу .append() та циклу for`, `використовуючи функцію len()`, `через оператор in`). Завдання має описувати бізнес-мету та очікуваний вивід, залишаючи вибір конкретних синтаксичних інструментів студентові.
 10. **Чистота синтаксичних сигнатур у Cheat Sheet**:
    - Сигнатури та шаблони у Cheat Sheet повинні використовувати стандартні конвенційні ідентифікатори Python (`lst`, `item`, `index`, `step`, `x`), категорично заборонено суржиковий псевдокод у кодових лапках (на кшталт `значення in список`, `список[початок:кінець]`).
+11. **Лаконічність заголовка практики (`title:` у YAML)**:
+   - Поле `title` у YAML-шапці має бути коротким і ємним (2–4 слова, наприклад, `"Словники в Python"`, `"List Comprehensions"`, без довгих підзаголовків через двокрапку), щоб не перевантажувати бічну панель навігації Quarto.
 
 > [!IMPORTANT]
 > Any violation of Tier 1 is a **CRITICAL BLOCKER**. It must be flagged immediately in the **🔴 Violations & Anti-patterns** section.

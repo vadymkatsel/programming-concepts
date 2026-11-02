@@ -24,7 +24,7 @@ When generating or editing educational materials, you **MUST strictly adhere** t
 > - All user-facing lesson content, scenarios, explanations, and instructions inside generated `.qmd` files **MUST be written EXCLUSIVELY in Ukrainian**.
 > - **Lists Preceding Blank Line**: Never attach a bullet (`- `) directly to a preceding bold lead-in line (e.g., `**Вхідні дані:**`). ALWAYS leave an empty line between the label and the first list item!
 > - **Clean Phrasing**: Do not clutter task specifications with superfluous parentheses like `(у гривнях)` or `(відповідь "так" або "ні")`. Keep context and inputs clean.
-> - **Prohibition of `input()` in `{pyodide}`**: Browser WebAssembly (Pyodide) runs in a Web Worker where `stdin` is unsupported. **NEVER use `input()` inside `{pyodide}` blocks**. Use explicit variable assignments with `#| edit: true` for browser execution, and teach `input()` exclusively in static markdown code blocks for local IDE execution.
+> - **Selective `{pyodide}` Interactivity (Default 1–2 per `standard-coding` practice)**: By default, use `engine: jupyter` in the YAML frontmatter and include **1–2 `{pyodide}` blocks** (`#| autorun: true`, `#| edit: true`) in the `## 📝 Cheat Sheet` ONLY where interactive execution/editing genuinely clarifies a tricky concept (while keeping simple syntax snippets as static ` ```python ` blocks). Never spam `{pyodide}` on every snippet, and **NEVER use `input()` inside `{pyodide}` blocks** (Browser WebAssembly runs in a Web Worker where `stdin` is unsupported).
 
 ## Practice Archetypes & Workflow
 
