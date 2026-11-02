@@ -638,16 +638,20 @@ a:hover {
 /* ============================================================
    PANELS  (sidebar + margin sidebar + main)
    ============================================================ */
-div.sidebar-item-container .sidebar-item-text {
+div.sidebar-item-container .sidebar-item-text,
+div.sidebar-item-container .sidebar-item-toggle {
   color: var(--fg-muted) !important;
   transition: color 0.2s ease;
 }
 
-div.sidebar-item-container:hover .sidebar-item-text {
-  color: var(--fg-text) !important;
+div.sidebar-item-container:hover .sidebar-item-text,
+div.sidebar-item-container:hover .sidebar-item-toggle,
+div.sidebar-item-container:hover .menu-text {
+  color: var(--accent-color) !important;
 }
 
-div.sidebar-item-container .sidebar-item-toggle {
+div.sidebar-item-container .sidebar-item-toggle i,
+div.sidebar-item-container .sidebar-item-toggle .bi {
   color: var(--accent-color) !important;
 }
 
@@ -657,6 +661,7 @@ div.sidebar-item-container .sidebar-item-text {
 }
 
 div.sidebar-item-container a.sidebar-item-text.active {
+  color: var(--fg-text) !important;
   border-left: 3px solid var(--accent-color) !important;
   padding-left: 0.8rem !important;
 }
