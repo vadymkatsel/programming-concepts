@@ -109,6 +109,11 @@ website:
           contents:
             - courses/be-course/modules/functions/functions-ps.qmd
 
+        - section: "Словники та List Comprehensions"
+          contents:
+            - courses/be-course/modules/dictionaries-lc/dictionaries-ps.qmd
+            - courses/be-course/modules/dictionaries-lc/list-comprehensions-ps.qmd
+
         - section: "Miscellaneous"
           contents:
             - courses/be-course/modules/miscellaneous/midterm-prep.qmd
