@@ -254,6 +254,93 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(injectCustomOverlay, 600);
 });
 
+// --- Collapsible & Copyable Filename Code Blocks ---
+document.addEventListener('DOMContentLoaded', function() {
+    const copyText = (text) => {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            return navigator.clipboard.writeText(text);
+        }
+        return new Promise((resolve, reject) => {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                resolve();
+            } catch (err) {
+                reject(err);
+            } finally {
+                textarea.remove();
+            }
+        });
+    };
+
+    document.querySelectorAll('.code-with-filename').forEach((block) => {
+        const header = block.querySelector('.code-with-filename-file');
+        const codeEl = block.querySelector('.sourceCode pre code') || block.querySelector('pre code');
+        const preEl = block.querySelector('pre.collapsed') || block.querySelector('.sourceCode pre') || block.querySelector('pre[data-filename]');
+        if (!header || !codeEl) return;
+
+        const filename = header.textContent.trim();
+
+        if (preEl && preEl.classList.contains('collapsed')) {
+            block.classList.add('is-collapsed');
+        }
+
+        header.setAttribute('role', 'button');
+        header.setAttribute('tabindex', '0');
+        header.setAttribute('aria-expanded', String(!block.classList.contains('is-collapsed')));
+
+        header.innerHTML = `
+            <span class="code-filename-left">
+                <i class="fa-solid fa-chevron-down code-filename-chevron" aria-hidden="true"></i>
+                <i class="fa-regular fa-file-lines code-filename-icon" aria-hidden="true"></i>
+                <strong class="code-filename-name"></strong>
+            </span>
+            <button type="button" class="code-filename-copy-btn" title="Копіювати вміст файлу" aria-label="Копіювати вміст файлу">
+                <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                <span>Копіювати</span>
+            </button>
+        `;
+        header.querySelector('.code-filename-name').textContent = filename;
+
+        const copyBtn = header.querySelector('.code-filename-copy-btn');
+        const toggleCollapse = () => {
+            const collapsed = block.classList.toggle('is-collapsed');
+            header.setAttribute('aria-expanded', String(!collapsed));
+        };
+
+        header.addEventListener('click', (e) => {
+            if (e.target.closest('.code-filename-copy-btn')) return;
+            toggleCollapse();
+        });
+
+        header.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                if (document.activeElement === copyBtn) return;
+                e.preventDefault();
+                toggleCollapse();
+            }
+        });
+
+        copyBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const rawText = (codeEl.textContent || '').replace(/\n$/, '');
+            copyText(rawText).then(() => {
+                copyBtn.classList.add('is-copied');
+                copyBtn.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i><span>Скопійовано</span>';
+                setTimeout(() => {
+                    copyBtn.classList.remove('is-copied');
+                    copyBtn.innerHTML = '<i class="fa-regular fa-copy" aria-hidden="true"></i><span>Копіювати</span>';
+                }, 2000);
+            });
+        });
+    });
+});
+
 // --- Course Progress Tracking ---
 document.addEventListener('DOMContentLoaded', function() {
     // Only track if on a course page

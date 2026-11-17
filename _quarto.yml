@@ -114,6 +114,11 @@ website:
             - courses/be-course/modules/dictionaries-lc/dictionaries-ps.qmd
             - courses/be-course/modules/dictionaries-lc/list-comprehensions-ps.qmd
 
+        - section: "Обробка помилок та робота з файлами"
+          contents:
+            - courses/be-course/modules/errors-files/error-handling-ps.qmd
+            - courses/be-course/modules/errors-files/files-json-csv-ps.qmd
+
         - section: "Miscellaneous"
           contents:
             - courses/be-course/modules/miscellaneous/midterm-prep.qmd
@@ -231,7 +236,7 @@ format:
       - file: analytics.html
     include-after-body:
       text: |
-        <script src="/scripts/script.js?v=3"></script>
+        <script src="/scripts/script.js?v=4"></script>
   typst:
     toc: true
     number-sections: false
