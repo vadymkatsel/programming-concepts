@@ -119,6 +119,11 @@ website:
             - courses/be-course/modules/errors-files/error-handling-ps.qmd
             - courses/be-course/modules/errors-files/files-json-csv-ps.qmd
 
+        - section: "Бібліотеки та API"
+          contents:
+            - courses/be-course/modules/api-libraries/libraries-ps.qmd
+            - courses/be-course/modules/api-libraries/api-requests-ps.qmd
+
         - section: "Miscellaneous"
           contents:
             - courses/be-course/modules/miscellaneous/midterm-prep.qmd
